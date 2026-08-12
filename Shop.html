@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>EliteVolt Systems | Mobile Solar Shop</title>
+    <link rel="stylesheet" href="css/shop.css">
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <img src="images/logo.png" alt="EliteVolt">
+            <span>EliteVolt Systems</span>
+        </div>
+        <div class="nav-links">
+            <a href="home.html"><i class="fas fa-solar-panel"></i> Home</a>
+            <a href="home.html#calculator"><i class="fas fa-calculator"></i> Calc</a>
+            <a href="home.html#services"><i class="fas fa-tools"></i> Services</a>
+        </div>
+    </div>
+</nav>
+
+<div class="hero-header">
+    <div class="hero-content">
+        <h1>EliteVolt Systems</h1>
+        <p><i class="fas fa-bolt"></i> Solar • Electrical • Electronics </p>
+    </div>
+</div>
+
+<!-- SINGLE shop container for mobile + desktop (no duplication) -->
+<div class="shop-container">
+    <div class="products-wrapper">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="🔍 Search products..." autocomplete="off">
+            <button id="clearSearchBtn"><i class="fas fa-times"></i> Clear</button>
+        </div>
+        <h2 style="margin-bottom: 1.2rem; font-size:2.2rem;">⚡ Products</h2>
+
+       <div class="category-bar">
+    <select id="categoryFilter">
+        <option value="All">All Categories</option>
+        <option value="Solar Kits">Solar Kits</option>
+        <option value="Solar Panels">Solar Panels</option>
+        <option value="Inverters">Inverters</option>
+        <option value="Gel Batteries">Gel Batteries</option>
+        <option value="Lithium Batteries">Lithium Batteries</option>
+        <option value="Streetlights">Streetlights</option>
+        <option value="Accessories">Accessories</option>
+        <option value="Appliance">Appliance</option>
+    </select>
+</div>
+
+        <div id="productsGrid" class="products-grid"></div>
+
+        <!-- Pagination controls -->
+        <div id="paginationControls" class="pagination"></div>
+    </div>
+    <div class="desktop-cart-section" id="desktopCartPanel">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <h3><i class="fas fa-shopping-cart"></i> Cart</h3>
+            <button id="clearCartDesktopBtn" style="background:#dc2626; color:white; border:none; padding:6px 14px; border-radius:30px; font-size:0.75rem;">Clear</button>
+        </div>
+        <div id="desktopCartContent">Cart is empty</div>
+        <div class="cart-total" style="margin-top:1rem; font-weight:800;">Total: GH₵ <span id="desktopTotal">0.00</span></div>
+        <div style="margin-top:1rem; display:flex; gap:8px; flex-direction:column;">
+            <button id="desktopWhatsapp" class="btn-whatsapp" style="padding:10px;">💬 WhatsApp Order</button>
+            <button id="desktopEmail" class="btn-email" style="padding:10px;">✉️ Email Order</button>
+        </div>
+    </div>
+</div>
+
+<!-- Floating Cart Button (mobile only) -->
+<div class="floating-cart" id="floatingCartBtn">
+    <i class="fas fa-shopping-cart"></i>
+    <span id="cartItemCount" class="cart-badge" style="display:none;">0</span>
+</div>
+
+<!-- Cart Drawer (mobile) -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+        <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+        <button class="close-drawer" id="closeDrawerBtn">&times;</button>
+    </div>
+    <div class="drawer-content" id="drawerCartContent">
+        <div class="empty-cart-message">Cart is empty</div>
+    </div>
+</div>
+
+<!-- Product Modal -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" id="closeModalBtn">&times;</span>
+        <div id="modalInner"></div>
+    </div>
+</div>
+
+<footer>
+
+<h3>EliteVolt Systems</h3>
+
+<p>
+Solar Installation • Electrical Services •
+Solar Boreholes • Pico Home Systems
+</p>
+
+<p>
+📞 +233 24 997 6762
+</p>
+
+<p>
+✉ info@elitevoltsystems.com
+</p>
+
+</footer>
+<script src="js/shop.js"></script>
+</body>
+</html>
