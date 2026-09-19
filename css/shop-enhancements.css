@@ -1,0 +1,135 @@
+/* EliteVolt professional shop polish */
+html, body { max-width: 100%; }
+body { padding-bottom: 0 !important; }
+footer {
+  width: 100%;
+  margin-top: 2rem !important;
+  padding: 2.25rem 1rem !important;
+  border-radius: 2rem 2rem 0 0;
+  position: relative;
+  z-index: 1;
+}
+footer p { margin: .55rem auto; line-height: 1.55; }
+footer h3 { margin-bottom: .65rem; }
+
+/* Better product cards */
+.product-card { overflow: hidden; }
+.product-image { transition: transform .25s ease, filter .25s ease; }
+.product-card:hover .product-image { transform: scale(1.025); }
+.product-card button, .page-btn, .search-bar button { touch-action: manipulation; }
+.btn-add, .btn-details { min-height: 44px; }
+
+/* Modal gallery */
+.product-gallery { min-width: 0; }
+#modalMainImg {
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
+  touch-action: pan-y;
+}
+.gallery-hint {
+  text-align: center;
+  color: #64748b;
+  font-size: .78rem;
+  margin-top: .55rem;
+}
+
+/* Full-screen image viewer */
+.ev-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2, 6, 23, .96);
+  padding: 64px 16px 24px;
+  overscroll-behavior: contain;
+}
+.ev-lightbox.open { display: flex; }
+.ev-lightbox-image-wrap {
+  width: min(96vw, 1200px);
+  height: min(84vh, 850px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  touch-action: none;
+  border-radius: 12px;
+}
+.ev-lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transform-origin: center center;
+  will-change: transform;
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: grab;
+}
+.ev-lightbox img.dragging { cursor: grabbing; }
+.ev-lightbox-toolbar {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: rgba(15, 23, 42, .82);
+  padding: 8px;
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+}
+.ev-lightbox-toolbar button,
+.ev-lightbox-close {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.13);
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+}
+.ev-lightbox-toolbar button:hover,
+.ev-lightbox-close:hover { background: rgba(255,255,255,.23); }
+.ev-lightbox-close {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  z-index: 2;
+}
+.ev-lightbox-counter {
+  color: #e2e8f0;
+  font-size: .78rem;
+  min-width: 56px;
+  text-align: center;
+}
+.ev-lightbox-caption {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #cbd5e1;
+  font-size: .8rem;
+  max-width: 85vw;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Mobile polish */
+@media (max-width: 699px) {
+  footer { margin-top: 1.25rem !important; padding-bottom: calc(1.5rem + env(safe-area-inset-bottom)) !important; }
+  .hero-header { background-attachment: scroll !important; }
+  .product-card { box-shadow: 0 5px 16px rgba(15,23,42,.07); }
+  .ev-lightbox { padding: 58px 6px 38px; }
+  .ev-lightbox-image-wrap { width: 100vw; height: 78vh; }
+  .ev-lightbox-toolbar { top: 10px; }
+  .ev-lightbox-toolbar button, .ev-lightbox-close { width: 40px; height: 40px; }
+  .ev-lightbox-caption { bottom: 8px; }
+}
