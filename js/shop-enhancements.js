@@ -98,12 +98,6 @@
       panY = startPanY + (e.clientY - startY);
       applyTransform();
     });
-    lightboxImg.addEventListener('pointermove', function (e) {
-      if (!dragging) return;
-      panX = startPanX + (e.clientX - startX);
-      panY = startPanY + (e.clientY - startY);
-      applyTransform();
-    });
     ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (name) {
       lightboxImg.addEventListener(name, function (e) {
         activePointers.delete(e.pointerId);
