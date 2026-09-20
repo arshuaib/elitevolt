@@ -64,13 +64,39 @@
       setZoom(zoom > 1 ? 1 : 2.5);
     });
 
+    var activePointers = new Map();
+    var pinchStartDistance = 0;
+    var pinchStartZoom = 1;
+
     lightboxImg.addEventListener('pointerdown', function (e) {
+      activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      try { lightboxImg.setPointerCapture(e.pointerId); } catch (_) {}
+      if (activePointers.size === 2) {
+        var pts = Array.from(activePointers.values());
+        pinchStartDistance = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+        pinchStartZoom = zoom;
+        dragging = false;
+        return;
+      }
       if (zoom <= 1) return;
       dragging = true;
       startX = e.clientX; startY = e.clientY;
       startPanX = panX; startPanY = panY;
       lightboxImg.classList.add('dragging');
-      try { lightboxImg.setPointerCapture(e.pointerId); } catch (_) {}
+    });
+
+    lightboxImg.addEventListener('pointermove', function (e) {
+      if (activePointers.has(e.pointerId)) activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (activePointers.size === 2) {
+        var pts = Array.from(activePointers.values());
+        var distance = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+        if (pinchStartDistance > 0) setZoom(pinchStartZoom * (distance / pinchStartDistance));
+        return;
+      }
+      if (!dragging) return;
+      panX = startPanX + (e.clientX - startX);
+      panY = startPanY + (e.clientY - startY);
+      applyTransform();
     });
     lightboxImg.addEventListener('pointermove', function (e) {
       if (!dragging) return;
@@ -79,7 +105,9 @@
       applyTransform();
     });
     ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (name) {
-      lightboxImg.addEventListener(name, function () {
+      lightboxImg.addEventListener(name, function (e) {
+        activePointers.delete(e.pointerId);
+        if (activePointers.size < 2) pinchStartDistance = 0;
         dragging = false;
         lightboxImg.classList.remove('dragging');
       });
@@ -150,7 +178,7 @@
     if (gallery && !gallery.querySelector('.gallery-hint')) {
       var hint = document.createElement('div');
       hint.className = 'gallery-hint';
-      hint.textContent = 'Tap image to zoom • Double-tap or use + / −';
+      hint.textContent = 'Tap image to zoom • Double-tap • Pinch or use + / −';
       gallery.appendChild(hint);
     }
   }
