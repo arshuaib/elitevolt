@@ -1,296 +1,129 @@
-/* EliteVolt professional shop polish */
-html, body { max-width: 100%; }
-body { padding-bottom: 0 !important; }
-footer {
-  width: 100%;
-  margin-top: 2rem !important;
-  padding: 2.25rem 1rem !important;
-  border-radius: 2rem 2rem 0 0;
-  position: relative;
-  z-index: 1;
-}
-footer p { margin: .55rem auto; line-height: 1.55; }
-footer h3 { margin-bottom: .65rem; }
+/* EliteVolt v5 — mobile modal, gallery and shop polish */
+@media (max-width:699px) {
+  .modal {
+    padding: 8px !important;
+    align-items: center !important;
+  }
 
-/* Better product cards */
-.product-card { overflow: hidden; }
-.product-image { transition: transform .25s ease, filter .25s ease; }
-.product-card:hover .product-image { transform: scale(1.025); }
-.product-card button, .page-btn, .search-bar button { touch-action: manipulation; }
-.btn-add, .btn-details { min-height: 44px; }
+  .modal-content {
+    width: min(100%, 560px) !important;
+    max-height: 90dvh !important;
+    padding: 10px !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
 
-/* Modal gallery */
-.product-gallery { min-width: 0; }
-#modalMainImg {
-  cursor: zoom-in;
-  user-select: none;
-  -webkit-user-drag: none;
-  touch-action: pan-y;
-}
-.gallery-hint {
-  text-align: center;
-  color: #64748b;
-  font-size: .78rem;
-  margin-top: .55rem;
+  #modalInner {
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    padding-right: 2px;
+  }
+
+  .modal-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .product-gallery {
+    flex: 0 0 auto !important;
+  }
+
+  #modalMainImg {
+    width: 100% !important;
+    height: min(30dvh, 245px) !important;
+    max-height: 245px !important;
+    object-fit: contain !important;
+    background: #f5f7fa !important;
+    border-radius: 15px !important;
+  }
+
+  .thumbnails {
+    display: flex !important;
+    gap: 7px !important;
+    overflow-x: auto !important;
+    padding: 5px 2px 2px !important;
+    scrollbar-width: none;
+  }
+  .thumbnails::-webkit-scrollbar { display:none; }
+  .thumbnails img {
+    flex: 0 0 58px !important;
+    width: 58px !important;
+    height: 52px !important;
+    object-fit: contain !important;
+    border-radius: 10px !important;
+  }
+
+  .gallery-hint {
+    font-size: .72rem !important;
+    margin: 3px 0 0 !important;
+  }
+
+  .modal-details {
+    padding: 0 1px 4px !important;
+  }
+
+  .modal-details h3 {
+    font-size: 1.22rem !important;
+    line-height: 1.15 !important;
+    margin: 6px 0 6px !important;
+  }
+
+  .modal-details p {
+    font-size: .88rem !important;
+    line-height: 1.42 !important;
+    margin: 0 0 8px !important;
+  }
+
+  .modal-details ul {
+    font-size: .84rem !important;
+    line-height: 1.38 !important;
+    margin: 0 0 10px !important;
+    padding-left: 18px !important;
+  }
+
+  .modal-details li { margin-bottom: 3px; }
+
+  .modal-details .btn-whatsapp {
+    position: sticky !important;
+    bottom: 0 !important;
+    z-index: 4 !important;
+    width: 100% !important;
+    min-height: 48px !important;
+    margin: 6px 0 2px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 -7px 14px rgba(255,255,255,.92) !important;
+  }
+
+  .close-modal {
+    z-index: 20 !important;
+    width: 42px !important;
+    height: 42px !important;
+  }
 }
 
-/* Full-screen image viewer */
-.ev-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 5000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  background: rgba(2, 6, 23, .96);
-  padding: 64px 16px 24px;
+/* Desktop modal also gets a bounded scroll area */
+.modal-content {
+  max-height: 92dvh;
+  overflow: hidden;
+}
+#modalInner {
+  min-height: 0;
+  overflow-y: auto;
   overscroll-behavior: contain;
 }
-.ev-lightbox.open { display: flex; }
-.ev-lightbox-image-wrap {
-  width: min(96vw, 1200px);
-  height: min(84vh, 850px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+
+/* Product cards: keep image proportions clean */
+.product-image {
+  object-fit: contain !important;
+  background: #f7f9fc;
+}
+
+/* Lightbox should never sit behind browser/mobile UI */
+.ev-lightbox {
+  overscroll-behavior: contain;
   touch-action: none;
-  border-radius: 12px;
-}
-.ev-lightbox img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  transform-origin: center center;
-  will-change: transform;
-  user-select: none;
-  -webkit-user-drag: none;
-  cursor: grab;
-}
-.ev-lightbox img.dragging { cursor: grabbing; }
-.ev-lightbox-toolbar {
-  position: absolute;
-  top: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  background: rgba(15, 23, 42, .82);
-  padding: 8px;
-  border-radius: 999px;
-  backdrop-filter: blur(10px);
-}
-.ev-lightbox-toolbar button,
-.ev-lightbox-close {
-  width: 42px;
-  height: 42px;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(255,255,255,.13);
-  color: white;
-  cursor: pointer;
-  font-size: 18px;
-  display: grid;
-  place-items: center;
-}
-.ev-lightbox-toolbar button:hover,
-.ev-lightbox-close:hover { background: rgba(255,255,255,.23); }
-.ev-lightbox-close {
-  position: absolute;
-  right: 14px;
-  top: 14px;
-  z-index: 2;
-}
-.ev-lightbox-counter {
-  color: #e2e8f0;
-  font-size: .78rem;
-  min-width: 56px;
-  text-align: center;
-}
-.ev-lightbox-caption {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #cbd5e1;
-  font-size: .8rem;
-  max-width: 85vw;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Mobile polish */
-@media (max-width: 699px) {
-  footer { margin-top: 1.25rem !important; padding-bottom: calc(1.5rem + env(safe-area-inset-bottom)) !important; }
-  .hero-header { background-attachment: scroll !important; }
-  .product-card { box-shadow: 0 5px 16px rgba(15,23,42,.07); }
-  .ev-lightbox { padding: 58px 6px 38px; }
-  .ev-lightbox-image-wrap { width: 100vw; height: 78vh; }
-  .ev-lightbox-toolbar { top: 10px; }
-  .ev-lightbox-toolbar button, .ev-lightbox-close { width: 40px; height: 40px; }
-  .ev-lightbox-caption { bottom: 8px; }
-}
-
-/* EliteVolt v3 mobile refinement */
-@media (max-width: 699px) {
-  body { padding-bottom: 0 !important; }
-
-  .navbar { position: sticky; top: 0; }
-  .nav-container {
-    padding: .7rem .9rem .65rem;
-    gap: .45rem;
-    justify-content: center;
-  }
-  .logo { width: 100%; justify-content: center; font-size: .95rem; }
-  .logo img { width: 44px; height: 44px; }
-  .nav-links {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: .25rem;
-  }
-  .nav-links a {
-    margin-left: 0;
-    padding: .45rem .65rem;
-    font-size: .84rem;
-    border-radius: 999px;
-  }
-
-  .hero-header {
-    min-height: 185px;
-    padding: .75rem;
-  }
-  .hero-content h1 { font-size: clamp(1.55rem, 7vw, 2rem); }
-  .hero-content p { font-size: .82rem; }
-
-  .shop-container { margin: .65rem auto; padding: 0 .7rem; }
-  .search-bar {
-    gap: 7px;
-    margin-bottom: .8rem;
-  }
-  .search-bar input {
-    min-width: 0;
-    height: 52px;
-    font-size: 16px;
-  }
-  .search-bar button {
-    flex: 0 0 52px;
-    width: 52px;
-    height: 52px;
-    padding: 0;
-    font-size: 0;
-    display: grid;
-    place-items: center;
-  }
-  .search-bar button i { font-size: 1rem; }
-
-  .products-wrapper > h2 {
-    font-size: 1.7rem !important;
-    margin-bottom: .8rem !important;
-  }
-  .category-bar select { height: 52px; font-size: 16px; }
-
-  .products-grid { gap: .65rem; }
-  .product-card { padding: .55rem; border-radius: 14px; }
-  .product-image {
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-    background: #f7f9fc;
-  }
-  .product-title { font-size: .78rem; min-height: 36px; }
-  .product-price { font-size: .88rem; }
-  .btn-add, .btn-details { min-height: 42px; font-size: .72rem; }
-
-  /* Keep the product modal compact enough to leave the browser UI visible. */
-  .modal {
-    padding: .55rem;
-    align-items: center;
-  }
-  .modal-content {
-    width: 100%;
-    max-height: 88dvh;
-    padding: .75rem;
-    border-radius: 20px;
-    overflow-y: auto;
-  }
-  .modal-layout { gap: .55rem; }
-  .product-gallery { min-height: 0; }
-  #modalMainImg {
-    height: min(32dvh, 270px);
-    max-height: 270px;
-    border-radius: 15px;
-  }
-  .thumbnails {
-    justify-content: flex-start;
-    margin-top: 7px;
-    padding-bottom: 4px;
-  }
-  .thumbnails img { width: 54px; height: 46px; }
-  .gallery-hint { margin-top: .35rem; font-size: .7rem; }
-  .modal-details h3 { font-size: 1.35rem; margin-bottom: .4rem; }
-  .modal-details p, .modal-details ul { font-size: .92rem; line-height: 1.38; margin-bottom: .55rem; }
-  .modal-details ul { padding-left: 1rem; }
-  .modal-details .btn-whatsapp { min-height: 48px !important; font-size: .95rem; }
-
-  .close-modal { width: 42px; height: 42px; right: 7px; top: 7px; }
-
-  .floating-cart {
-    right: 12px;
-    bottom: calc(12px + env(safe-area-inset-bottom));
-    width: 56px;
-    height: 56px;
-  }
-
-  footer {
-    margin-top: 1rem !important;
-    padding: 1.5rem .9rem calc(1.5rem + env(safe-area-inset-bottom)) !important;
-    border-radius: 1.25rem 1.25rem 0 0;
-  }
-}
-
-@media (min-width: 700px) and (max-width: 899px) {
-  .modal-content { max-height: 90dvh; }
-}
-
-/* Avoid accidental horizontal page movement from fixed/absolute UI. */
-html, body { overflow-x: clip; }
-
-
-/* EliteVolt v4 — mobile visual refinement based on live mobile layout */
-@media (max-width: 699px) {
-  .navbar { min-height: auto !important; }
-  .nav-container { padding: .55rem .7rem .45rem !important; }
-  .logo { font-size: .9rem !important; gap: .35rem !important; }
-  .logo img { width: 42px !important; height: 42px !important; }
-  .nav-links a { font-size: .78rem !important; padding: .38rem .55rem !important; }
-  .hero-header { min-height: 165px !important; padding: .55rem !important; }
-  .hero-content h1 { font-size: clamp(1.35rem, 6vw, 1.8rem) !important; }
-  .hero-content p { font-size: .76rem !important; }
-  .shop-container { padding: 0 .55rem !important; margin: .45rem auto !important; }
-  .search-bar { margin-bottom: .55rem !important; gap: 6px !important; }
-  .search-bar input { height: 46px !important; font-size: 15px !important; border-radius: 999px !important; }
-  .search-bar button { flex: 0 0 46px !important; width: 46px !important; height: 46px !important; min-height: 46px !important; border-radius: 50% !important; }
-  .products-wrapper > h2 { font-size: 1.45rem !important; margin: .55rem 0 .55rem !important; }
-  .category-bar select { height: 46px !important; min-height: 46px !important; font-size: 15px !important; }
-  .products-grid { grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap: 8px !important; }
-  .product-card { padding: 7px !important; border-radius: 13px !important; }
-  .product-image { height: 128px !important; aspect-ratio: 1 / 1 !important; border-radius: 10px !important; }
-  .product-title { font-size: .76rem !important; line-height: 1.18 !important; min-height: 31px !important; margin-top: 5px !important; }
-  .product-price { font-size: .82rem !important; margin: 4px 0 !important; }
-  .btn-add, .btn-details { min-height: 36px !important; height: 36px !important; margin-top: 4px !important; font-size: .68rem !important; padding: .25rem .4rem !important; }
-  .out-of-stock-badge { font-size: .48rem !important; padding: 2px 5px !important; }
-  .floating-cart { width: 52px !important; height: 52px !important; right: 10px !important; bottom: calc(10px + env(safe-area-inset-bottom)) !important; }
-  footer { margin-top: .8rem !important; padding: 1.15rem .7rem calc(1.15rem + env(safe-area-inset-bottom)) !important; border-radius: 1rem 1rem 0 0 !important; }
-  footer p { font-size: .72rem !important; line-height: 1.4 !important; margin: .4rem auto !important; }
-  footer h3 { font-size: .9rem !important; }
-  .modal { padding: .4rem !important; }
-  .modal-content { max-height: 84dvh !important; padding: .65rem !important; border-radius: 17px !important; }
-  #modalMainImg { height: min(27dvh, 220px) !important; max-height: 220px !important; }
-  .modal-details h3 { font-size: 1.18rem !important; }
-  .modal-details p, .modal-details ul { font-size: .84rem !important; line-height: 1.3 !important; }
-  .modal-details .btn-whatsapp { min-height: 44px !important; font-size: .85rem !important; }
 }
