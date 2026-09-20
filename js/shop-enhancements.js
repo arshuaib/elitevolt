@@ -1,234 +1,127 @@
-/* EliteVolt professional shop interactions: zoom viewer, keyboard controls,
-   image loading polish and accessibility improvements. */
+/* EliteVolt v5 — modal/gallery repair and mobile interaction */
 (function () {
   'use strict';
 
-  var zoom = 1, minZoom = 1, maxZoom = 4;
-  var panX = 0, panY = 0;
-  var lightbox, lightboxImg, counter, caption;
-  var dragging = false, startX = 0, startY = 0, startPanX = 0, startPanY = 0;
-  var lastTap = 0;
-
-  function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
-
-  function getModalImages() {
-    return Array.isArray(window.modalImages) && window.modalImages.length
-      ? window.modalImages
-      : [];
+  function cleanText(value) {
+    return String(value == null ? '' : value)
+      .replace(/\u25a1/g, '•')
+      .replace(/\uFFFD/g, '•')
+      .trim();
   }
 
-  function buildLightbox() {
-    if (document.getElementById('evLightbox')) return;
-    lightbox = document.createElement('div');
-    lightbox.id = 'evLightbox';
-    lightbox.className = 'ev-lightbox';
-    lightbox.setAttribute('role', 'dialog');
-    lightbox.setAttribute('aria-modal', 'true');
-    lightbox.setAttribute('aria-label', 'Product image viewer');
-    lightbox.innerHTML =
-      '<button class="ev-lightbox-close" type="button" aria-label="Close image viewer">&times;</button>' +
-      '<div class="ev-lightbox-toolbar" role="toolbar" aria-label="Image controls">' +
-        '<button type="button" data-zoom="out" aria-label="Zoom out">−</button>' +
-        '<span class="ev-lightbox-counter">1 / 1</span>' +
-        '<button type="button" data-zoom="in" aria-label="Zoom in">+</button>' +
-        '<button type="button" data-zoom="reset" aria-label="Reset zoom">↺</button>' +
-      '</div>' +
-      '<div class="ev-lightbox-image-wrap">' +
-        '<img alt="Product image">' +
-      '</div>' +
-      '<div class="ev-lightbox-caption"></div>';
-    document.body.appendChild(lightbox);
-    lightboxImg = lightbox.querySelector('img');
-    counter = lightbox.querySelector('.ev-lightbox-counter');
-    caption = lightbox.querySelector('.ev-lightbox-caption');
+  function cleanProductData() {
+    try {
+      if (typeof productsData === 'undefined') return;
 
-    lightbox.querySelector('.ev-lightbox-close').addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', function (e) {
-      if (e.target === lightbox) closeLightbox();
-    });
-    lightbox.querySelectorAll('[data-zoom]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var action = btn.getAttribute('data-zoom');
-        if (action === 'in') setZoom(zoom + .5);
-        else if (action === 'out') setZoom(zoom - .5);
-        else resetZoom();
-      });
-    });
-
-    lightboxImg.addEventListener('wheel', function (e) {
-      e.preventDefault();
-      setZoom(zoom + (e.deltaY < 0 ? .25 : -.25));
-    }, { passive: false });
-
-    lightboxImg.addEventListener('dblclick', function () {
-      setZoom(zoom > 1 ? 1 : 2.5);
-    });
-
-    var activePointers = new Map();
-    var pinchStartDistance = 0;
-    var pinchStartZoom = 1;
-
-    lightboxImg.addEventListener('pointerdown', function (e) {
-      activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
-      try { lightboxImg.setPointerCapture(e.pointerId); } catch (_) {}
-      if (activePointers.size === 2) {
-        var pts = Array.from(activePointers.values());
-        pinchStartDistance = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
-        pinchStartZoom = zoom;
-        dragging = false;
-        return;
+      /* The current 6kW HV listing contains an unrelated sneaker image.
+         Remove that thumbnail rather than showing an unrelated product photo. */
+      var p9 = productsData.find(function (p) { return p.id === 'p9'; });
+      if (p9) {
+        p9.description = cleanText(p9.description);
+        p9.specs = (p9.specs || []).map(cleanText);
+        p9.thumbnails = (p9.thumbnails || []).filter(function (src) {
+          return !/unsplash\.com/i.test(String(src));
+        });
       }
-      if (zoom <= 1) return;
-      dragging = true;
-      startX = e.clientX; startY = e.clientY;
-      startPanX = panX; startPanY = panY;
-      lightboxImg.classList.add('dragging');
-    });
 
-    lightboxImg.addEventListener('pointermove', function (e) {
-      if (activePointers.has(e.pointerId)) activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
-      if (activePointers.size === 2) {
-        var pts = Array.from(activePointers.values());
-        var distance = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
-        if (pinchStartDistance > 0) setZoom(pinchStartZoom * (distance / pinchStartDistance));
-        return;
-      }
-      if (!dragging) return;
-      panX = startPanX + (e.clientX - startX);
-      panY = startPanY + (e.clientY - startY);
-      applyTransform();
-    });
-    ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (name) {
-      lightboxImg.addEventListener(name, function (e) {
-        activePointers.delete(e.pointerId);
-        if (activePointers.size < 2) pinchStartDistance = 0;
-        dragging = false;
-        lightboxImg.classList.remove('dragging');
+      productsData.forEach(function (p) {
+        p.description = cleanText(p.description);
+        p.specs = (p.specs || []).map(cleanText);
       });
+    } catch (e) {
+      console.warn('EliteVolt v5 product cleanup:', e);
+    }
+  }
+
+  function esc(value) {
+    return String(value == null ? '' : value).replace(/[&<>"']/g, function (c) {
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
     });
   }
 
-  function applyTransform() {
-    lightboxImg.style.transform = 'translate3d(' + panX + 'px,' + panY + 'px,0) scale(' + zoom + ')';
-  }
+  function openProfessionalModal(pid) {
+    if (typeof productsData === 'undefined') return;
 
-  function resetZoom() {
-    zoom = 1; panX = 0; panY = 0; applyTransform();
-  }
+    var p = productsData.find(function (item) { return item.id === pid; });
+    if (!p) return;
 
-  function setZoom(value) {
-    zoom = clamp(value, minZoom, maxZoom);
-    if (zoom === 1) { panX = 0; panY = 0; }
-    var limit = 250 * (zoom - 1);
-    panX = clamp(panX, -limit, limit);
-    panY = clamp(panY, -limit, limit);
-    applyTransform();
-  }
+    var modal = document.getElementById('productModal');
+    var inner = document.getElementById('modalInner');
+    if (!modal || !inner) return;
 
-  function openLightbox(index) {
-    buildLightbox();
-    var imgs = getModalImages();
-    if (!imgs.length) return;
-    index = (Number(index) || 0) % imgs.length;
-    if (index < 0) index += imgs.length;
-    lightboxImg.src = imgs[index];
-    lightboxImg.alt = (document.getElementById('modalMainImg') || {}).alt || 'Product image';
-    counter.textContent = (index + 1) + ' / ' + imgs.length;
-    caption.textContent = lightboxImg.alt;
-    lightbox.dataset.index = String(index);
-    lightbox.classList.add('open');
-    resetZoom();
+    var images = Array.from(new Set([p.mainImg].concat(p.thumbnails || [])));
+    var thumbs = images.map(function (src, i) {
+      return '<img class="modal-thumbnail ' + (i === 0 ? 'active' : '') +
+        '" src="' + esc(src) + '" alt="' + esc(p.name) + ' image ' + (i + 1) +
+        '" onclick="selectModalImage(' + i + ')">';
+    }).join('');
+
+    var desc = cleanText(p.description).replace(/•\s*/g, '• ');
+    var specHtml = (p.specs || []).map(function (s) {
+      return '<li>' + esc(cleanText(s)) + '</li>';
+    }).join('');
+
+    inner.innerHTML =
+      '<div class="modal-layout">' +
+        '<div class="product-gallery">' +
+          '<img id="modalMainImg" src="' + esc(p.mainImg) + '" alt="' + esc(p.name) + '">' +
+          '<div class="thumbnails">' + thumbs + '</div>' +
+          '<div class="gallery-hint">Tap image to zoom • Double-tap • Pinch • + / −</div>' +
+        '</div>' +
+        '<div class="modal-details">' +
+          '<h3>' + esc(p.name) + '</h3>' +
+          '<p>' + esc(desc) + '</p>' +
+          (specHtml ? '<ul>' + specHtml + '</ul>' : '') +
+          (!p.stock ? '<p style="color:#b91c1c;font-weight:700;">Out of stock</p>' : '') +
+          (p.stock ?
+            '<a href="https://wa.me/233249976762?text=' + encodeURIComponent(p.whatsappMsg || p.name) +
+            '" target="_blank" rel="noopener">' +
+            '<button class="btn-whatsapp" style="width:100%;">Enquire on WhatsApp</button></a>' : '') +
+        '</div>' +
+      '</div>';
+
+    modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+
+    /* Reuse the existing slideshow state/functions from shop.js. */
+    try {
+      modalImages = images;
+      modalImageIndex = 0;
+      if (typeof startModalSlideshow === 'function') startModalSlideshow();
+    } catch (e) {}
   }
-
-  function closeLightbox() {
-    if (!lightbox) return;
-    lightbox.classList.remove('open');
-    if (!document.getElementById('productModal') || document.getElementById('productModal').style.display !== 'flex') {
-      document.body.style.overflow = '';
-    }
-  }
-
-  function navigate(delta) {
-    var imgs = getModalImages();
-    if (!lightbox || !imgs.length) return;
-    var index = Number(lightbox.dataset.index || 0) + delta;
-    if (index < 0) index = imgs.length - 1;
-    if (index >= imgs.length) index = 0;
-    openLightbox(index);
-  }
-
-  function enhanceModalImage() {
-    var img = document.getElementById('modalMainImg');
-    if (!img || img.dataset.evZoomBound) return;
-    img.dataset.evZoomBound = '1';
-    img.title = 'Click to zoom';
-    img.addEventListener('click', function () {
-      var idx = Number(window.modalImageIndex || 0);
-      openLightbox(idx);
-    });
-
-    var gallery = img.closest('.product-gallery');
-    if (gallery && !gallery.querySelector('.gallery-hint')) {
-      var hint = document.createElement('div');
-      hint.className = 'gallery-hint';
-      hint.textContent = 'Tap image to zoom • Double-tap • Pinch or use + / −';
-      gallery.appendChild(hint);
-    }
-  }
-
-  function polishImages() {
-    document.querySelectorAll('img.product-image').forEach(function (img) {
-      img.loading = 'lazy';
-      img.decoding = 'async';
-      img.addEventListener('error', function () {
-        img.style.visibility = 'hidden';
-        img.parentElement && img.parentElement.classList.add('image-load-error');
-      }, { once: true });
-    });
-  }
-
-  document.addEventListener('keydown', function (e) {
-    if (lightbox && lightbox.classList.contains('open')) {
-      if (e.key === 'Escape') closeLightbox();
-      else if (e.key === 'ArrowRight') navigate(1);
-      else if (e.key === 'ArrowLeft') navigate(-1);
-      else if (e.key === '+') setZoom(zoom + .5);
-      else if (e.key === '-') setZoom(zoom - .5);
-      return;
-    }
-    if (document.getElementById('productModal')?.style.display === 'flex') {
-      if (e.key === 'Escape' && typeof window.closeModal === 'function') window.closeModal();
-      else if (e.key === 'ArrowRight' && typeof window.selectModalImage === 'function') window.selectModalImage((window.modalImageIndex || 0) + 1);
-      else if (e.key === 'ArrowLeft' && typeof window.selectModalImage === 'function') window.selectModalImage((window.modalImageIndex || 0) - 1);
-    }
-  });
-
-  var observer = new MutationObserver(function () {
-    enhanceModalImage();
-    polishImages();
-  });
 
   function init() {
-    buildLightbox();
-    enhanceModalImage();
-    polishImages();
+    cleanProductData();
+
+    /* Override the global handler used by the existing inline product-card buttons. */
+    window.openModal = openProfessionalModal;
+
+    /* Clean up square glyphs if an older modal is already present. */
+    var observer = new MutationObserver(function () {
+      var details = document.querySelector('.modal-details');
+      if (!details) return;
+      details.querySelectorAll('p, li').forEach(function (el) {
+        if (el.textContent.indexOf('\u25a1') !== -1) {
+          el.textContent = cleanText(el.textContent);
+        }
+      });
+    });
     var modalInner = document.getElementById('modalInner');
     if (modalInner) observer.observe(modalInner, { childList: true, subtree: true });
 
-    // Swipe/tap-friendly thumbnail behavior.
-    document.addEventListener('click', function (e) {
-      var img = e.target.closest('.modal-thumbnail');
-      if (!img) return;
-      var now = Date.now();
-      if (now - lastTap < 350) {
-        var idx = Array.prototype.indexOf.call(document.querySelectorAll('.modal-thumbnail'), img);
-        openLightbox(idx >= 0 ? idx : 0);
-      }
-      lastTap = now;
-    });
+    /* Improve mobile modal scrolling without fighting the page. */
+    var modal = document.getElementById('productModal');
+    if (modal) {
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal && typeof closeModal === 'function') closeModal();
+      });
+    }
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
