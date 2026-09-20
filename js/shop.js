@@ -65,15 +65,15 @@
         whatsappMsg: "16inch Solar fan" },
 
         { id: "p7", 
-        name: "Ritar 12V 200Ah (Deep Cycle Gel Batteries)", 
-        category: "Gel Batteries", 
+        name: "Ritar 12V 200Ah (Deep Cycle Gel Battery)", 
+        category: "Gel Battery", 
         price: 5000, 
         stock: false, 
         mainImg: "https://www.ritarpower.com/uploads/image/20251226/dg-series-lead-acid-batteries-bulk.webp", 
         thumbnails: ["https://images.unsplash.com/photo-1622484214887-b6bb5e7fc5b3?w=300&h=300&fit=crop"], 
         description: "DG (Deep Cycle GEL) series is designed for frequent cyclic charge anddischarge applications under extreme enviroments. By using strong grids,high purity lead and patented Gel electrolyte, DG series offers excellentrecovery after deep discharge under frequent cyclic discharge, and candeliver 400 cycles at 100% DOD. Suitable for solar, CATV, marine, RV anddeep discharge UPS etc..", 
         specs: ["12V 200Ah", "Low Maintenance"], 
-        whatsappMsg: "Ritar 12V 200Ah (Deep Cycle Gel Batteries)" },
+        whatsappMsg: "Ritar 12V 200Ah (Deep Cycle Gel Battery)" },
 
         { id: "p8", 
         name: "SRNE Hybrid Inverter 5kW HV", 
