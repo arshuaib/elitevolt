@@ -133,3 +133,128 @@ footer h3 { margin-bottom: .65rem; }
   .ev-lightbox-toolbar button, .ev-lightbox-close { width: 40px; height: 40px; }
   .ev-lightbox-caption { bottom: 8px; }
 }
+
+/* EliteVolt v3 mobile refinement */
+@media (max-width: 699px) {
+  body { padding-bottom: 0 !important; }
+
+  .navbar { position: sticky; top: 0; }
+  .nav-container {
+    padding: .7rem .9rem .65rem;
+    gap: .45rem;
+    justify-content: center;
+  }
+  .logo { width: 100%; justify-content: center; font-size: .95rem; }
+  .logo img { width: 44px; height: 44px; }
+  .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: .25rem;
+  }
+  .nav-links a {
+    margin-left: 0;
+    padding: .45rem .65rem;
+    font-size: .84rem;
+    border-radius: 999px;
+  }
+
+  .hero-header {
+    min-height: 185px;
+    padding: .75rem;
+  }
+  .hero-content h1 { font-size: clamp(1.55rem, 7vw, 2rem); }
+  .hero-content p { font-size: .82rem; }
+
+  .shop-container { margin: .65rem auto; padding: 0 .7rem; }
+  .search-bar {
+    gap: 7px;
+    margin-bottom: .8rem;
+  }
+  .search-bar input {
+    min-width: 0;
+    height: 52px;
+    font-size: 16px;
+  }
+  .search-bar button {
+    flex: 0 0 52px;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    font-size: 0;
+    display: grid;
+    place-items: center;
+  }
+  .search-bar button i { font-size: 1rem; }
+
+  .products-wrapper > h2 {
+    font-size: 1.7rem !important;
+    margin-bottom: .8rem !important;
+  }
+  .category-bar select { height: 52px; font-size: 16px; }
+
+  .products-grid { gap: .65rem; }
+  .product-card { padding: .55rem; border-radius: 14px; }
+  .product-image {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: #f7f9fc;
+  }
+  .product-title { font-size: .78rem; min-height: 36px; }
+  .product-price { font-size: .88rem; }
+  .btn-add, .btn-details { min-height: 42px; font-size: .72rem; }
+
+  /* Keep the product modal compact enough to leave the browser UI visible. */
+  .modal {
+    padding: .55rem;
+    align-items: center;
+  }
+  .modal-content {
+    width: 100%;
+    max-height: 88dvh;
+    padding: .75rem;
+    border-radius: 20px;
+    overflow-y: auto;
+  }
+  .modal-layout { gap: .55rem; }
+  .product-gallery { min-height: 0; }
+  #modalMainImg {
+    height: min(32dvh, 270px);
+    max-height: 270px;
+    border-radius: 15px;
+  }
+  .thumbnails {
+    justify-content: flex-start;
+    margin-top: 7px;
+    padding-bottom: 4px;
+  }
+  .thumbnails img { width: 54px; height: 46px; }
+  .gallery-hint { margin-top: .35rem; font-size: .7rem; }
+  .modal-details h3 { font-size: 1.35rem; margin-bottom: .4rem; }
+  .modal-details p, .modal-details ul { font-size: .92rem; line-height: 1.38; margin-bottom: .55rem; }
+  .modal-details ul { padding-left: 1rem; }
+  .modal-details .btn-whatsapp { min-height: 48px !important; font-size: .95rem; }
+
+  .close-modal { width: 42px; height: 42px; right: 7px; top: 7px; }
+
+  .floating-cart {
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    width: 56px;
+    height: 56px;
+  }
+
+  footer {
+    margin-top: 1rem !important;
+    padding: 1.5rem .9rem calc(1.5rem + env(safe-area-inset-bottom)) !important;
+    border-radius: 1.25rem 1.25rem 0 0;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 899px) {
+  .modal-content { max-height: 90dvh; }
+}
+
+/* Avoid accidental horizontal page movement from fixed/absolute UI. */
+html, body { overflow-x: clip; }
