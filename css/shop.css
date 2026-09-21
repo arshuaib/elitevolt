@@ -625,3 +625,8 @@
         .products-wrapper {
             width: 100%;
         }
+
+.product-page-link{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;margin-top:6px;}
+.shop-seo-intro{max-width:1100px;margin:0 auto 1rem;padding:1rem 1.25rem;}
+.shop-seo-intro h1{font-size:clamp(1.5rem,3vw,2.2rem);margin:.25rem 0 .5rem;}
+.shop-seo-intro p{max-width:850px;line-height:1.65;}
