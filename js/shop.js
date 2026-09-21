@@ -100,6 +100,17 @@
             "Rated AC Frequency -- 50/60Hz", "Pure sine wave", "Switch Time -- 10ms（typical)"],     
         whatsappMsg: "SRNE Hybrid Inverter 6kW HV" },
 
+        { id: "p10", 
+        name: "2p din Smart Voltage and Current protection Meter", 
+        category: "protection", 
+        price: 300, 
+        stock: true, 
+        mainImg: "smart-meter1.png", "smart-meter2.png",
+        thumbnails: ["images/smart-meter1.png", "smart-meter2.png"], 
+        description: " Tuya WiFi 8in1 Power Meter 2P AC Energy Meter APP Control 170-270V/63A Votage and Current Meter Electricity Meter Smart Life",
+            specs: ["Support over-voltage, under-voltage, over-current over-power, over-temperature, timer power failure protections setting, and screen hibernation setting"],     
+        whatsappMsg: "2p 63A smart voltage protector" },
+
     ];
 
     // Pagination settings
