@@ -102,7 +102,7 @@
 
         { id: "p10", 
         name: "2p din Smart Voltage and Current protection Meter", 
-        category: "protection", 
+        category: "protective devices", 
         price: 300, 
         stock: true, 
         mainImg: "smart-meter1.png", "smart-meter2.png",
