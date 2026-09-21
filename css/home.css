@@ -534,3 +534,4 @@
 .seo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;}
 .seo-grid article{padding:1rem;border-radius:12px;}
 @media(max-width:700px){.seo-grid{grid-template-columns:1fr;}}
+.resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin-top:1rem}.resource-grid a{display:block;padding:1rem;border:1px solid #dbe3df;border-radius:12px;background:#fff;color:#155e3a;text-decoration:none;font-weight:700;transition:.2s}.resource-grid a:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(15,23,42,.08);background:#f7fbf8}@media(max-width:800px){.resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){.resource-grid{grid-template-columns:1fr}}
