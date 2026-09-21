@@ -60,18 +60,18 @@
         price: 1750, stock: true, 
         mainImg: "images/16in Solar fan.jpeg", 
         thumbnails: ["images/solar-fan.jpg","images/solar-fan1.jpg"], 
-        description: "The 16-Inch Built-in Battery Solar Stand Fan Pack comprises of a 25W solar panel and 16-inch stand fan with built-in battery. This portable pack allows direct fan charging and boasts a noiseless, brushless motor for an elegant touch in homes and shops. With 4-speed levels, natural wind mode, and timer function, the fan provides flexible cooling options lasting up to 40 hours and includes LED lighting.",
+        description: "The 16-Inch Built-in Battery Solar Stand Fan Pack comprises a 25W solar panel and 16-inch stand fan with built-in battery. This portable pack allows direct fan charging and boasts a noiseless, brushless motor for an elegant touch in homes and shops. With 4-speed levels, natural wind mode, and timer function, the fan provides flexible cooling options lasting up to 40 hours and includes LED lighting.",
         specs: ["16 Inch Solar Built-in Battery Desk Fan", "25Wp c-Si Standard Sized IEC Certified Solar Panel"], 
         whatsappMsg: "16inch Solar fan" },
 
         { id: "p7", 
         name: "Ritar 12V 200Ah (Deep Cycle Gel Battery)", 
-        category: "Gel Batteries", 
+        category: "Gel Battery", 
         price: 5000, 
         stock: false, 
         mainImg: "https://www.ritarpower.com/uploads/image/20251226/dg-series-lead-acid-batteries-bulk.webp", 
         thumbnails: ["https://images.unsplash.com/photo-1622484214887-b6bb5e7fc5b3?w=300&h=300&fit=crop"], 
-        description: "DG (Deep Cycle GEL) series is designed for frequent cyclic charge and discharge applications under extreme environments. By using strong grids, high-purity lead and patented Gel electrolyte, DG series offers excellent recovery after deep discharge under frequent cyclic discharge, and can deliver 400 cycles at 100% DOD. Suitable for solar, CATV, marine, RV and deep-discharge UPS applications.", 
+        description: "DG (Deep Cycle GEL) series is designed for frequent cyclic charge and discharge applications under extreme environments. By using strong grids, high-purity lead and patented Gel electrolyte, DG series offers excellent recovery after deep discharge under frequent cyclic discharge, and can deliver 400 cycles at 100% DOD. Suitable for solar, CATV, marine, RV and deep discharge UPS applications.", 
         specs: ["12V 200Ah", "Low Maintenance"], 
         whatsappMsg: "Ritar 12V 200Ah (Deep Cycle Gel Battery)" },
 
@@ -84,7 +84,7 @@
         thumbnails: ["images/5kw-hv-srne2.png", "images/5kw-hv-srne3.png"], 
         description: "Single-Phase Off-grid Solar Storage Inverter, Compatible with 48V storage batteries, Up to 6 units in parallel for 30kW, Time-slot function to save cost with peak-valley, Off-grid/without battery output mode, Aesthetically industrial design appearance, Support BMS communication", 
         specs: ["MODEL -- HYP4850S100-H", "Rated Output Power -- 5,000W", "Max. Output Power -- 10,000VA", "Rated Output Voltage -- 230Vac (L/N/PE, Single-Phase)",
-            "Waveform -- Pure sine wave", "Battery Type -- Li-ion / Lead-acid / User-defined", "Rated Battery Voltage -- 48V", "Battery Voltage Range -- 40～60Vdc",
+            "Waveform -- Pure sine wave", "Battery Type -- Li-ion / Lead-acid / User-defined", "Rated Battery Voltage -- 48V", "Battery Voltage Range -- 40-60Vdc",
             "Max. Solar Charging Current -- 100A", "Max. Grid/Generator Charging Current -- 60A", "Max. Hybrid Charging Current -- 100A"], 
         whatsappMsg: "SRNE Hybrid Inverter 5kW HV" },
 
@@ -100,7 +100,8 @@
             "Rated AC Frequency -- 50/60Hz", "Pure sine wave", "Switch Time -- 10ms (typical)"],     
         whatsappMsg: "SRNE Hybrid Inverter 6kW HV" },
 
-        { id: "p10",
+        {
+    id: "p10",
     name: "2p din Smart Voltage and Current protection Meter",
     category: "Protective Devices",
     price: 300,
@@ -190,6 +191,13 @@
         return Math.ceil(filtered.length / ITEMS_PER_PAGE);
     }
 
+    function slugify(text) {
+        return String(text).toLowerCase().trim()
+            .replace(/[^a-z0-9\s-]/g, "")
+            .replace(/\s+/g, "-")
+            .replace(/-+/g, "-");
+    }
+
     function renderProducts() {
         const container = document.getElementById('productsGrid');
         if(!container) return;
@@ -199,7 +207,7 @@
         if(paginated.length === 0) {
             container.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:2rem;">🔍 No products found</div>';
             const pagination = document.getElementById('paginationControls');
-            if(pagination) pagination.innerHTML = '';
+            if (pagination) pagination.innerHTML = '';
             return;
         }
         
@@ -210,6 +218,7 @@
                 <div class="product-title">${escapeHtml(p.name)}</div>
                 <div class="product-price">GH₵ ${p.price}</div>
                 <button class="btn-details" onclick="openModal('${p.id}')">Details</button>
+                <a class="btn-details product-page-link" href="products/${slugify(p.name)}.html">Product page</a>
                 <button class="btn-add" ${!p.stock ? 'disabled' : ''} onclick="addToCart('${p.id}')">${p.stock ? 'Add' : 'Out of stock'}</button>
             </div>
         `).join('');
@@ -255,6 +264,7 @@
     
     function updateCartBadge() {
         const badge = document.getElementById('cartItemCount');
+        if(!badge) return;
         const totalItems = cart.reduce((sum,i)=> sum + i.quantity, 0);
         if(totalItems>0) { badge.style.display = 'flex'; badge.innerText = totalItems>99 ? '99+' : totalItems; }
         else badge.style.display = 'none';
@@ -303,9 +313,7 @@
     function updateDesktopCartPanel() {
         const cont = document.getElementById('desktopCartContent');
         if(!cont) return;
-        if(cart.length===0) { cont.innerHTML = '<p style="padding:1rem; text-align:center;">Cart empty</p>'; const totalEl = document.getElementById('desktopTotal');
-            if(totalEl) totalEl.innerText='0.00';
-            return; }
+        if(cart.length===0) { cont.innerHTML = '<p style="padding:1rem; text-align:center;">Cart empty</p>'; document.getElementById('desktopTotal').innerText='0.00'; return; }
         let html = '<ul style="list-style:none; max-height:300px; overflow:auto;">';
         let total=0;
         cart.forEach(item=> {
@@ -335,8 +343,7 @@
 
         html += '</ul>';
         cont.innerHTML = html;
-        const totalEl = document.getElementById('desktopTotal');
-        if(totalEl) totalEl.innerText = total.toFixed(2);
+        document.getElementById('desktopTotal').innerText = total.toFixed(2);
     }
     
     function buildOrderMsg() {
