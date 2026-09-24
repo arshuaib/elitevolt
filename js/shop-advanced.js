@@ -1,30 +1,57 @@
-/* EliteVolt advanced shop UX: sort + wishlist + recently viewed */
+/* EliteVolt advanced shop UX: sorting + wishlist */
 (function(){
 'use strict';
 var wishKey='ev_wishlist_v1';
 function getWish(){try{return JSON.parse(localStorage.getItem(wishKey)||'[]')}catch(e){return[]}}
 function setWish(a){localStorage.setItem(wishKey,JSON.stringify(a))}
-function toggleWish(id,btn){
- var a=getWish(), i=a.indexOf(id); if(i>=0)a.splice(i,1);else a.push(id);setWish(a);
- btn.classList.toggle('active',a.indexOf(id)>=0); btn.setAttribute('aria-pressed',a.indexOf(id)>=0?'true':'false');
+function paintWishlist(){
+  var grid=document.getElementById('productsGrid'); if(!grid)return;
+  var wishes=getWish();
+  grid.querySelectorAll('[data-wish]').forEach(function(btn){
+    var active=wishes.indexOf(btn.dataset.wish)>=0;
+    btn.classList.toggle('active',active);
+    btn.setAttribute('aria-pressed',active?'true':'false');
+    btn.textContent=active?'♥':'♡';
+    btn.setAttribute('aria-label',active?'Remove from wishlist':'Add to wishlist');
+  });
+}
+function toggleWish(id){
+  var a=getWish(), i=a.indexOf(id);
+  if(i>=0)a.splice(i,1);else a.push(id);
+  setWish(a); paintWishlist();
 }
 function init(){
- var grid=document.getElementById('productsGrid'); if(!grid||typeof productsData==='undefined')return;
- var bar=document.querySelector('.category-bar'); if(bar&&!document.getElementById('sortProducts')){
-  var s=document.createElement('select');s.id='sortProducts';s.setAttribute('aria-label','Sort products');
-  s.innerHTML='<option value="default">Sort: Featured</option><option value="price-asc">Price: Low to High</option><option value="price-desc">Price: High to Low</option><option value="name">Name A–Z</option>';
-  bar.appendChild(s);s.addEventListener('change',function(){productsData.sort(function(a,b){
-    if(s.value==='price-asc')return a.price-b.price;if(s.value==='price-desc')return b.price-a.price;
-    if(s.value==='name')return a.name.localeCompare(b.name);return Number(a.id.slice(1))-Number(b.id.slice(1));
-  });if(typeof currentPage!=='undefined')currentPage=1;if(typeof renderProducts==='function')renderProducts();});
- }
- var old=window.renderProducts; if(typeof old==='function'&&!window.evAdvancedWrapped){
-  window.evAdvancedWrapped=true;
-  window.renderProducts=function(){old();setTimeout(function(){
-    getWish().forEach(function(id){var b=grid.querySelector('[data-wish="'+id+'"]');if(b)b.classList.add('active')});
-    grid.querySelectorAll('[data-wish]').forEach(function(b){b.onclick=function(e){e.preventDefault();e.stopPropagation();toggleWish(b.dataset.wish,b)}});
-  },0)}
- }
+  var grid=document.getElementById('productsGrid');
+  if(!grid||typeof productsData==='undefined')return;
+  var bar=document.querySelector('.category-bar');
+  if(bar&&!document.getElementById('sortProducts')){
+    var s=document.createElement('select');
+    s.id='sortProducts';
+    s.setAttribute('aria-label','Sort products');
+    s.innerHTML='<option value="default">Sort: Featured</option><option value="price-asc">Price: Low to High</option><option value="price-desc">Price: High to Low</option><option value="name">Name A–Z</option>';
+    bar.appendChild(s);
+    s.addEventListener('change',function(){
+      var mode=s.value;
+      productsData.sort(function(a,b){
+        if(mode==='price-asc')return Number(a.price)-Number(b.price);
+        if(mode==='price-desc')return Number(b.price)-Number(a.price);
+        if(mode==='name')return a.name.localeCompare(b.name);
+        return Number(String(a.id).slice(1))-Number(String(b.id).slice(1));
+      });
+      if(typeof currentPage!=='undefined')currentPage=1;
+      if(typeof renderProducts==='function')renderProducts();
+      paintWishlist();
+    });
+  }
+  grid.addEventListener('click',function(e){
+    var btn=e.target.closest('[data-wish]');
+    if(!btn)return;
+    e.preventDefault(); e.stopPropagation();
+    toggleWish(btn.dataset.wish);
+  });
+  var observer=new MutationObserver(paintWishlist);
+  observer.observe(grid,{childList:true});
+  paintWishlist();
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
