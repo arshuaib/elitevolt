@@ -218,7 +218,7 @@
                 <a href="products/${slugify(p.name)}.html" class="product-image-link"><img class="product-image" src="${p.mainImg}" alt="${p.name}"></a>
                 <div class="product-title">${escapeHtml(p.name)}</div>
                 <div class="product-price">GH₵ ${p.price}</div>
-                <a class="btn-details product-page-link" href="products/${slugify(p.name)}.html" aria-label="View ${escapeHtml(p.name)} product page"><i class="fas fa-eye"></i> View Product</a>
+                <a class="btn-details product-page-link" href="products/${slugify(p.name)}.html" aria-label="View details for ${escapeHtml(p.name)}"><i class="fas fa-eye"></i> Details</a>
                 <button class="btn-add" ${!p.stock ? 'disabled' : ''} onclick="addToCart('${p.id}')">${p.stock ? 'Add' : 'Out of stock'}</button>
             </div>
         `).join('');
