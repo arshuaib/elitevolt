@@ -214,7 +214,8 @@
         container.innerHTML = paginated.map(p => `
             <div class="product-card">
                 ${!p.stock ? '<div class="out-of-stock-badge">OUT OF STOCK</div>' : ''}
-                <img class="product-image" src="${p.mainImg}" alt="${p.name}" onclick="openModal('${p.id}')">
+                <button class="wishlist-btn" data-wish="${p.id}" aria-label="Add ${escapeHtml(p.name)} to wishlist" aria-pressed="false">♡</button>
+                <a href="products/${slugify(p.name)}.html" class="product-image-link"><img class="product-image" src="${p.mainImg}" alt="${p.name}"></a>
                 <div class="product-title">${escapeHtml(p.name)}</div>
                 <div class="product-price">GH₵ ${p.price}</div>
                 <button class="btn-details" onclick="openModal('${p.id}')">Details</button>
