@@ -2,3 +2,25 @@
 .gallery,.product-gallery{overflow:hidden;position:relative}.gallery img,.product-gallery img{cursor:zoom-in;transition:transform .18s ease,box-shadow .25s ease;transform-origin:center center;will-change:transform}.gallery img.zoom-hover,.product-gallery img.zoom-hover{transform:scale(1.28);z-index:3;box-shadow:0 14px 35px rgba(0,0,0,.18)}
 .gallery-zoom-note{font-size:.85rem;color:#64748b;margin:.55rem 0 0}.image-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;display:flex;align-items:center;justify-content:center;padding:4rem 1rem;flex-direction:column;touch-action:none}.image-lightbox img{max-width:95vw;max-height:80vh;object-fit:contain;cursor:zoom-in;transition:transform .15s ease;user-select:none;-webkit-user-drag:none}.lightbox-close{position:absolute;right:1rem;top:1rem;border:0;background:#fff;color:#111;width:46px;height:46px;border-radius:50%;font-size:2rem;cursor:pointer}.lightbox-help{color:#fff;margin-top:1rem;font-size:.85rem;text-align:center}.product-page-link{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;box-sizing:border-box}
 @media(max-width:700px){.gallery img.zoom-hover,.product-gallery img.zoom-hover{transform:none}.gallery img,.product-gallery img{cursor:zoom-in}.gallery-zoom-note{text-align:center}}
+
+
+/* v9 product pages: compact, touch-friendly mobile layout */
+.product-page-link { min-height:44px; }
+@media(max-width:700px){
+  body { overflow-x:hidden; }
+  .site-nav .nav-inner { width:100%; }
+  .product { gap:1.2rem; }
+  .product h1 { font-size:clamp(1.75rem,8vw,2.4rem); line-height:1.12; }
+  .product > div:last-child { min-width:0; }
+  .gallery { grid-template-columns:repeat(3,minmax(0,1fr)); gap:.5rem; }
+  .gallery img { height:110px !important; border-radius:10px; }
+  .gallery img:first-child { height:260px !important; grid-column:1/-1; }
+  .gallery-zoom-note { font-size:.78rem; margin-top:.35rem; }
+  .cta { width:100%; margin:.3rem 0; min-height:48px; display:flex; align-items:center; justify-content:center; }
+  .crumbs { overflow-x:auto; white-space:nowrap; -webkit-overflow-scrolling:touch; padding:.8rem 0; }
+}
+@media(max-width:420px){
+  .gallery img:first-child { height:230px !important; }
+  .gallery { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .gallery img { height:105px !important; }
+}
