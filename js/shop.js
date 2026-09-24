@@ -124,6 +124,32 @@
     let currentPage = 1;
     let currentSearchTerm = "";
     let currentCategory = "All";
+    let currentSort = "default";
+    let currentStock = "all";
+    let currentMaxPrice = "";
+
+    const wishlistKey = "ev_wishlist_v1";
+    function getWishlist() { try { return JSON.parse(localStorage.getItem(wishlistKey) || "[]"); } catch (e) { return []; } }
+    function setWishlist(items) { localStorage.setItem(wishlistKey, JSON.stringify(items)); }
+
+    function trackMetaAddToCart(product, quantity = 1) {
+        const payload = {
+            content_ids: [product.id],
+            content_name: product.name,
+            content_type: "product",
+            value: Number(product.price) * quantity,
+            currency: "GHS",
+            contents: [{ id: product.id, quantity }]
+        };
+        // Works immediately when the Meta Pixel is installed; otherwise keep a local event queue for diagnostics.
+        if (typeof window.fbq === "function") {
+            window.fbq("track", "AddToCart", payload);
+        } else {
+            window._eliteVoltMetaEvents = window._eliteVoltMetaEvents || [];
+            window._eliteVoltMetaEvents.push({ event: "AddToCart", payload, timestamp: Date.now() });
+        }
+        window.dispatchEvent(new CustomEvent("elitevolt:addtocart", { detail: payload }));
+    }
 
     // Cart state
     let cart = [];
@@ -140,6 +166,7 @@
         else cart.push({ id: p.id, name: p.name, price: p.price, quantity: 1 }); 
         saveCart(); 
         updateAllUI(); 
+        trackMetaAddToCart(p, 1);
         showToast(`✓ ${p.name} added`);
     }
     function changeQuantity(id, delta) { 
@@ -165,19 +192,29 @@
 
     // Get filtered products based on search
   function getFilteredProducts() {
-    return productsData.filter(product => {
-
-        const matchesSearch =
-            product.name.toLowerCase()
-            .includes(currentSearchTerm.toLowerCase());
-
-        const matchesCategory =
-            currentCategory === "All" ||
-            product.category === currentCategory;
-
-        return matchesSearch && matchesCategory;
+    const term = currentSearchTerm.toLowerCase().trim();
+    let filtered = productsData.filter(product => {
+        const searchable = [
+            product.name, product.category, product.description,
+            ...(product.specs || [])
+        ].join(" ").toLowerCase();
+        const matchesSearch = !term || searchable.includes(term);
+        const matchesCategory = currentCategory === "All" || product.category === currentCategory;
+        const matchesStock = currentStock === "all" || (currentStock === "in" ? product.stock : !product.stock);
+        const maxPrice = Number(currentMaxPrice);
+        const matchesPrice = !currentMaxPrice || (!Number.isNaN(maxPrice) && Number(product.price) <= maxPrice);
+        return matchesSearch && matchesCategory && matchesStock && matchesPrice;
     });
-}
+
+    filtered.sort((a,b) => {
+        if (currentSort === "price-asc") return Number(a.price) - Number(b.price);
+        if (currentSort === "price-desc") return Number(b.price) - Number(a.price);
+        if (currentSort === "name") return a.name.localeCompare(b.name);
+        if (currentSort === "stock") return Number(b.stock) - Number(a.stock);
+        return Number(String(a.id).replace(/\D/g, "")) - Number(String(b.id).replace(/\D/g, ""));
+    });
+    return filtered;
+  }
 
     // Pagination logic
     function getPaginatedProducts() {
@@ -196,6 +233,25 @@
             .replace(/[^a-z0-9\s-]/g, "")
             .replace(/\s+/g, "-")
             .replace(/-+/g, "-");
+    }
+
+    function paintWishlist() {
+        const wishes = getWishlist();
+        document.querySelectorAll("#productsGrid [data-wish]").forEach(btn => {
+            const active = wishes.includes(btn.dataset.wish);
+            btn.classList.toggle("active", active);
+            btn.setAttribute("aria-pressed", active ? "true" : "false");
+            btn.textContent = active ? "♥" : "♡";
+            btn.setAttribute("aria-label", active ? "Remove from wishlist" : "Add to wishlist");
+        });
+    }
+
+    function toggleWishlist(id) {
+        const items = getWishlist();
+        const index = items.indexOf(id);
+        if (index >= 0) items.splice(index, 1); else items.push(id);
+        setWishlist(items);
+        paintWishlist();
     }
 
     function renderProducts() {
@@ -225,6 +281,7 @@
         
         // Render pagination buttons
         renderPagination(totalPages);
+        paintWishlist();
     }
     
     function renderPagination(totalPages) {
@@ -358,79 +415,6 @@
     function checkoutWhatsApp() { const m = buildOrderMsg(); if(!m) { alert("No available items in cart"); return; } window.open(`https://wa.me/233249976762?text=${encodeURIComponent(m)}`,'_blank'); }
     function checkoutEmail() { const m = buildOrderMsg(); if(!m) { alert("No available items in cart"); return; } window.location.href = `mailto:sales@elitevoltsystems.com?subject=Order&body=${encodeURIComponent(m)}`; }
     
-    let modalImages = [];
-    let modalImageIndex = 0;
-    let modalSlideshowTimer = null;
-
-    function showModalImage(index) {
-        if(modalImages.length === 0) return;
-        modalImageIndex = (index + modalImages.length) % modalImages.length;
-        const mainImage = document.getElementById('modalMainImg');
-        if(!mainImage) return;
-
-        mainImage.style.opacity = '0';
-        setTimeout(() => {
-            mainImage.src = modalImages[modalImageIndex];
-            mainImage.style.opacity = '1';
-        }, 120);
-
-        document.querySelectorAll('.modal-thumbnail').forEach((thumbnail, thumbnailIndex) => {
-            thumbnail.classList.toggle('active', thumbnailIndex === modalImageIndex);
-        });
-    }
-
-    function startModalSlideshow() {
-        clearInterval(modalSlideshowTimer);
-        if(modalImages.length < 2) return;
-        modalSlideshowTimer = setInterval(() => {
-            showModalImage(modalImageIndex + 1);
-        }, 3000);
-    }
-
-    function selectModalImage(index) {
-        showModalImage(index);
-        startModalSlideshow();
-    }
-
-    function openModal(pid) {
-        const p = productsData.find(pr=>pr.id===pid);
-        if(!p) return;
-        const inner = document.getElementById('modalInner');
-        modalImages = [...new Set([p.mainImg, ...p.thumbnails])];
-        modalImageIndex = 0;
-        const thumbs = modalImages.map((img, index) =>
-            `<img class="modal-thumbnail ${index === 0 ? 'active' : ''}" src="${img}" alt="${escapeHtml(p.name)} image ${index + 1}" onclick="selectModalImage(${index})">`
-        ).join('');
-        inner.innerHTML = `
-            <div class="modal-layout">
-                <div class="product-gallery">
-                    <img id="modalMainImg" src="${p.mainImg}" alt="${escapeHtml(p.name)}">
-                    <div class="thumbnails">${thumbs}</div>
-                </div>
-                <div class="modal-details">
-                    <h3>${escapeHtml(p.name)}</h3>
-                    <p>${escapeHtml(p.description)}</p>
-                    <ul>${p.specs.map(s=>`<li>${escapeHtml(s)}</li>`).join('')}</ul>
-                    ${!p.stock ? '<p style="color:red;">Out of stock</p>' : ''}
-                    <a href="https://wa.me/233249976762?text=${encodeURIComponent(p.whatsappMsg)}" target="_blank" rel="noopener">
-                        <button class="btn-whatsapp" style="width:100%; margin-top:10px;" ${!p.stock ? 'disabled' : ''}>Enquire on WhatsApp</button>
-                    </a>
-                </div>
-            </div>`;
-        document.getElementById('productModal').style.display = "flex";
-        document.body.style.overflow = 'hidden';
-        startModalSlideshow();
-    }
-    function changeModalImage(src) {
-        const index = modalImages.indexOf(src);
-        if(index !== -1) selectModalImage(index);
-    }
-    function closeModal() {
-        clearInterval(modalSlideshowTimer);
-        modalSlideshowTimer = null;
-        document.getElementById('productModal').style.display = "none";
-        document.body.style.overflow = '';
-    }
     function showToast(msg) {
         const t = document.createElement('div');
         t.innerText = msg;
@@ -458,8 +442,6 @@
     document.getElementById('floatingCartBtn')?.addEventListener('click', openDrawer);
     document.getElementById('closeDrawerBtn')?.addEventListener('click', closeDrawer);
     document.getElementById('drawerOverlay')?.addEventListener('click', closeDrawer);
-    document.getElementById('closeModalBtn')?.addEventListener('click', closeModal);
-    window.addEventListener('click', (e) => { if(e.target === document.getElementById('productModal')) closeModal(); });
     
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.getElementById('searchBtn');
@@ -485,18 +467,26 @@
     document.getElementById('desktopEmail')?.addEventListener('click', checkoutEmail);
 
     const categoryFilter = document.getElementById("categoryFilter");
+    const sortFilter = document.getElementById("sortProducts");
+    const stockFilter = document.getElementById("stockFilter");
+    const maxPriceFilter = document.getElementById("maxPriceFilter");
 
-categoryFilter?.addEventListener("change", function() {
-    currentCategory = this.value;
-    currentPage = 1;
-    renderProducts();
-});
+    categoryFilter?.addEventListener("change", function() { currentCategory = this.value; currentPage = 1; renderProducts(); });
+    sortFilter?.addEventListener("change", function() { currentSort = this.value; currentPage = 1; renderProducts(); });
+    stockFilter?.addEventListener("change", function() { currentStock = this.value; currentPage = 1; renderProducts(); });
+    maxPriceFilter?.addEventListener("input", function() { currentMaxPrice = this.value; currentPage = 1; renderProducts(); });
+    document.getElementById("productsGrid")?.addEventListener("click", function(e) {
+        const btn = e.target.closest("[data-wish]");
+        if (!btn) return;
+        e.preventDefault();
+        e.stopPropagation();
+        toggleWishlist(btn.dataset.wish);
+    });
     
     window.addToCart = addToCart; window.changeQuantity = changeQuantity; window.clearCart = clearCart;
     window.removeFromCart = removeFromCart;
-    window.openModal = openModal; window.changeModalImage = changeModalImage;
-    window.selectModalImage = selectModalImage;
     window.checkoutWhatsApp = checkoutWhatsApp; window.checkoutEmail = checkoutEmail;
     window.goToPage = goToPage;
+    window.toggleWishlist = toggleWishlist;
     
     loadCart();
