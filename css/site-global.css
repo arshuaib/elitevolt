@@ -1,0 +1,24 @@
+
+/* EliteVolt Systems — shared site chrome */
+.site-footer{
+  background:#071b16;color:#e9f7ef;margin-top:3rem;padding:2.5rem 1.25rem 1.25rem;
+  border-top:4px solid #2b7a3e;
+}
+.site-footer-inner{max-width:1300px;margin:auto;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:2rem}
+.site-footer h3,.site-footer h4{margin:0 0 .7rem;color:#fff}
+.site-footer p{color:#c7d8d0;line-height:1.6;margin:.4rem 0}
+.site-footer a{color:#d9f6e3;text-decoration:none}
+.site-footer a:hover{text-decoration:underline;color:#fff}
+.footer-links{display:grid;gap:.45rem}
+.footer-bottom{max-width:1300px;margin:1.5rem auto 0;padding-top:1rem;border-top:1px solid rgba(255,255,255,.14);
+display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:#9fb5aa;font-size:.85rem}
+.site-nav .nav-inner{max-width:1300px;margin:auto;padding:0 1.25rem}
+.site-nav .main-nav{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.site-nav .main-nav a{white-space:nowrap}
+@media(max-width:800px){
+ .site-footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+ .site-footer-inner{grid-template-columns:1fr}
+ .footer-bottom{display:block}.footer-bottom span{display:block;margin:.25rem 0}
+}
