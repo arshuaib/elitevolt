@@ -1,10 +1,4 @@
-
-/* Product gallery zoom */
-.gallery,.product-gallery{overflow:hidden}
-.gallery img,.product-gallery img{cursor:zoom-in;transition:transform .25s ease,box-shadow .25s ease;overflow:hidden}
-.gallery img.zoom-hover,.product-gallery img.zoom-hover{transform:scale(1.12);z-index:3;box-shadow:0 10px 30px rgba(0,0,0,.18)}
-.image-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;padding:4rem 1rem;flex-direction:column}
-.image-lightbox img{max-width:min(95vw,1200px);max-height:78vh;object-fit:contain;cursor:zoom-in;transition:transform .2s ease}
-.lightbox-close{position:absolute;right:1rem;top:1rem;border:0;background:#fff;color:#111;width:44px;height:44px;border-radius:50%;font-size:2rem;cursor:pointer}
-.lightbox-help{color:#fff;margin-top:1rem;font-size:.85rem;text-align:center}
-.product-page-link{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;box-sizing:border-box}
+/* EliteVolt product gallery v8 */
+.gallery,.product-gallery{overflow:hidden;position:relative}.gallery img,.product-gallery img{cursor:zoom-in;transition:transform .18s ease,box-shadow .25s ease;transform-origin:center center;will-change:transform}.gallery img.zoom-hover,.product-gallery img.zoom-hover{transform:scale(1.28);z-index:3;box-shadow:0 14px 35px rgba(0,0,0,.18)}
+.gallery-zoom-note{font-size:.85rem;color:#64748b;margin:.55rem 0 0}.image-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;display:flex;align-items:center;justify-content:center;padding:4rem 1rem;flex-direction:column;touch-action:none}.image-lightbox img{max-width:95vw;max-height:80vh;object-fit:contain;cursor:zoom-in;transition:transform .15s ease;user-select:none;-webkit-user-drag:none}.lightbox-close{position:absolute;right:1rem;top:1rem;border:0;background:#fff;color:#111;width:46px;height:46px;border-radius:50%;font-size:2rem;cursor:pointer}.lightbox-help{color:#fff;margin-top:1rem;font-size:.85rem;text-align:center}.product-page-link{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;box-sizing:border-box}
+@media(max-width:700px){.gallery img.zoom-hover,.product-gallery img.zoom-hover{transform:none}.gallery img,.product-gallery img{cursor:zoom-in}.gallery-zoom-note{text-align:center}}

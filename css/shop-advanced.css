@@ -1,1 +1,8 @@
 .category-bar{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}.category-bar select{padding:.55rem .8rem;border:1px solid #d0dee9;border-radius:10px;background:#fff}.wishlist-btn{position:absolute;top:8px;left:8px;width:34px;height:34px;border:0;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.12);font-size:1.2rem;z-index:4;cursor:pointer}.wishlist-btn.active{background:#166534;color:#fff}.product-image-link{display:block}.product-image-link img{display:block}
+/* v8 product-page-first shop */
+.product-page-link{background:#eef4f5;color:#17211d;border:1px solid #cbd9dc;border-radius:999px;font-weight:700;}
+.product-page-link:hover{background:#e4eef0;transform:translateY(-1px);}
+.product-card .product-image-link{display:block;border-radius:18px;overflow:hidden;}
+.product-card .product-image{transition:transform .35s ease;}
+.product-card:hover .product-image{transform:scale(1.035);}
+@media(max-width:767px){.product-card{display:flex;flex-direction:column}.product-card .btn-add,.product-card .product-page-link{margin-top:7px}.product-card .product-title{min-height:2.6em}.product-card .product-price{margin-top:auto;padding-top:8px}}
