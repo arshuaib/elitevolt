@@ -271,7 +271,7 @@
             <div class="product-card">
                 ${!p.stock ? '<div class="out-of-stock-badge">OUT OF STOCK</div>' : ''}
                 <button class="wishlist-btn" data-wish="${p.id}" aria-label="Add ${escapeHtml(p.name)} to wishlist" aria-pressed="false">♡</button>
-                <a href="products/${slugify(p.name)}.html" class="product-image-link"><img class="product-image" src="${p.mainImg}" alt="${p.name}"></a>
+                <a href="products/${slugify(p.name)}.html" class="product-image-link"><img class="product-image" src="${p.mainImg}" alt="${p.name}" loading="lazy" decoding="async"></a>
                 <div class="product-title">${escapeHtml(p.name)}</div>
                 <div class="product-price">GH₵ ${p.price}</div>
                 <a class="btn-details product-page-link" href="products/${slugify(p.name)}.html" aria-label="View details for ${escapeHtml(p.name)}"><i class="fas fa-eye"></i> Details</a>
