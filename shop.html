@@ -6,6 +6,7 @@
     <title>Solar Products, Inverters & Batteries Ghana | EliteVolt Shop</title>
     <meta name="description" content="Shop solar home systems, solar fans, batteries, hybrid inverters and electrical protection devices from EliteVolt Systems in Ghana.">
     <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="meta-pixel-id" content="">
     <link rel="canonical" href="https://elitevoltsystems.com/shop.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Solar Products, Inverters & Batteries Ghana | EliteVolt Shop">
@@ -17,14 +18,12 @@
     {"@context":"https://schema.org","@type":"CollectionPage","name":"EliteVolt Solar & Electrical Shop","url":"https://elitevoltsystems.com/shop.html","description":"Solar products, batteries, inverters and electrical protection devices available from EliteVolt Systems in Ghana."}
     </script>
     <link rel="stylesheet" href="css/shop.css">
-    <link rel="stylesheet" href="css/shop-mobile-fixes.css">
-    <link rel="stylesheet" href="css/shop-enhancements.css">
     <!-- Google Fonts + Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link rel="stylesheet" href="css/site-global.css">
-<link rel="stylesheet" href="css/shop-advanced.css">
+    <!-- Meta Pixel AddToCart hook: shop.js calls fbq('track','AddToCart', payload) when Meta Pixel is installed. -->
 </head>
 <body>
 <nav class="navbar">
@@ -62,8 +61,8 @@
         </div>
         <h2 style="margin-bottom: 1.2rem; font-size:2.2rem;">⚡ Products</h2>
 
-       <div class="category-bar">
-    <select id="categoryFilter">
+       <div class="category-bar" aria-label="Product filters">
+    <select id="categoryFilter" aria-label="Filter by category">
         <option value="All">All Categories</option>
         <option value="Solar Kits">Solar Kits</option>
         <option value="Solar Panels">Solar Panels</option>
@@ -75,6 +74,19 @@
         <option value="Protective Devices">Protective Devices</option>
         <option value="Appliance">Appliance</option>
     </select>
+    <select id="sortProducts" aria-label="Sort products">
+        <option value="default">Sort: Featured</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="name">Name A–Z</option>
+        <option value="stock">In-stock first</option>
+    </select>
+    <select id="stockFilter" aria-label="Filter by stock">
+        <option value="all">All stock status</option>
+        <option value="in">In stock</option>
+        <option value="out">Out of stock</option>
+    </select>
+    <input id="maxPriceFilter" type="number" min="0" step="50" inputmode="numeric" placeholder="Max price (GH₵)" aria-label="Maximum price">
 </div>
 
         <div id="productsGrid" class="products-grid"></div>
@@ -159,9 +171,8 @@
     <span>Solar • Electrical • Electronics</span>
   </div>
 </footer>
+<script src="js/meta-pixel.js"></script>
 <script src="js/shop.js"></script>
-<script src="js/site-fixes.js"></script>
-<script src="js/shop-advanced.js"></script>
 
 </body>
 </html>

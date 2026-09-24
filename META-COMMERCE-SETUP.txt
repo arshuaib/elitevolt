@@ -1,0 +1,24 @@
+EliteVolt Systems — Meta Commerce / Pixel setup
+
+PRODUCT FEED
+Feed URL:
+https://elitevoltsystems.com/merchant-feed.xml
+
+The feed is RSS 2.0 with the Google Merchant namespace and contains the current 10 products from js/shop.js, including product IDs, titles, descriptions, URLs, images, prices in GHS, availability, condition, brand and product type.
+
+META PIXEL
+The shop includes js/meta-pixel.js and the AddToCart hook in js/shop.js.
+To activate the pixel, put your numeric Meta Pixel ID in shop.html:
+
+<meta name="meta-pixel-id" content="YOUR_NUMERIC_PIXEL_ID">
+
+Do not include quotes or spaces inside the numeric ID.
+
+When configured, the shop sends:
+- PageView on shop load
+- AddToCart with content_ids, content_name, value, currency (GHS), and contents
+
+The AddToCart hook also emits the browser event:
+elitevolt:addtocart
+
+The catalog filter/search system is fully client-side and does not reload the page.

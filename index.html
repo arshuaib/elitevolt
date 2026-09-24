@@ -31,7 +31,6 @@
   }
   </script>
   <link rel="stylesheet" href="css/home.css">
-  <link rel="stylesheet" href="css/home-mobile-fixes.css">
   <!-- Google Fonts + Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -112,6 +111,34 @@
     <div class="calc-section">
       <h2 class="section-title" style="font-size:1.8rem; margin-bottom:1rem;">⚙️ Design Your Solar System</h2>
       <p style="text-align:center; margin-bottom:1.5rem;">Add appliances, set quantity, wattage, and daily hours — we'll calculate the estimated solar array & battery bank.</p>
+
+      <div class="quick-kwh-calculator" id="quickKwhCalculator" aria-labelledby="quickKwhTitle">
+        <div class="quick-kwh-copy">
+          <span class="quick-kwh-badge"><i class="fas fa-bolt"></i> Quick sizing</span>
+          <h3 id="quickKwhTitle">Size from your daily kWh</h3>
+          <p>Already know your average daily electricity consumption? Enter it below for an instant planning estimate.</p>
+        </div>
+        <div class="quick-kwh-controls">
+          <label for="dailyKwhInput">Daily consumption (kWh/day)</label>
+          <div class="kwh-input-row">
+            <input id="dailyKwhInput" type="number" min="0.1" step="0.1" inputmode="decimal" placeholder="e.g. 10" aria-describedby="kwhSizingNote">
+            <select id="backupDaysInput" aria-label="Battery backup days">
+              <option value="0.5">0.5 day backup</option>
+              <option value="1" selected>1 day backup</option>
+              <option value="1.5">1.5 day backup</option>
+              <option value="2">2 day backup</option>
+            </select>
+          </div>
+          <button type="button" class="btn-primary quick-kwh-button" id="calculateKwhBtn"><i class="fas fa-calculator"></i> Calculate</button>
+          <button type="button" class="quick-kwh-secondary" id="useTableKwhBtn"><i class="fas fa-sync-alt"></i> Use appliance calculation</button>
+        </div>
+        <div class="quick-kwh-results" id="quickKwhResults" aria-live="polite">
+          <div><span>Recommended inverter</span><strong id="recommendedInverter">—</strong></div>
+          <div><span>Battery bank</span><strong id="recommendedBattery">—</strong></div>
+          <div><span>Suggested solar PV</span><strong id="recommendedPv">—</strong></div>
+        </div>
+        <p class="quick-kwh-note" id="kwhSizingNote"><i class="fas fa-info-circle"></i> Planning estimate only. Inverter sizing also depends on peak/starting loads; a site survey should confirm the final design.</p>
+      </div>
 
       <div class="appliance-table">
         <table id="applianceTable">
@@ -292,6 +319,77 @@
     });
   }
 
+  // ---------- Quick kWh Solar Sizing ----------
+  function recommendInverter(dailyKwh) {
+    // Energy-only estimate: final inverter selection must be checked against peak/starting load.
+    const tiers = [
+      [3, 3], [5, 5], [8, 8], [12, 10], [16, 15], [22, 20], [30, 25]
+    ];
+    const estimatedPeakKw = Math.max(1, dailyKwh / 4.5 * 1.25);
+    for (const [maxDaily, kw] of tiers) {
+      if (dailyKwh <= maxDaily) return Math.max(kw, Math.ceil(estimatedPeakKw));
+    }
+    return Math.max(30, Math.ceil(estimatedPeakKw / 5) * 5);
+  }
+
+  function calculateKwhSizing(dailyKwh, backupDays) {
+    const kwh = Math.max(0, Number(dailyKwh) || 0);
+    const days = Math.max(0.5, Number(backupDays) || 1);
+    if (!kwh) return null;
+    const inverterKw = recommendInverter(kwh);
+    const batteryKwh = Math.ceil((kwh * days / (0.80 * 0.92)) * 10) / 10;
+    const pvKwp = Math.ceil((kwh * 1.20 / 5) * 10) / 10;
+    return { inverterKw, batteryKwh, pvKwp, dailyKwh: Math.round(kwh * 10) / 10, days };
+  }
+
+  function renderKwhSizing(result) {
+    const inverter = document.getElementById('recommendedInverter');
+    const battery = document.getElementById('recommendedBattery');
+    const pv = document.getElementById('recommendedPv');
+    if (!inverter || !battery || !pv) return;
+    if (!result) {
+      inverter.textContent = '—'; battery.textContent = '—'; pv.textContent = '—';
+      return;
+    }
+    inverter.textContent = `${result.inverterKw} kW`;
+    battery.textContent = `${result.batteryKwh} kWh`;
+    pv.textContent = `${result.pvKwp} kWp`;
+  }
+
+  function initKwhCalculator() {
+    const kwhInput = document.getElementById('dailyKwhInput');
+    const daysInput = document.getElementById('backupDaysInput');
+    const calculateBtn = document.getElementById('calculateKwhBtn');
+    const useTableBtn = document.getElementById('useTableKwhBtn');
+    if (!kwhInput || !daysInput || !calculateBtn) return;
+
+    const calculate = () => {
+      const result = calculateKwhSizing(kwhInput.value, daysInput.value);
+      if (!result) {
+        renderKwhSizing(null);
+        kwhInput.focus();
+        return;
+      }
+      renderKwhSizing(result);
+    };
+
+    calculateBtn.addEventListener('click', calculate);
+    kwhInput.addEventListener('input', () => { if (kwhInput.value) calculate(); });
+    daysInput.addEventListener('change', calculate);
+    kwhInput.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+
+    useTableBtn?.addEventListener('click', () => {
+      const tableResult = computeSystem();
+      if (!tableResult.totalWhRaw) {
+        alert('Enter appliance quantities, wattage and hours first.');
+        return;
+      }
+      kwhInput.value = tableResult.totalDailyKwh;
+      calculate();
+      document.getElementById('quickKwhCalculator')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
+
   function computeSystem() {
     let totalWh = 0;
     for (let app of applianceRows) {
@@ -405,6 +503,7 @@ applianceRows.forEach(app => {
   }
   
   init();
+  initKwhCalculator();
 
   // optional smooth scrolling for nav internal links
   document.querySelectorAll('.nav-links a').forEach(anchor => {
@@ -423,6 +522,5 @@ applianceRows.forEach(app => {
     document.getElementById('contact-support')?.scrollIntoView({behavior:'smooth'});
   });
 </script>
-  <script src="js/site-fixes.js"></script>
 </body>
 </html>
