@@ -4,21 +4,47 @@ PRODUCT FEED
 Feed URL:
 https://elitevoltsystems.com/merchant-feed.xml
 
-The feed is RSS 2.0 with the Google Merchant namespace and contains the current 10 products from js/shop.js, including product IDs, titles, descriptions, URLs, images, prices in GHS, availability, condition, brand and product type.
+The feed is RSS 2.0 with the Google Merchant namespace (also accepted by
+Meta Commerce Manager) and contains the current 10 products from
+js/shop.js, including product IDs, titles, descriptions, URLs, images,
+prices in GHS, availability, condition, brand and product type. Use this
+URL when creating your catalog in Meta Commerce Manager.
 
 META PIXEL
-The shop includes js/meta-pixel.js and the AddToCart hook in js/shop.js.
-To activate the pixel, put your numeric Meta Pixel ID in shop.html:
+Every page on the site (home, shop, all 10 product pages, all blog and
+service pages) now includes js/meta-pixel.js and a
+<meta name="meta-pixel-id" content=""> tag in its <head>. To activate the
+pixel sitewide, put your numeric Meta Pixel ID into that one meta tag on
+EVERY page (find/replace across the project is the fastest way):
 
 <meta name="meta-pixel-id" content="YOUR_NUMERIC_PIXEL_ID">
 
 Do not include quotes or spaces inside the numeric ID.
 
-When configured, the shop sends:
-- PageView on shop load
-- AddToCart with content_ids, content_name, value, currency (GHS), and contents
+Once the ID is set, the site automatically sends:
+- PageView on every page load
+- ViewContent on each product page (id, name, price)
+- AddToCart when a shopper adds an item from the shop grid or a product
+  page (content_ids, content_name, value, currency GHS, contents)
+- InitiateCheckout when a shopper taps "WhatsApp Order" or "Email Order"
+  in the cart (value = cart total, num_items, contents)
+- Lead when a shopper requests a quote from the home page solar
+  calculator, by WhatsApp or email
 
-The AddToCart hook also emits the browser event:
-elitevolt:addtocart
+The AddToCart hook also emits a browser event you can hook into for your
+own analytics: elitevolt:addtocart (similarly elitevolt:initiatecheckout).
 
-The catalog filter/search system is fully client-side and does not reload the page.
+The catalog filter/search/wishlist system is fully client-side and does
+not reload the page. Cart and wishlist data live in the shopper's own
+browser (localStorage) — there is no shared/server-side cart.
+
+NOTES
+- Product IDs (p1–p10) match the IDs used in the pixel events and the
+  "sku" field in each product page's Product structured data, so Meta's
+  dynamic ads / catalog matching will line up automatically as long as
+  the catalog is built from merchant-feed.xml.
+- Two catalog images are currently placeholders and should be replaced
+  with real product photos before running catalog/dynamic ads: the Ritar
+  12V 200Ah battery's main and thumbnail images, and the SRNE 6kW HV
+  inverter's second thumbnail (see recommendations from EliteVolt's last
+  review for details).

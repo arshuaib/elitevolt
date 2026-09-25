@@ -8,6 +8,7 @@
   <title>EliteVolt Systems | Solar Installation & Electrical Services in Ghana</title>
   <meta name="description" content="EliteVolt Systems provides solar installation, electrical services, solar backup systems, inverters, batteries and solar products in Ghana, with service coverage including Accra and other regions.">
   <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="meta-pixel-id" content="">
   <link rel="canonical" href="https://elitevoltsystems.com/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="EliteVolt Systems | Solar & Electrical Solutions in Ghana">
@@ -433,8 +434,9 @@
     applianceRows.forEach(app => {
       appliancesText += `${app.name} (${app.qty}x ${app.watt}W, ${app.hours}h/day), `;
     });
-    if (appliancesText.length > 80) appliancesText = appliancesText.slice(0, 200) + "...";
-    const msg = `Hello EliteVolt Team,%0A%0AI need a quote for a solar power system based on my load calculation:%0A• Total Daily Consumption: ${totalDailyKwh} kWh%0A• Recommended Solar PV: ${solarKwp} kWp%0A• Battery Bank: ${batteryKwh} kWh (1-day backup)%0A• Appliances: ${appliancesText || "Custom setup"}%0A%0APlease provide pricing & installation details. Thank you!`;
+    appliancesText = appliancesText.replace(/,\s*$/, '');
+    if (appliancesText.length > 200) appliancesText = appliancesText.slice(0, 200) + "...";
+    const msg = `Hello EliteVolt Team,\n\nI need a quote for a solar power system based on my load calculation:\n• Total Daily Consumption: ${totalDailyKwh} kWh\n• Recommended Solar PV: ${solarKwp} kWp\n• Battery Bank: ${batteryKwh} kWh (1-day backup)\n• Appliances: ${appliancesText || "Custom setup"}\n\nPlease provide pricing & installation details. Thank you!`;
     return msg;
   }
   
@@ -445,9 +447,12 @@
       alert("Please add at least one appliance to generate quote.");
       return;
     }
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead', { content_name: 'Solar load calculator - WhatsApp quote', value: solarKwp, currency: 'GHS' });
+    }
     let msg = getQuoteMessage();
     const phone = "233249976762";  // EliteVolt contact 
-    const url = `https://wa.me/${phone}?text=${msg}`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank');
   });
   
@@ -457,6 +462,9 @@
     if (totalDailyKwh === 0 && applianceRows.length === 0) {
       alert("Please add appliances before requesting quote.");
       return;
+    }
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead', { content_name: 'Solar load calculator - email quote', value: solarKwp, currency: 'GHS' });
     }
     let subject = "EliteVolt Solar Quote Request";
 
@@ -505,6 +513,7 @@ applianceRows.forEach(app => {
   init();
   initKwhCalculator();
 
+
   // optional smooth scrolling for nav internal links
   document.querySelectorAll('.nav-links a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -518,9 +527,7 @@ applianceRows.forEach(app => {
       }
     });
   });
-  document.querySelector('.btn-outline')?.addEventListener('click', function(){
-    document.getElementById('contact-support')?.scrollIntoView({behavior:'smooth'});
-  });
 </script>
+<script src="js/meta-pixel.js"></script>
 </body>
 </html>

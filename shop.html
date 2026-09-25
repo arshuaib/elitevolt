@@ -32,9 +32,6 @@
             <img src="images/logo.png" alt="EliteVolt">
             <span>EliteVolt Systems</span>
         </div>
-        <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="shopNavLinks">
-            <i class="fas fa-bars"></i>
-        </button>
         <div class="nav-links" id="shopNavLinks">
             <a href="index.html"><i class="fas fa-solar-panel"></i> Home</a>
             <a href="shop.html" aria-current="page"><i class="fas fa-store"></i> Shop</a>
@@ -66,14 +63,9 @@
     <select id="categoryFilter" aria-label="Filter by category">
         <option value="All">All Categories</option>
         <option value="Solar Kits">Solar Kits</option>
-        <option value="Solar Panels">Solar Panels</option>
         <option value="Inverters">Inverters</option>
         <option value="Gel Batteries">Gel Batteries</option>
-        <option value="Lithium Batteries">Lithium Batteries</option>
-        <option value="Streetlights">Streetlights</option>
-        <option value="Accessories">Accessories</option>
         <option value="Protective Devices">Protective Devices</option>
-        <option value="Appliance">Appliance</option>
     </select>
     <select id="sortProducts" aria-label="Sort products">
         <option value="default">Sort: Featured</option>
@@ -88,6 +80,7 @@
         <option value="out">Out of stock</option>
     </select>
     <input id="maxPriceFilter" type="number" min="0" step="50" inputmode="numeric" placeholder="Max price (GH₵)" aria-label="Maximum price">
+    <button id="wishlistToggleBtn" type="button" class="wishlist-toggle-btn" aria-pressed="false"><i class="far fa-heart"></i> Wishlist</button>
 </div>
 
         <div id="productsGrid" class="products-grid"></div>
