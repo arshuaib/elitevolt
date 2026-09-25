@@ -550,6 +550,27 @@
     outline:none;
 }
 
+.wishlist-toggle-btn{
+    width:100%;
+    padding:12px 15px;
+    border-radius:12px;
+    border:1px solid #d0dee9;
+    background:white;
+    font-size:0.9rem;
+    font-weight:600;
+    cursor:pointer;
+    color:#334155;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:.4rem;
+}
+.wishlist-toggle-btn.active{
+    background:#dc2626;
+    border-color:#dc2626;
+    color:#fff;
+}
+
 .cat-btn{
     border:none;
     background:#e5e7eb;
