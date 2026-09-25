@@ -66,7 +66,7 @@
 
         { id: "p7", 
         name: "Ritar 12V 200Ah (Deep Cycle Gel Battery)", 
-        category: "Gel Battery", 
+        category: "Gel Batteries", 
         price: 5000, 
         stock: false, 
         mainImg: "https://www.ritarpower.com/uploads/image/20251226/dg-series-lead-acid-batteries-bulk.webp", 
@@ -127,28 +127,49 @@
     let currentSort = "default";
     let currentStock = "all";
     let currentMaxPrice = "";
+    let currentWishlistOnly = false;
 
     const wishlistKey = "ev_wishlist_v1";
     function getWishlist() { try { return JSON.parse(localStorage.getItem(wishlistKey) || "[]"); } catch (e) { return []; } }
     function setWishlist(items) { localStorage.setItem(wishlistKey, JSON.stringify(items)); }
 
+    function formatPrice(n) {
+        return Number(n || 0).toLocaleString('en-GH', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    // Generic Meta Pixel event helper. Works immediately once the Meta Pixel
+    // ID is set (see META-COMMERCE-SETUP.txt); otherwise events are queued
+    // locally so nothing errors and they can still be inspected for testing.
+    function trackMetaEvent(eventName, payload) {
+        if (typeof window.fbq === "function") {
+            window.fbq("track", eventName, payload);
+        } else {
+            window._eliteVoltMetaEvents = window._eliteVoltMetaEvents || [];
+            window._eliteVoltMetaEvents.push({ event: eventName, payload, timestamp: Date.now() });
+        }
+        window.dispatchEvent(new CustomEvent("elitevolt:" + eventName.toLowerCase(), { detail: payload }));
+    }
+
     function trackMetaAddToCart(product, quantity = 1) {
-        const payload = {
+        trackMetaEvent("AddToCart", {
             content_ids: [product.id],
             content_name: product.name,
             content_type: "product",
             value: Number(product.price) * quantity,
             currency: "GHS",
             contents: [{ id: product.id, quantity }]
-        };
-        // Works immediately when the Meta Pixel is installed; otherwise keep a local event queue for diagnostics.
-        if (typeof window.fbq === "function") {
-            window.fbq("track", "AddToCart", payload);
-        } else {
-            window._eliteVoltMetaEvents = window._eliteVoltMetaEvents || [];
-            window._eliteVoltMetaEvents.push({ event: "AddToCart", payload, timestamp: Date.now() });
-        }
-        window.dispatchEvent(new CustomEvent("elitevolt:addtocart", { detail: payload }));
+        });
+    }
+
+    function trackMetaCheckout(items, total) {
+        trackMetaEvent("InitiateCheckout", {
+            content_ids: items.map(i => i.id),
+            content_type: "product",
+            value: total,
+            currency: "GHS",
+            num_items: items.reduce((sum, i) => sum + i.quantity, 0),
+            contents: items.map(i => ({ id: i.id, quantity: i.quantity }))
+        });
     }
 
     // Cart state
@@ -203,7 +224,8 @@
         const matchesStock = currentStock === "all" || (currentStock === "in" ? product.stock : !product.stock);
         const maxPrice = Number(currentMaxPrice);
         const matchesPrice = !currentMaxPrice || (!Number.isNaN(maxPrice) && Number(product.price) <= maxPrice);
-        return matchesSearch && matchesCategory && matchesStock && matchesPrice;
+        const matchesWishlist = !currentWishlistOnly || getWishlist().includes(product.id);
+        return matchesSearch && matchesCategory && matchesStock && matchesPrice && matchesWishlist;
     });
 
     filtered.sort((a,b) => {
@@ -261,7 +283,10 @@
         const totalPages = getTotalPages();
         
         if(paginated.length === 0) {
-            container.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:2rem;">🔍 No products found</div>';
+            const emptyMsg = currentWishlistOnly
+                ? '<div style="grid-column:1/-1; text-align:center; padding:2rem;">♡ Your wishlist is empty. Tap the heart on any product to save it here.</div>'
+                : '<div style="grid-column:1/-1; text-align:center; padding:2rem;">🔍 No products found</div>';
+            container.innerHTML = emptyMsg;
             const pagination = document.getElementById('paginationControls');
             if (pagination) pagination.innerHTML = '';
             return;
@@ -271,9 +296,9 @@
             <div class="product-card">
                 ${!p.stock ? '<div class="out-of-stock-badge">OUT OF STOCK</div>' : ''}
                 <button class="wishlist-btn" data-wish="${p.id}" aria-label="Add ${escapeHtml(p.name)} to wishlist" aria-pressed="false">♡</button>
-                <a href="products/${slugify(p.name)}.html" class="product-image-link"><img class="product-image" src="${p.mainImg}" alt="${p.name}" loading="lazy" decoding="async"></a>
+                <a href="products/${slugify(p.name)}.html" class="product-image-link"><img class="product-image" src="${escapeHtml(p.mainImg)}" alt="${escapeHtml(p.name)}" loading="lazy" decoding="async"></a>
                 <div class="product-title">${escapeHtml(p.name)}</div>
-                <div class="product-price">GH₵ ${p.price}</div>
+                <div class="product-price">GH₵ ${formatPrice(p.price)}</div>
                 <a class="btn-details product-page-link" href="products/${slugify(p.name)}.html" aria-label="View details for ${escapeHtml(p.name)}"><i class="fas fa-eye"></i> Details</a>
                 <button class="btn-add" ${!p.stock ? 'disabled' : ''} onclick="addToCart('${p.id}')">${p.stock ? 'Add' : 'Out of stock'}</button>
             </div>
@@ -342,7 +367,7 @@
             html += `<li class="cart-item-drawer">
                         <div class="cart-item-info">
                             <strong>${escapeHtml(item.name)}</strong><br>
-                            <small>GH₵ ${item.price}</small>
+                            <small>GH₵ ${formatPrice(item.price)}</small>
                         </div>
                         <div class="cart-item-controls">
     <button onclick="changeQuantity('${item.id}',-1)">-</button>
@@ -357,7 +382,7 @@
                     </li>`;
         });
 
-        html += `</ul><div class="drawer-total">Total: GH₵ ${total.toFixed(2)}</div>
+        html += `</ul><div class="drawer-total">Total: GH₵ ${formatPrice(total)}</div>
                 <div class="drawer-buttons">
                     <button class="clear-cart-btn-sm" onclick="clearCart()">🗑 Clear Cart</button>
                     <button class="btn-whatsapp" onclick="checkoutWhatsApp()">💬 WhatsApp Order</button>
@@ -385,7 +410,7 @@
 
     <div style="display:flex; gap:8px; align-items:center;">
         <span>
-            GH₵ ${(item.price*item.quantity).toFixed(2)}
+            GH₵ ${formatPrice(item.price*item.quantity)}
         </span>
 
         <button class="remove-item-btn"
@@ -400,7 +425,7 @@
 
         html += '</ul>';
         cont.innerHTML = html;
-        document.getElementById('desktopTotal').innerText = total.toFixed(2);
+        document.getElementById('desktopTotal').innerText = formatPrice(total);
     }
     
     function buildOrderMsg() {
@@ -408,12 +433,22 @@
         if(avail.length===0) return null;
         let msg = "🛒 *NEW ORDER*\n---------------------------\n";
         let total=0;
-        avail.forEach((item,i)=>{ const cost=item.price*item.quantity; total+=cost; msg+=`${i+1}. ${item.name} x${item.quantity} - GH₵ ${cost}\n`; });
-        msg+=`---------------------------\n💰 Total: GH₵ ${total.toFixed(2)}\nPlease process my order.`;
-        return msg;
+        avail.forEach((item,i)=>{ const cost=item.price*item.quantity; total+=cost; msg+=`${i+1}. ${item.name} x${item.quantity} - GH₵ ${formatPrice(cost)}\n`; });
+        msg+=`---------------------------\n💰 Total: GH₵ ${formatPrice(total)}\nPlease process my order.`;
+        return { text: msg, items: avail, total };
     }
-    function checkoutWhatsApp() { const m = buildOrderMsg(); if(!m) { alert("No available items in cart"); return; } window.open(`https://wa.me/233249976762?text=${encodeURIComponent(m)}`,'_blank'); }
-    function checkoutEmail() { const m = buildOrderMsg(); if(!m) { alert("No available items in cart"); return; } window.location.href = `mailto:sales@elitevoltsystems.com?subject=Order&body=${encodeURIComponent(m)}`; }
+    function checkoutWhatsApp() {
+        const order = buildOrderMsg();
+        if(!order) { alert("No available items in cart"); return; }
+        trackMetaCheckout(order.items, order.total);
+        window.open(`https://wa.me/233249976762?text=${encodeURIComponent(order.text)}`,'_blank');
+    }
+    function checkoutEmail() {
+        const order = buildOrderMsg();
+        if(!order) { alert("No available items in cart"); return; }
+        trackMetaCheckout(order.items, order.total);
+        window.location.href = `mailto:info@elitevoltsystems.com?subject=Order&body=${encodeURIComponent(order.text)}`;
+    }
     
     function showToast(msg) {
         const t = document.createElement('div');
@@ -471,10 +506,20 @@
     const stockFilter = document.getElementById("stockFilter");
     const maxPriceFilter = document.getElementById("maxPriceFilter");
 
+    const wishlistToggleBtn = document.getElementById("wishlistToggleBtn");
+
     categoryFilter?.addEventListener("change", function() { currentCategory = this.value; currentPage = 1; renderProducts(); });
     sortFilter?.addEventListener("change", function() { currentSort = this.value; currentPage = 1; renderProducts(); });
     stockFilter?.addEventListener("change", function() { currentStock = this.value; currentPage = 1; renderProducts(); });
     maxPriceFilter?.addEventListener("input", function() { currentMaxPrice = this.value; currentPage = 1; renderProducts(); });
+    wishlistToggleBtn?.addEventListener("click", function() {
+        currentWishlistOnly = !currentWishlistOnly;
+        this.classList.toggle("active", currentWishlistOnly);
+        this.setAttribute("aria-pressed", currentWishlistOnly ? "true" : "false");
+        this.innerHTML = currentWishlistOnly ? '<i class="fas fa-heart"></i> Showing wishlist' : '<i class="far fa-heart"></i> Wishlist';
+        currentPage = 1;
+        renderProducts();
+    });
     document.getElementById("productsGrid")?.addEventListener("click", function(e) {
         const btn = e.target.closest("[data-wish]");
         if (!btn) return;
