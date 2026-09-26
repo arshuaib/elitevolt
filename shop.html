@@ -24,8 +24,9 @@
     
     <link rel="stylesheet" href="css/site-global.css">
     <!-- Meta Pixel AddToCart hook: shop.js calls fbq('track','AddToCart', payload) when Meta Pixel is installed. -->
+<script defer src="js/site-nav.js"></script>
 </head>
-<body>
+<body class="shop-page">
 <nav class="navbar">
     <div class="nav-container">
         <div class="logo">
@@ -103,17 +104,17 @@
 </div>
 
 <!-- Floating Cart Button (mobile only) -->
-<div class="floating-cart" id="floatingCartBtn">
+<button class="floating-cart" id="floatingCartBtn" type="button" aria-label="Open cart" aria-haspopup="dialog" aria-expanded="false">
     <i class="fas fa-shopping-cart"></i>
     <span id="cartItemCount" class="cart-badge" style="display:none;">0</span>
-</div>
+</button>
 
 <!-- Cart Drawer (mobile) -->
-<div class="drawer-overlay" id="drawerOverlay"></div>
-<div class="cart-drawer" id="cartDrawer">
+<div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+<div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle" aria-hidden="true" tabindex="-1">
     <div class="drawer-header">
-        <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
-        <button class="close-drawer" id="closeDrawerBtn">&times;</button>
+        <h3 id="cartDrawerTitle"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Your Cart</h3>
+        <button class="close-drawer" id="closeDrawerBtn" type="button" aria-label="Close cart">&times;</button>
     </div>
     <div class="drawer-content" id="drawerCartContent">
         <div class="empty-cart-message">Cart is empty</div>
