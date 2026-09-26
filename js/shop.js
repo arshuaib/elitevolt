@@ -259,11 +259,15 @@
 
     function paintWishlist() {
         const wishes = getWishlist();
-        document.querySelectorAll("#productsGrid [data-wish]").forEach(btn => {
+        document.querySelectorAll("[data-wish]").forEach(btn => {
             const active = wishes.includes(btn.dataset.wish);
             btn.classList.toggle("active", active);
             btn.setAttribute("aria-pressed", active ? "true" : "false");
-            btn.textContent = active ? "♥" : "♡";
+            if (btn.classList.contains("product-wishlist")) {
+                btn.textContent = active ? "♥ Saved to wishlist" : "♡ Save to wishlist";
+            } else {
+                btn.textContent = active ? "♥" : "♡";
+            }
             btn.setAttribute("aria-label", active ? "Remove from wishlist" : "Add to wishlist");
         });
     }
@@ -295,12 +299,16 @@
         container.innerHTML = paginated.map(p => `
             <div class="product-card">
                 ${!p.stock ? '<div class="out-of-stock-badge">OUT OF STOCK</div>' : ''}
-                <button class="wishlist-btn" data-wish="${p.id}" aria-label="Add ${escapeHtml(p.name)} to wishlist" aria-pressed="false">♡</button>
                 <a href="products/${slugify(p.name)}.html" class="product-image-link"><img class="product-image" src="${escapeHtml(p.mainImg)}" alt="${escapeHtml(p.name)}" loading="lazy" decoding="async"></a>
-                <div class="product-title">${escapeHtml(p.name)}</div>
+                <div class="product-title-row">
+                    <div class="product-title">${escapeHtml(p.name)}</div>
+                    <button class="wishlist-btn" type="button" data-wish="${p.id}" aria-label="Add ${escapeHtml(p.name)} to wishlist" aria-pressed="false">♡</button>
+                </div>
                 <div class="product-price">GH₵ ${formatPrice(p.price)}</div>
-                <a class="btn-details product-page-link" href="products/${slugify(p.name)}.html" aria-label="View details for ${escapeHtml(p.name)}"><i class="fas fa-eye"></i> Details</a>
-                <button class="btn-add" ${!p.stock ? 'disabled' : ''} onclick="addToCart('${p.id}')">${p.stock ? 'Add' : 'Out of stock'}</button>
+                <div class="product-card-actions">
+                    <a class="btn-details product-page-link" href="products/${slugify(p.name)}.html" aria-label="View details for ${escapeHtml(p.name)}"><i class="fas fa-eye"></i> Details</a>
+                    <button class="btn-add" ${!p.stock ? 'disabled' : ''} onclick="addToCart('${p.id}')">${p.stock ? 'Add to cart' : 'Out of stock'}</button>
+                </div>
             </div>
         `).join('');
         
@@ -470,13 +478,42 @@
     }
     
     // Drawer controls
-    function openDrawer() { document.getElementById('cartDrawer').classList.add('open'); document.getElementById('drawerOverlay').classList.add('active'); }
-    function closeDrawer() { document.getElementById('cartDrawer').classList.remove('open'); document.getElementById('drawerOverlay').classList.remove('active'); }
+    function openDrawer() {
+        const drawer = document.getElementById('cartDrawer');
+        const overlay = document.getElementById('drawerOverlay');
+        if (!drawer || !overlay) return;
+        drawer.classList.add('open');
+        drawer.setAttribute('aria-hidden', 'false');
+        overlay.classList.add('active');
+        document.getElementById('floatingCartBtn')?.setAttribute('aria-expanded', 'true');
+        document.getElementById('closeDrawerBtn')?.focus();
+    }
+    function closeDrawer() {
+        const drawer = document.getElementById('cartDrawer');
+        const overlay = document.getElementById('drawerOverlay');
+        if (!drawer || !overlay) return;
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden', 'true');
+        overlay.classList.remove('active');
+        const cartButton = document.getElementById('floatingCartBtn');
+        cartButton?.setAttribute('aria-expanded', 'false');
+        if (cartButton && cartButton.getAttribute('aria-hidden') !== 'true') cartButton.focus();
+    }
     
     // Event listeners
     document.getElementById('floatingCartBtn')?.addEventListener('click', openDrawer);
     document.getElementById('closeDrawerBtn')?.addEventListener('click', closeDrawer);
     document.getElementById('drawerOverlay')?.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.getElementById('cartDrawer')?.classList.contains('open')) closeDrawer(); });
+    const floatingCart = document.getElementById('floatingCartBtn');
+    const siteFooter = document.querySelector('.site-footer');
+    if (floatingCart && siteFooter && 'IntersectionObserver' in window) {
+        new IntersectionObserver(entries => {
+            const footerVisible = entries.some(entry => entry.isIntersecting);
+            floatingCart.classList.toggle('near-footer', footerVisible);
+            floatingCart.setAttribute('aria-hidden', String(footerVisible));
+        }, { rootMargin: '0px 0px -24px 0px' }).observe(siteFooter);
+    }
     
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.getElementById('searchBtn');
@@ -520,12 +557,19 @@
         currentPage = 1;
         renderProducts();
     });
-    document.getElementById("productsGrid")?.addEventListener("click", function(e) {
-        const btn = e.target.closest("[data-wish]");
-        if (!btn) return;
-        e.preventDefault();
-        e.stopPropagation();
-        toggleWishlist(btn.dataset.wish);
+    document.addEventListener("click", function(e) {
+        const wishlistButton = e.target.closest("[data-wish]");
+        if (wishlistButton) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleWishlist(wishlistButton.dataset.wish);
+            return;
+        }
+        const addButton = e.target.closest("[data-product-add]");
+        if (addButton) {
+            e.preventDefault();
+            addToCart(addButton.dataset.productAdd);
+        }
     });
     
     window.addToCart = addToCart; window.changeQuantity = changeQuantity; window.clearCart = clearCart;
@@ -535,3 +579,4 @@
     window.toggleWishlist = toggleWishlist;
     
     loadCart();
+    paintWishlist();
