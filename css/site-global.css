@@ -526,3 +526,16 @@ img { max-width:100%; }
 .energy-quick-note{margin:.7rem 0 0;color:#52645a;font-size:.82rem;line-height:1.45}
 @media(max-width:800px){.energy-quick-controls{grid-template-columns:1fr 1fr}.energy-quick-controls button{grid-column:1/-1}.energy-quick-results{grid-template-columns:repeat(2,minmax(0,1fr))}.energy-quick-results>div:last-child{grid-column:1/-1}}
 @media(max-width:480px){.energy-quick-controls{grid-template-columns:1fr}.energy-quick-controls button{grid-column:auto}.energy-quick-results{grid-template-columns:1fr 1fr}.energy-quick-results>div:last-child{grid-column:1/-1}.energy-quick-calculator{padding:.9rem}}
+
+
+/* Clear regular, reduced, and promotional product pricing */
+.product-price{display:flex;align-items:center;flex-wrap:wrap;gap:.3rem .55rem}
+.product-price.is-discounted .price-current,.price[data-product-price].is-discounted .price-current{color:#b42318}
+.price-before{color:#68756f;font-size:.82em;font-weight:500;text-decoration:line-through;text-decoration-thickness:1.5px}
+.price-current{font-weight:800}
+.discount-badge,.promotion-label{display:inline-flex;align-items:center;border-radius:999px;padding:.2rem .5rem;background:#fff1ed;color:#a12a17;font-size:.7rem;font-weight:800;line-height:1.2}
+.promotion-label{background:#eaf6ed;color:#17653b}
+.price[data-product-price]{display:flex;align-items:center;gap:.35rem .55rem;flex-wrap:wrap}
+.price[data-product-price].is-discounted .price-current{color:#b42318}
+.price[data-product-price] .price-before{font-size:.58em}
+.price[data-product-price] .discount-badge,.price[data-product-price] .promotion-label{font-size:.42em}
