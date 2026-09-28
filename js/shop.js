@@ -95,7 +95,7 @@
         name: "SRNE Hybrid Inverter 6kW HV", 
         category: "Inverters", 
         price: 8800, 
-        stock: true, 
+        stock: false, 
         mainImg: "images/6kw-hv-srne1.png", 
         thumbnails: [], 
         description: "Single-Phase Off-grid Solar Storage Inverter □ SRNE 15 years in PV industry, committed to independent R&D and production. □ Holds over 200 patents in energy storage, with unique industry- leading technologies. □ Chooses top-quality international components to deliver high-value products to customers. □ Upholds values of customer priority, proactivity, responsibility, and innovative breakthroughs. □ Advanced MPPT technology with up to 99.9% efficiency □ Up to 6 units in parallel for 36kW □ Time-slot function to save cost with peak-valley □ Off-grid/without battery output mode □ Aesthetically industrial design appearance □ Support BMS communication", 
