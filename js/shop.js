@@ -1,0 +1,627 @@
+
+    // PRODUCT DATABASE 
+    // Optional verified offer fields: compareAtPrice (regular price) and promotionLabel. Keep price as the customer pays.
+    const productsData = [
+        { id: "p1", name: "M600X Solar Kit",
+            category: "Solar Kits",
+            price: 1400,
+            compareAtPrice: 1500,
+            promotionLabel: "Limited Offer",
+            stock: true, 
+        mainImg: "images/M600X.jpeg",
+        thumbnails: ["images/M600X-2.jpeg","images/M600X-3.jpg"], 
+        description: "12W solar home system, 4 lamps, USB, 5200mAh battery.", 
+        specs: ["12W Panel", "Main Lamp", "3 Secondary", "Torch", "USB Cable"],
+        whatsappMsg: "M600X Solar Kit" },
+       
+        { id: "p2", name: "Lumn Home 840",
+            category: "Solar Kits",
+            price: 1500,
+            stock: true, 
+        mainImg: "images/Lumn Home 840.jpg", 
+        thumbnails: ["images/Lumn Home 840-2.jpg","images/Lumn Home 840-3.png"],
+        description: "LUMN Home 840lm delivers four high-intensity LED bulbs, ensuring every corner stays bright. Built with MPPT solar charging, wireless switches, and pay-go compatibility, it offers modern energy solutions for off-grid communities.Up to 10 hours of lighting at full brightness Four 210-lumen LED lamps with 3 brightness settings 12W solar panel & 40Wh battery for efficient energy storage", 
+        specs: ["Lumn Home Battery Hub 12Ah/40Wh", "LED Lamp 1W 210 Lm Output",
+            "2M Extend Charging Cable for Lumn Home","5M Extend Cable for Lumn Home",
+            "Wireless Switch for Lumn Home"], 
+        whatsappMsg: "Lumn Home 840" },
+
+        { id: "p3", name: "Lumn Home 1230",
+        category: "Solar Kits",
+        price: 1600, 
+        stock: true,
+        mainImg: "images/Lumn Home 1230.jpg",
+        thumbnails: ["images/Lumn Home 1230-2.jpg", "images/Lumn Home 1230-3.jpg"],
+        description: "LUMN Home 1230lm is designed for large rooms, classrooms, or shared spaces. The system is easy to install, Bluetooth-enabled, and powered by a smart solar hub for uninterrupted lighting. 6-7 hours of runtime at full brightness. Three 410-lumen tube lights. MPPT solar charging for maximum efficiency. Durable LiFePO4 battery with 2000 cycles",
+        specs: ["1 x Lumn Home Battery Hub 12Ah/40Wh", "3 x Lumn Home LED Tube 2W/410 Lumen", "2M Extend Charging Cable for Lumn Home", "5M Extend Cable for Lumn Home", "3 x Wireless Switch for Lumn Home"], 
+        whatsappMsg: "Lumn Home 1230" },
+
+        { id: "p4", name: "Solar Barber Shop 06Ah Starter Pack",
+        category: "Solar Kits",
+        price: 3500,
+        stock: true, 
+        mainImg: "images/Solar barber kit.jpeg",
+        thumbnails: ["images/barberkit.jpg"],
+        description: "The Solar Barber Shop 06Ah Starter Pack includes a 20W solar panel, 6Ah lithium battery Hub for energy storage, two cordless haircutters with accessories such as limit combs, a cleaning brush, and lubricating oil, two efficient LED tube lights and a multi-functional torch.",
+        specs: ["Camp Battery Hub 06Ah","20Wp c-Si Standard Sized IEC Certified Solar Panel", "2 x Cordless Battery Powered Durable Professional Hair Clipper", "2 x LT4 LED Tube",  "Hand-Held Torch / Lantern / Remote Control w/ Li-Ion Battery"],
+        whatsappMsg: "Solar Barber Shop 06Ah Starter Pack" },
+
+        { id: "p5", name: "Solar speaker",
+        category: "Solar Kits",
+        price: 7500, 
+        stock: true,    
+        mainImg: "images/solar-speaker.jpeg", 
+        thumbnails: ["images/solar-speaker2.jpeg"], 
+        description: "Reliable sound system for events such as road-show campaigns, weddings, churches, karaoke, USB/SD card functionalities, connectivity to Bluetooth devices, digital FM radio for local radio stations", 
+        specs: ["Camp Battery Hub 18Ah", "80Wp c-Si Standard Sized IEC Certified Solar Panel",
+            "Wireless Portable Bluetooth Karaoke Party Speaker ", "2 Wireless Micphone"], 
+        whatsappMsg: "Solar speaker" },
+
+        { id: "p6", 
+        name: "16inch Solar fan", 
+        category: "Solar Kits", 
+        price: 1750, stock: true, 
+        mainImg: "images/16in Solar fan.jpeg", 
+        thumbnails: ["images/solar-fan.jpg","images/solar-fan1.jpg"], 
+        description: "The 16-Inch Built-in Battery Solar Stand Fan Pack comprises a 25W solar panel and 16-inch stand fan with built-in battery. This portable pack allows direct fan charging and boasts a noiseless, brushless motor for an elegant touch in homes and shops. With 4-speed levels, natural wind mode, and timer function, the fan provides flexible cooling options lasting up to 40 hours and includes LED lighting.",
+        specs: ["16 Inch Solar Built-in Battery Desk Fan", "25Wp c-Si Standard Sized IEC Certified Solar Panel"], 
+        whatsappMsg: "16inch Solar fan" },
+
+        { id: "p7", 
+        name: "Ritar 12V 200Ah (Deep Cycle Gel Battery)", 
+        category: "Gel Batteries", 
+        price: 5000, 
+        stock: false, 
+        mainImg: "https://www.ritarpower.com/uploads/image/20251226/dg-series-lead-acid-batteries-bulk.webp", 
+        thumbnails: ["https://images.unsplash.com/photo-1622484214887-b6bb5e7fc5b3?w=300&h=300&fit=crop"], 
+        description: "DG (Deep Cycle GEL) series is designed for frequent cyclic charge and discharge applications under extreme environments. By using strong grids, high-purity lead and patented Gel electrolyte, DG series offers excellent recovery after deep discharge under frequent cyclic discharge, and can deliver 400 cycles at 100% DOD. Suitable for solar, CATV, marine, RV and deep discharge UPS applications.", 
+        specs: ["12V 200Ah", "Low Maintenance"], 
+        whatsappMsg: "Ritar 12V 200Ah (Deep Cycle Gel Battery)" },
+
+        { id: "p8", 
+        name: "SRNE Hybrid Inverter 5kW HV", 
+        category: "Inverters", 
+        price: 8500, 
+        stock: true, 
+        mainImg: "images/5kw-hv-srne1.png", 
+        thumbnails: ["images/5kw-hv-srne2.png", "images/5kw-hv-srne3.png"], 
+        description: "Single-Phase Off-grid Solar Storage Inverter, Compatible with 48V storage batteries, Up to 6 units in parallel for 30kW, Time-slot function to save cost with peak-valley, Off-grid/without battery output mode, Aesthetically industrial design appearance, Support BMS communication", 
+        specs: ["MODEL -- HYP4850S100-H", "Rated Output Power -- 5,000W", "Max. Output Power -- 10,000VA", "Rated Output Voltage -- 230Vac (L/N/PE, Single-Phase)",
+            "Waveform -- Pure sine wave", "Battery Type -- Li-ion / Lead-acid / User-defined", "Rated Battery Voltage -- 48V", "Battery Voltage Range -- 40-60Vdc",
+            "Max. Solar Charging Current -- 100A", "Max. Grid/Generator Charging Current -- 60A", "Max. Hybrid Charging Current -- 100A"], 
+        whatsappMsg: "SRNE Hybrid Inverter 5kW HV" },
+
+        { id: "p9", 
+        name: "SRNE Hybrid Inverter 6kW HV", 
+        category: "Inverters", 
+        price: 8800, 
+        stock: true, 
+        mainImg: "images/6kw-hv-srne1.png", 
+        thumbnails: [], 
+        description: "Single-Phase Off-grid Solar Storage Inverter □ SRNE 15 years in PV industry, committed to independent R&D and production. □ Holds over 200 patents in energy storage, with unique industry- leading technologies. □ Chooses top-quality international components to deliver high-value products to customers. □ Upholds values of customer priority, proactivity, responsibility, and innovative breakthroughs. □ Advanced MPPT technology with up to 99.9% efficiency □ Up to 6 units in parallel for 36kW □ Time-slot function to save cost with peak-valley □ Off-grid/without battery output mode □ Aesthetically industrial design appearance □ Support BMS communication", 
+        specs: ["Model -- HYP4860S100-H", "Rated Output Power -- 6,200W", "Max. Output Power -- 12,400VA", "Rated Output Voltage -- 230Vac (L/N/PE, Single-Phase)",
+            "Rated AC Frequency -- 50/60Hz", "Pure sine wave", "Switch Time -- 10ms (typical)"],     
+        whatsappMsg: "SRNE Hybrid Inverter 6kW HV" },
+
+        {
+    id: "p10",
+    name: "2p din Smart Voltage and Current protection Meter",
+    category: "Protective Devices",
+    price: 300,
+    stock: true,
+    mainImg: "images/smart-meter1.png",
+    thumbnails: [
+        "images/smart-meter2.png"
+    ],
+    description: "Tuya WiFi 8in1 Power Meter 2P AC Energy Meter APP Control 170-270V/63A Voltage and Current Meter Electricity Meter Smart Life",
+    specs: [
+        "Support over-voltage, under-voltage, over-current, over-power, over-temperature, timer power failure protections setting, and screen hibernation setting"
+    ],
+    whatsappMsg: "2p 63A smart voltage protector"
+},
+
+    ];
+
+    // Pagination settings
+    const ITEMS_PER_PAGE = 12;
+    let currentPage = 1;
+    let currentSearchTerm = "";
+    let currentCategory = "All";
+    let currentSort = "default";
+    let currentStock = "all";
+    let currentMaxPrice = "";
+    let currentWishlistOnly = false;
+
+    const wishlistKey = "ev_wishlist_v1";
+    function getWishlist() { try { return JSON.parse(localStorage.getItem(wishlistKey) || "[]"); } catch (e) { return []; } }
+    function setWishlist(items) { localStorage.setItem(wishlistKey, JSON.stringify(items)); }
+
+    function formatPrice(n) {
+        return Number(n || 0).toLocaleString('en-GH', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    function getPricePresentation(product) {
+        const currentPrice = Number(product.price) || 0;
+        const compareAtPrice = Number(product.compareAtPrice) || 0;
+        const isDiscounted = currentPrice > 0 && compareAtPrice > currentPrice;
+        const savingsPercent = isDiscounted ? Math.round((compareAtPrice - currentPrice) / compareAtPrice * 100) : 0;
+        const promotionLabel = String(product.promotionLabel || (isDiscounted ? 'Sale' : '')).trim();
+        return { currentPrice, compareAtPrice, isDiscounted, savingsPercent, promotionLabel };
+    }
+
+    function renderPriceMarkup(product) {
+        const price = getPricePresentation(product);
+        return `${price.isDiscounted ? `<span class="price-before">Was GH₵ ${formatPrice(price.compareAtPrice)}</span>` : ''}` +
+            `<span class="price-current">GH₵ ${formatPrice(price.currentPrice)}</span>` +
+            `${price.isDiscounted && price.savingsPercent > 0 ? `<span class="discount-badge">Save ${price.savingsPercent}%</span>` : ''}` +
+            `${price.promotionLabel ? `<span class="promotion-label">${escapeHtml(price.promotionLabel)}</span>` : ''}`;
+    }
+
+    function renderProductPagePrice() {
+        const productInfo = window.EV_PRODUCT;
+        const priceElement = document.querySelector('[data-product-price]');
+        if (!productInfo || !priceElement) return;
+        const product = productsData.find(item => item.id === productInfo.id);
+        if (!product) return;
+        const price = getPricePresentation(product);
+        priceElement.classList.toggle('is-discounted', price.isDiscounted);
+        priceElement.innerHTML = renderPriceMarkup(product);
+    }
+
+    // Generic Meta Pixel event helper. Works immediately once the Meta Pixel
+    // ID is set (see META-COMMERCE-SETUP.txt); otherwise events are queued
+    // locally so nothing errors and they can still be inspected for testing.
+    function trackMetaEvent(eventName, payload) {
+        if (typeof window.fbq === "function") {
+            window.fbq("track", eventName, payload);
+        } else {
+            window._eliteVoltMetaEvents = window._eliteVoltMetaEvents || [];
+            window._eliteVoltMetaEvents.push({ event: eventName, payload, timestamp: Date.now() });
+        }
+        window.dispatchEvent(new CustomEvent("elitevolt:" + eventName.toLowerCase(), { detail: payload }));
+    }
+
+    function trackMetaAddToCart(product, quantity = 1) {
+        trackMetaEvent("AddToCart", {
+            content_ids: [product.id],
+            content_name: product.name,
+            content_type: "product",
+            value: Number(product.price) * quantity,
+            currency: "GHS",
+            contents: [{ id: product.id, quantity }]
+        });
+    }
+
+    function trackMetaCheckout(items, total) {
+        trackMetaEvent("InitiateCheckout", {
+            content_ids: items.map(i => i.id),
+            content_type: "product",
+            value: total,
+            currency: "GHS",
+            num_items: items.reduce((sum, i) => sum + i.quantity, 0),
+            contents: items.map(i => ({ id: i.id, quantity: i.quantity }))
+        });
+    }
+
+    // Cart state
+    let cart = [];
+    function loadCart() { const s = localStorage.getItem("ev_cart_v4"); if(s) { try { cart = JSON.parse(s); } catch(e) { cart = []; } } else cart = []; validateCart(); updateAllUI(); }
+    function saveCart() { localStorage.setItem("ev_cart_v4", JSON.stringify(cart)); }
+    function validateCart() {
+        let changed = false;
+        cart = cart.filter(item => {
+            const product = productsData.find(entry => entry.id === item.id);
+            if (!product || !product.stock) { changed = true; return false; }
+            if (Number(item.price) !== Number(product.price) || item.name !== product.name) {
+                item.price = product.price;
+                item.name = product.name;
+                changed = true;
+            }
+            return true;
+        });
+        if (changed) saveCart();
+    }
+
+    function addToCart(productId) { 
+        const p = productsData.find(pr=> pr.id === productId); 
+        if(!p) return; 
+        if(!p.stock) { alert(`❌ ${p.name} out of stock`); return; } 
+        const exist = cart.find(i=> i.id === productId); 
+        if(exist) exist.quantity += 1; 
+        else cart.push({ id: p.id, name: p.name, price: p.price, quantity: 1 }); 
+        saveCart(); 
+        updateAllUI(); 
+        trackMetaAddToCart(p, 1);
+        showToast(`✓ ${p.name} added`);
+    }
+    function changeQuantity(id, delta) { 
+        const idx = cart.findIndex(i=> i.id === id); 
+        if(idx !== -1) { 
+            const prodValid = productsData.find(p=> p.id === id && p.stock === true); 
+            if(delta > 0 && !prodValid) { cart.splice(idx,1); saveCart(); updateAllUI(); showToast("Removed unavailable"); return; } 
+            const newQ = cart[idx].quantity + delta; 
+            if(newQ <= 0) cart.splice(idx,1); 
+            else cart[idx].quantity = newQ; 
+            saveCart(); 
+            updateAllUI(); 
+        } 
+    }
+
+    function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    saveCart();
+    updateAllUI();
+    showToast("Item removed");
+}
+    function clearCart() { if(cart.length===0) return; if(confirm("Clear all items?")) { cart = []; saveCart(); updateAllUI(); showToast("Cart cleared"); } }
+
+    // Get filtered products based on search
+  function getFilteredProducts() {
+    const term = currentSearchTerm.toLowerCase().trim();
+    let filtered = productsData.filter(product => {
+        const searchable = [
+            product.name, product.category, product.description,
+            ...(product.specs || [])
+        ].join(" ").toLowerCase();
+        const matchesSearch = !term || searchable.includes(term);
+        const matchesCategory = currentCategory === "All" || product.category === currentCategory;
+        const matchesStock = currentStock === "all" || (currentStock === "in" ? product.stock : !product.stock);
+        const maxPrice = Number(currentMaxPrice);
+        const matchesPrice = !currentMaxPrice || (!Number.isNaN(maxPrice) && Number(product.price) <= maxPrice);
+        const matchesWishlist = !currentWishlistOnly || getWishlist().includes(product.id);
+        return matchesSearch && matchesCategory && matchesStock && matchesPrice && matchesWishlist;
+    });
+
+    filtered.sort((a,b) => {
+        if (currentSort === "price-asc") return Number(a.price) - Number(b.price);
+        if (currentSort === "price-desc") return Number(b.price) - Number(a.price);
+        if (currentSort === "name") return a.name.localeCompare(b.name);
+        if (currentSort === "stock") return Number(b.stock) - Number(a.stock);
+        return Number(String(a.id).replace(/\D/g, "")) - Number(String(b.id).replace(/\D/g, ""));
+    });
+    return filtered;
+  }
+
+    // Pagination logic
+    function getPaginatedProducts() {
+        const filtered = getFilteredProducts();
+        const start = (currentPage - 1) * ITEMS_PER_PAGE;
+        return filtered.slice(start, start + ITEMS_PER_PAGE);
+    }
+
+    function getTotalPages() {
+        const filtered = getFilteredProducts();
+        return Math.ceil(filtered.length / ITEMS_PER_PAGE);
+    }
+
+    function slugify(text) {
+        return String(text).toLowerCase().trim()
+            .replace(/[^a-z0-9\s-]/g, "")
+            .replace(/\s+/g, "-")
+            .replace(/-+/g, "-");
+    }
+
+    function paintWishlist() {
+        const wishes = getWishlist();
+        document.querySelectorAll("[data-wish]").forEach(btn => {
+            const active = wishes.includes(btn.dataset.wish);
+            btn.classList.toggle("active", active);
+            btn.setAttribute("aria-pressed", active ? "true" : "false");
+            if (btn.classList.contains("product-wishlist")) {
+                btn.textContent = active ? "♥ Saved to wishlist" : "♡ Save to wishlist";
+            } else {
+                btn.textContent = active ? "♥" : "♡";
+            }
+            btn.setAttribute("aria-label", active ? "Remove from wishlist" : "Add to wishlist");
+        });
+    }
+
+    function toggleWishlist(id) {
+        const items = getWishlist();
+        const index = items.indexOf(id);
+        if (index >= 0) items.splice(index, 1); else items.push(id);
+        setWishlist(items);
+        paintWishlist();
+    }
+
+    function renderProducts() {
+        const container = document.getElementById('productsGrid');
+        if(!container) return;
+        const paginated = getPaginatedProducts();
+        const totalPages = getTotalPages();
+        
+        if(paginated.length === 0) {
+            const emptyMsg = currentWishlistOnly
+                ? '<div style="grid-column:1/-1; text-align:center; padding:2rem;">♡ Your wishlist is empty. Tap the heart on any product to save it here.</div>'
+                : '<div style="grid-column:1/-1; text-align:center; padding:2rem;">🔍 No products found</div>';
+            container.innerHTML = emptyMsg;
+            const pagination = document.getElementById('paginationControls');
+            if (pagination) pagination.innerHTML = '';
+            return;
+        }
+        
+        container.innerHTML = paginated.map(p => `
+            <div class="product-card">
+                ${!p.stock ? '<div class="out-of-stock-badge">OUT OF STOCK</div>' : ''}
+                <a href="products/${slugify(p.name)}.html" class="product-image-link"><img class="product-image" src="${escapeHtml(p.mainImg)}" alt="${escapeHtml(p.name)}" loading="lazy" decoding="async"></a>
+                <div class="product-title-row">
+                    <div class="product-title">${escapeHtml(p.name)}</div>
+                    <button class="wishlist-btn" type="button" data-wish="${p.id}" aria-label="Add ${escapeHtml(p.name)} to wishlist" aria-pressed="false">♡</button>
+                </div>
+                <div class="product-price ${getPricePresentation(p).isDiscounted ? 'is-discounted' : ''}">${renderPriceMarkup(p)}</div>
+                <div class="product-card-actions">
+                    <a class="btn-details product-page-link" href="products/${slugify(p.name)}.html" aria-label="View details for ${escapeHtml(p.name)}"><i class="fas fa-eye"></i> Details</a>
+                    <button class="btn-add" ${!p.stock ? 'disabled' : ''} onclick="addToCart('${p.id}')">${p.stock ? 'Add to cart' : 'Out of stock'}</button>
+                </div>
+            </div>
+        `).join('');
+        
+        // Render pagination buttons
+        renderPagination(totalPages);
+        paintWishlist();
+    }
+    
+    function renderPagination(totalPages) {
+        const container = document.getElementById('paginationControls');
+        if(!container) return;
+        if(totalPages <= 1) {
+            container.innerHTML = '';
+            return;
+        }
+        let html = `<button class="page-btn" onclick="goToPage(${currentPage-1})" ${currentPage===1 ? 'disabled' : ''}>‹ Prev</button>`;
+        for(let i=1; i<=totalPages; i++) {
+            if(i===1 || i===totalPages || (i>=currentPage-1 && i<=currentPage+1)) {
+                html += `<button class="page-btn ${i===currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+            } else if(i===currentPage-2 || i===currentPage+2) {
+                html += `<span style="padding:0 4px;">...</span>`;
+            }
+        }
+        html += `<button class="page-btn" onclick="goToPage(${currentPage+1})" ${currentPage===totalPages ? 'disabled' : ''}>Next ›</button>`;
+        container.innerHTML = html;
+    }
+    
+    function goToPage(page) {
+        const total = getTotalPages();
+        if(page < 1 || page > total) return;
+        currentPage = page;
+        renderProducts();
+        // scroll to top of products
+        document.querySelector('.products-wrapper')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    function updateAllUI() {
+        renderProducts();
+        updateCartDrawer();
+        updateDesktopCartPanel();
+        updateCartBadge();
+    }
+    
+    function updateCartBadge() {
+        const badge = document.getElementById('cartItemCount');
+        if(!badge) return;
+        const totalItems = cart.reduce((sum,i)=> sum + i.quantity, 0);
+        if(totalItems>0) { badge.style.display = 'flex'; badge.innerText = totalItems>99 ? '99+' : totalItems; }
+        else badge.style.display = 'none';
+    }
+    
+    function updateCartDrawer() {
+        const container = document.getElementById('drawerCartContent');
+        if(!container) return;
+        if(cart.length===0) { container.innerHTML = '<div class="empty-cart-message">🛒 Your cart is empty</div>'; return; }
+        let html = '<ul class="cart-items-list">';
+        let total=0;
+        cart.forEach(item=> {
+            const prod = productsData.find(p=>p.id===item.id);
+            const avail = prod && prod.stock;
+            if(!avail) return;
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+            html += `<li class="cart-item-drawer">
+                        <div class="cart-item-info">
+                            <strong>${escapeHtml(item.name)}</strong><br>
+                            <small>GH₵ ${formatPrice(item.price)}</small>
+                        </div>
+                        <div class="cart-item-controls">
+    <button onclick="changeQuantity('${item.id}',-1)">-</button>
+    <span>${item.quantity}</span>
+    <button onclick="changeQuantity('${item.id}',1)">+</button>
+
+    <button class="remove-item-btn"
+        onclick="removeFromCart('${item.id}')">
+        ×
+    </button>
+</div>
+                    </li>`;
+        });
+
+        html += `</ul><div class="drawer-total">Total: GH₵ ${formatPrice(total)}</div>
+                <div class="drawer-buttons">
+                    <button class="clear-cart-btn-sm" onclick="clearCart()">🗑 Clear Cart</button>
+                    <button class="btn-whatsapp" onclick="checkoutWhatsApp()">💬 WhatsApp Order</button>
+                    <button class="btn-email" onclick="checkoutEmail()">✉️ Email Order</button>
+                </div>
+                <div class="cart-note-drawer"><i class="fas fa-info-circle"></i> Unavailable items auto-removed</div>`;
+        container.innerHTML = html;
+    }
+    
+    function updateDesktopCartPanel() {
+        const cont = document.getElementById('desktopCartContent');
+        if(!cont) return;
+        if(cart.length===0) { cont.innerHTML = '<p style="padding:1rem; text-align:center;">Cart empty</p>'; document.getElementById('desktopTotal').innerText='0.00'; return; }
+        let html = '<ul style="list-style:none; max-height:300px; overflow:auto;">';
+        let total=0;
+        cart.forEach(item=> {
+            const prod = productsData.find(p=>p.id===item.id);
+            if(!prod||!prod.stock) return;
+            total += item.price*item.quantity;
+           html += `<li style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #eee;">
+    <span>
+        <strong>${escapeHtml(item.name)}</strong>
+        x${item.quantity}
+    </span>
+
+    <div style="display:flex; gap:8px; align-items:center;">
+        <span>
+            GH₵ ${formatPrice(item.price*item.quantity)}
+        </span>
+
+        <button class="remove-item-btn"
+            onclick="removeFromCart('${item.id}')">
+            ×
+        </button>
+    </div>
+
+</li>`;
+
+        });
+
+        html += '</ul>';
+        cont.innerHTML = html;
+        document.getElementById('desktopTotal').innerText = formatPrice(total);
+    }
+    
+    function buildOrderMsg() {
+        const avail = cart.filter(item=> productsData.find(p=>p.id===item.id && p.stock));
+        if(avail.length===0) return null;
+        let msg = "🛒 *NEW ORDER*\n---------------------------\n";
+        let total=0;
+        avail.forEach((item,i)=>{ const cost=item.price*item.quantity; total+=cost; msg+=`${i+1}. ${item.name} x${item.quantity} - GH₵ ${formatPrice(cost)}\n`; });
+        msg+=`---------------------------\n💰 Total: GH₵ ${formatPrice(total)}\nPlease process my order.`;
+        return { text: msg, items: avail, total };
+    }
+    function checkoutWhatsApp() {
+        const order = buildOrderMsg();
+        if(!order) { alert("No available items in cart"); return; }
+        trackMetaCheckout(order.items, order.total);
+        window.open(`https://wa.me/233249976762?text=${encodeURIComponent(order.text)}`,'_blank');
+    }
+    function checkoutEmail() {
+        const order = buildOrderMsg();
+        if(!order) { alert("No available items in cart"); return; }
+        trackMetaCheckout(order.items, order.total);
+        window.location.href = `mailto:info@elitevoltsystems.com?subject=Order&body=${encodeURIComponent(order.text)}`;
+    }
+    
+    function showToast(msg) {
+        const t = document.createElement('div');
+        t.innerText = msg;
+        t.style.position='fixed'; t.style.bottom='90px'; t.style.left='50%'; t.style.transform='translateX(-50%)';
+        t.style.background='#0b2b26'; t.style.color='white'; t.style.padding='6px 16px'; t.style.borderRadius='40px';
+        t.style.fontSize='0.75rem'; t.style.zIndex='1400';
+        document.body.appendChild(t);
+        setTimeout(()=>t.remove(),1800);
+    }
+    function escapeHtml(str) {
+        return String(str).replace(/[&<>"']/g, char => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        })[char]);
+    }
+    
+    // Drawer controls
+    function openDrawer() {
+        const drawer = document.getElementById('cartDrawer');
+        const overlay = document.getElementById('drawerOverlay');
+        if (!drawer || !overlay) return;
+        drawer.classList.add('open');
+        drawer.setAttribute('aria-hidden', 'false');
+        overlay.classList.add('active');
+        document.getElementById('floatingCartBtn')?.setAttribute('aria-expanded', 'true');
+        document.getElementById('closeDrawerBtn')?.focus();
+    }
+    function closeDrawer() {
+        const drawer = document.getElementById('cartDrawer');
+        const overlay = document.getElementById('drawerOverlay');
+        if (!drawer || !overlay) return;
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden', 'true');
+        overlay.classList.remove('active');
+        const cartButton = document.getElementById('floatingCartBtn');
+        cartButton?.setAttribute('aria-expanded', 'false');
+        if (cartButton && cartButton.getAttribute('aria-hidden') !== 'true') cartButton.focus();
+    }
+    
+    // Event listeners
+    document.getElementById('floatingCartBtn')?.addEventListener('click', openDrawer);
+    document.getElementById('closeDrawerBtn')?.addEventListener('click', closeDrawer);
+    document.getElementById('drawerOverlay')?.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.getElementById('cartDrawer')?.classList.contains('open')) closeDrawer(); });
+    const floatingCart = document.getElementById('floatingCartBtn');
+    const siteFooter = document.querySelector('.site-footer');
+    if (floatingCart && siteFooter && 'IntersectionObserver' in window) {
+        new IntersectionObserver(entries => {
+            const footerVisible = entries.some(entry => entry.isIntersecting);
+            floatingCart.classList.toggle('near-footer', footerVisible);
+            floatingCart.setAttribute('aria-hidden', String(footerVisible));
+        }, { rootMargin: '0px 0px -24px 0px' }).observe(siteFooter);
+    }
+    
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const clearBtn = document.getElementById('clearSearchBtn');
+    const runSearch = () => {
+        currentSearchTerm = (searchInput?.value || '').trim();
+        currentPage = 1;
+        renderProducts();
+    };
+    searchInput?.addEventListener('input', (e) => { currentSearchTerm = e.target.value; currentPage = 1; renderProducts(); });
+    searchInput?.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); runSearch(); } });
+    searchBtn?.addEventListener('click', runSearch);
+    clearBtn?.addEventListener('click', () => {
+        if (!searchInput) return;
+        searchInput.value = '';
+        currentSearchTerm = '';
+        currentPage = 1;
+        renderProducts();
+        searchInput.focus();
+    });
+    document.getElementById('clearCartDesktopBtn')?.addEventListener('click', clearCart);
+    document.getElementById('desktopWhatsapp')?.addEventListener('click', checkoutWhatsApp);
+    document.getElementById('desktopEmail')?.addEventListener('click', checkoutEmail);
+
+    const categoryFilter = document.getElementById("categoryFilter");
+    const sortFilter = document.getElementById("sortProducts");
+    const stockFilter = document.getElementById("stockFilter");
+    const maxPriceFilter = document.getElementById("maxPriceFilter");
+
+    const wishlistToggleBtn = document.getElementById("wishlistToggleBtn");
+
+    categoryFilter?.addEventListener("change", function() { currentCategory = this.value; currentPage = 1; renderProducts(); });
+    sortFilter?.addEventListener("change", function() { currentSort = this.value; currentPage = 1; renderProducts(); });
+    stockFilter?.addEventListener("change", function() { currentStock = this.value; currentPage = 1; renderProducts(); });
+    maxPriceFilter?.addEventListener("input", function() { currentMaxPrice = this.value; currentPage = 1; renderProducts(); });
+    wishlistToggleBtn?.addEventListener("click", function() {
+        currentWishlistOnly = !currentWishlistOnly;
+        this.classList.toggle("active", currentWishlistOnly);
+        this.setAttribute("aria-pressed", currentWishlistOnly ? "true" : "false");
+        this.innerHTML = currentWishlistOnly ? '<i class="fas fa-heart"></i> Showing wishlist' : '<i class="far fa-heart"></i> Wishlist';
+        currentPage = 1;
+        renderProducts();
+    });
+    document.addEventListener("click", function(e) {
+        const wishlistButton = e.target.closest("[data-wish]");
+        if (wishlistButton) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleWishlist(wishlistButton.dataset.wish);
+            return;
+        }
+        const addButton = e.target.closest("[data-product-add]");
+        if (addButton) {
+            e.preventDefault();
+            addToCart(addButton.dataset.productAdd);
+        }
+    });
+    
+    window.addToCart = addToCart; window.changeQuantity = changeQuantity; window.clearCart = clearCart;
+    window.removeFromCart = removeFromCart;
+    window.checkoutWhatsApp = checkoutWhatsApp; window.checkoutEmail = checkoutEmail;
+    window.goToPage = goToPage;
+    window.toggleWishlist = toggleWishlist;
+    
+    renderProductPagePrice();
+    loadCart();
+    paintWishlist();
