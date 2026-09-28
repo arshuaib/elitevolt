@@ -97,21 +97,26 @@
         price: 8800, 
         stock: true, 
         mainImg: "images/6kw-hv-srne1.png", 
-        thumbnails: ["images/6kw-hv-srne1.png"], 
+        thumbnails: [], 
         description: "Single-Phase Off-grid Solar Storage Inverter □ SRNE 15 years in PV industry, committed to independent R&D and production. □ Holds over 200 patents in energy storage, with unique industry- leading technologies. □ Chooses top-quality international components to deliver high-value products to customers. □ Upholds values of customer priority, proactivity, responsibility, and innovative breakthroughs. □ Advanced MPPT technology with up to 99.9% efficiency □ Up to 6 units in parallel for 36kW □ Time-slot function to save cost with peak-valley □ Off-grid/without battery output mode □ Aesthetically industrial design appearance □ Support BMS communication", 
         specs: ["Model -- HYP4860S100-H", "Rated Output Power -- 6,200W", "Max. Output Power -- 12,400VA", "Rated Output Voltage -- 230Vac (L/N/PE, Single-Phase)",
             "Rated AC Frequency -- 50/60Hz", "Pure sine wave", "Switch Time -- 10ms (typical)"],     
         whatsappMsg: "SRNE Hybrid Inverter 6kW HV" },
 
-        {id: "p10",
+        {
+    id: "p10",
     name: "2p din Smart Voltage and Current protection Meter",
     category: "Protective Devices",
     price: 300,
     stock: true,
     mainImg: "images/smart-meter1.png",
-    thumbnails: ["images/smart-meter2.png"],
+    thumbnails: [
+        "images/smart-meter2.png"
+    ],
     description: "Tuya WiFi 8in1 Power Meter 2P AC Energy Meter APP Control 170-270V/63A Voltage and Current Meter Electricity Meter Smart Life",
-    specs: ["Support over-voltage, under-voltage, over-current, over-power, over-temperature, timer power failure protections setting, and screen hibernation setting"],
+    specs: [
+        "Support over-voltage, under-voltage, over-current, over-power, over-temperature, timer power failure protections setting, and screen hibernation setting"
+    ],
     whatsappMsg: "2p 63A smart voltage protector"
 },
 
