@@ -1,9 +1,12 @@
 
     // PRODUCT DATABASE 
+    // Optional verified offer fields: compareAtPrice (regular price) and promotionLabel. Keep price as the customer pays.
     const productsData = [
         { id: "p1", name: "M600X Solar Kit",
             category: "Solar Kits",
             price: 1400,
+            compareAtPrice: 1500,
+            promotionLabel: "Limited Offer",
             stock: true, 
         mainImg: "images/M600X.jpeg",
         thumbnails: ["images/M600X-2.jpeg","images/M600X-3.jpg"], 
@@ -137,6 +140,34 @@
         return Number(n || 0).toLocaleString('en-GH', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
 
+    function getPricePresentation(product) {
+        const currentPrice = Number(product.price) || 0;
+        const compareAtPrice = Number(product.compareAtPrice) || 0;
+        const isDiscounted = currentPrice > 0 && compareAtPrice > currentPrice;
+        const savingsPercent = isDiscounted ? Math.round((compareAtPrice - currentPrice) / compareAtPrice * 100) : 0;
+        const promotionLabel = String(product.promotionLabel || (isDiscounted ? 'Sale' : '')).trim();
+        return { currentPrice, compareAtPrice, isDiscounted, savingsPercent, promotionLabel };
+    }
+
+    function renderPriceMarkup(product) {
+        const price = getPricePresentation(product);
+        return `${price.isDiscounted ? `<span class="price-before">Was GH₵ ${formatPrice(price.compareAtPrice)}</span>` : ''}` +
+            `<span class="price-current">GH₵ ${formatPrice(price.currentPrice)}</span>` +
+            `${price.isDiscounted && price.savingsPercent > 0 ? `<span class="discount-badge">Save ${price.savingsPercent}%</span>` : ''}` +
+            `${price.promotionLabel ? `<span class="promotion-label">${escapeHtml(price.promotionLabel)}</span>` : ''}`;
+    }
+
+    function renderProductPagePrice() {
+        const productInfo = window.EV_PRODUCT;
+        const priceElement = document.querySelector('[data-product-price]');
+        if (!productInfo || !priceElement) return;
+        const product = productsData.find(item => item.id === productInfo.id);
+        if (!product) return;
+        const price = getPricePresentation(product);
+        priceElement.classList.toggle('is-discounted', price.isDiscounted);
+        priceElement.innerHTML = renderPriceMarkup(product);
+    }
+
     // Generic Meta Pixel event helper. Works immediately once the Meta Pixel
     // ID is set (see META-COMMERCE-SETUP.txt); otherwise events are queued
     // locally so nothing errors and they can still be inspected for testing.
@@ -176,7 +207,20 @@
     let cart = [];
     function loadCart() { const s = localStorage.getItem("ev_cart_v4"); if(s) { try { cart = JSON.parse(s); } catch(e) { cart = []; } } else cart = []; validateCart(); updateAllUI(); }
     function saveCart() { localStorage.setItem("ev_cart_v4", JSON.stringify(cart)); }
-    function validateCart() { let changed = false; cart = cart.filter(item => { const p = productsData.find(pr=> pr.id === item.id); if(!p || !p.stock) { changed=true; return false; } return true; }); if(changed) saveCart(); }
+    function validateCart() {
+        let changed = false;
+        cart = cart.filter(item => {
+            const product = productsData.find(entry => entry.id === item.id);
+            if (!product || !product.stock) { changed = true; return false; }
+            if (Number(item.price) !== Number(product.price) || item.name !== product.name) {
+                item.price = product.price;
+                item.name = product.name;
+                changed = true;
+            }
+            return true;
+        });
+        if (changed) saveCart();
+    }
 
     function addToCart(productId) { 
         const p = productsData.find(pr=> pr.id === productId); 
@@ -304,7 +348,7 @@
                     <div class="product-title">${escapeHtml(p.name)}</div>
                     <button class="wishlist-btn" type="button" data-wish="${p.id}" aria-label="Add ${escapeHtml(p.name)} to wishlist" aria-pressed="false">♡</button>
                 </div>
-                <div class="product-price">GH₵ ${formatPrice(p.price)}</div>
+                <div class="product-price ${getPricePresentation(p).isDiscounted ? 'is-discounted' : ''}">${renderPriceMarkup(p)}</div>
                 <div class="product-card-actions">
                     <a class="btn-details product-page-link" href="products/${slugify(p.name)}.html" aria-label="View details for ${escapeHtml(p.name)}"><i class="fas fa-eye"></i> Details</a>
                     <button class="btn-add" ${!p.stock ? 'disabled' : ''} onclick="addToCart('${p.id}')">${p.stock ? 'Add to cart' : 'Out of stock'}</button>
@@ -578,5 +622,6 @@
     window.goToPage = goToPage;
     window.toggleWishlist = toggleWishlist;
     
+    renderProductPagePrice();
     loadCart();
     paintWishlist();
