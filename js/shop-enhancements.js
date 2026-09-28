@@ -13,16 +13,7 @@
     try {
       if (typeof productsData === 'undefined') return;
 
-      /* The current 6kW HV listing contains an unrelated sneaker image.
-         Remove that thumbnail rather than showing an unrelated product photo. */
-      var p9 = productsData.find(function (p) { return p.id === 'p9'; });
-      if (p9) {
-        p9.description = cleanText(p9.description);
-        p9.specs = (p9.specs || []).map(cleanText);
-        p9.thumbnails = (p9.thumbnails || []).filter(function (src) {
-          return !/unsplash\.com/i.test(String(src));
-        });
-      }
+     
 
       productsData.forEach(function (p) {
         p.description = cleanText(p.description);
