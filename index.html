@@ -40,9 +40,10 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
     <link rel="stylesheet" href="css/site-global.css">
+  <link rel="stylesheet" href="css/home-redesign.css">
 <script defer src="js/site-nav.js"></script>
 </head>
-<body>
+<body class="home-page">
 
 <nav class="navbar">
   <div class="nav-container">
@@ -53,157 +54,37 @@
     <div class="nav-links">
       <a href="#home"><i class="fas fa-solar-panel"></i> Home</a>
       <a href="shop.html"><i class="fas fa-leaf"></i> Shop</a>
-      <a href="#calculator"><i class="fas fa-calculator"></i> Load Calc</a>
+      <a href="calculator.html"><i class="fas fa-calculator"></i> Solar Calculator</a>
       <a href="#services"><i class="fas fa-tools"></i> Services</a>
       <a href="blog/index.html"><i class="fas fa-blog"></i> Blog</a>
     </div>
   </div>
 </nav>
 
-<main>
-  <section class="container seo-intro" aria-labelledby="about-elitevolt">
-    <h1 id="about-elitevolt">Solar Installation & Electrical Services in Ghana</h1>
-    <p>EliteVolt Systems supplies and installs solar power systems, hybrid and off-grid inverters, batteries, solar lighting and electrical solutions for homes, businesses and projects in Ghana.</p>
-    <p>Explore our solar and electrical products, use our solar system calculator, or contact us for a site survey and installation quotation.</p>
+<main class="home-main">
+  <section class="home-hero container" id="home" aria-labelledby="home-title">
+    <div class="home-hero-copy">
+      <span class="home-eyebrow"><i class="fas fa-sun" aria-hidden="true"></i> Solar and electrical solutions in Ghana</span>
+      <h1 id="home-title">Reliable power, designed around your needs.</h1>
+      <p>Plan a solar system for your home or business, explore trusted products, and get practical support from consultation through installation.</p>
+      <div class="home-hero-actions"><a class="home-button home-button-primary" href="calculator.html"><i class="fas fa-calculator" aria-hidden="true"></i> Design your solar system</a><a class="home-button home-button-light" href="shop.html"><i class="fas fa-store" aria-hidden="true"></i> Browse solar products</a></div>
+      <a class="home-contact-link" href="https://wa.me/233249976762" target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> Talk to a solar specialist</a>
+      <div class="home-proof-points"><span><i class="fas fa-house-user" aria-hidden="true"></i> Homes and businesses</span><span><i class="fas fa-bolt" aria-hidden="true"></i> Solar and backup power</span></div>
+    </div>
+    <div class="home-hero-visual"><div class="hero-slider"><div class="swiper heroSwiper" aria-label="Solar products and installations"><div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/solar-panel.jpeg" alt="Solar panels installed for clean energy"></div><div class="swiper-slide"><img src="images/M600X.jpeg" alt="Portable solar home system"></div><div class="swiper-slide"><img src="images/inverter-12kw-srne.jpeg" alt="SRNE hybrid solar inverter"></div><div class="swiper-slide"><img src="images/Deye12kW.png" alt="Deye solar inverter"></div><div class="swiper-slide"><img src="images/lifepo-srne.jpeg" alt="Lithium battery storage for solar backup"></div>
+    </div><div class="swiper-pagination"></div></div></div><div class="home-visual-caption"><span class="caption-icon"><i class="fas fa-plug" aria-hidden="true"></i></span><span><strong>Power that works for you</strong><small>Thoughtful design and dependable support</small></span></div></div>
   </section>
-  <!-- Hero + Slider Section (home) -->
-  <div class="container" id="home">
-    <div class="hero">
-      <div class="hero-content">
-        <h2>About</h2>
-        <p>EliteVolt Systems provides professional electrical installations, solar energy installations, solar boreholes, power backup systems, electrical maintenance, and sales of electrical, electronic and solar products.</p>
-        <div class="btn-group">
-          <button class="btn-primary" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})"><i class="fas fa-calculator"></i> Calculate Your System</button>
-          <button class="btn-outline" onclick="window.open('https://wa.me/233249976762', '_blank')">
-    <i class="fab fa-whatsapp"></i> WhatsApp</button>
-    <button class="btn-outline" onclick="window.location.href='mailto:info@elitevoltsystems.com'">
-    <i class="fas fa-envelope"></i> Email Us
-</button>
-        </div>
-      </div>
-      <div class="hero-slider">
-        <div class="swiper heroSwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="images/logo.png" alt="Elitevolt Systems"></div>
-            <div class="swiper-slide"><img src="images/solar-panel.jpeg" alt="Solar Panels"></div>
-            <div class="swiper-slide"><img src="images/M600X.jpeg" alt="Pico Home Systems"></div>
-            <div class="swiper-slide"><img src="images/inverter-12kw-srne.jpeg" alt="SRNE Inverters"></div>
-            <div class="swiper-slide"><img src="images/Deye12kW.png" alt="Deye Inverters"></div>
-            <div class="swiper-slide"><img src="images/lifepo-srne.jpeg" alt="Lithium Battery"></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Benefits Section -->
-  <div class="container" id="benefits">
-    <div class="section-title">Why Go Solar with EliteVolt</div>
-    <div class="benefits-grid">
-      <div class="benefit-card"><i class="fas fa-sun"></i><h3>70% Energy Saving</h3><p>Slash electricity bills with high-efficiency solar panels.</p></div>
-      <div class="benefit-card"><i class="fas fa-battery-full"></i><h3>24/7 Backup</h3><p>Hybrid inverters & lithium batteries for night & grid outages.</p></div>
-      <div class="benefit-card"><i class="fas fa-leaf"></i><h3>Eco-Friendly</h3><p>Reduce carbon footprint & enjoy green tax benefits.</p></div>
-      <div class="benefit-card"><i class="fas fa-chart-line"></i><h3>5 to 10-Year Warranty</h3><p>Premium components with extended service plans.</p></div>
-    </div>
-  </div>
-
-  <!-- Solar Load Calculator + Table Input Section -->
-  <div class="container" id="calculator">
-    <div class="calc-section">
-      <h2 class="section-title" style="font-size:1.8rem; margin-bottom:1rem;">⚙️ Design Your Solar System</h2>
-      <p style="text-align:center; margin-bottom:1.5rem;">Set sunshine hours, autonomy and safety margins, then add appliance quantities, wattage and daily hours to size your solar array and battery bank.</p>
-
-      <section class="solar-sizing-controls" aria-labelledby="solarSizingSettingsTitle">
-        <h3 id="solarSizingSettingsTitle">System sizing settings</h3>
-        <p>Choose the site sunshine estimate, battery backup period and design margins used for the appliance calculation.</p>
-        <div class="sizing-input-grid">
-          <label for="sunshineHoursInput">Peak sunshine (hours/day)
-            <select id="sunshineHoursInput">
-              <option value="2.5">2.5</option><option value="3">3</option><option value="3.5">3.5</option><option value="4">4</option><option value="4.5">4.5</option><option value="5" selected>5</option><option value="5.5">5.5</option><option value="6">6</option><option value="6.5">6.5</option><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option>
-            </select>
-          </label>
-          <label for="backupDaysInput">Days of autonomy
-            <select id="backupDaysInput"><option value="0.5">0.5 day</option><option value="1" selected>1 day</option><option value="1.5">1.5 days</option><option value="2">2 days</option><option value="3">3 days</option></select>
-          </label>
-          <label for="pvMarginInput">PV safety margin
-            <select id="pvMarginInput"><option value="0">0%</option><option value="0.1">10%</option><option value="0.2">20%</option><option value="0.25" selected>25%</option><option value="0.3">30%</option><option value="0.4">40%</option></select>
-          </label>
-          <label for="loadMarginInput">Load / inverter safety margin
-            <select id="loadMarginInput"><option value="0">0%</option><option value="0.1">10%</option><option value="0.2">20%</option><option value="0.25" selected>25%</option><option value="0.3">30%</option><option value="0.4">40%</option></select>
-          </label>
-        </div>
-      </section>
-
-      <section class="energy-quick-calculator" aria-labelledby="energyQuickTitle">
-        <div class="energy-quick-heading">
-          <span class="quick-sizing-badge"><i class="fas fa-bolt" aria-hidden="true"></i> Quick estimate</span>
-          <h3 id="energyQuickTitle">Size from your electricity consumption</h3>
-          <p>Enter the kWh shown on your bill or meter and choose the period it covers.</p>
-        </div>
-        <div class="energy-quick-controls">
-          <label for="energyConsumptionInput">Energy used (kWh)
-            <input id="energyConsumptionInput" type="number" min="0.1" step="0.1" inputmode="decimal" placeholder="e.g. 120">
-          </label>
-          <label for="energyConsumptionPeriod">Consumption period
-            <select id="energyConsumptionPeriod">
-              <option value="1">Daily</option>
-              <option value="7">Weekly</option>
-              <option value="30" selected>Monthly (30 days)</option>
-              <option value="365">Yearly (365 days)</option>
-            </select>
-          </label>
-          <button type="button" class="btn-primary" id="calculateEnergyQuickBtn"><i class="fas fa-calculator" aria-hidden="true"></i> Calculate estimate</button>
-        </div>
-        <div class="energy-quick-results" id="energyQuickResults" aria-live="polite">
-          <div><span>Average daily use</span><strong id="energyQuickDaily">—</strong></div>
-          <div><span>Estimated running load</span><strong id="energyQuickLoad">—</strong></div>
-          <div><span>Recommended inverter</span><strong id="energyQuickInverter">—</strong></div>
-          <div><span>PV array target</span><strong id="energyQuickPv">—</strong></div>
-          <div><span>Battery bank</span><strong id="energyQuickBattery">—</strong></div>
-        </div>
-        <p class="energy-quick-note">Uses the sunshine, autonomy and safety margins selected above. Monthly and yearly values use 30 and 365 days. Running load is estimated from energy use; use the appliance list below for the combined wattage of your actual loads.</p>
-      </section>
-
-      <div class="appliance-table">
-        <table id="applianceTable">
-          <thead>
-            <tr><th>Appliance</th><th>Quantity</th><th>Wattage (W)</th><th>Hours/day</th><th style="width:80px">Action</th></tr>
-          </thead>
-          <tbody id="tableBody">
-            <!-- dynamic rows will be added, default rows shown -->
-          </tbody>
-        </table>
-        <button class="btn-primary" style="background:#3b5e3f; margin-top:0.5rem;" id="addRowBtn"><i class="fas fa-plus-circle"></i> Add Appliance</button>
-      </div>
-
-      <!-- Result area and estimation -->
-      <div class="result-area" id="resultArea">
-        <div class="result-text"><i class="fas fa-microchip"></i> <span id="estimationText">No appliances added yet. Add appliance quantities, wattage and daily hours to see total running load and system sizing.</span></div>
-        <div class="quote-buttons">
-          <button class="btn-wa" id="whatsappQuoteBtn"><i class="fab fa-whatsapp"></i> Request via WhatsApp</button>
-          <button class="btn-email" id="emailQuoteBtn"><i class="far fa-envelope"></i> Request via Email</button>
-        </div>
-      </div>
-      <p style="font-size:1rem; margin-top:0.5rem; color:#4b5563;"><i class="fas fa-info-circle"></i> Kindly note that quotation may vary from calculated results.</p>
-    </div>
-  </div>
-
-  <!-- Services and product sales -->
-  <div class="container" id="services">
-    <div class="section-title">Services</div>
-    <div class="services-row">
-      <a class="service-item" href="solar-installation-ghana.html"><i class="fas fa-solar-panel"></i> On-grid / Off-grid Solar</a>
-      <a class="service-item" href="ev-charger-installation-ghana.html"><i class="fas fa-charging-station"></i> EV Chargers</a>
-      <a class="service-item" href="smart-home-electrical-ghana.html"><i class="fas fa-lightbulb"></i> Smart Home Electrical</a>
-      <a class="service-item" href="solar-inverter-and-battery-solutions-ghana.html"><i class="fas fa-microchip"></i> Inverters & Lithium Batteries</a>
-      <a class="service-item" href="electrical-wiring-safety-ghana.html"><i class="fas fa-plug"></i> Complete Wiring & Safety</a>
-      <a class="service-item" href="shop.html"><i class="fas fa-tv"></i> Appliance Sales</a>
-    </div>
-    <div style="margin-top: 2.5rem; text-align:center;">
-      <p style="font-size:1.1rem;">🔋 EliteVolt provides end-to-end solution: consultation, installation, maintenance, and after-sales support. <strong>Get a free site survey today!</strong></p>
-    </div>
-  </div>
+  <section class="container home-benefits" id="benefits" aria-labelledby="benefits-title">
+    <div class="home-section-heading"><span class="home-eyebrow">Why EliteVolt</span><h2 class="section-title" id="benefits-title">Make every part of your power plan count</h2><p>Practical advice and carefully selected equipment help you build a system that fits your loads, usage and budget.</p></div>
+    <div class="benefits-grid"><article class="benefit-card"><i class="fas fa-sun" aria-hidden="true"></i><h3>Lower grid dependence</h3><p>Use high-efficiency solar panels to offset electricity use and plan for long-term savings.</p></article><article class="benefit-card"><i class="fas fa-battery-full" aria-hidden="true"></i><h3>Backup when you need it</h3><p>Pair hybrid inverters and battery storage with the loads that matter most.</p></article><article class="benefit-card"><i class="fas fa-leaf" aria-hidden="true"></i><h3>Cleaner energy</h3><p>Generate renewable power for homes, shops, offices and project sites.</p></article><article class="benefit-card"><i class="fas fa-screwdriver-wrench" aria-hidden="true"></i><h3>Support beyond supply</h3><p>Get help with planning, installation, maintenance and after-sales service.</p></article></div>
+  </section>
+  <section class="container home-calculator-cta" aria-labelledby="home-calculator-title"><div class="calculator-cta-icon"><i class="fas fa-calculator" aria-hidden="true"></i></div><div class="calculator-cta-copy"><span class="home-eyebrow">Start with your loads</span><h2 id="home-calculator-title">Find a sensible starting size for your solar system</h2><p>Enter appliances or electricity consumption, adjust sunshine hours and backup days, and review the estimated inverter, PV array and battery sizes.</p></div><a class="home-button home-button-primary" href="calculator.html">Open solar calculator <i class="fas fa-arrow-right" aria-hidden="true"></i></a></section>
+  <section class="container home-services" id="services" aria-labelledby="services-title">
+    <div class="home-section-heading"><span class="home-eyebrow">How we can help</span><h2 class="section-title" id="services-title">Solutions for your next project</h2><p>Choose a service to explore the details and find the right next step.</p></div>
+    <div class="services-row"><a class="service-item" href="solar-installation-ghana.html"><i class="fas fa-solar-panel" aria-hidden="true"></i><span>On-grid / Off-grid Solar</span><b>↗</b></a><a class="service-item" href="ev-charger-installation-ghana.html"><i class="fas fa-charging-station" aria-hidden="true"></i><span>EV Chargers</span><b>↗</b></a><a class="service-item" href="smart-home-electrical-ghana.html"><i class="fas fa-lightbulb" aria-hidden="true"></i><span>Smart Home Electrical</span><b>↗</b></a><a class="service-item" href="solar-inverter-and-battery-solutions-ghana.html"><i class="fas fa-microchip" aria-hidden="true"></i><span>Inverters &amp; Lithium Batteries</span><b>↗</b></a><a class="service-item" href="electrical-wiring-safety-ghana.html"><i class="fas fa-plug" aria-hidden="true"></i><span>Complete Wiring &amp; Safety</span><b>↗</b></a><a class="service-item" href="shop.html"><i class="fas fa-tv" aria-hidden="true"></i><span>Appliance Sales</span><b>↗</b></a></div>
+    <div class="home-service-note"><i class="fas fa-headset" aria-hidden="true"></i><p><strong>From first consultation to after-sales care.</strong> Get in touch to arrange a site survey and discuss your project.</p><a href="https://wa.me/233249976762" target="_blank" rel="noopener">Contact our team <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+  </section>
 </main>
 
 <section class="container seo-content" id="resources-heading" aria-labelledby="solar-services-ghana">
@@ -228,7 +109,7 @@
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="shop.html">Shop</a>
-        <a href="index.html#calculator">Load Calculator</a>
+        <a href="calculator.html">Solar Calculator</a>
         <a href="index.html#services">Services</a>
         <a href="blog/index.html">Blog</a>
       </div>
@@ -261,316 +142,7 @@
   </div>
 </footer>
 
-<script>
-  // ---------- Appliance Table Management ----------
-  let applianceRows = [];
-  
-  // Default initial appliances (refrigerator, lights, TV)
-  const defaultAppliances = [
-    { name: "Refrigerator", qty: 0, watt: 0, hours: 0 },
-    { name: "Lights ", qty: 0, watt:0, hours:  0 },
-    { name: "Air-conditioner", qty: 0, watt: 0, hours: 0 },
-    { name: "TV", qty: 0, watt:0, hours: 0 },
-    { name: "Fan", qty: 0, watt:0, hours: 0 }
-  ];
-
-  function renderTable() {
-    const tbody = document.getElementById('tableBody');
-    tbody.innerHTML = '';
-    applianceRows.forEach((item, idx) => {
-      const tr = document.createElement('tr');
-      // Appliance name input
-      const tdName = document.createElement('td');
-      const nameInput = document.createElement('input');
-      nameInput.type = 'text';
-      nameInput.value = item.name;
-      nameInput.placeholder = "Appliance";
-      nameInput.addEventListener('input', (e) => { applianceRows[idx].name = e.target.value; updateEstimation(); });
-      tdName.appendChild(nameInput);
-      
-      // Quantity
-      const tdQty = document.createElement('td');
-      const qtyInput = document.createElement('input');
-      qtyInput.type = 'number';
-      qtyInput.min = 0;
-      qtyInput.value = item.qty;
-      qtyInput.addEventListener('input', (e) => {
-        const raw = e.target.value.trim();
-        const val = raw === '' ? 0 : parseInt(raw, 10);
-        applianceRows[idx].qty = Number.isFinite(val) ? Math.max(0, val) : 0;
-        updateEstimation();
-      });
-      tdQty.appendChild(qtyInput);
-      
-      // Wattage
-      const tdWatt = document.createElement('td');
-      const wattInput = document.createElement('input');
-      wattInput.type = 'number';
-      wattInput.min = 0;
-      wattInput.step = 5;
-      wattInput.value = item.watt;
-      wattInput.addEventListener('input', (e) => { applianceRows[idx].watt = parseFloat(e.target.value) || 0; updateEstimation(); });
-      tdWatt.appendChild(wattInput);
-      
-      // Hours
-      const tdHours = document.createElement('td');
-      const hoursInput = document.createElement('input');
-      hoursInput.type = 'number';
-      hoursInput.min = 0;
-      hoursInput.step = 0.5;
-      hoursInput.value = item.hours;
-      hoursInput.addEventListener('input', (e) => { applianceRows[idx].hours = parseFloat(e.target.value) || 0; updateEstimation(); });
-      tdHours.appendChild(hoursInput);
-      
-      // Action remove button
-      const tdAction = document.createElement('td');
-      const removeBtn = document.createElement('button');
-      removeBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
-      removeBtn.classList.add('btn-icon');
-      removeBtn.style.background = '#b91c1c';
-      removeBtn.addEventListener('click', () => {
-        applianceRows.splice(idx, 1);
-        renderTable();
-        updateEstimation();
-      });
-      tdAction.appendChild(removeBtn);
-      
-      tr.appendChild(tdName);
-      tr.appendChild(tdQty);
-      tr.appendChild(tdWatt);
-      tr.appendChild(tdHours);
-      tr.appendChild(tdAction);
-      tbody.appendChild(tr);
-    });
-  }
-
-  // ---------- Shared solar sizing ----------
-  function getSizingSettings() {
-    return {
-      sunshineHours: Math.min(10, Math.max(1, Number(document.getElementById('sunshineHoursInput')?.value) || 5)),
-      backupDays: Math.max(0.5, Number(document.getElementById('backupDaysInput')?.value) || 1),
-      pvMargin: Math.max(0, Number(document.getElementById('pvMarginInput')?.value) || 0.25),
-      loadMargin: Math.max(0, Number(document.getElementById('loadMarginInput')?.value) || 0.25)
-    };
-  }
-
-  function roundUpInverter(kw) {
-    const ratings = [1, 1.5, 2, 3, 5, 6, 8, 10, 12, 15, 20, 25, 30];
-    const required = Math.max(0, Number(kw) || 0);
-    return ratings.find(rating => rating >= required) || Math.ceil(required / 5) * 5;
-  }
-
-  function roundUpPv(kwp) {
-    return Math.ceil((Math.max(0, kwp) - 1e-9) * 10) / 10;
-  }
-
-  function sizePvArray(dailyKwh, sunshineHours, pvMargin, inverterKw) {
-    // A 0.80 planning performance factor allows for ordinary system losses.
-    const energyTargetKwp = (dailyKwh / Math.max(1, sunshineHours) / 0.80) * (1 + pvMargin);
-    return roundUpPv(Math.max(energyTargetKwp, inverterKw));
-  }
-
-  function updateEnergyQuickSizing() {
-    const amountInput = document.getElementById('energyConsumptionInput');
-    const periodInput = document.getElementById('energyConsumptionPeriod');
-    const amount = Number(amountInput?.value) || 0;
-    const periodDays = Number(periodInput?.value) || 1;
-    const values = {
-      daily: document.getElementById('energyQuickDaily'),
-      load: document.getElementById('energyQuickLoad'),
-      inverter: document.getElementById('energyQuickInverter'),
-      pv: document.getElementById('energyQuickPv'),
-      battery: document.getElementById('energyQuickBattery')
-    };
-    if (!Object.values(values).every(Boolean)) return;
-    if (amount <= 0) {
-      Object.values(values).forEach(output => { output.textContent = '—'; });
-      return;
-    }
-
-    const dailyKwh = amount / periodDays;
-    const settings = getSizingSettings();
-    const estimatedRunningKw = dailyKwh / 5;
-    const inverterKw = roundUpInverter(estimatedRunningKw * (1 + settings.loadMargin));
-    const pvKwp = sizePvArray(dailyKwh, settings.sunshineHours, settings.pvMargin, inverterKw);
-    const batteryKwh = Math.ceil((dailyKwh * settings.backupDays / (0.80 * 0.92)) * 10) / 10;
-    values.daily.textContent = `${dailyKwh.toFixed(1)} kWh/day`;
-    values.load.textContent = `${estimatedRunningKw.toFixed(2)} kW (estimated)`;
-    values.inverter.textContent = `${inverterKw} kW`;
-    values.pv.textContent = `${pvKwp} kWp`;
-    values.battery.textContent = `${batteryKwh} kWh`;
-  }
-
-  function initEnergyQuickSizing() {
-    const amountInput = document.getElementById('energyConsumptionInput');
-    const periodInput = document.getElementById('energyConsumptionPeriod');
-    const calculateButton = document.getElementById('calculateEnergyQuickBtn');
-    if (!amountInput || !periodInput || !calculateButton) return;
-    calculateButton.addEventListener('click', updateEnergyQuickSizing);
-    amountInput.addEventListener('input', updateEnergyQuickSizing);
-    periodInput.addEventListener('change', updateEnergyQuickSizing);
-    amountInput.addEventListener('keydown', event => {
-      if (event.key === 'Enter') updateEnergyQuickSizing();
-    });
-  }
-
-  function computeSystem() {
-    let totalWh = 0;
-    let runningW = 0;
-    for (const app of applianceRows) {
-      runningW += Math.max(0, app.qty) * Math.max(0, app.watt);
-      totalWh += Math.max(0, app.qty) * Math.max(0, app.watt) * Math.max(0, app.hours);
-    }
-    const settings = getSizingSettings();
-    const totalDailyKwh = totalWh / 1000;
-    const runningKw = runningW / 1000;
-    const inverterKw = runningKw > 0 ? roundUpInverter(runningKw * (1 + settings.loadMargin)) : 0;
-    const solarKwp = totalDailyKwh > 0 ? sizePvArray(totalDailyKwh, settings.sunshineHours, settings.pvMargin, inverterKw) : 0;
-    const batteryKwh = totalDailyKwh > 0 ? Math.ceil((totalDailyKwh * settings.backupDays / (0.80 * 0.92)) * 10) / 10 : 0;
-    return {
-      totalDailyKwh: Math.round(totalDailyKwh * 10) / 10,
-      runningKw: Math.round(runningKw * 100) / 100,
-      inverterKw,
-      solarKwp,
-      batteryKwh,
-      sunshineHours: settings.sunshineHours,
-      backupDays: settings.backupDays,
-      pvMargin: settings.pvMargin,
-      loadMargin: settings.loadMargin,
-      totalWhRaw: totalWh
-    };
-  }
-  
-  function updateEstimation() {
-    const sizing = computeSystem();
-    const estSpan = document.getElementById('estimationText');
-    if (!estSpan) return;
-    if (sizing.totalWhRaw === 0) {
-      estSpan.textContent = 'No appliances added yet. Add appliance quantities, wattage and daily hours to see total running load and system sizing.';
-    } else {
-      estSpan.textContent = `Total running load: ${sizing.runningKw.toFixed(2)} kW | Daily consumption: ${sizing.totalDailyKwh} kWh | Recommended inverter: ${sizing.inverterKw} kW | PV array: ${sizing.solarKwp} kWp | Battery: ${sizing.batteryKwh} kWh (${sizing.backupDays}-day autonomy)`;
-    }
-  }
-  
-  // Add new row
-  document.getElementById('addRowBtn').addEventListener('click', () => {
-    applianceRows.push({ name: "New Appliance", qty: 0, watt: 0, hours: 0 });
-    renderTable();
-    updateEstimation();
-  });
-
-  // Build Quote Message for WhatsApp and Email
-  function getQuoteMessage() {
-    const { totalDailyKwh, runningKw, inverterKw, solarKwp, batteryKwh, sunshineHours, backupDays, pvMargin, loadMargin } = computeSystem();
-    let appliancesText = "";
-    applianceRows.forEach(app => {
-      appliancesText += `${app.name} (${app.qty}x ${app.watt}W, ${app.hours}h/day), `;
-    });
-    appliancesText = appliancesText.replace(/,\s*$/, '');
-    if (appliancesText.length > 200) appliancesText = appliancesText.slice(0, 200) + "...";
-    const msg = `Hello EliteVolt Team,\n\nI need a quote for a solar power system based on my load calculation:\n• Total Running Load: ${runningKw.toFixed(2)} kW\n• Total Daily Consumption: ${totalDailyKwh} kWh\n• Peak Sunshine: ${sunshineHours} hours/day\n• Recommended Inverter: ${inverterKw} kW\n• Recommended Solar PV: ${solarKwp} kWp\n• Battery Bank: ${batteryKwh} kWh (${backupDays}-day autonomy)\n• PV safety margin: ${Math.round(pvMargin * 100)}% | Load margin: ${Math.round(loadMargin * 100)}%\n• Appliances: ${appliancesText || "Custom setup"}\n\nPlease provide pricing & installation details. Thank you!`;
-    return msg;
-  }
-  
-  // WhatsApp Quote
-  document.getElementById('whatsappQuoteBtn').addEventListener('click', () => {
-    const { totalDailyKwh, inverterKw, solarKwp, batteryKwh } = computeSystem();
-    if (totalDailyKwh === 0) {
-      alert("Please enter appliance quantities, wattage and daily hours before requesting a quote.");
-      return;
-    }
-    if (typeof window.fbq === 'function') {
-      window.fbq('track', 'Lead', { content_name: 'Solar load calculator - WhatsApp quote', value: solarKwp, currency: 'GHS' });
-    }
-    let msg = getQuoteMessage();
-    const phone = "233249976762";  // EliteVolt contact 
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank');
-  });
-  
-  // Email Quote Request
-  document.getElementById('emailQuoteBtn').addEventListener('click', () => {
-    const { totalDailyKwh, runningKw, inverterKw, solarKwp, batteryKwh, sunshineHours, backupDays, pvMargin, loadMargin } = computeSystem();
-    if (totalDailyKwh === 0) {
-      alert("Please enter appliance quantities, wattage and daily hours before requesting a quote.");
-      return;
-    }
-    if (typeof window.fbq === 'function') {
-      window.fbq('track', 'Lead', { content_name: 'Solar load calculator - email quote', value: solarKwp, currency: 'GHS' });
-    }
-    let subject = "EliteVolt Solar Quote Request";
-
-let body = `Hello EliteVolt Systems,
-
-I would like to request a quote for a solar installation.
-
-SYSTEM REQUIREMENTS
--------------------
-Total Running Load: ${runningKw.toFixed(2)} kW
-Total Daily Energy: ${totalDailyKwh} kWh/day
-Peak Sunshine: ${sunshineHours} hours/day
-Recommended Inverter: ${inverterKw} kW
-Solar Array Size: ${solarKwp} kWp
-Battery Storage: ${batteryKwh} kWh (${backupDays}-day autonomy)
-PV safety margin: ${Math.round(pvMargin * 100)}%
-Load / inverter margin: ${Math.round(loadMargin * 100)}%
-
-APPLIANCE LIST
---------------
-`;
-
-applianceRows.forEach(app => {
-    body += `• ${app.name}
-  Quantity: ${app.qty}
-  Power: ${app.watt}W each
-  Usage: ${app.hours} hours/day
-
-`;
-
-    });
-    body += `Thank you`;
-    window.location.href = `mailto:info@elitevoltsystems.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  });
-
-  // Initialize table with default data
-  function init() {
-    applianceRows = JSON.parse(JSON.stringify(defaultAppliances));
-    renderTable();
-    updateEstimation();
-    initEnergyQuickSizing();
-    document.querySelectorAll('#sunshineHoursInput, #backupDaysInput, #pvMarginInput, #loadMarginInput').forEach(control => {
-      control.addEventListener('change', () => {
-        updateEstimation();
-        updateEnergyQuickSizing();
-      });
-    });
-    // Swiper initialization
-    new Swiper('.heroSwiper', {
-      loop: true,
-      autoplay: { delay: 4000, disableOnInteraction: false },
-      pagination: { el: '.swiper-pagination', clickable: true },
-      effect: 'slide',
-      speed: 800,
-    });
-  }
-  
-  init();
-
-
-  // optional smooth scrolling for nav internal links
-  document.querySelectorAll('.nav-links a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if(targetId && targetId !== '#') {
-        const targetElem = document.querySelector(targetId);
-        if(targetElem){
-          e.preventDefault();
-          targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    });
-  });
-</script>
-<script src="js/meta-pixel.js"></script>
+<script>if (document.querySelector(".heroSwiper") && typeof Swiper !== "undefined") { new Swiper(".heroSwiper", { loop: true, autoplay: { delay: 4200, disableOnInteraction: false }, pagination: { el: ".swiper-pagination", clickable: true }, speed: 750 }); }</script>
+<script src="js/shop.js"></script><script src="js/meta-pixel.js"></script>
 </body>
 </html>

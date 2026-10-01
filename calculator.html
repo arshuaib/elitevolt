@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="index, follow, max-image-preview:large">
+  <title>Solar System Calculator | EliteVolt Systems Ghana</title>
+  <meta name="description" content="Estimate solar inverter, panel and battery sizes from appliance loads or electricity consumption. Adjust sunshine hours, autonomy and safety margins.">
+  <link rel="canonical" href="https://elitevoltsystems.com/calculator.html"><meta property="og:type" content="website"><meta property="og:title" content="Solar System Calculator | EliteVolt Systems Ghana"><meta property="og:description" content="Estimate a solar system from appliance loads or electricity consumption."><meta property="og:url" content="https://elitevoltsystems.com/calculator.html">
+  <link rel="icon" type="image/png" href="images/logo.png"><link rel="stylesheet" href="css/home.css"><link rel="stylesheet" href="css/site-global.css"><link rel="stylesheet" href="css/calculator-page.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><script defer src="js/site-nav.js"></script>
+</head>
+<body class="calculator-page">
+<nav class="navbar"><div class="nav-container"><a class="logo" href="index.html" aria-label="EliteVolt Systems home"><img src="images/logo.png" alt="EliteVolt Systems"><span>Solar • Electrical • Electronics</span></a><div class="nav-links">
+  <a href="index.html"><i class="fas fa-house" aria-hidden="true"></i> Home</a><a href="shop.html"><i class="fas fa-leaf" aria-hidden="true"></i> Shop</a><a href="calculator.html" aria-current="page"><i class="fas fa-calculator" aria-hidden="true"></i> Solar Calculator</a><a href="index.html#services"><i class="fas fa-tools" aria-hidden="true"></i> Services</a><a href="blog/index.html"><i class="fas fa-blog" aria-hidden="true"></i> Blog</a>
+</div></div></nav>
+<main><header class="calculator-page-heading container"><span class="calculator-kicker"><i class="fas fa-solar-panel" aria-hidden="true"></i> Plan your solar setup</span><h1>Solar System Calculator</h1><p>Estimate a starting system size using your appliance list or electricity bill. Tune the sunshine estimate, backup days and safety margins before reviewing the results.</p><div class="calculator-heading-chips"><span><i class="fas fa-sliders-h" aria-hidden="true"></i> Adjustable assumptions</span><span><i class="fas fa-bolt" aria-hidden="true"></i> Appliance and kWh methods</span><span><i class="fas fa-comments" aria-hidden="true"></i> Request a quote</span></div></header>  <!-- Solar Load Calculator + Table Input Section -->
+  <div class="container" id="calculator">
+    <div class="calc-section">
+      <h2 class="section-title" style="font-size:1.8rem; margin-bottom:1rem;">⚙️ Design Your Solar System</h2>
+      <p style="text-align:center; margin-bottom:1.5rem;">Set sunshine hours, autonomy and safety margins, then add appliance quantities, wattage and daily hours to size your solar array and battery bank.</p>
+
+      <section class="solar-sizing-controls" aria-labelledby="solarSizingSettingsTitle">
+        <h3 id="solarSizingSettingsTitle">System sizing settings</h3>
+        <p>Choose the site sunshine estimate, battery backup period and design margins used for the appliance calculation.</p>
+        <div class="sizing-input-grid">
+          <label for="sunshineHoursInput">Peak sunshine (hours/day)
+            <select id="sunshineHoursInput">
+              <option value="2.5">2.5</option><option value="3">3</option><option value="3.5">3.5</option><option value="4">4</option><option value="4.5">4.5</option><option value="5" selected>5</option><option value="5.5">5.5</option><option value="6">6</option><option value="6.5">6.5</option><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option>
+            </select>
+          </label>
+          <label for="backupDaysInput">Days of autonomy
+            <select id="backupDaysInput"><option value="0.5">0.5 day</option><option value="1" selected>1 day</option><option value="1.5">1.5 days</option><option value="2">2 days</option><option value="3">3 days</option></select>
+          </label>
+          <label for="pvMarginInput">PV safety margin
+            <select id="pvMarginInput"><option value="0">0%</option><option value="0.1">10%</option><option value="0.2">20%</option><option value="0.25" selected>25%</option><option value="0.3">30%</option><option value="0.4">40%</option></select>
+          </label>
+          <label for="loadMarginInput">Load / inverter safety margin
+            <select id="loadMarginInput"><option value="0">0%</option><option value="0.1">10%</option><option value="0.2">20%</option><option value="0.25" selected>25%</option><option value="0.3">30%</option><option value="0.4">40%</option></select>
+          </label>
+        </div>
+      </section>
+
+      <section class="energy-quick-calculator" aria-labelledby="energyQuickTitle">
+        <div class="energy-quick-heading">
+          <span class="quick-sizing-badge"><i class="fas fa-bolt" aria-hidden="true"></i> Quick estimate</span>
+          <h3 id="energyQuickTitle">Size from your electricity consumption</h3>
+          <p>Enter the kWh shown on your bill or meter and choose the period it covers.</p>
+        </div>
+        <div class="energy-quick-controls">
+          <label for="energyConsumptionInput">Energy used (kWh)
+            <input id="energyConsumptionInput" type="number" min="0.1" step="0.1" inputmode="decimal" placeholder="e.g. 120">
+          </label>
+          <label for="energyConsumptionPeriod">Consumption period
+            <select id="energyConsumptionPeriod">
+              <option value="1">Daily</option>
+              <option value="7">Weekly</option>
+              <option value="30" selected>Monthly (30 days)</option>
+              <option value="365">Yearly (365 days)</option>
+            </select>
+          </label>
+          <button type="button" class="btn-primary" id="calculateEnergyQuickBtn"><i class="fas fa-calculator" aria-hidden="true"></i> Calculate estimate</button>
+        </div>
+        <div class="energy-quick-results" id="energyQuickResults" aria-live="polite">
+          <div><span>Average daily use</span><strong id="energyQuickDaily">—</strong></div>
+          <div><span>Estimated running load</span><strong id="energyQuickLoad">—</strong></div>
+          <div><span>Recommended inverter</span><strong id="energyQuickInverter">—</strong></div>
+          <div><span>PV array target</span><strong id="energyQuickPv">—</strong></div>
+          <div><span>Battery bank</span><strong id="energyQuickBattery">—</strong></div>
+        </div>
+        <p class="energy-quick-note">Uses the sunshine, autonomy and safety margins selected above. Monthly and yearly values use 30 and 365 days. Running load is estimated from energy use; use the appliance list below for the combined wattage of your actual loads.</p>
+      </section>
+
+      <div class="appliance-table">
+        <table id="applianceTable">
+          <thead>
+            <tr><th>Appliance</th><th>Quantity</th><th>Wattage (W)</th><th>Hours/day</th><th style="width:80px">Action</th></tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- dynamic rows will be added, default rows shown -->
+          </tbody>
+        </table>
+        <button class="btn-primary" style="background:#3b5e3f; margin-top:0.5rem;" id="addRowBtn"><i class="fas fa-plus-circle"></i> Add Appliance</button>
+      </div>
+
+      <!-- Result area and estimation -->
+      <div class="result-area" id="resultArea">
+        <div class="result-text"><i class="fas fa-microchip"></i> <span id="estimationText">No appliances added yet. Add appliance quantities, wattage and daily hours to see total running load and system sizing.</span></div>
+        <div class="quote-buttons">
+          <button class="btn-wa" id="whatsappQuoteBtn"><i class="fab fa-whatsapp"></i> Request via WhatsApp</button>
+          <button class="btn-email" id="emailQuoteBtn"><i class="far fa-envelope"></i> Request via Email</button>
+        </div>
+      </div>
+      <p style="font-size:1rem; margin-top:0.5rem; color:#4b5563;"><i class="fas fa-info-circle"></i> Kindly note that quotation may vary from calculated results.</p>
+    </div>
+  </div>
+</main>
+<footer class="site-footer calculator-footer"><div class="site-footer-inner"><div class="footer-brand"><h3>EliteVolt Systems</h3><p>Solar • Electrical • Electronics</p><p>Solar installation, electrical services, products and backup power solutions in Ghana.</p></div><div><h4>Quick Links</h4><div class="footer-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="calculator.html">Solar Calculator</a><a href="index.html#services">Services</a><a href="blog/index.html">Blog</a></div></div><div><h4>Contact</h4><p>📞 <a href="tel:+233249976762">+233 24 997 6762</a></p><p>✉ <a href="mailto:info@elitevoltsystems.com">info@elitevoltsystems.com</a></p><p>Ghana</p></div></div><div class="footer-bottom"><span>© 2026 EliteVolt Systems. All rights reserved.</span><span>Solar • Electrical • Electronics</span></div></footer>
+<script src="js/calculator.js"></script><script src="js/shop.js"></script><script src="js/meta-pixel.js"></script>
+</body></html>
