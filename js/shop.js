@@ -2,7 +2,7 @@
     // PRODUCT DATABASE 
     // Optional verified offer fields: compareAtPrice (regular price) and promotionLabel. Keep price as the customer pays.
     const productsData = [
-        { id: "p1", name: "M600X Solar Kit",
+        { id: "p1", pageUrl: "products/m600x-solar-kit.html", name: "M600X Solar Kit",
             category: "Solar Kits",
             price: 1400,
             compareAtPrice: 1500,
@@ -14,7 +14,7 @@
         specs: ["12W Panel", "Main Lamp", "3 Secondary", "Torch", "USB Cable"],
         whatsappMsg: "M600X Solar Kit" },
        
-        { id: "p2", name: "Lumn Home 840",
+        { id: "p2", pageUrl: "products/lumn-home-840.html", name: "Lumn Home 840",
             category: "Solar Kits",
             price: 1500,
             stock: true, 
@@ -26,7 +26,7 @@
             "Wireless Switch for Lumn Home"], 
         whatsappMsg: "Lumn Home 840" },
 
-        { id: "p3", name: "Lumn Home 1230",
+        { id: "p3", pageUrl: "products/lumn-home-1230.html", name: "Lumn Home 1230",
         category: "Solar Kits",
         price: 1600, 
         stock: true,
@@ -36,7 +36,7 @@
         specs: ["1 x Lumn Home Battery Hub 12Ah/40Wh", "3 x Lumn Home LED Tube 2W/410 Lumen", "2M Extend Charging Cable for Lumn Home", "5M Extend Cable for Lumn Home", "3 x Wireless Switch for Lumn Home"], 
         whatsappMsg: "Lumn Home 1230" },
 
-        { id: "p4", name: "Solar Barber Shop 06Ah Starter Pack",
+        { id: "p4", pageUrl: "products/solar-barber-shop-06ah-starter-pack.html", name: "Solar Barber Shop 06Ah Starter Pack",
         category: "Solar Kits",
         price: 3500,
         stock: true, 
@@ -46,7 +46,7 @@
         specs: ["Camp Battery Hub 06Ah","20Wp c-Si Standard Sized IEC Certified Solar Panel", "2 x Cordless Battery Powered Durable Professional Hair Clipper", "2 x LT4 LED Tube",  "Hand-Held Torch / Lantern / Remote Control w/ Li-Ion Battery"],
         whatsappMsg: "Solar Barber Shop 06Ah Starter Pack" },
 
-        { id: "p5", name: "Solar speaker",
+        { id: "p5", pageUrl: "products/solar-speaker.html", name: "Solar speaker",
         category: "Solar Kits",
         price: 7500, 
         stock: true,    
@@ -57,7 +57,7 @@
             "Wireless Portable Bluetooth Karaoke Party Speaker ", "2 Wireless Micphone"], 
         whatsappMsg: "Solar speaker" },
 
-        { id: "p6", 
+        { id: "p6", pageUrl: "products/16inch-solar-fan.html", 
         name: "16inch Solar fan", 
         category: "Solar Kits", 
         price: 1750, stock: true, 
@@ -67,9 +67,9 @@
         specs: ["16 Inch Solar Built-in Battery Desk Fan", "25Wp c-Si Standard Sized IEC Certified Solar Panel"], 
         whatsappMsg: "16inch Solar fan" },
 
-        { id: "p7", 
+        { id: "p7", pageUrl: "products/ritar-12v-200ah-deep-cycle-gel-battery.html", 
         name: "Ritar 12V 200Ah (Deep Cycle Gel Battery)", 
-        category: "Gel Batteries", 
+        category: "Batteries", "subcategory": "Gel batteries",
         price: 5000, 
         stock: false, 
         mainImg: "https://www.ritarpower.com/uploads/image/20251226/dg-series-lead-acid-batteries-bulk.webp", 
@@ -78,10 +78,11 @@
         specs: ["12V 200Ah", "Low Maintenance"], 
         whatsappMsg: "Ritar 12V 200Ah (Deep Cycle Gel Battery)" },
 
-        { id: "p8", 
+        { id: "p8", pageUrl: "products/srne-hybrid-inverter-5kw-hv.html", 
         name: "SRNE Hybrid Inverter 5kW HV", 
         category: "Inverters", 
-        price: 8500, 
+        price: 7500,
+        compareAtPrice: 8500, 
         stock: true, 
         mainImg: "images/5kw-hv-srne1.png", 
         thumbnails: ["images/5kw-hv-srne2.png", "images/5kw-hv-srne3.png"], 
@@ -91,7 +92,7 @@
             "Max. Solar Charging Current -- 100A", "Max. Grid/Generator Charging Current -- 60A", "Max. Hybrid Charging Current -- 100A"], 
         whatsappMsg: "SRNE Hybrid Inverter 5kW HV" },
 
-        { id: "p9", 
+        { id: "p9", pageUrl: "products/srne-hybrid-inverter-6kw-hv.html", 
         name: "SRNE Hybrid Inverter 6kW HV", 
         category: "Inverters", 
         price: 8800, 
@@ -103,22 +104,59 @@
             "Rated AC Frequency -- 50/60Hz", "Pure sine wave", "Switch Time -- 10ms (typical)"],     
         whatsappMsg: "SRNE Hybrid Inverter 6kW HV" },
 
-        {
-    id: "p10",
-    name: "2p din Smart Voltage and Current protection Meter",
-    category: "Protective Devices",
-    price: 300,
-    stock: true,
-    mainImg: "images/smart-meter1.png",
-    thumbnails: [
-        "images/smart-meter2.png"
-    ],
-    description: "Tuya WiFi 8in1 Power Meter 2P AC Energy Meter APP Control 170-270V/63A Voltage and Current Meter Electricity Meter Smart Life",
-    specs: [
-        "Support over-voltage, under-voltage, over-current, over-power, over-temperature, timer power failure protections setting, and screen hibernation setting"
-    ],
-    whatsappMsg: "2p 63A smart voltage protector"
-},
+        {id: "p10", pageUrl: "products/2p-din-smart-voltage-and-current-protection-meter.html",
+            name: "2p din Smart Voltage and Current protection Meter",
+            category: "Protective Devices",
+            price: 300,
+            stock: true,
+            mainImg: "images/smart-meter1.png",
+            thumbnails: ["images/smart-meter2.png"],
+            description: "Tuya WiFi 8in1 Power Meter 2P AC Energy Meter APP Control 170-270V/63A Voltage and Current Meter Electricity Meter Smart Life",
+            specs: ["Support over-voltage, under-voltage, over-current, over-power, over-temperature, timer power failure protections setting, and screen hibernation setting"],
+            whatsappMsg: "2p 63A smart voltage protector"
+        },
+
+        {id: "p11", pageUrl: "products/blue-carbon-100w-all-in-one-integrated-solar-street-light.html",
+            name: "Blue Carbon 100w All In One Integrated Solar Street Light",
+            category: "Solar Streetlights", "subcategory": "All In One Solar Streetlights",
+            price: 2500,
+            compareAtPrice: 3000,
+            stock: true,
+            mainImg: "images/bct-st-100w-1.png",
+            thumbnails: ["images/bct-st-100w-2.png", "images/bct-st-100w-3.png", "images/bct-st-100w-4.png"],
+            description: "Blue Carbon 100w All In One Integrated Solar Street Light Suitable For Commercial, Industrial and Residential Applications",
+            specs: ["Model: BCT-OLF100W",
+                "Solar Panel: 5V/100W mono",
+                "Battery: 3.2V/200Ah LiFePO4 Battery",
+                "LED: 8000lm Common 7W LED",
+                "Bracket: Aluminum magnesium alloy",
+                "Control Mode: Light sensor, intelligent control",
+                "Lighting Time: All night lighting, can use remote controller to adjust the brightness and working mode",
+                "Installation Height: 8-10m",
+                "Application: Courtyards, communities, villas, scenic spots, parks, squares and areas without electricity"
+            ],
+            whatsappMsg: "Blue Carbon 100w All In One Integrated Solar Street Light"
+        },
+
+        {id: "p12", pageUrl: "products/srne-12kw-1ph-on.html",
+            name: "SRNE 12kW Single phase On/Off grid Hybrid Inverter",
+            category: "Inverters", "subcategory": "Hybrid Inverters",
+            price: 26000,
+            compareAtPrice: 30000,
+            stock: true,
+            mainImg: "images/12kw-srne-1.png",
+            thumbnails: ["images/12kw-srne-2.png", "images/12kw-srne-3.jpg"],
+            description: "12kW SRNE Single Phase Low Voltage On/Off-grid Solar Hybrid Inverter",
+            specs: ["Rated Output Power: 240V 12000W",
+                "Max. Peak Power: 240V  24000W",
+                "Rated Output Voltage: 240Vac",
+                "Rated Output Current:  50A",
+                "Load Motor Capacity:  6HP",
+                "Rated Frequency: 50/60Hz</li",
+                "Waveform:  Pure Sine Wave",
+            ],
+            whatsappMsg: "SRNE 12kW Single phase On/Off grid Hybrid Inverter"
+        },
 
     ];
 
@@ -127,6 +165,7 @@
     let currentPage = 1;
     let currentSearchTerm = "";
     let currentCategory = "All";
+    let currentSubcategory = "All";
     let currentSort = "default";
     let currentStock = "all";
     let currentMaxPrice = "";
@@ -159,10 +198,84 @@
 
     function renderProductPagePrice() {
         const productInfo = window.EV_PRODUCT;
-        const priceElement = document.querySelector('[data-product-price]');
-        if (!productInfo || !priceElement) return;
+        if (!productInfo) return;
         const product = productsData.find(item => item.id === productInfo.id);
         if (!product) return;
+
+        const productPage = document.querySelector('.product');
+        const title = productPage?.querySelector('h1');
+        const description = title?.nextElementSibling?.matches('p') ? title.nextElementSibling : null;
+        const gallery = productPage?.querySelector('.gallery');
+        const priceElement = productPage?.querySelector('[data-product-price]');
+        const statusElement = productPage?.querySelector('.status');
+        const addButton = productPage?.querySelector('[data-product-add]');
+        const wishlistButton = productPage?.querySelector('[data-wish]');
+
+        if (title) title.textContent = product.name;
+        if (description) description.textContent = product.description || '';
+        const breadcrumbs = productPage?.querySelector('.crumbs');
+        if (breadcrumbs?.lastChild?.nodeType === Node.TEXT_NODE) breadcrumbs.lastChild.nodeValue = ` / ${product.name}`;
+        if (gallery) {
+            const images = [product.mainImg, ...(product.thumbnails || [])].filter(Boolean);
+            gallery.innerHTML = images.map(src => `<img src="${escapeHtml(productImageUrl(src))}" alt="${escapeHtml(product.name)}" loading="lazy" decoding="async">`).join('');
+        }
+        if (statusElement) {
+            statusElement.textContent = product.stock ? 'In stock' : 'Out of stock';
+            statusElement.classList.toggle('out-of-stock', !product.stock);
+        }
+        if (addButton) {
+            addButton.dataset.productAdd = product.id;
+            addButton.disabled = !product.stock;
+            addButton.textContent = product.stock ? 'Add to cart' : 'Out of stock';
+        }
+        if (wishlistButton) wishlistButton.dataset.wish = product.id;
+
+        const specificationsHeading = Array.from(productPage?.querySelectorAll('h2') || [])
+            .find(heading => heading.textContent.trim().toLowerCase() === 'specifications');
+        const specificationsList = specificationsHeading?.nextElementSibling;
+        if (specificationsList?.matches('ul, ol')) {
+            specificationsList.innerHTML = (product.specs || []).map(spec => `<li>${escapeHtml(spec)}</li>`).join('');
+        }
+
+        const whatsappLink = productPage?.querySelector('a[href^="https://wa.me/"]');
+        if (whatsappLink) whatsappLink.href = `https://wa.me/233249976762?text=${encodeURIComponent(`Hello, I am interested in ${product.whatsappMsg || product.name}`)}`;
+        const emailLink = productPage?.querySelector('a.email-enquiry[href^="mailto:"]');
+        if (emailLink) {
+            emailLink.href = `mailto:info@elitevoltsystems.com?subject=${encodeURIComponent(`Product enquiry - ${product.name}`)}&body=${encodeURIComponent(`Hello EliteVolt Systems,\n\nI am interested in ${product.name}. Please share availability and details.`)}`;
+        }
+
+        document.title = `${product.name} | EliteVolt Systems Ghana`;
+        const descriptionMeta = document.querySelector('meta[name="description"]');
+        if (descriptionMeta) descriptionMeta.content = product.description || product.name;
+        setMetaContent('meta[property="og:title"]', document.title);
+        setMetaContent('meta[property="og:description"]', product.description || product.name);
+        setMetaContent('meta[property="og:image"]', absoluteProductImageUrl(product.mainImg));
+        document.querySelectorAll('script[type="application/ld+json"]').forEach(script => {
+            try {
+                const schema = JSON.parse(script.textContent);
+                if (schema['@type'] === 'Product') {
+                    schema.name = product.name;
+                    schema.description = product.description || product.name;
+                    schema.sku = product.id;
+                    schema.image = [product.mainImg, ...(product.thumbnails || [])].filter(Boolean).map(absoluteProductImageUrl);
+                    if (schema.offers) {
+                        schema.offers.price = String(product.price);
+                        schema.offers.availability = product.stock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock';
+                    }
+                    script.textContent = JSON.stringify(schema);
+                } else if (schema['@type'] === 'BreadcrumbList') {
+                    const lastCrumb = schema.itemListElement?.[schema.itemListElement.length - 1];
+                    if (lastCrumb) lastCrumb.name = product.name;
+                    script.textContent = JSON.stringify(schema);
+                }
+            } catch (error) {
+                // Ignore unrelated or malformed structured data blocks.
+            }
+        });
+        updateRelatedProducts();
+        Object.assign(productInfo, { name: product.name, price: product.price, description: product.description, image: absoluteProductImageUrl(product.mainImg) });
+
+        if (!priceElement) return;
         const price = getPricePresentation(product);
         priceElement.classList.toggle('is-discounted', price.isDiscounted);
         priceElement.innerHTML = renderPriceMarkup(product);
@@ -260,16 +373,17 @@
     const term = currentSearchTerm.toLowerCase().trim();
     let filtered = productsData.filter(product => {
         const searchable = [
-            product.name, product.category, product.description,
+            product.name, product.category, product.subcategory, product.description,
             ...(product.specs || [])
         ].join(" ").toLowerCase();
         const matchesSearch = !term || searchable.includes(term);
         const matchesCategory = currentCategory === "All" || product.category === currentCategory;
+        const matchesSubcategory = currentSubcategory === "All" || product.subcategory === currentSubcategory;
         const matchesStock = currentStock === "all" || (currentStock === "in" ? product.stock : !product.stock);
         const maxPrice = Number(currentMaxPrice);
         const matchesPrice = !currentMaxPrice || (!Number.isNaN(maxPrice) && Number(product.price) <= maxPrice);
         const matchesWishlist = !currentWishlistOnly || getWishlist().includes(product.id);
-        return matchesSearch && matchesCategory && matchesStock && matchesPrice && matchesWishlist;
+        return matchesSearch && matchesCategory && matchesSubcategory && matchesStock && matchesPrice && matchesWishlist;
     });
 
     filtered.sort((a,b) => {
@@ -281,6 +395,39 @@
     });
     return filtered;
   }
+
+    function renderCategoryOptions(select) {
+        if (!select) return;
+        const selectedValue = select.value || currentCategory;
+        const compareAlphabetically = (a, b) => a.localeCompare(b, 'en', { sensitivity: 'base', numeric: true });
+        const categories = [...new Set(productsData.map(product => String(product.category || '').trim()).filter(Boolean))]
+            .sort(compareAlphabetically);
+        const options = categories.map(category => `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`).join('');
+        select.innerHTML = `<option value="All">All Categories</option>${options}`;
+        const hasSelection = Array.from(select.options).some(option => option.value === selectedValue);
+        select.value = hasSelection ? selectedValue : 'All';
+        currentCategory = select.value;
+    }
+
+    function renderSubcategoryOptions(select, category) {
+        if (!select) return;
+        const compareAlphabetically = (a, b) => a.localeCompare(b, 'en', { sensitivity: 'base', numeric: true });
+        const subcategories = category === 'All' ? [] : [...new Set(productsData
+            .filter(product => product.category === category)
+            .map(product => String(product.subcategory || '').trim())
+            .filter(Boolean))].sort(compareAlphabetically);
+
+        select.innerHTML = `<option value="All">All Subcategories</option>${subcategories.map(subcategory =>
+            `<option value="${escapeHtml(subcategory)}">${escapeHtml(subcategory)}</option>`
+        ).join('')}`;
+
+        const hasSubcategories = subcategories.length > 0;
+        select.hidden = !hasSubcategories;
+        select.style.display = hasSubcategories ? '' : 'none';
+        select.disabled = !hasSubcategories;
+        if (!hasSubcategories || !subcategories.includes(currentSubcategory)) currentSubcategory = 'All';
+        select.value = currentSubcategory;
+    }
 
     // Pagination logic
     function getPaginatedProducts() {
@@ -299,6 +446,61 @@
             .replace(/[^a-z0-9\s-]/g, "")
             .replace(/\s+/g, "-")
             .replace(/-+/g, "-");
+    }
+
+    function productPagePath(product) {
+        return product.pageUrl || `products/${slugify(product.name)}.html`;
+    }
+
+    function productPageHref(product) {
+        const path = productPagePath(product);
+        return /\/products\/[^/]+$/i.test(window.location.pathname)
+            ? path.replace(/^products\//i, '')
+            : path;
+    }
+
+    function productImageUrl(src) {
+        const value = String(src || '').trim();
+        if (!value || /^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(value)) return value;
+        const path = value.replace(/^\/+/, '').replace(/^\.\//, '');
+        return /\/products\/[^/]+$/i.test(window.location.pathname) ? `../${path}` : path;
+    }
+
+    function absoluteProductImageUrl(src) {
+        const value = productImageUrl(src);
+        try { return new URL(value, window.location.href).href; }
+        catch (error) { return value; }
+    }
+
+    function setMetaContent(selector, content) {
+        const meta = document.querySelector(selector);
+        if (meta) meta.setAttribute('content', content);
+    }
+
+    function updateRelatedProducts() {
+        document.querySelectorAll('.related-product-card').forEach(card => {
+            const link = card.getAttribute('href');
+            if (!link) return;
+            let linkedPath = '';
+            try { linkedPath = new URL(link, window.location.href).pathname.toLowerCase(); }
+            catch (error) { return; }
+            const product = productsData.find(item => {
+                const expected = new URL(productPageHref(item), window.location.href).pathname.toLowerCase();
+                return expected === linkedPath;
+            });
+            if (!product) return;
+
+            card.href = productPageHref(product);
+            const image = card.querySelector('img');
+            if (image) {
+                image.src = productImageUrl(product.mainImg);
+                image.alt = product.name;
+            }
+            const name = card.querySelector('strong');
+            if (name) name.textContent = product.name;
+            const price = card.querySelector('b');
+            if (price) price.innerHTML = renderPriceMarkup(product);
+        });
     }
 
     function paintWishlist() {
@@ -343,14 +545,14 @@
         container.innerHTML = paginated.map(p => `
             <div class="product-card">
                 ${!p.stock ? '<div class="out-of-stock-badge">OUT OF STOCK</div>' : ''}
-                <a href="products/${slugify(p.name)}.html" class="product-image-link"><img class="product-image" src="${escapeHtml(p.mainImg)}" alt="${escapeHtml(p.name)}" loading="lazy" decoding="async"></a>
+                <a href="${escapeHtml(productPageHref(p))}" class="product-image-link"><img class="product-image" src="${escapeHtml(p.mainImg)}" alt="${escapeHtml(p.name)}" loading="lazy" decoding="async"></a>
                 <div class="product-title-row">
                     <div class="product-title">${escapeHtml(p.name)}</div>
                     <button class="wishlist-btn" type="button" data-wish="${p.id}" aria-label="Add ${escapeHtml(p.name)} to wishlist" aria-pressed="false">♡</button>
                 </div>
                 <div class="product-price ${getPricePresentation(p).isDiscounted ? 'is-discounted' : ''}">${renderPriceMarkup(p)}</div>
                 <div class="product-card-actions">
-                    <a class="btn-details product-page-link" href="products/${slugify(p.name)}.html" aria-label="View details for ${escapeHtml(p.name)}"><i class="fas fa-eye"></i> Details</a>
+                    <a class="btn-details product-page-link" href="${escapeHtml(productPageHref(p))}" aria-label="View details for ${escapeHtml(p.name)}"><i class="fas fa-eye"></i> Details</a>
                     <button class="btn-add" ${!p.stock ? 'disabled' : ''} onclick="addToCart('${p.id}')">${p.stock ? 'Add to cart' : 'Out of stock'}</button>
                 </div>
             </div>
@@ -397,11 +599,11 @@
     }
     
     function updateCartBadge() {
-        const badge = document.getElementById('cartItemCount');
-        if(!badge) return;
         const totalItems = cart.reduce((sum,i)=> sum + i.quantity, 0);
-        if(totalItems>0) { badge.style.display = 'flex'; badge.innerText = totalItems>99 ? '99+' : totalItems; }
-        else badge.style.display = 'none';
+        document.querySelectorAll('#cartItemCount, [data-cart-count]').forEach(badge => {
+            badge.style.display = totalItems > 0 ? 'inline-flex' : 'none';
+            badge.textContent = totalItems > 99 ? '99+' : totalItems;
+        });
     }
     
     function updateCartDrawer() {
@@ -521,15 +723,100 @@
         })[char]);
     }
     
+    // Install one shared cart drawer on every page. Product and content pages
+    // use the same cart state as the shop without navigating away from the page.
+    function ensureCartUI() {
+        if (!document.getElementById('evCartRuntimeStyles')) {
+            const style = document.createElement('style');
+            style.id = 'evCartRuntimeStyles';
+            style.textContent = `
+                .mini-cart-link { position:relative; display:inline-flex; align-items:center; gap:.4rem; }
+                .mini-cart-link .cart-badge { position:absolute; top:-7px; right:-12px; min-width:18px; height:18px; padding:0 4px; border-radius:999px; align-items:center; justify-content:center; background:#dc2626; color:#fff; font:800 .65rem/1 Arial,sans-serif; }
+                .ev-cart-overlay { position:fixed; inset:0; z-index:2400; background:rgba(15,23,42,.52); opacity:0; visibility:hidden; transition:opacity .2s ease,visibility .2s ease; }
+                .ev-cart-overlay.active { opacity:1; visibility:visible; }
+                .ev-cart-panel { position:fixed; z-index:2401; top:0; right:0; bottom:0; width:min(92vw,430px); max-width:100vw; display:flex !important; flex-direction:column; background:#fff; color:#17211d; box-shadow:-16px 0 48px rgba(15,23,42,.2); transform:translateX(105%); visibility:hidden; transition:transform .24s ease,visibility .24s ease; }
+                .ev-cart-panel.open { transform:translateX(0); visibility:visible; }
+                .ev-cart-panel .drawer-header { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem 1.1rem; border-bottom:1px solid #e2e8f0; }
+                .ev-cart-panel .drawer-header h3 { margin:0; color:#0b3d34; }
+                .ev-cart-panel .close-drawer { min-width:44px; min-height:44px; border:0; border-radius:50%; background:#edf2ef; color:#17211d; font-size:1.6rem; cursor:pointer; }
+                .ev-cart-panel .drawer-content { flex:1; overflow:auto; padding:1rem; -webkit-overflow-scrolling:touch; }
+                .ev-cart-panel .cart-items-list { list-style:none; padding:0; margin:0; }
+                .ev-cart-panel .cart-item-drawer { display:flex; align-items:center; justify-content:space-between; gap:.75rem; padding:.9rem 0; border-bottom:1px solid #e2e8f0; }
+                .ev-cart-panel .cart-item-info { min-width:0; overflow-wrap:anywhere; }
+                .ev-cart-panel .cart-item-controls { display:flex; align-items:center; gap:.4rem; flex:none; }
+                .ev-cart-panel .cart-item-controls button { min-width:36px; min-height:36px; border:1px solid #dbe4dd; border-radius:9px; background:#f8faf9; color:#17211d; font:700 1rem/1 Arial,sans-serif; cursor:pointer; }
+                .ev-cart-panel .cart-item-controls .remove-item-btn { background:#dc2626; color:#fff; border:0; }
+                .ev-cart-panel .drawer-total { padding:1rem 0; font-weight:800; font-size:1.1rem; }
+                .ev-cart-panel .drawer-buttons { display:grid; gap:.6rem; }
+                .ev-cart-panel .drawer-buttons button { min-height:46px; border:0; border-radius:10px; padding:.7rem .9rem; color:#fff; font:inherit; font-size:.95rem; font-weight:700; cursor:pointer; }
+                .ev-cart-panel .clear-cart-btn-sm { background:#dc2626; }
+                .ev-cart-panel .btn-whatsapp { background:#16833d; }
+                .ev-cart-panel .btn-email { background:#0b3d34; }
+                .ev-cart-panel .cart-note-drawer { margin-top:.8rem; color:#64748b; font-size:.8rem; }
+                .ev-cart-fab { position:fixed; z-index:1800; right:16px; bottom:calc(16px + env(safe-area-inset-bottom)); width:56px; height:56px; display:none; align-items:center; justify-content:center; border:0; border-radius:50%; background:#0b3d34; color:#fff; box-shadow:0 8px 24px rgba(15,23,42,.22); font-size:1.2rem; cursor:pointer; }
+                .ev-cart-fab .cart-badge { position:absolute; top:-4px; right:-3px; min-width:20px; height:20px; padding:0 4px; border-radius:999px; align-items:center; justify-content:center; background:#dc2626; color:#fff; font:800 .68rem/1 Arial,sans-serif; }
+                .ev-cart-fab.near-footer { opacity:0; pointer-events:none; transform:translateY(12px); }
+                .related-product-copy .price-before { display:block; color:#64748b; font-size:.78em; text-decoration:line-through; }
+                .related-product-copy .discount-badge,.related-product-copy .promotion-label { display:inline-block; margin-left:.35rem; }
+                @media(max-width:899px) { .ev-cart-fab { display:inline-flex; } }
+                @media(prefers-reduced-motion:reduce) { .ev-cart-overlay,.ev-cart-panel { transition:none; } }
+            `;
+            document.head.appendChild(style);
+        }
+
+        if (!document.getElementById('drawerOverlay')) {
+            document.body.insertAdjacentHTML('beforeend', '<div class="drawer-overlay ev-cart-overlay" id="drawerOverlay" aria-hidden="true"></div>');
+        } else {
+            document.getElementById('drawerOverlay').classList.add('ev-cart-overlay');
+        }
+        if (!document.getElementById('cartDrawer')) {
+            document.body.insertAdjacentHTML('beforeend', '<aside class="cart-drawer ev-cart-panel" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle" aria-hidden="true" tabindex="-1"><div class="drawer-header"><h3 id="cartDrawerTitle">Your Cart</h3><button class="close-drawer" id="closeDrawerBtn" type="button" aria-label="Close cart">×</button></div><div class="drawer-content" id="drawerCartContent"><div class="empty-cart-message">Your cart is empty</div></div></aside>');
+        } else {
+            document.getElementById('cartDrawer').classList.add('ev-cart-panel');
+        }
+        if (!document.getElementById('floatingCartBtn')) {
+            document.body.insertAdjacentHTML('beforeend', '<button class="floating-cart ev-cart-fab" id="floatingCartBtn" type="button" aria-label="Open cart" aria-haspopup="dialog" aria-expanded="false"><i class="fas fa-shopping-cart" aria-hidden="true"></i><span class="cart-badge" data-cart-count style="display:none">0</span></button>');
+        } else {
+            document.getElementById('floatingCartBtn').classList.add('ev-cart-fab');
+        }
+
+        document.querySelectorAll('.main-nav, .nav-links').forEach(nav => {
+            if (document.getElementById('productsGrid')) return;
+            if (nav.querySelector('.mini-cart-link')) return;
+            const link = document.createElement('a');
+            link.href = '#cart';
+            link.className = 'mini-cart-link';
+            link.setAttribute('aria-label', 'Open cart');
+            link.innerHTML = '<i class="fas fa-shopping-cart" aria-hidden="true"></i> Cart <span class="cart-badge" data-cart-count style="display:none">0</span>';
+            nav.appendChild(link);
+        });
+        document.querySelectorAll('.mini-cart-link').forEach(link => {
+            link.setAttribute('aria-haspopup', 'dialog');
+            if (!link.hasAttribute('aria-expanded')) link.setAttribute('aria-expanded', 'false');
+        });
+    }
+
     // Drawer controls
-    function openDrawer() {
+    let lastCartTrigger = null;
+    let previousBodyOverflow = '';
+    function openDrawer(trigger) {
+        const desktopPanel = document.getElementById('desktopCartPanel');
+        if (desktopPanel && window.matchMedia('(min-width: 900px)').matches) {
+            desktopPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            desktopPanel.setAttribute('tabindex', '-1');
+            desktopPanel.focus({ preventScroll: true });
+            return;
+        }
         const drawer = document.getElementById('cartDrawer');
         const overlay = document.getElementById('drawerOverlay');
         if (!drawer || !overlay) return;
+        lastCartTrigger = trigger || document.activeElement;
+        previousBodyOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
         drawer.classList.add('open');
         drawer.setAttribute('aria-hidden', 'false');
         overlay.classList.add('active');
-        document.getElementById('floatingCartBtn')?.setAttribute('aria-expanded', 'true');
+        document.querySelectorAll('.mini-cart-link, #floatingCartBtn').forEach(button => button.setAttribute('aria-expanded', 'true'));
         document.getElementById('closeDrawerBtn')?.focus();
     }
     function closeDrawer() {
@@ -539,15 +826,21 @@
         drawer.classList.remove('open');
         drawer.setAttribute('aria-hidden', 'true');
         overlay.classList.remove('active');
-        const cartButton = document.getElementById('floatingCartBtn');
-        cartButton?.setAttribute('aria-expanded', 'false');
-        if (cartButton && cartButton.getAttribute('aria-hidden') !== 'true') cartButton.focus();
+        document.body.style.overflow = previousBodyOverflow;
+        document.querySelectorAll('.mini-cart-link, #floatingCartBtn').forEach(button => button.setAttribute('aria-expanded', 'false'));
+        if (lastCartTrigger && document.contains(lastCartTrigger)) lastCartTrigger.focus();
+        lastCartTrigger = null;
     }
     
     // Event listeners
-    document.getElementById('floatingCartBtn')?.addEventListener('click', openDrawer);
+    ensureCartUI();
+    document.getElementById('floatingCartBtn')?.addEventListener('click', event => openDrawer(event.currentTarget));
     document.getElementById('closeDrawerBtn')?.addEventListener('click', closeDrawer);
     document.getElementById('drawerOverlay')?.addEventListener('click', closeDrawer);
+    document.querySelectorAll('.mini-cart-link').forEach(link => link.addEventListener('click', event => {
+        event.preventDefault();
+        openDrawer(link);
+    }));
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.getElementById('cartDrawer')?.classList.contains('open')) closeDrawer(); });
     const floatingCart = document.getElementById('floatingCartBtn');
     const siteFooter = document.querySelector('.site-footer');
@@ -583,13 +876,23 @@
     document.getElementById('desktopEmail')?.addEventListener('click', checkoutEmail);
 
     const categoryFilter = document.getElementById("categoryFilter");
+    const subcategoryFilter = document.getElementById("subcategoryFilter");
     const sortFilter = document.getElementById("sortProducts");
     const stockFilter = document.getElementById("stockFilter");
     const maxPriceFilter = document.getElementById("maxPriceFilter");
 
     const wishlistToggleBtn = document.getElementById("wishlistToggleBtn");
 
-    categoryFilter?.addEventListener("change", function() { currentCategory = this.value; currentPage = 1; renderProducts(); });
+    renderCategoryOptions(categoryFilter);
+    renderSubcategoryOptions(subcategoryFilter, currentCategory);
+    categoryFilter?.addEventListener("change", function() {
+        currentCategory = this.value;
+        currentSubcategory = 'All';
+        renderSubcategoryOptions(subcategoryFilter, currentCategory);
+        currentPage = 1;
+        renderProducts();
+    });
+    subcategoryFilter?.addEventListener("change", function() { currentSubcategory = this.value; currentPage = 1; renderProducts(); });
     sortFilter?.addEventListener("change", function() { currentSort = this.value; currentPage = 1; renderProducts(); });
     stockFilter?.addEventListener("change", function() { currentStock = this.value; currentPage = 1; renderProducts(); });
     maxPriceFilter?.addEventListener("input", function() { currentMaxPrice = this.value; currentPage = 1; renderProducts(); });
