@@ -141,8 +141,8 @@
         {id: "p12", pageUrl: "products/srne-12kw-1ph-on.html",
             name: "SRNE 12kW Single phase On/Off grid Hybrid Inverter",
             category: "Inverters", "subcategory": "Hybrid Inverters",
-            price: 26000,
-            compareAtPrice: 30000,
+            price: 23000,
+            compareAtPrice: 29000,
             stock: true,
             mainImg: "images/12kw-srne-1.png",
             thumbnails: ["images/12kw-srne-2.png", "images/12kw-srne-3.jpg"],
@@ -152,17 +152,59 @@
                 "Rated Output Voltage: 240Vac",
                 "Rated Output Current:  50A",
                 "Load Motor Capacity:  6HP",
-                "Rated Frequency: 50/60Hz</li",
+                "Rated Frequency: 50/60Hz",
                 "Waveform:  Pure Sine Wave",
             ],
             whatsappMsg: "SRNE 12kW Single phase On/Off grid Hybrid Inverter"
         },
 
+        {id: "p13", pageUrl: "products/srne-16kwh-lit.html",
+            name: "SRNE 16kWh Lithium Battery (51.2V 314Ah)",
+            category: "Batteries", "subcategory": "Lithium Batteries",
+            price: 26000,
+            compareAtPrice: 30000,
+            stock: true,
+            mainImg: "images/srne-16kwh-lit-1.jpg",
+            thumbnails: ["images/srne-16kwh-lit-2.png", "images/srne-16kwh-lit-3.png"],
+            description: "16kWh Lithium Ion Battery (51.2V 314Ah)",
+            specs: ["Rated Voltage: 51.2V",
+                "Rated Capacity: 314Ah",
+                "Battery Energy: 16.07kWh",
+                "Battery Type: LFP",
+                "Cycle Lifespan: 6000 Cycles",
+                "Max. Parallel Capacity: 1-16 units",
+                "Dimension (mm): 837*380*253",
+                "Communication: CAN/RS485/USB"
+            ],
+            whatsappMsg: "SRNE 16kWh Lithium Battery (SR-SE16B-Pro)"
+        },
+
+        {id: "p14", pageUrl: "products/tw-620w.html",
+            name: "TW Solar 620W Bifacial panel",
+            category: "Solar Panels", "subcategory": "Bifacial Panels",
+            price: 1400,
+            stock: true,
+            mainImg: "images/tw-620w-1.png",
+            thumbnails: ["images/tw-620w-2.png", "images/tw-620w-3.png"],
+            description: "620W Bifacial Solar Panel",
+            specs: ["Power Output: 620W",
+                "Open Circuit Voltage (Voc): 48.30V",
+                "Voltage at Pmax: 41.55V",
+                "Efficiency: Up to 23.0%",
+                "Cell Type: N-type TOPCon", 
+                "Monocrystalline Half-Cell (132 cells)",
+                "Dimensions: 2382 x 1134 x 30 mm",
+                "Weight: 32.5 kg",
+            ],
+            whatsappMsg: "TW Solar 620W Bifacial panel"
+        },
+
     ];
 
     // Pagination settings
-    const ITEMS_PER_PAGE = 12;
-    let currentPage = 1;
+    const ITEMS_PER_PAGE = 15;
+    const pageFromUrl = Number.parseInt(new URLSearchParams(window.location.search).get('page') || '1', 10);
+    let currentPage = Number.isFinite(pageFromUrl) && pageFromUrl > 0 ? pageFromUrl : 1;
     let currentSearchTerm = "";
     let currentCategory = "All";
     let currentSubcategory = "All";
@@ -441,6 +483,14 @@
         return Math.ceil(filtered.length / ITEMS_PER_PAGE);
     }
 
+    function syncShopPageUrl() {
+        if (!document.getElementById('productsGrid')) return;
+        const url = new URL(window.location.href);
+        if (currentPage > 1) url.searchParams.set('page', String(currentPage));
+        else url.searchParams.delete('page');
+        window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`);
+    }
+
     function slugify(text) {
         return String(text).toLowerCase().trim()
             .replace(/[^a-z0-9\s-]/g, "")
@@ -453,10 +503,35 @@
     }
 
     function productPageHref(product) {
-        const path = productPagePath(product);
-        return /\/products\/[^/]+$/i.test(window.location.pathname)
-            ? path.replace(/^products\//i, '')
-            : path;
+        let path = productPagePath(product);
+        const onProductPage = /\/products\/[^/]+$/i.test(window.location.pathname);
+        if (onProductPage) path = path.replace(/^products\//i, '');
+
+        const returnTo = document.getElementById('productsGrid')
+            ? `${window.location.pathname}${window.location.search}${window.location.hash}`
+            : new URLSearchParams(window.location.search).get('return');
+        return returnTo ? `${path}${path.includes('?') ? '&' : '?'}return=${encodeURIComponent(returnTo)}` : path;
+    }
+
+    function restoreShopReturnLinks() {
+        const returnTo = new URLSearchParams(window.location.search).get('return');
+        if (!returnTo) return;
+
+        let destination;
+        try { destination = new URL(returnTo, window.location.href); }
+        catch (error) { return; }
+        if (destination.origin !== window.location.origin || !/\/shop\.html$/i.test(destination.pathname)) return;
+        const targetHref = `${destination.pathname}${destination.search}${destination.hash}`;
+
+        document.querySelectorAll('a[href]').forEach(link => {
+            if (link.classList.contains('mini-cart-link')) return;
+            let linkUrl;
+            try { linkUrl = new URL(link.getAttribute('href'), window.location.href); }
+            catch (error) { return; }
+            if (linkUrl.origin === destination.origin && /\/shop\.html$/i.test(linkUrl.pathname)) {
+                link.href = targetHref;
+            }
+        });
     }
 
     function productImageUrl(src) {
@@ -477,30 +552,141 @@
         if (meta) meta.setAttribute('content', content);
     }
 
-    function updateRelatedProducts() {
-        document.querySelectorAll('.related-product-card').forEach(card => {
-            const link = card.getAttribute('href');
-            if (!link) return;
-            let linkedPath = '';
-            try { linkedPath = new URL(link, window.location.href).pathname.toLowerCase(); }
-            catch (error) { return; }
-            const product = productsData.find(item => {
-                const expected = new URL(productPageHref(item), window.location.href).pathname.toLowerCase();
-                return expected === linkedPath;
-            });
-            if (!product) return;
+    function normalizeRecommendationValue(value) {
+        return String(value || '')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, ' ')
+            .trim();
+    }
 
-            card.href = productPageHref(product);
-            const image = card.querySelector('img');
-            if (image) {
-                image.src = productImageUrl(product.mainImg);
-                image.alt = product.name;
-            }
-            const name = card.querySelector('strong');
-            if (name) name.textContent = product.name;
-            const price = card.querySelector('b');
-            if (price) price.innerHTML = renderPriceMarkup(product);
+    function recommendationSubcategory(product) {
+        const explicit = String(product.subcategory || '').trim();
+        if (explicit) return { key: normalizeRecommendationValue(explicit), label: explicit };
+
+        const category = normalizeRecommendationValue(product.category);
+        const text = normalizeRecommendationValue([
+            product.name, product.description, ...(product.specs || [])
+        ].join(' '));
+        let label = '';
+
+        if (category === 'solar kits') {
+            if (/\b(fan|fans|cooling)\b/.test(text)) label = 'Solar Fans';
+            else if (/\b(speaker|speakers|audio|karaoke)\b/.test(text)) label = 'Solar Audio';
+            else if (/\b(barber|clipper|hair)\b/.test(text)) label = 'Solar Business Kits';
+            else label = 'Solar Home Systems';
+        } else if (category === 'inverters') {
+            label = /\b(hybrid|on off grid)\b/.test(text) ? 'Hybrid Inverters' : 'Off-grid Inverters';
+        } else if (category === 'batteries') {
+            if (/\b(gel)\b/.test(text)) label = 'Gel Batteries';
+            else if (/\b(lithium|lifepo|lfp)\b/.test(text)) label = 'Lithium Batteries';
+        } else if (category === 'protective devices' && /\b(voltage|current|meter|protection)\b/.test(text)) {
+            label = 'Voltage and Current Protection';
+        } else if (category === 'solar streetlights' && /\b(all in one|integrated)\b/.test(text)) {
+            label = 'All-in-One Solar Streetlights';
+        }
+
+        return label ? { key: normalizeRecommendationValue(label), label } : { key: '', label: '' };
+    }
+
+    const recommendationStopWords = new Set([
+        'the', 'and', 'for', 'with', 'from', 'this', 'that', 'your', 'into', 'its', 'are', 'was', 'has', 'have',
+        'solar', 'product', 'products', 'system', 'systems', 'series', 'suitable', 'designed', 'includes', 'including',
+        'available', 'elitevolt', 'ghana', 'high', 'quality', 'watt', 'watts', 'unit', 'units'
+    ]);
+
+    function recommendationTokens(value) {
+        return new Set(normalizeRecommendationValue(value).split(/\s+/).filter(token =>
+            token.length > 2 && !recommendationStopWords.has(token) && !/^\d+$/.test(token)
+        ));
+    }
+
+    function recommendationCategoryBonus(categoryA, categoryB) {
+        const pair = [normalizeRecommendationValue(categoryA), normalizeRecommendationValue(categoryB)].sort().join('|');
+        const complementaryPairs = new Map([
+            ['batteries|inverters', 24],
+            ['inverters|protective devices', 18],
+            ['protective devices|solar kits', 10],
+            ['batteries|solar kits', 14],
+            ['inverters|solar kits', 14],
+            ['solar kits|solar streetlights', 8]
+        ]);
+        return complementaryPairs.get(pair) || 0;
+    }
+
+    function scoreRelatedProduct(current, candidate) {
+        let score = 0;
+        const currentCategory = normalizeRecommendationValue(current.category);
+        const candidateCategory = normalizeRecommendationValue(candidate.category);
+        const currentSubcategory = recommendationSubcategory(current);
+        const candidateSubcategory = recommendationSubcategory(candidate);
+
+        if (currentCategory && currentCategory === candidateCategory) score += 38;
+        if (currentSubcategory.key && currentSubcategory.key === candidateSubcategory.key) score += 72;
+        score += recommendationCategoryBonus(current.category, candidate.category);
+
+        const currentNameTokens = recommendationTokens(current.name);
+        const currentTokens = recommendationTokens([
+            current.name, current.description, ...(current.specs || []), current.category, current.subcategory
+        ].join(' '));
+        const candidateNameTokens = recommendationTokens(candidate.name);
+        const candidateTokens = recommendationTokens([
+            candidate.name, candidate.description, ...(candidate.specs || []), candidate.category, candidate.subcategory
+        ].join(' '));
+
+        currentTokens.forEach(token => {
+            if (!candidateTokens.has(token)) return;
+            score += currentNameTokens.has(token) && candidateNameTokens.has(token) ? 9 :
+                currentNameTokens.has(token) ? 5 : 2;
         });
+        if (candidate.stock) score += 1;
+        return score;
+    }
+
+    function updateRelatedProducts() {
+        const productInfo = window.EV_PRODUCT;
+        const grid = document.querySelector('.related-product-grid');
+        if (!productInfo || !grid) return;
+
+        const current = productsData.find(product => product.id === productInfo.id);
+        const section = grid.closest('.related-products');
+        if (!current) {
+            if (section) section.hidden = true;
+            return;
+        }
+
+        const recommendations = productsData
+            .filter(product => product.id !== current.id)
+            .map(product => ({ product, score: scoreRelatedProduct(current, product) }))
+            .filter(result => result.score > 0)
+            .sort((a, b) => b.score - a.score || Number(Boolean(b.product.stock)) - Number(Boolean(a.product.stock)) || a.product.name.localeCompare(b.product.name))
+            .slice(0, 3)
+            .map(result => result.product);
+
+        if (recommendations.length === 0) {
+            if (section) section.hidden = true;
+            return;
+        }
+        if (section) section.hidden = false;
+
+        const title = section?.querySelector('h2');
+        if (title) title.textContent = 'Recommended products';
+        const intro = section?.querySelector('p');
+        if (intro) intro.textContent = 'Selected by product type and matching features.';
+
+        grid.innerHTML = recommendations.map(product => {
+            const group = recommendationSubcategory(product);
+            const note = group.label || product.category || 'Recommended match';
+            return `<a class="related-product-card" href="${escapeHtml(productPageHref(product))}" aria-label="View ${escapeHtml(product.name)}">
+                <img src="${escapeHtml(productImageUrl(product.mainImg))}" alt="${escapeHtml(product.name)}" loading="lazy" decoding="async">
+                <span class="related-product-copy">
+                    <strong>${escapeHtml(product.name)}</strong>
+                    <small>${escapeHtml(note)}</small>
+                    <b>${renderPriceMarkup(product)}</b>
+                </span>
+            </a>`;
+        }).join('');
     }
 
     function paintWishlist() {
@@ -529,8 +715,10 @@
     function renderProducts() {
         const container = document.getElementById('productsGrid');
         if(!container) return;
-        const paginated = getPaginatedProducts();
         const totalPages = getTotalPages();
+        currentPage = Math.max(1, Math.min(currentPage, Math.max(1, totalPages)));
+        syncShopPageUrl();
+        const paginated = getPaginatedProducts();
         
         if(paginated.length === 0) {
             const emptyMsg = currentWishlistOnly
@@ -594,7 +782,6 @@
     function updateAllUI() {
         renderProducts();
         updateCartDrawer();
-        updateDesktopCartPanel();
         updateCartBadge();
     }
     
@@ -644,42 +831,6 @@
                 </div>
                 <div class="cart-note-drawer"><i class="fas fa-info-circle"></i> Unavailable items auto-removed</div>`;
         container.innerHTML = html;
-    }
-    
-    function updateDesktopCartPanel() {
-        const cont = document.getElementById('desktopCartContent');
-        if(!cont) return;
-        if(cart.length===0) { cont.innerHTML = '<p style="padding:1rem; text-align:center;">Cart empty</p>'; document.getElementById('desktopTotal').innerText='0.00'; return; }
-        let html = '<ul style="list-style:none; max-height:300px; overflow:auto;">';
-        let total=0;
-        cart.forEach(item=> {
-            const prod = productsData.find(p=>p.id===item.id);
-            if(!prod||!prod.stock) return;
-            total += item.price*item.quantity;
-           html += `<li style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #eee;">
-    <span>
-        <strong>${escapeHtml(item.name)}</strong>
-        x${item.quantity}
-    </span>
-
-    <div style="display:flex; gap:8px; align-items:center;">
-        <span>
-            GH₵ ${formatPrice(item.price*item.quantity)}
-        </span>
-
-        <button class="remove-item-btn"
-            onclick="removeFromCart('${item.id}')">
-            ×
-        </button>
-    </div>
-
-</li>`;
-
-        });
-
-        html += '</ul>';
-        cont.innerHTML = html;
-        document.getElementById('desktopTotal').innerText = formatPrice(total);
     }
     
     function buildOrderMsg() {
@@ -732,7 +883,7 @@
             style.textContent = `
                 .mini-cart-link { position:relative; display:inline-flex; align-items:center; gap:.4rem; }
                 .mini-cart-link .cart-badge { position:absolute; top:-7px; right:-12px; min-width:18px; height:18px; padding:0 4px; border-radius:999px; align-items:center; justify-content:center; background:#dc2626; color:#fff; font:800 .65rem/1 Arial,sans-serif; }
-                .ev-cart-overlay { position:fixed; inset:0; z-index:2400; background:rgba(15,23,42,.52); opacity:0; visibility:hidden; transition:opacity .2s ease,visibility .2s ease; }
+                .ev-cart-overlay { display:block; position:fixed; inset:0; z-index:2400; background:rgba(15,23,42,.52); opacity:0; visibility:hidden; transition:opacity .2s ease,visibility .2s ease; }
                 .ev-cart-overlay.active { opacity:1; visibility:visible; }
                 .ev-cart-panel { position:fixed; z-index:2401; top:0; right:0; bottom:0; width:min(92vw,430px); max-width:100vw; display:flex !important; flex-direction:column; background:#fff; color:#17211d; box-shadow:-16px 0 48px rgba(15,23,42,.2); transform:translateX(105%); visibility:hidden; transition:transform .24s ease,visibility .24s ease; }
                 .ev-cart-panel.open { transform:translateX(0); visibility:visible; }
@@ -753,7 +904,7 @@
                 .ev-cart-panel .btn-whatsapp { background:#16833d; }
                 .ev-cart-panel .btn-email { background:#0b3d34; }
                 .ev-cart-panel .cart-note-drawer { margin-top:.8rem; color:#64748b; font-size:.8rem; }
-                .ev-cart-fab { position:fixed; z-index:1800; right:16px; bottom:calc(16px + env(safe-area-inset-bottom)); width:56px; height:56px; display:none; align-items:center; justify-content:center; border:0; border-radius:50%; background:#0b3d34; color:#fff; box-shadow:0 8px 24px rgba(15,23,42,.22); font-size:1.2rem; cursor:pointer; }
+                .ev-cart-fab { position:fixed; z-index:1800; right:16px; bottom:calc(16px + env(safe-area-inset-bottom)); width:auto; min-width:112px; height:56px; display:none; align-items:center; justify-content:center; gap:.55rem; padding:0 18px; border:0; border-radius:999px; background:#0b3d34; color:#fff; box-shadow:0 8px 24px rgba(15,23,42,.22); font-size:1rem; font-weight:800; cursor:pointer; }
                 .ev-cart-fab .cart-badge { position:absolute; top:-4px; right:-3px; min-width:20px; height:20px; padding:0 4px; border-radius:999px; align-items:center; justify-content:center; background:#dc2626; color:#fff; font:800 .68rem/1 Arial,sans-serif; }
                 .ev-cart-fab.near-footer { opacity:0; pointer-events:none; transform:translateY(12px); }
                 .related-product-copy .price-before { display:block; color:#64748b; font-size:.78em; text-decoration:line-through; }
@@ -775,7 +926,7 @@
             document.getElementById('cartDrawer').classList.add('ev-cart-panel');
         }
         if (!document.getElementById('floatingCartBtn')) {
-            document.body.insertAdjacentHTML('beforeend', '<button class="floating-cart ev-cart-fab" id="floatingCartBtn" type="button" aria-label="Open cart" aria-haspopup="dialog" aria-expanded="false"><i class="fas fa-shopping-cart" aria-hidden="true"></i><span class="cart-badge" data-cart-count style="display:none">0</span></button>');
+            document.body.insertAdjacentHTML('beforeend', '<button class="floating-cart ev-cart-fab" id="floatingCartBtn" type="button" aria-label="Open cart" aria-haspopup="dialog" aria-expanded="false"><i class="fas fa-shopping-cart" aria-hidden="true"></i><span class="floating-cart-label">Cart</span><span class="cart-badge" data-cart-count style="display:none">0</span></button>');
         } else {
             document.getElementById('floatingCartBtn').classList.add('ev-cart-fab');
         }
@@ -800,13 +951,6 @@
     let lastCartTrigger = null;
     let previousBodyOverflow = '';
     function openDrawer(trigger) {
-        const desktopPanel = document.getElementById('desktopCartPanel');
-        if (desktopPanel && window.matchMedia('(min-width: 900px)').matches) {
-            desktopPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            desktopPanel.setAttribute('tabindex', '-1');
-            desktopPanel.focus({ preventScroll: true });
-            return;
-        }
         const drawer = document.getElementById('cartDrawer');
         const overlay = document.getElementById('drawerOverlay');
         if (!drawer || !overlay) return;
@@ -871,9 +1015,6 @@
         renderProducts();
         searchInput.focus();
     });
-    document.getElementById('clearCartDesktopBtn')?.addEventListener('click', clearCart);
-    document.getElementById('desktopWhatsapp')?.addEventListener('click', checkoutWhatsApp);
-    document.getElementById('desktopEmail')?.addEventListener('click', checkoutEmail);
 
     const categoryFilter = document.getElementById("categoryFilter");
     const subcategoryFilter = document.getElementById("subcategoryFilter");
@@ -926,5 +1067,6 @@
     window.toggleWishlist = toggleWishlist;
     
     renderProductPagePrice();
+    restoreShopReturnLinks();
     loadCart();
     paintWishlist();
