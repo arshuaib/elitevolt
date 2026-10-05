@@ -52,3 +52,28 @@
 .home-page .seo-products-article .seo-product-cta .btn-primary{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.15rem;border:0;border-radius:12px;background:#287b45;color:#fff;font-size:.95rem;box-shadow:0 8px 18px rgba(40,123,69,.2);transition:transform .2s ease,background .2s ease,box-shadow .2s ease;}
 .home-page .seo-products-article .seo-product-cta .btn-primary:hover{transform:translateY(-2px);background:#1d6336;box-shadow:0 12px 23px rgba(40,123,69,.27);}
 @media(max-width:700px){.home-page .seo-content{margin:1.5rem .75rem;padding:1.4rem 1rem;border-radius:22px}.home-page .seo-content>h2{margin-bottom:1.2rem}.home-page .seo-grid{grid-template-columns:1fr!important;gap:.8rem!important}.home-page .seo-grid article{min-height:0;padding:1.2rem;border-radius:17px}.home-page .seo-products-article .seo-product-cta .btn-primary{width:100%;justify-content:center}}
+
+/* Reduce the vertical scroll on phones while keeping the hero and service copy intact. */
+@media(max-width:720px){
+ .home-page .home-hero.container{min-height:0;padding:1.2rem 1.1rem 1rem;}
+ .home-page .home-hero-copy{padding:.2rem 0 4rem;}
+ .home-page .home-hero h1{font-size:clamp(2rem,9vw,2.8rem);margin:.55rem 0 .7rem;}
+ .home-page .home-hero-copy>p{font-size:.95rem;line-height:1.5;margin-bottom:1rem;}
+ .home-page .home-hero-actions{gap:.55rem;}
+ .home-page .home-button{min-height:46px;padding:.65rem 1rem;font-size:.92rem;}
+ .home-page .home-contact-link{margin-top:.65rem;font-size:.95rem;}
+ .home-page .home-proof-points{margin-top:1rem;gap:.45rem .7rem;font-size:.74rem;}
+ .home-page .home-visual-caption{right:.65rem;bottom:.6rem;gap:.55rem;padding:.55rem .7rem;}
+ .home-page .caption-icon{width:36px;height:36px;flex-basis:36px;border-radius:11px;}
+ .home-page .home-visual-caption small{font-size:.68rem;}
+}
+@media(max-width:700px){
+ .home-page .seo-content{margin:1rem .75rem;padding:1.1rem .85rem;border-radius:18px;}
+ .home-page .seo-content>h2{margin-bottom:.85rem;font-size:1.45rem;line-height:1.2;}
+ .home-page .seo-grid{gap:.55rem!important;}
+ .home-page .seo-grid article{padding:.85rem;border-radius:14px;}
+ .home-page .seo-grid article h3{margin-bottom:.35rem;font-size:1.03rem;line-height:1.25;}
+ .home-page .seo-grid article p{font-size:.88rem;line-height:1.5;}
+ .home-page .seo-products-article .seo-product-cta{padding-top:.6rem;}
+ .home-page .seo-products-article .seo-product-cta .btn-primary{min-height:44px;padding:.65rem .85rem;font-size:.9rem;}
+}
