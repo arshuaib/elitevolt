@@ -55,7 +55,12 @@
 
 /* Reduce the vertical scroll on phones while keeping the hero and service copy intact. */
 @media(max-width:720px){
- .home-page .home-hero.container{min-height:0;padding:1.2rem 1.1rem 1rem;}
+ .home-page .home-hero.container{width:calc(100% - 1.5rem);max-width:calc(100% - 1.5rem);min-height:0;margin:.75rem auto 1.8rem;padding:1.2rem 1.1rem 1rem;}
+ .home-page .home-hero-visual .hero-slider,
+ .home-page .home-hero-visual .swiper{height:100%!important;min-height:0!important;}
+ .home-page .home-hero-visual .swiper-wrapper,
+ .home-page .home-hero-visual .swiper-slide{height:100%;}
+ .home-page .home-hero-visual .swiper-slide img{width:100%;height:100%;}
  .home-page .home-hero-copy{padding:.2rem 0 4rem;}
  .home-page .home-hero h1{font-size:clamp(2rem,9vw,2.8rem);margin:.55rem 0 .7rem;}
  .home-page .home-hero-copy>p{font-size:.95rem;line-height:1.5;margin-bottom:1rem;}
@@ -68,7 +73,7 @@
  .home-page .home-visual-caption small{font-size:.68rem;}
 }
 @media(max-width:700px){
- .home-page .seo-content{margin:1rem .75rem;padding:1.1rem .85rem;border-radius:18px;}
+ .home-page .seo-content{width:calc(100% - 1.5rem);max-width:calc(100% - 1.5rem);margin:1rem auto;padding:1.1rem .85rem;border-radius:18px;}
  .home-page .seo-content>h2{margin-bottom:.85rem;font-size:1.45rem;line-height:1.2;}
  .home-page .seo-grid{gap:.55rem!important;}
  .home-page .seo-grid article{padding:.85rem;border-radius:14px;}
