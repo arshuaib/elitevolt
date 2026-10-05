@@ -1,17 +1,23 @@
 EliteVolt Systems — Meta Commerce / Pixel setup
 
 PRODUCT FEED
-Feed URL:
-https://elitevoltsystems.com/merchant-feed.xml
+Ready-to-upload CSV file: facebook-product-feed.csv
+Scheduled feed URL: https://elitevoltsystems.com/facebook-product-feed.csv
+RSS/XML alternative: https://elitevoltsystems.com/merchant-feed.xml
 
-The feed is RSS 2.0 with the Google Merchant namespace (also accepted by
-Meta Commerce Manager) and contains the current 10 products from
-js/shop.js, including product IDs, titles, descriptions, URLs, images,
-prices in GHS, availability, condition, brand and product type. Use this
-URL when creating your catalog in Meta Commerce Manager.
+Both feeds are generated from the product catalog in js/shop.js. The CSV
+contains IDs, titles, descriptions, current stock, regular and sale prices,
+product and image URLs, brand and category. Run
+`node scripts/generate-facebook-feed.mjs` after changing products. The
+GitHub Pages deployment workflow runs this automatically before publishing,
+so the scheduled feed URL is refreshed with each site deployment.
+
+In Meta Commerce Manager, upload facebook-product-feed.csv directly, or add
+the scheduled CSV URL above as a data feed source. The XML URL remains
+available for existing integrations.
 
 META PIXEL
-Every page on the site (home, shop, all 10 product pages, all blog and
+Every page on the site (home, shop, all 14 product pages, all blog and
 service pages) now includes js/meta-pixel.js and a
 <meta name="meta-pixel-id" content=""> tag in its <head>. To activate the
 pixel sitewide, put your numeric Meta Pixel ID into that one meta tag on
@@ -39,10 +45,10 @@ not reload the page. Cart and wishlist data live in the shopper's own
 browser (localStorage) — there is no shared/server-side cart.
 
 NOTES
-- Product IDs (p1–p10) match the IDs used in the pixel events and the
+- Product IDs (p1–p14) match the IDs used in the pixel events and the
   "sku" field in each product page's Product structured data, so Meta's
-  dynamic ads / catalog matching will line up automatically as long as
-  the catalog is built from merchant-feed.xml.
+  dynamic ads / catalog matching will line up when the catalog uses either
+  generated feed file.
 - Two catalog images are currently placeholders and should be replaced
   with real product photos before running catalog/dynamic ads: the Ritar
   12V 200Ah battery's main and thumbnail images, and the SRNE 6kW HV

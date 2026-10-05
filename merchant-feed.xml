@@ -11,9 +11,11 @@
       <g:description>12W solar home system, 4 lamps, USB, 5200mAh battery.</g:description>
       <link>https://elitevoltsystems.com/products/m600x-solar-kit.html</link>
       <g:image_link>https://elitevoltsystems.com/images/M600X.jpeg</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/M600X-2.jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
-      <g:price>1400.00 GHS</g:price>
+      <g:price>1500.00 GHS</g:price>
+      <g:sale_price>1400.00 GHS</g:sale_price>
       <g:brand>EliteVolt Systems</g:brand>
       <g:product_type>Solar Kits</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
@@ -24,6 +26,7 @@
       <g:description>LUMN Home 840lm delivers four high-intensity LED bulbs, ensuring every corner stays bright. Built with MPPT solar charging, wireless switches, and pay-go compatibility, it offers modern energy solutions for off-grid communities.Up to 10 hours of lighting at full brightness Four 210-lumen LED lamps with 3 brightness settings 12W solar panel &amp; 40Wh battery for efficient energy storage</g:description>
       <link>https://elitevoltsystems.com/products/lumn-home-840.html</link>
       <g:image_link>https://elitevoltsystems.com/images/Lumn%20Home%20840.jpg</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/Lumn%20Home%20840-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>1500.00 GHS</g:price>
@@ -37,6 +40,7 @@
       <g:description>LUMN Home 1230lm is designed for large rooms, classrooms, or shared spaces. The system is easy to install, Bluetooth-enabled, and powered by a smart solar hub for uninterrupted lighting. 6-7 hours of runtime at full brightness. Three 410-lumen tube lights. MPPT solar charging for maximum efficiency. Durable LiFePO4 battery with 2000 cycles</g:description>
       <link>https://elitevoltsystems.com/products/lumn-home-1230.html</link>
       <g:image_link>https://elitevoltsystems.com/images/Lumn%20Home%201230.jpg</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/Lumn%20Home%201230-2.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>1600.00 GHS</g:price>
@@ -50,6 +54,7 @@
       <g:description>The Solar Barber Shop 06Ah Starter Pack includes a 20W solar panel, 6Ah lithium battery Hub for energy storage, two cordless haircutters with accessories such as limit combs, a cleaning brush, and lubricating oil, two efficient LED tube lights and a multi-functional torch.</g:description>
       <link>https://elitevoltsystems.com/products/solar-barber-shop-06ah-starter-pack.html</link>
       <g:image_link>https://elitevoltsystems.com/images/Solar%20barber%20kit.jpeg</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/barberkit.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>3500.00 GHS</g:price>
@@ -63,6 +68,7 @@
       <g:description>Reliable sound system for events such as road-show campaigns, weddings, churches, karaoke, USB/SD card functionalities, connectivity to Bluetooth devices, digital FM radio for local radio stations</g:description>
       <link>https://elitevoltsystems.com/products/solar-speaker.html</link>
       <g:image_link>https://elitevoltsystems.com/images/solar-speaker.jpeg</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/solar-speaker2.jpeg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>7500.00 GHS</g:price>
@@ -76,6 +82,7 @@
       <g:description>The 16-Inch Built-in Battery Solar Stand Fan Pack comprises a 25W solar panel and 16-inch stand fan with built-in battery. This portable pack allows direct fan charging and boasts a noiseless, brushless motor for an elegant touch in homes and shops. With 4-speed levels, natural wind mode, and timer function, the fan provides flexible cooling options lasting up to 40 hours and includes LED lighting.</g:description>
       <link>https://elitevoltsystems.com/products/16inch-solar-fan.html</link>
       <g:image_link>https://elitevoltsystems.com/images/16in%20Solar%20fan.jpeg</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/solar-fan.jpg</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>1750.00 GHS</g:price>
@@ -89,11 +96,12 @@
       <g:description>DG (Deep Cycle GEL) series is designed for frequent cyclic charge and discharge applications under extreme environments. By using strong grids, high-purity lead and patented Gel electrolyte, DG series offers excellent recovery after deep discharge under frequent cyclic discharge, and can deliver 400 cycles at 100% DOD. Suitable for solar, CATV, marine, RV and deep discharge UPS applications.</g:description>
       <link>https://elitevoltsystems.com/products/ritar-12v-200ah-deep-cycle-gel-battery.html</link>
       <g:image_link>https://www.ritarpower.com/uploads/image/20251226/dg-series-lead-acid-batteries-bulk.webp</g:image_link>
+      <g:additional_image_link>https://images.unsplash.com/photo-1622484214887-b6bb5e7fc5b3?w=300&amp;h=300&amp;fit=crop</g:additional_image_link>
       <g:availability>out_of_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>5000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Gel Battery</g:product_type>
+      <g:product_type>Batteries &gt; Gel batteries</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -102,9 +110,11 @@
       <g:description>Single-Phase Off-grid Solar Storage Inverter, Compatible with 48V storage batteries, Up to 6 units in parallel for 30kW, Time-slot function to save cost with peak-valley, Off-grid/without battery output mode, Aesthetically industrial design appearance, Support BMS communication</g:description>
       <link>https://elitevoltsystems.com/products/srne-hybrid-inverter-5kw-hv.html</link>
       <g:image_link>https://elitevoltsystems.com/images/5kw-hv-srne1.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/5kw-hv-srne2.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>8500.00 GHS</g:price>
+      <g:sale_price>7500.00 GHS</g:sale_price>
       <g:brand>EliteVolt Systems</g:brand>
       <g:product_type>Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
@@ -115,7 +125,7 @@
       <g:description>Single-Phase Off-grid Solar Storage Inverter □ SRNE 15 years in PV industry, committed to independent R&amp;D and production. □ Holds over 200 patents in energy storage, with unique industry- leading technologies. □ Chooses top-quality international components to deliver high-value products to customers. □ Upholds values of customer priority, proactivity, responsibility, and innovative breakthroughs. □ Advanced MPPT technology with up to 99.9% efficiency □ Up to 6 units in parallel for 36kW □ Time-slot function to save cost with peak-valley □ Off-grid/without battery output mode □ Aesthetically industrial design appearance □ Support BMS communication</g:description>
       <link>https://elitevoltsystems.com/products/srne-hybrid-inverter-6kw-hv.html</link>
       <g:image_link>https://elitevoltsystems.com/images/6kw-hv-srne1.png</g:image_link>
-      <g:availability>in_stock</g:availability>
+      <g:availability>out_of_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>8800.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
@@ -128,11 +138,71 @@
       <g:description>Tuya WiFi 8in1 Power Meter 2P AC Energy Meter APP Control 170-270V/63A Voltage and Current Meter Electricity Meter Smart Life</g:description>
       <link>https://elitevoltsystems.com/products/2p-din-smart-voltage-and-current-protection-meter.html</link>
       <g:image_link>https://elitevoltsystems.com/images/smart-meter1.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/smart-meter2.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>300.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
       <g:product_type>Protective Devices</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p11</g:id>
+      <g:title>Blue Carbon 100w All In One Integrated Solar Street Light</g:title>
+      <g:description>Blue Carbon 100w All In One Integrated Solar Street Light Suitable For Commercial, Industrial and Residential Applications</g:description>
+      <link>https://elitevoltsystems.com/products/blue-carbon-100w-all-in-one-integrated-solar-street-light.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/bct-st-100w-1.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/bct-st-100w-2.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>3000.00 GHS</g:price>
+      <g:sale_price>2500.00 GHS</g:sale_price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Solar Streetlights &gt; All In One Solar Streetlights</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p12</g:id>
+      <g:title>SRNE 12kW Single phase On/Off grid Hybrid Inverter</g:title>
+      <g:description>12kW SRNE Single Phase Low Voltage On/Off-grid Solar Hybrid Inverter</g:description>
+      <link>https://elitevoltsystems.com/products/srne-12kw-1ph-on.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/12kw-srne-1.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/12kw-srne-2.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>29000.00 GHS</g:price>
+      <g:sale_price>23000.00 GHS</g:sale_price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p13</g:id>
+      <g:title>SRNE 16kWh Lithium Battery (51.2V 314Ah)</g:title>
+      <g:description>16kWh Lithium Ion Battery (51.2V 314Ah)</g:description>
+      <link>https://elitevoltsystems.com/products/srne-16kwh-lit.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/srne-16kwh-lit-1.jpg</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/srne-16kwh-lit-2.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>30000.00 GHS</g:price>
+      <g:sale_price>26000.00 GHS</g:sale_price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Batteries &gt; Lithium Batteries</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p14</g:id>
+      <g:title>TW Solar 620W Bifacial panel</g:title>
+      <g:description>620W Bifacial Solar Panel</g:description>
+      <link>https://elitevoltsystems.com/products/tw-620w.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/tw-620w-1.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/tw-620w-2.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>1400.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Solar Panels &gt; Bifacial Panels</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
   </channel>
