@@ -791,6 +791,13 @@
             badge.style.display = totalItems > 0 ? 'inline-flex' : 'none';
             badge.textContent = totalItems > 99 ? '99+' : totalItems;
         });
+        const floatingCart = document.getElementById('floatingCartBtn');
+        if (floatingCart) {
+            const hasItems = totalItems > 0;
+            floatingCart.hidden = !hasItems;
+            if (hasItems) floatingCart.style.removeProperty('display');
+            else floatingCart.style.setProperty('display', 'none', 'important');
+        }
     }
     
     function updateCartDrawer() {
@@ -926,7 +933,7 @@
             document.getElementById('cartDrawer').classList.add('ev-cart-panel');
         }
         if (!document.getElementById('floatingCartBtn')) {
-            document.body.insertAdjacentHTML('beforeend', '<button class="floating-cart ev-cart-fab" id="floatingCartBtn" type="button" aria-label="Open cart" aria-haspopup="dialog" aria-expanded="false"><i class="fas fa-shopping-cart" aria-hidden="true"></i><span class="floating-cart-label">Cart</span><span class="cart-badge" data-cart-count style="display:none">0</span></button>');
+            document.body.insertAdjacentHTML('beforeend', '<button class="floating-cart ev-cart-fab" id="floatingCartBtn" type="button" aria-label="Open cart" aria-haspopup="dialog" aria-expanded="false" hidden style="display:none!important"><i class="fas fa-shopping-cart" aria-hidden="true"></i><span class="floating-cart-label">Cart</span><span class="cart-badge" data-cart-count style="display:none">0</span></button>');
         } else {
             document.getElementById('floatingCartBtn').classList.add('ev-cart-fab');
         }
