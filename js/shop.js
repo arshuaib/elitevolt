@@ -199,6 +199,42 @@
             whatsappMsg: "TW Solar 620W Bifacial panel"
         },
 
+        {id: "p15", pageUrl: "products/RTG12-200-or.html",
+            name: "Restar 12V 200Ah Gel Battery",
+            category: "Batteries", "subcategory": "Gel batteries",
+            price: 4000,
+            stock: true,
+            mainImg: "images/res12-200-g1.png",
+            description: "12V 200Ah Restar Gel Battery, orange top",
+            specs: [
+                "Cells Per unit: 6",
+                "Voltage (V): 12",
+                "Capacity (Ah): 200Ah@10hr.rate to 1.80V pet @25C",
+                "Weight: Approx. 62kg",
+                "Max. Charging Current: 50A",
+                "Max. Discharging Current: 1200A (5s)",
+            ],
+            whatsappMsg: "Restar 12V 200Ah Gel Battery orange"
+        },
+
+        {id: "p15", pageUrl: "products/RTG12-200-b.html",
+            name: "Restar 12V 200Ah Gel Battery",
+            category: "Batteries", "subcategory": "Gel batteries",
+            price: 3600,
+            stock: true,
+            mainImg: "images/res12-200-bg1.png",
+            description: "12V 200Ah Restar Gel Battery, orange top",
+            specs: [
+                "Cells Per unit: 6",
+                "Voltage (V): 12",
+                "Capacity (Ah): 200Ah@10hr.rate to 1.80V pet @25C",
+                "Weight: Approx. 62kg",
+                "Max. Charging Current: 50A",
+                "Max. Discharging Current: 1200A (5s)",
+            ],
+            whatsappMsg: "Restar 12V 200Ah Gel Battery orange"
+        },
+
     ];
 
     // Pagination settings
@@ -412,13 +448,22 @@
 
     // Get filtered products based on search
   function getFilteredProducts() {
-    const term = currentSearchTerm.toLowerCase().trim();
+    const normalizeSearchText = value => String(value || '').normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    const terms = normalizeSearchText(currentSearchTerm).match(/[a-z0-9]+/g) || [];
     let filtered = productsData.filter(product => {
-        const searchable = [
-            product.name, product.category, product.subcategory, product.description,
-            ...(product.specs || [])
-        ].join(" ").toLowerCase();
-        const matchesSearch = !term || searchable.includes(term);
+        const searchable = normalizeSearchText([
+            product.name, product.id, product.category, product.subcategory
+        ].join(' '));
+        const searchableCompact = searchable.replace(/[^a-z0-9]/g, '');
+        const matchesSearch = terms.length === 0 || terms.every(term => {
+            const variants = [term];
+            if (/[^aeiou]y$/.test(term)) variants.push(term.slice(0, -1) + 'ies');
+            else if (term.endsWith('ies')) variants.push(term.slice(0, -3) + 'y');
+            else if (term.endsWith('s')) variants.push(term.slice(0, -1));
+            else variants.push(term + 's');
+            return variants.some(variant => searchable.includes(variant) || searchableCompact.includes(variant));
+        });
         const matchesCategory = currentCategory === "All" || product.category === currentCategory;
         const matchesSubcategory = currentSubcategory === "All" || product.subcategory === currentSubcategory;
         const matchesStock = currentStock === "all" || (currentStock === "in" ? product.stock : !product.stock);
@@ -930,7 +975,9 @@
         if (!document.getElementById('cartDrawer')) {
             document.body.insertAdjacentHTML('beforeend', '<aside class="cart-drawer ev-cart-panel" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle" aria-hidden="true" tabindex="-1"><div class="drawer-header"><h3 id="cartDrawerTitle">Your Cart</h3><button class="close-drawer" id="closeDrawerBtn" type="button" aria-label="Close cart">×</button></div><div class="drawer-content" id="drawerCartContent"><div class="empty-cart-message">Your cart is empty</div></div></aside>');
         } else {
-            document.getElementById('cartDrawer').classList.add('ev-cart-panel');
+            const drawer = document.getElementById('cartDrawer');
+            drawer.classList.add('ev-cart-panel');
+            drawer.style.removeProperty('display');
         }
         if (!document.getElementById('floatingCartBtn')) {
             document.body.insertAdjacentHTML('beforeend', '<button class="floating-cart ev-cart-fab" id="floatingCartBtn" type="button" aria-label="Open cart" aria-haspopup="dialog" aria-expanded="false" hidden style="display:none!important"><i class="fas fa-shopping-cart" aria-hidden="true"></i><span class="floating-cart-label">Cart</span><span class="cart-badge" data-cart-count style="display:none">0</span></button>');
@@ -939,13 +986,22 @@
         }
 
         document.querySelectorAll('.main-nav, .nav-links').forEach(nav => {
-            if (document.getElementById('productsGrid')) return;
-            if (nav.querySelector('.mini-cart-link')) return;
+            const existingCartLink = nav.querySelector('.mini-cart-link');
+            if (existingCartLink) {
+                existingCartLink.setAttribute('aria-label', 'Open cart');
+                if (!existingCartLink.querySelector('.mini-cart-label')) {
+                    const label = document.createElement('span');
+                    label.className = 'mini-cart-label';
+                    label.textContent = 'Cart';
+                    existingCartLink.insertBefore(label, existingCartLink.querySelector('.cart-badge'));
+                }
+                return;
+            }
             const link = document.createElement('a');
-            link.href = '#cart';
+            link.href = /\/(?:blog|products)\//i.test(window.location.pathname) ? '../shop.html' : 'shop.html';
             link.className = 'mini-cart-link';
             link.setAttribute('aria-label', 'Open cart');
-            link.innerHTML = '<i class="fas fa-shopping-cart" aria-hidden="true"></i> Cart <span class="cart-badge" data-cart-count style="display:none">0</span>';
+            link.innerHTML = '<i class="fas fa-shopping-cart" aria-hidden="true"></i><span class="mini-cart-label">Cart</span><span class="cart-badge" data-cart-count style="display:none">0</span>';
             nav.appendChild(link);
         });
         document.querySelectorAll('.mini-cart-link').forEach(link => {
