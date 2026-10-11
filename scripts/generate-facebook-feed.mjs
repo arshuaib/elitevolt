@@ -20,6 +20,10 @@ if (!Array.isArray(products) || products.length === 0) {
 }
 
 const seenIds = new Set();
+const taxonomyValues = (product, singularKey, pluralKey) => [product[singularKey], product[pluralKey]]
+  .flatMap((value) => Array.isArray(value) ? value : [value])
+  .map((value) => String(value || '').trim())
+  .filter(Boolean);
 const rows = products.map((product) => {
   const id = String(product.id || '').trim();
   const title = String(product.name || '').trim();
@@ -42,10 +46,13 @@ const rows = products.map((product) => {
     ? currentPrice
     : null;
   const regularPrice = salePrice === null ? currentPrice : compareAtPrice;
-  const category = [product.category, product.subcategory]
-    .map((value) => String(value || '').trim())
-    .filter(Boolean)
-    .join(' > ') || 'Solar & Electrical Products';
+  const categories = taxonomyValues(product, 'category', 'categories');
+  const subcategories = taxonomyValues(product, 'subcategory', 'subcategories');
+  const category = (categories.length
+    ? categories.map((value) => subcategories.length
+      ? `${value} > ${subcategories.join(', ')}`
+      : value)
+    : subcategories).join(' | ') || 'Solar & Electrical Products';
   const thumbnails = Array.isArray(product.thumbnails) ? product.thumbnails : [];
 
   return {
