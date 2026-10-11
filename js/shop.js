@@ -651,8 +651,8 @@
             category: "Inverters", "subcategory": ["Hybrid inverters", "On/Off-grid inverters"],
             price: 22500,
             stock: true,
-            mainImg: "images/Deye-6k-hy.png",
-            thumbnails: ["images/Deye-6k-hy-1.png", "images/Deye-6k-hy-2.png", "images/Deye-6k-hy-3.png"],
+            mainImg: "images/deye-6k-hy.png",
+            thumbnails: ["images/deye-6k-hy-1.png", "images/deye-6k-hy-2.png", "images/deye-6k-hy-3.png"],
             description: "The Deye SUN-6K-SG04LP1-EU is a 6 kW single-phase low-voltage hybrid solar inverter designed for residential and light commercial use",
             specs: [
                 "• Inverter Type: Single-phase hybrid solar inverter",
