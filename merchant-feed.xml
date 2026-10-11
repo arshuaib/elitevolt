@@ -173,7 +173,7 @@
       <g:price>29000.00 GHS</g:price>
       <g:sale_price>23000.00 GHS</g:sale_price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid Inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -202,7 +202,360 @@
       <g:condition>new</g:condition>
       <g:price>1400.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Panels &gt; Bifacial Panels</g:product_type>
+      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline Solar Panels</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p15</g:id>
+      <g:title>Restar 12V 200Ah Gel Battery</g:title>
+      <g:description>12V 200Ah Restar Gel Battery, orange top</g:description>
+      <link>https://elitevoltsystems.com/products/RTG12-200-or.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/res12-200-g1.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>4000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Batteries &gt; Gel batteries</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p16</g:id>
+      <g:title>Restar 12V 200Ah Gel Battery</g:title>
+      <g:description>12V 200Ah Restar Gel Battery, orange top</g:description>
+      <link>https://elitevoltsystems.com/products/RTG12-200-b.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/res12-200-bg1.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>3600.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Batteries &gt; Gel batteries</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p17</g:id>
+      <g:title>Restar 1kW Off-grid Inverter</g:title>
+      <g:description>1kW pure sine wave off-grid inverter with built-in MPPT solar charge controller</g:description>
+      <link>https://elitevoltsystems.com/products/restar-1kw-off.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/restar-1kw-off.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>2600.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p18</g:id>
+      <g:title>Restar 1.5kW Off-grid Inverter</g:title>
+      <g:description>1.5kW pure sine wave off-grid inverter with built-in MPPT solar charge controller</g:description>
+      <link>https://elitevoltsystems.com/products/RT-ES1.5KW-24.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/restar-1kw-off.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>3000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p19</g:id>
+      <g:title>Restar 2.0kVA Off-grid Inverter</g:title>
+      <g:description>2.0kVA pure sine wave off-grid inverter with built-in MPPT solar charge controller</g:description>
+      <link>https://elitevoltsystems.com/products/RTES2.0KW-12.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/restar-1kw-off.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>4000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p20</g:id>
+      <g:title>Restar 3.2kW Off-grid Inverter</g:title>
+      <g:description>3.2kW pure sine wave off-grid inverter with built-in MPPT solar charge controller</g:description>
+      <link>https://elitevoltsystems.com/products/RTES3.2KW-24.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/restar-1kw-off.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>4500.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p21</g:id>
+      <g:title>Restar 4.2kW Hybrid Inverter</g:title>
+      <g:description>4.2kW pure sine wave hybrid inverter with built-in MPPT solar charge controller</g:description>
+      <link>https://elitevoltsystems.com/products/RTHY4.2KW-24P1-II.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/restar4k.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>5500.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p22</g:id>
+      <g:title>Huawei SUN2000-3K-LB0 single-phase hybrid solar inverter</g:title>
+      <g:description>Huawei SUN2000-3K-LB0 single-phase hybrid solar inverter and smart energy controller designed for residential photovoltaic (PV) and battery storage systems</g:description>
+      <link>https://elitevoltsystems.com/products/SUN2000-3K-LB0.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/huawei.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>9600.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p23</g:id>
+      <g:title>Megatank GL48100 LiFePO4 Energy Storage Battery</g:title>
+      <g:description>Megatank GL48100 is a 51.2V, 100Ah LiFePO4 (lithium iron phosphate) energy storage battery with a rated capacity of 5.12 kWh</g:description>
+      <link>https://elitevoltsystems.com/products/GL48100.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/megatank-5kwh.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/mega-5kwh-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>11500.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Batteries &gt; Lithium Batteries</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p24</g:id>
+      <g:title>Megatank GM2000 Power Station</g:title>
+      <g:description>The GM2000 Movable Energy Storage (ESS) Power Station is a portable power system that provides mobile backup and off-grid electricity.</g:description>
+      <link>https://elitevoltsystems.com/products/2kw-mega.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/2kw-mega.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/2kw-mega-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>11000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Power Stations &gt; Portable Power Stations</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p25</g:id>
+      <g:title>Megatank GIO-05T Solar Hybrid Inverter</g:title>
+      <g:description>A 5kVA, 230VAC single-phase transformer solar hybrid inverter with two MPPT trackers, WiFi and Bluetooth monitoring, smart generator input and rapid battery transfer.</g:description>
+      <link>https://elitevoltsystems.com/products/GIO-05T.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/GIO-05T.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>13500.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p26</g:id>
+      <g:title>620W Jinko Bifacial Solar Panel</g:title>
+      <g:description>The Jinko Tiger Neo 620W bifacial solar panel features a dual-glass design that generates electricity from both sides of the panel.</g:description>
+      <link>https://elitevoltsystems.com/products/jinko-620w.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/jinko-1.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/jinko-2.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>1800.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline Solar Panels</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p27</g:id>
+      <g:title>625W Jinko Bifacial Solar Panel</g:title>
+      <g:description>The Jinko Tiger Neo 625W bifacial solar panel features a dual-glass design that generates electricity from both sides of the panel.</g:description>
+      <link>https://elitevoltsystems.com/products/jinko-625w.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/jinko-1.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/jinko-2.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>1800.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline Solar Panels</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p28</g:id>
+      <g:title>630W Jinko Bifacial Solar Panel</g:title>
+      <g:description>The Jinko Tiger Neo 630W bifacial solar panel features a dual-glass design that generates electricity from both sides of the panel.</g:description>
+      <link>https://elitevoltsystems.com/products/jinko-630w.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/jinko-1.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/jinko-2.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>1800.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline Solar Panels</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p29</g:id>
+      <g:title>715W Jinko Bifacial Solar Panel</g:title>
+      <g:description>The Jinko Tiger Neo 715W bifacial solar panel features a dual-glass design that generates electricity from both sides of the panel.</g:description>
+      <link>https://elitevoltsystems.com/products/jinko-715w.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/jinko-1.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/jinko-2.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>2200.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline Solar Panels</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p30</g:id>
+      <g:title>720W Jinko Bifacial Solar Panel</g:title>
+      <g:description>The Jinko Tiger Neo 720W bifacial solar panel features a dual-glass design that generates electricity from both sides of the panel.</g:description>
+      <link>https://elitevoltsystems.com/products/jinko-720w.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/jinko-1.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/jinko-2.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>2300.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline Solar Panels</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p31</g:id>
+      <g:title>Geya 32A Automatic Transfer Switch</g:title>
+      <g:description>The W2R automatic transfer switch is a PC-class dual-power transfer device for circuits that require automatic changeover between a normal supply and an alternate supply. It is suitable for use in power supply systems with a rated voltage of 50Hz, AC 220V, and a rated current of 32A. The device can be used in various applications such as residential, commercial, and industrial settings where uninterrupted power supply is critical.</g:description>
+      <link>https://elitevoltsystems.com/products/geya-32a-ats.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/geya-ats-1.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/geya-ats-2.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>1200.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Switches &gt; Automatic Changeover (ATS) | Changeover &gt; Automatic Changeover (ATS)</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p32</g:id>
+      <g:title>Geya 63A Automatic Transfer Switch</g:title>
+      <g:description>The W2R automatic transfer switch is a PC-class dual-power transfer device for circuits that require automatic changeover between a normal supply and an alternate supply. It is suitable for use in power supply systems with a rated voltage of 50Hz, AC 220V, and a rated current of 32A. The device can be used in various applications such as residential, commercial, and industrial settings where uninterrupted power supply is critical.</g:description>
+      <link>https://elitevoltsystems.com/products/geya-63a-ats.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/geya-ats-1.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/geya-ats-2.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>1600.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Switches &gt; Automatic Changeover (ATS) | Changeover &gt; Automatic Changeover (ATS)</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p33</g:id>
+      <g:title>Geya 100A Automatic Transfer Switch</g:title>
+      <g:description>The W2R automatic transfer switch is a PC-class dual-power transfer device for circuits that require automatic changeover between a normal supply and an alternate supply. It is suitable for use in power supply systems with a rated voltage of 50Hz, AC 220V, and a rated current of 32A. The device can be used in various applications such as residential, commercial, and industrial settings where uninterrupted power supply is critical.</g:description>
+      <link>https://elitevoltsystems.com/products/geya-100a-ats.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/geya-ats-1.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/geya-ats-2.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>1800.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Switches &gt; Automatic Changeover (ATS) | Changeover &gt; Automatic Changeover (ATS)</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p34</g:id>
+      <g:title>Deye SUN-6K-OG01LP1-EU-AM2 6kW Off-grid Inverter</g:title>
+      <g:description>Deye SUN-6K-OG01LP1-EU-AM2 6kW Off-grid Inverter</g:description>
+      <link>https://elitevoltsystems.com/products/SUN-6K-OG01LP1-EU-AM2.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/deye-6k-off.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>11200.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters, Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p35</g:id>
+      <g:title>Deye SUN-5K-SG03LP1-EU 5kW Solar Hybrid Inverter</g:title>
+      <g:description>The Deye SUN-5K-SG03LP1-EU is a 5 kW single-phase low-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
+      <link>https://elitevoltsystems.com/products/SUN-5K-SG03LP1-EU.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/Deye-5k-hy.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/Deye-5k-hy-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>22000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p36</g:id>
+      <g:title>Deye SUN-6K-SG04LP1-EU 6kW Solar Hybrid Inverter</g:title>
+      <g:description>The Deye SUN-6K-SG04LP1-EU is a 6 kW single-phase low-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
+      <link>https://elitevoltsystems.com/products/SUN-6K-SG04LP1-EU-SM2.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/Deye-6k-hy.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/Deye-6k-hy-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>22500.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p37</g:id>
+      <g:title>Deye SUN-8K-SG01LP1-EU 8kW Solar Hybrid Inverter</g:title>
+      <g:description>The Deye SUN-8K-SG01LP1-EU is a 8 kW single-phase low-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
+      <link>https://elitevoltsystems.com/products/SUN-8K-SG01LP1-EU.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/Deye-8k-hy.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>29000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p38</g:id>
+      <g:title>Deye SUN-10K-SG02LP1-EU-AM3 10kW Solar Hybrid Inverter</g:title>
+      <g:description>The Deye SUN-10K-SG02LP1-EU-AM3 is a 10 kW single-phase low-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
+      <link>https://elitevoltsystems.com/products/SUN-10K-SG02LP1-EU-AM3.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/Deye-10k-hy.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/Deye-10k-hy-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>42000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p39</g:id>
+      <g:title>Deye SUN-12K-SG02LP1-EU-AM3 12kW Solar Hybrid Inverter</g:title>
+      <g:description>The Deye SUN-12K-SG02LP1-EU-AM3 is a 12 kW single-phase low-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
+      <link>https://elitevoltsystems.com/products/SUN-12K-SG02LP1-EU-AM3.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/Deye-10k-hy.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/Deye-10k-hy-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>44000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p40</g:id>
+      <g:title>Deye SUN-12K-SG04LP3-EU 12kW Solar Hybrid Inverter</g:title>
+      <g:description>The Deye SUN-12K-SG04LP3-EU is a 12 kW three-phase low-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
+      <link>https://elitevoltsystems.com/products/SUN-12K-SG04LP3-EU.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/Deye-10k-hy.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/Deye-10k-hy-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>47000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
   </channel>

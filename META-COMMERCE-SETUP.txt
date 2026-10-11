@@ -7,17 +7,29 @@ RSS/XML alternative: https://elitevoltsystems.com/merchant-feed.xml
 
 Both feeds are generated from the product catalog in js/shop.js. The CSV
 contains IDs, titles, descriptions, current stock, regular and sale prices,
-product and image URLs, brand and category. Run
-`node scripts/generate-facebook-feed.mjs` after changing products. The
-GitHub Pages deployment workflow runs this automatically before publishing,
-so the scheduled feed URL is refreshed with each site deployment.
+product and image URLs, brand and category. The GitHub Pages workflow runs
+the catalog updater and feed generator before every deployment. It creates a
+product page when a catalog item has a new pageUrl, refreshes sitemap.xml,
+then generates both catalog feeds from the same product data.
+
+To add an item, add a complete product record to productsData in js/shop.js,
+including a unique id and pageUrl under products/. Commit and push to main.
+The next Pages deployment publishes the new product page, shop listing,
+sitemap entry, CSV feed and XML feed together. For a local preview, run:
+
+`node scripts/update-catalog.mjs`
+`node scripts/generate-facebook-feed.mjs`
+
+The blog index and eight long-form guides are generated from
+scripts/generate-blog-guides.mjs. Edit that source file to update the guide
+content; the deployment workflow rebuilds the blog index and article pages.
 
 In Meta Commerce Manager, upload facebook-product-feed.csv directly, or add
 the scheduled CSV URL above as a data feed source. The XML URL remains
 available for existing integrations.
 
 META PIXEL
-Every page on the site (home, shop, all 14 product pages, all blog and
+Every page on the site (home, shop, all 40 product pages, all blog and
 service pages) now includes js/meta-pixel.js and a
 <meta name="meta-pixel-id" content=""> tag in its <head>. To activate the
 pixel sitewide, put your numeric Meta Pixel ID into that one meta tag on
@@ -45,7 +57,7 @@ not reload the page. Cart and wishlist data live in the shopper's own
 browser (localStorage) — there is no shared/server-side cart.
 
 NOTES
-- Product IDs (p1–p14) match the IDs used in the pixel events and the
+- Product IDs (p1–p40) match the IDs used in the pixel events and the
   "sku" field in each product page's Product structured data, so Meta's
   dynamic ads / catalog matching will line up when the catalog uses either
   generated feed file.
