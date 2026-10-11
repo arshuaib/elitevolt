@@ -140,7 +140,7 @@
 
         {id: "p12", pageUrl: "products/srne-12kw-1ph-on.html",
             name: "SRNE 12kW Single phase On/Off grid Hybrid Inverter",
-            category: "Inverters", "subcategory": "Hybrid Inverters",
+            category: "Inverters", "subcategory": "Hybrid inverters",
             price: 23000,
             compareAtPrice: 29000,
             stock: true,
@@ -181,7 +181,7 @@
 
         {id: "p14", pageUrl: "products/tw-620w.html",
             name: "TW Solar 620W Bifacial panel",
-            category: "Solar Panels", "subcategory": "Bifacial Panels",
+            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline Solar Panels"],
             price: 1400,
             stock: true,
             mainImg: "images/tw-620w-1.png",
@@ -217,7 +217,7 @@
             whatsappMsg: "Restar 12V 200Ah Gel Battery orange"
         },
 
-        {id: "p15", pageUrl: "products/RTG12-200-b.html",
+        {id: "p16", pageUrl: "products/RTG12-200-b.html",
             name: "Restar 12V 200Ah Gel Battery",
             category: "Batteries", "subcategory": "Gel batteries",
             price: 3600,
@@ -235,10 +235,535 @@
             whatsappMsg: "Restar 12V 200Ah Gel Battery orange"
         },
 
+        {id: "p17", pageUrl: "products/restar-1kw-off.html",
+            name: "Restar 1kW Off-grid Inverter",
+            category: "Inverters", "subcategory": "Off-grid inverters",
+            price: 2600,
+            stock: true,
+            mainImg: "images/restar-1kw-off.png",
+            description: "1kW pure sine wave off-grid inverter with built-in MPPT solar charge controller",
+            specs: [
+                "Rated Power: 1000VA/1000W",
+                "Rated Input Voltage: 12VDC",
+                "Input Voltage Range: 10.5~16VDC",
+                "Battery Voltage: 12VDC",
+                "Battery Voltage Range:10.5~16VDC",
+                "AC Output: 230VAC, 50/60Hz, 1Φ",
+                "AC Input: 230VAC, 50/60Hz, 1Φ",
+                "DC Output: 13.5VDC",
+                "AC Output: 230VAC, 50/60Hz, 1Φ",
+                "Maximum AC Charging Current: 40A",
+                "Rated Power: 600W",
+                "Max. Solar Voltage (VOC): 150VDC",
+                "MPPT Voltage range: 20 ~ 150VDC",
+                "Maximum Solar Charging Current: 40A"
+            ],
+            whatsappMsg: "Restar 1kW Off-grid Inverter"
+        },
+
+        {id: "p18", pageUrl: "products/RT-ES1.5KW-24.html",
+            name: "Restar 1.5kW Off-grid Inverter",
+            category: "Inverters", "subcategory": "Off-grid inverters",
+            price: 3000,
+            stock: true,
+            mainImg: "images/restar-1kw-off.png",
+            description: "1.5kW pure sine wave off-grid inverter with built-in MPPT solar charge controller",
+            specs: [
+                "Rated Power: 1500VA/1500W",
+                "Rated Input Voltage: 24VDC",
+                "Input Voltage Range: 21~32VDC",
+                "Battery Voltage: 24VDC",
+                "Battery Voltage Range:21~32VDC",
+                "AC Output: 230VAC, 50/60Hz, 6.5A, 1Φ",
+                "AC Charger Mode:",
+                "AC Input: 230VAC, 50/60Hz,8.82A, 1Φ",
+                "DC Output: 27VDC",
+                "AC Output: 230VAC, 50/60Hz, 6.5A, 1Φ",
+                "Maximum AC Charging Current: 40A",
+                "Solar Charger Mode:",
+                "Rated Power: 1200W",
+                "Max Solar Voltage (VOC): 150VDC",
+                "MPPT Voltage range: 30 – 150VDC",
+                "Maximum Solar Charging Current: 40A"
+            ],
+            whatsappMsg: "Restar 1.5kW Off-grid Inverter"
+        },
+
+        {id: "p19", pageUrl: "products/RTES2.0KW-12.html",
+            name: "Restar 2.0kVA Off-grid Inverter",
+            category: "Inverters", "subcategory": "Off-grid inverters",
+            price: 4000,
+            stock: true,
+            mainImg: "images/restar-1kw-off.png",
+            description: "2.0kVA pure sine wave off-grid inverter with built-in MPPT solar charge controller",
+            specs: [
+                "Inverter Mode:",
+                "Rated Power:2000VA/1600W",
+                "DC Input:12VDC ,133.3A",
+                "AC Output:230VAC,50/60Hz,8.7A,1Φ",
+                "AC Charger Mode:",
+                "AC Input:230VAC,50/60Hz,11.8A,1Φ",
+                "DC Output: 13.5VDC,",
+                "AC Output: 230VAC,50/60Hz,8.7A,1Φ",
+                "Maximum AC Charging Current:60A",
+                "Solar Charger Mode:",
+                "Rated Power:2000W",
+                "Nominal operating voltage:240VDC",
+                "Max. Solar Voltage(VOC):400VDC",
+                "MPPT Voltage range:30~400VDC",
+                "Maximum Solar Charging Current:80A"
+            ],
+            whatsappMsg: "Restar 2.0kva Off-grid Inverter"
+        },
+
+        {id: "p20", pageUrl: "products/RTES3.2KW-24.html",
+            name: "Restar 3.2kW Off-grid Inverter",
+            category: "Inverters", "subcategory": "Off-grid inverters",
+            price: 4500,
+            stock: true,
+            mainImg: "images/restar-1kw-off.png",
+            description: "3.2kW pure sine wave off-grid inverter with built-in MPPT solar charge controller",
+            specs: [
+                "Inverter Mode:",
+                "Rated Power: 3200VA/3000W",
+                "DC Input: 24VDC, 125A",
+                "AC Output: 230VAC, 50/60Hz, 13.9A, 1Φ",
+                "AC Charger Mode:",
+                "AC Input: 230VAC, 50/60Hz, 20.2A, 1Φ",
+                "DC Output: 27VDC,",
+                "AC Output: 230VAC, 50/60Hz, 13.9A, 1Φ",
+                "Maximum AC Charging Current:60A",
+                "Solar Charger Mode:",
+                "Rated Power: 3000W",
+                "Nominal operating voltage: 240VDC",
+                "Max. Solar Voltage (VOC): 400VDC",
+                "MPPT Voltage range: 30 ~ 400VDC",
+                "Maximum Solar Charging Current:80A"
+            ],
+            whatsappMsg: "Huawei SUN2000-3K-LB0 single-phase hybrid solar inverter"
+        },
+
+        {id: "p21", pageUrl: "products/RTHY4.2KW-24P1-II.html",
+            name: "Restar 4.2kW Hybrid Inverter",
+            category: "Inverters", "subcategory": "Hybrid inverters",
+            price: 5500,
+            stock: true,
+            mainImg: "images/restar4k.png",
+            description: "4.2kW pure sine wave hybrid inverter with built-in MPPT solar charge controller",
+            specs: [
+                "PV INPUT:",
+                "Nominal operating voltage:240Vdc",
+                "Vmax PV:500Vdc",
+                "PV input voltage range:60-450Vdc",
+                "Imax PV:18A",
+                "Full load MPPT range:240~450Vdc",
+                "Maximum PV Input power:6200W",
+                "Maximum Solar Charging Current:120A",
+                "GRID/AC OUTPUT:",
+                "Nominal Output Voltage:220/230/240Vac",
+                "Feed-in Grid Voltage Range:195~253Vac",
+                "Feed-in Grid Frequency Range:50±1Hz",
+                "Nominal Output Current:18.2A",
+                "Power Factor Range:>0.99",
+                "Maximum Conversion Efficiency(DC/AC):97%",
+                "Nominal Operating Frequency:50/60Hz",
+                "TWO LOAD OUTPUT POWER:",
+                "Full Load:4200W",
+                "Maximum Main Load:4200W",
+                "Maximum Second Load:1400W",
+                "Main Load Cut Off Voltage:26Vdc",
+                "Main Load Return Voltage:27Vdc",
+                "AC INPUT:",
+                "Nominal operating voltage:230Vac",
+                "Maximum input current:30A",
+                "Nominal operating frequency:50/60Hz",
+                "Surge power:8400VA",
+                "Maximum AC Charging Current:100A",
+                "BATTERY:",
+                "Battery voltage :24Vdc"
+            ],
+            whatsappMsg: "Restar 4.2kW Hybrid Inverter"
+        },
+
+        {id: "p22", pageUrl: "products/SUN2000-3K-LB0.html",
+            name: "Huawei SUN2000-3K-LB0 single-phase hybrid solar inverter",
+            category: "Inverters", "subcategory": "Hybrid inverters",
+            price: 9600,
+            stock: true,
+            mainImg: "images/huawei.png",
+            description: "Huawei SUN2000-3K-LB0 single-phase hybrid solar inverter and smart energy controller designed for residential photovoltaic (PV) and battery storage systems",
+            specs: [
+                "Max. efficiency: 97.8%",
+                "Recommended max. PV power: 4,500 Wp",
+                "Max. input voltage: 600 V",
+                "Start-up voltage: 50V",
+                "MPPT operating voltage range: 40–560 V",
+                "Rated input voltage: 360V",
+                "Max. input current per MPPT: 16A",
+                "Max. short-circuit current: 20A",
+                "Number of MPP trackers: 2",
+                "Max. inputs per MPP tracker: 1",
+                "Compatible battery: LUNA2000-5/10/15-S0, LUNA2000-7/14/21-S1",
+            ],
+            whatsappMsg: "Huawei SUN2000-3K-LB0 single-phase hybrid solar inverter"
+        },
+
+        {id: "p23", pageUrl: "products/GL48100.html",
+            name: "Megatank GL48100 LiFePO4 Energy Storage Battery",
+            category: "Batteries", "subcategory": "Lithium Batteries",
+            price: 11500,
+            stock: true,
+            mainImg: "images/megatank-5kwh.png",
+            thumbnails: ["images/mega-5kwh-1.png", "images/mega-5kwh.png"],
+            description: "Megatank GL48100 is a 51.2V, 100Ah LiFePO4 (lithium iron phosphate) energy storage battery with a rated capacity of 5.12 kWh",
+            specs: ["Rated voltage: 51.2V", 
+                "Rated capacity [Ah]: 100Ah", 
+                "Rated energy [kWh]: 5.12kWh", 
+                "Max. charge current [A]: 100A", 
+                "Max. discharge current [A]: 100A", 
+                "Cycle life: >6000 cycles at 80% DOD", 
+                "Operating temperature range: -20°C to 60°C", 
+                "Communication interface: RS485, CAN bus"
+            ],
+            whatsappMsg: "Megatank GL48100 5kWh"
+        },
+
+        {id: "p24", pageUrl: "products/2kw-mega.html",
+            name: "Megatank GM2000 Power Station",
+            category: "Power Stations", "subcategory": "Portable Power Stations",
+            price: 11000,
+            stock: true,
+            mainImg: "images/2kw-mega.png",
+            thumbnails: ["images/2kw-mega-1.png","images/2kw-mega-2.png"],
+            description: "The GM2000 Movable Energy Storage (ESS) Power Station is a portable power system that provides mobile backup and off-grid electricity.",
+            specs: ["Battery chemistry: LiFePO4 cylindrical cell",
+                "Rated capacity [Wh]: 2048Wh",
+                "Battery cell life: 2000 cycles SOH > 80%",
+                "Wide input voltage range :180-264Vac",
+                "External DC charger：Support",
+                "Wide frequency input range ：46-64Hz (AC Charging)",
+                "PV charging ：Supports external PV charger",
+                "AC outlet：South African, European, British, Universal, Chinese",
+                "AC output waveform ：Pure sine-wave (Inverter Mode)",
+                "USB-A output ：5V/2.1A × 2",
+                "UPS feature：Yes",
+                "Bidirectional inverter：Yes",
+                "Emergency power backup：Yes",
+                "Expansion battery pack: Supports expansion battery pack with 2048Wh capacity (total 4096Wh)",
+                "Swappable battery module:Yes",
+                "Weight:≈ 18kg",
+                "Dimensions:400mm (L) × 250mm (W) × 290mm (H)"
+            ],
+            whatsappMsg: "Megatank GM2000 2kWh"
+        },
+
+        {id: "p25", pageUrl: "products/GIO-05T.html",
+            name: "Megatank GIO-05T Solar Hybrid Inverter",
+            category: "Inverters", "subcategory": "Hybrid inverters",
+            price: 13500,
+            stock: true,
+            mainImg: "images/GIO-05T.png",
+            description: "A 5kVA, 230VAC single-phase transformer solar hybrid inverter with two MPPT trackers, WiFi and Bluetooth monitoring, smart generator input and rapid battery transfer.",
+            specs: [],
+            whatsappMsg: "Megatank GIO-05T 5kW Solar Hybrid Inverter"
+        },
+
+        {id: "p26", pageUrl: "products/jinko-620w.html",
+            name: "620W Jinko Bifacial Solar Panel",
+            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline Solar Panels"],
+            price: 1800,
+            stock: true,
+            mainImg: "images/jinko-1.png",
+            thumbnails: ["images/jinko-2.png","images/jinko-3.png"],
+            description: "The Jinko Tiger Neo 620W bifacial solar panel features a dual-glass design that generates electricity from both sides of the panel.",
+            specs: ["Cell Type: N- type Mono-crystalline",
+                "Maximum Power - Pmax  [Wp]: 620W",
+                "Maximum Power Voltage - Vmp  [V]: 40.74V",
+                "Maximum Power Current - Imp  [A]: 15.22A",
+                "Open Circuit Voltage - Voc  [V]: 49.08V",
+                "Short Circuit Current - Isc  [A]: 16.08A",
+                "Module Efficiency [%]: 22.95%", 
+            ],
+            whatsappMsg: "620W Jinko Bifacial Solar Panel"
+        },
+
+        {id: "p27", pageUrl: "products/jinko-625w.html",
+            name: "625W Jinko Bifacial Solar Panel",
+            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline Solar Panels"],
+            price: 1800,
+            stock: true,
+            mainImg: "images/jinko-1.png",
+            thumbnails: ["images/jinko-2.png","images/jinko-3.png"],
+            description: "The Jinko Tiger Neo 625W bifacial solar panel features a dual-glass design that generates electricity from both sides of the panel.",
+            specs: ["Cell Type: N- type Mono-crystalline",
+                "Maximum Power - Pmax  [Wp]: 625W",
+                "Maximum Power Voltage - Vmp  [V]: 46.10V",
+                "Maximum Power Current - Imp  [A]: 13.56A",
+                "Open Circuit Voltage - Voc  [V]: 55.72V",
+                "Short Circuit Current - Isc  [A]: 14.27A",
+                "Module Efficiency [%]: 23.0%", 
+            ],
+            whatsappMsg: "625W Jinko Bifacial Solar Panel"
+        },
+        
+        {id: "p28", pageUrl: "products/jinko-630w.html",
+            name: "630W Jinko Bifacial Solar Panel",
+            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline Solar Panels"],
+            price: 1800,
+            stock: true,
+            mainImg: "images/jinko-1.png",
+            thumbnails: ["images/jinko-2.png","images/jinko-3.png"],
+            description: "The Jinko Tiger Neo 630W bifacial solar panel features a dual-glass design that generates electricity from both sides of the panel.",
+            specs: ["Cell Type: N- type Mono-crystalline",
+                "Maximum Power - Pmax  [Wp]: 630W",
+                "Maximum Power Voltage - Vmp  [V]: 41.02V",
+                "Maximum Power Current - Imp  [A]: 15.36A",
+                "Open Circuit Voltage - Voc  [V]: 49.48V",
+                "Short Circuit Current - Isc  [A]: 16.20A",
+                "Module Efficiency [%]: 23.0%"
+            ],
+            whatsappMsg: "630W Jinko Bifacial Solar Panel"
+        },
+
+        {id: "p29", pageUrl: "products/jinko-715w.html",
+            name: "715W Jinko Bifacial Solar Panel",
+            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline Solar Panels"],
+            price: 2200,
+            stock: true,
+            mainImg: "images/jinko-1.png",
+            thumbnails: ["images/jinko-2.png","images/jinko-3.png"],
+            description: "The Jinko Tiger Neo 715W bifacial solar panel features a dual-glass design that generates electricity from both sides of the panel.",
+            specs: ["Cell Type: N- type Mono-crystalline",
+                "Maximum Power - Pmax  [Wp]: 715W",
+                "Maximum Power Voltage - Vmp  [V]: 40.77V",
+                "Maximum Power Current - Imp  [A]: 17.54A",
+                "Open Circuit Voltage - Voc  [V]: 48.88V",
+                "Short Circuit Current - Isc  [A]: 18.60A",
+                "Module Efficiency [%]: 23.02%",
+                "Dimensions:2384×1303×33 mm"
+            ],
+            whatsappMsg: "715W Jinko Bifacial Solar Panel"
+        },
+
+        {id: "p30", pageUrl: "products/jinko-720w.html",
+            name: "720W Jinko Bifacial Solar Panel",
+            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline Solar Panels"],
+            price: 2300,
+            stock: true,
+            mainImg: "images/jinko-1.png",
+            thumbnails: ["images/jinko-2.png","images/jinko-3.png"],
+            description: "The Jinko Tiger Neo 720W bifacial solar panel features a dual-glass design that generates electricity from both sides of the panel.",
+            specs: ["Cell Type: N- type Mono-crystalline",
+                "Maximum Power - Pmax  [Wp]: 720W",
+                "Maximum Power Voltage - Vmp  [V]: 40.89V",
+                "Maximum Power Current - Imp  [A]: 17.61A",
+                "Open Circuit Voltage - Voc  [V]: 49.04V",
+                "Short Circuit Current - Isc  [A]: 18.67A",
+                "Module Efficiency [%]: 23.18%",
+                "Dimensions:2384×1303×33 mm"
+            ],
+            whatsappMsg: "720W Jinko Bifacial Solar Panel"
+        },
+
+        {id: "p31", pageUrl: "products/geya-32a-ats.html",
+            name: "Geya 32A Automatic Transfer Switch",
+            category: ["Switches","Changeover"], "subcategory": "Automatic Changeover (ATS)",
+            price: 1200,
+            stock: true,
+            mainImg: "images/geya-ats-1.png",
+            thumbnails: ["images/geya-ats-2.png","images/geya-ats-3.png","images/geya-ats-4.png"],
+            description: "The W2R automatic transfer switch is a PC-class dual-power transfer device for circuits that require automatic changeover between a normal supply and an alternate supply. It is suitable for use in power supply systems with a rated voltage of 50Hz, AC 220V, and a rated current of 32A. The device can be used in various applications such as residential, commercial, and industrial settings where uninterrupted power supply is critical.",
+            whatsappMsg: "Geya 32A Automatic Transfer Switch"
+        },
+
+        {id: "p32", pageUrl: "products/geya-63a-ats.html",
+            name: "Geya 63A Automatic Transfer Switch",
+            category: ["Switches","Changeover"], "subcategory": "Automatic Changeover (ATS)",
+            price: 1600,
+            stock: true,
+            mainImg: "images/geya-ats-1.png",
+            thumbnails: ["images/geya-ats-2.png","images/geya-ats-3.png","images/geya-ats-4.png"],
+            description: "The W2R automatic transfer switch is a PC-class dual-power transfer device for circuits that require automatic changeover between a normal supply and an alternate supply. It is suitable for use in power supply systems with a rated voltage of 50Hz, AC 220V, and a rated current of 32A. The device can be used in various applications such as residential, commercial, and industrial settings where uninterrupted power supply is critical.",
+            whatsappMsg: "Geya 63A Automatic Transfer Switch"
+        },
+
+        {id: "p33", pageUrl: "products/geya-100a-ats.html",
+            name: "Geya 100A Automatic Transfer Switch",
+            category: ["Switches","Changeover"], "subcategory": "Automatic Changeover (ATS)",
+            price: 1800,
+            stock: true,
+            mainImg: "images/geya-ats-1.png",
+            thumbnails: ["images/geya-ats-2.png","images/geya-ats-3.png","images/geya-ats-4.png"],
+            description: "The W2R automatic transfer switch is a PC-class dual-power transfer device for circuits that require automatic changeover between a normal supply and an alternate supply. It is suitable for use in power supply systems with a rated voltage of 50Hz, AC 220V, and a rated current of 32A. The device can be used in various applications such as residential, commercial, and industrial settings where uninterrupted power supply is critical.",
+            whatsappMsg: "Geya 100A Automatic Transfer Switch"
+        },
+
+        {id: "p34", pageUrl: "products/SUN-6K-OG01LP1-EU-AM2.html",
+            name: "Deye SUN-6K-OG01LP1-EU-AM2 6kW Off-grid Inverter",
+            category: "Inverters", "subcategory": ["Hybrid inverters", "Off-grid inverters"],
+            price: 11200,
+            stock: true,
+            mainImg: "images/deye-6k-off.png",
+            thumbnails: "images/deye-6k-off-2.png",
+            description: "Deye SUN-6K-OG01LP1-EU-AM2 6kW Off-grid Inverter",
+            specs: [
+                "• Rated AC Output Power: 6,000 W (pure sine wave)",
+                "• Max PV Access Power: 10,000 W",
+                "• Max PV Input Voltage: 500 V",
+                "• MPPT Range: 150 V – 425 V (Dual MPPT trackers)",
+                "• Battery Compatibility: 40 V – 60 V (Lead-acid or Lithium-ion, with self-adaptation to BMS)",
+                "• Max Charging / Discharging Current: 135 A",
+                "• Max Efficiency: 97.6%",
+                "• Parallel Support: Up to 16 units in off-grid/hybrid mode",
+                "• Protection Rating: IP65 (dust and water resistant)",
+                "• Operating Temperature: -40°C to +60°C",
+                "• Communication: RS232, RS485, CAN, and built-in Wi-Fi",
+            ],
+            whatsappMsg: "Deye SUN-6K-OG01LP1-EU-AM2 6kW Off-grid Inverter"
+        },
+
+        {id: "p35", pageUrl: "products/SUN-5K-SG03LP1-EU.html",
+            name: "Deye SUN-5K-SG03LP1-EU 5kW Solar Hybrid Inverter",
+            category: "Inverters", "subcategory": ["Hybrid inverters", "On/Off-grid inverters"],
+            price: 22000,
+            stock: true,
+            mainImg: "images/Deye-5k-hy.png",
+            thumbnails: ["images/Deye-5k-hy-1.png", "images/Deye-5k-hy-2.png"],
+            description: "The Deye SUN-5K-SG03LP1-EU is a 5 kW single-phase low-voltage hybrid solar inverter designed for residential and light commercial use",
+            specs: [
+                "• Rated AC Output: 5000W (single-phase, 220/230V)",
+                "• Max AC Output: 5500W",
+                "• Max PV Input Power: 6500W",
+                "• Max DC Input Power: 6500W (up to 500V max input voltage)",
+                "• MPPT Trackers: 2 independent MPPT trackers (150V–425V range)",
+                "• Battery Compatibility: 40V–60V low-voltage lead-acid or lithium-ion batteries",
+                "• Max Charge/Discharge Current: 120A",
+                "• Max Efficiency: 97.6% (European efficiency 96.5%)",
+                "• Protection Degree: IP65 (weather-resistant for outdoor installation)",
+                "• Display & Control: Color LCD touch screen",
+                "• Dimensions & Weight: 330 × 580 × 232 mm; approx. 20.5 kg net weight",
+            ],
+            whatsappMsg: "Deye SUN-5K-SG03LP1-EU 5kW Solar Hybrid Inverter"
+        },
+
+        {id: "p36", pageUrl: "products/SUN-6K-SG04LP1-EU-SM2.html",
+            name: "Deye SUN-6K-SG04LP1-EU 6kW Solar Hybrid Inverter",
+            category: "Inverters", "subcategory": ["Hybrid inverters", "On/Off-grid inverters"],
+            price: 22500,
+            stock: true,
+            mainImg: "images/Deye-6k-hy.png",
+            thumbnails: ["images/Deye-6k-hy-1.png", "images/Deye-6k-hy-2.png", "images/Deye-6k-hy-3.png"],
+            description: "The Deye SUN-6K-SG04LP1-EU is a 6 kW single-phase low-voltage hybrid solar inverter designed for residential and light commercial use",
+            specs: [
+                "• Inverter Type: Single-phase hybrid solar inverter",
+                "• Rated AC Output Power: 6,000 W (6 kW)",
+                "• Max PV Input Power: Up to 12,000 W (depending on configuration) / 9,600 W",
+                "• MPPT Trackers: 2 independent MPPT trackers (1 string per MPPT)",
+                "• MPPT Voltage Range: 150 V – 425 V (Max PV voltage: 500 V)",
+                "• Battery Support: Low-voltage lead-acid or lithium-ion batteries (40–60 V range)",
+                "• Max Charge / Discharge Current: 135 A – 140 A",
+                "• Max Efficiency: 97.6% (Euro efficiency: 96.5%)",
+                "• Protection Rating: IP65 (suitable for outdoor installation)",
+                "• Dimensions & Weight: 376 × 470 × 241.5 mm; approx. 17.6 – 19 kg"
+            ],
+            whatsappMsg: "Deye SUN-6K-SG04LP1-EU 6kW Solar Hybrid Inverter"
+        },
+
+        {id: "p37", pageUrl: "products/SUN-8K-SG01LP1-EU.html",
+            name: "Deye SUN-8K-SG01LP1-EU 8kW Solar Hybrid Inverter",
+            category: "Inverters", "subcategory": ["Hybrid inverters", "On/Off-grid inverters"],
+            price: 29000,
+            stock: true,
+            mainImg: "images/Deye-8k-hy.png",
+            thumbnails: "images/Deye-8k-hy-1.png",
+            description: "The Deye SUN-8K-SG01LP1-EU is a 8 kW single-phase low-voltage hybrid solar inverter designed for residential and light commercial use",
+            specs: [
+                "• Rated AC Output: 8,000W (Max AC output: 8,800W)",
+                "• Max PV Input Power: 10,400W",
+                "• Max DC Input Voltage: 500V",
+                "• MPPT Voltage Range: 150V – 425V (2 independent MPPT trackers)",
+                "• Max DC Input Power: 10,400W",
+                "• Battery Compatibility: Low-voltage 40–60V (Lead-acid or Lithium-ion)",
+                "• Charge/Discharge Current: Max 190A / 190A",
+                "• MPPT Trackers: 2 MPPT trackers with 2+2 string configuration (Max efficiency: 97.6%)",
+                "• Protection Rating: IP65 dust and water resistance",
+                "• Parallel Operation: Supports up to 16 units in parallel (on/grid and off-grid)",
+                "• Control & Interface: Color touch LCD, RS485/CAN communication, and 6 programmable time periods for battery charging/discharging.",
+                "• Dimensions & Weight:"
+            ],
+            whatsappMsg: "Deye SUN-8K-SG01LP1-EU 8kW Solar Hybrid Inverter"
+        },
+
+        {id: "p38", pageUrl: "products/SUN-10K-SG02LP1-EU-AM3.html",
+            name: "Deye SUN-10K-SG02LP1-EU-AM3 10kW Solar Hybrid Inverter",
+            category: "Inverters", "subcategory": ["Hybrid inverters", "On/Off-grid inverters"],
+            price: 42000,
+            stock: true,
+            mainImg: "images/Deye-10k-hy.png",
+            thumbnails: ["images/Deye-10k-hy-1.png", "images/Deye-10k-hy-2.png"],
+            description: "The Deye SUN-10K-SG02LP1-EU-AM3 is a 10 kW single-phase low-voltage hybrid solar inverter designed for residential and light commercial use",
+            specs: [
+                "• Rated AC Output Power: 10,000 W (10 kW)",
+                "• Battery Compatibility: Low-voltage (LV) 48V lead-acid or lithium-ion batteries (operating range 40V–60V)",
+                "• Max Charge/Discharge Current: 220 A",
+                "• MPPT Trackers: 3 independent MPPT trackers (with multiple string inputs)",
+                "• Maximum Efficiency: Up to 97.6%",
+                "• Enclosure Rating: IP65 dust and water resistance for outdoor installation",
+                "• Physical Dimensions: 420 x 670 x 233 mm",
+                "• Weight: 35.6 kg"
+            ],
+            whatsappMsg: "Deye SUN-10K-SG02LP1-EU-AM3 10kW Solar Hybrid Inverter"
+        },
+
+        {id: "p39", pageUrl: "products/SUN-12K-SG02LP1-EU-AM3.html",
+            name: "Deye SUN-12K-SG02LP1-EU-AM3 12kW Solar Hybrid Inverter",
+            category: "Inverters", "subcategory": ["Hybrid inverters", "On/Off-grid inverters"],
+            price: 44000,
+            stock: true,
+            mainImg: "images/Deye-10k-hy.png",
+            thumbnails: ["images/Deye-10k-hy-1.png", "images/Deye-10k-hy-2.png"],
+            description: "The Deye SUN-12K-SG02LP1-EU-AM3 is a 12 kW single-phase low-voltage hybrid solar inverter designed for residential and light commercial use",
+            specs: [
+                "• Type: Single-phase hybrid inverter (on-grid, off-grid, and UPS modes)",
+                "• Rated AC Output: 12,000 W (12 kW)",
+                "• Battery Compatibility: Low-voltage 48V (40V–60V) lead-acid or lithium-ion batteries",
+                "• Max Charge/Discharge Current: 250 A",
+                "• MPPT Trackers: 3 independent MPPT trackers",
+                "• Max Efficiency: Up to 97.6% (Euro efficiency 96.5%)",
+                "• Protection Rating: IP65 (outdoor-rated)",
+                "• Parallel Operation: Support for up to 16 units in parallel",
+                "• Additional Features: Colorful touch LCD, AC coupling support, generator energy storage support, and Wi-Fi monitoring.",
+                "• Dimensions & Weight: 420 x 670 x 233 mm, weighing 35.6 kg"
+            ],
+            whatsappMsg: "Deye SUN-12K-SG02LP1-EU-AM3 12kW Solar Hybrid Inverter"
+        },
+
+        {id: "p40", pageUrl: "products/SUN-12K-SG04LP3-EU.html",
+            name: "Deye SUN-12K-SG04LP3-EU 12kW Solar Hybrid Inverter",
+            category: "Inverters", "subcategory": ["Hybrid inverters", "On/Off-grid inverters"],
+            price: 47000,
+            stock: true,
+            mainImg: "images/Deye-10k-hy.png",
+            thumbnails: ["images/Deye-10k-hy-1.png", "images/Deye-10k-hy-2.png"],
+            description: "The Deye SUN-12K-SG04LP3-EU is a 12 kW three-phase low-voltage hybrid solar inverter designed for residential and light commercial use",
+            specs: [
+                "• Rated AC Output Power: 12,000 W (Max AC output: 13,200 W)",
+                "• Battery Compatibility: 48V low-voltage Lead-acid or Lithium-ion (Voltage range: 40–60V)",
+                "• Max Charge / Discharge Current: 240 A",
+                "• Max DC Input Power: 15,600 W (Dual MPPT trackers, 200–650V MPPT range)",
+                "• Max Efficiency: 97.6% (European efficiency: 97.0%)",
+                "• AC Output Voltage/Frequency: 230/400V, 50/60 Hz (3L/N/PE)",
+                "• Enclosure / Protection Rating: IP65",
+                "• Dimensions & Weight: 422 × 699.3 × 279 mm; 33.6 kg",
+                "• Parallel Operation: Supports up to 10 units in parallel"
+            ],
+            whatsappMsg: "Deye SUN-12K-SG04LP3-EU 12kW Solar Hybrid Inverter"
+        },
+
     ];
 
     // Pagination settings
-    const ITEMS_PER_PAGE = 15;
+    const ITEMS_PER_PAGE = 20;
     const pageFromUrl = Number.parseInt(new URLSearchParams(window.location.search).get('page') || '1', 10);
     let currentPage = Number.isFinite(pageFromUrl) && pageFromUrl > 0 ? pageFromUrl : 1;
     let currentSearchTerm = "";
@@ -266,6 +791,29 @@
         return { currentPrice, compareAtPrice, isDiscounted, savingsPercent, promotionLabel };
     }
 
+    function getTaxonomyValues(product, singularKey, pluralKey) {
+        const values = [product?.[singularKey], product?.[pluralKey]]
+            .flatMap(value => Array.isArray(value) ? value : [value])
+            .map(value => String(value || '').trim())
+            .filter(Boolean);
+        return [...new Set(values)];
+    }
+
+    function getProductCategories(product) {
+        return getTaxonomyValues(product, 'category', 'categories');
+    }
+
+    function getProductSubcategories(product) {
+        return getTaxonomyValues(product, 'subcategory', 'subcategories');
+    }
+
+    function getProductCategoryPaths(product) {
+        const categories = getProductCategories(product);
+        const subcategories = getProductSubcategories(product);
+        if (!subcategories.length) return categories;
+        return categories.flatMap(category => [`${category} > ${subcategories.join(', ')}`]);
+    }
+
     function renderPriceMarkup(product) {
         const price = getPricePresentation(product);
         return `${price.isDiscounted ? `<span class="price-before">Was GH₵ ${formatPrice(price.compareAtPrice)}</span>` : ''}` +
@@ -291,6 +839,7 @@
 
         if (title) title.textContent = product.name;
         if (description) description.textContent = product.description || '';
+        productPage?.querySelectorAll('[data-product-taxonomy], .product-taxonomy').forEach(element => element.remove());
         const breadcrumbs = productPage?.querySelector('.crumbs');
         if (breadcrumbs?.lastChild?.nodeType === Node.TEXT_NODE) breadcrumbs.lastChild.nodeValue = ` / ${product.name}`;
         if (gallery) {
@@ -312,7 +861,10 @@
             .find(heading => heading.textContent.trim().toLowerCase() === 'specifications');
         const specificationsList = specificationsHeading?.nextElementSibling;
         if (specificationsList?.matches('ul, ol')) {
-            specificationsList.innerHTML = (product.specs || []).map(spec => `<li>${escapeHtml(spec)}</li>`).join('');
+            const specifications = Array.isArray(product.specs) ? product.specs : [];
+            specificationsHeading.hidden = specifications.length === 0;
+            specificationsList.hidden = specifications.length === 0;
+            specificationsList.innerHTML = specifications.map(spec => `<li>${escapeHtml(spec)}</li>`).join('');
         }
 
         const whatsappLink = productPage?.querySelector('a[href^="https://wa.me/"]');
@@ -335,6 +887,7 @@
                     schema.name = product.name;
                     schema.description = product.description || product.name;
                     schema.sku = product.id;
+                    schema.category = getProductCategoryPaths(product).join(' | ');
                     schema.image = [product.mainImg, ...(product.thumbnails || [])].filter(Boolean).map(absoluteProductImageUrl);
                     if (schema.offers) {
                         schema.offers.price = String(product.price);
@@ -453,7 +1006,7 @@
     const terms = normalizeSearchText(currentSearchTerm).match(/[a-z0-9]+/g) || [];
     let filtered = productsData.filter(product => {
         const searchable = normalizeSearchText([
-            product.name, product.id, product.category, product.subcategory
+            product.name, product.id, ...getProductCategories(product), ...getProductSubcategories(product)
         ].join(' '));
         const searchableCompact = searchable.replace(/[^a-z0-9]/g, '');
         const matchesSearch = terms.length === 0 || terms.every(term => {
@@ -464,8 +1017,8 @@
             else variants.push(term + 's');
             return variants.some(variant => searchable.includes(variant) || searchableCompact.includes(variant));
         });
-        const matchesCategory = currentCategory === "All" || product.category === currentCategory;
-        const matchesSubcategory = currentSubcategory === "All" || product.subcategory === currentSubcategory;
+        const matchesCategory = currentCategory === "All" || getProductCategories(product).includes(currentCategory);
+        const matchesSubcategory = currentSubcategory === "All" || getProductSubcategories(product).includes(currentSubcategory);
         const matchesStock = currentStock === "all" || (currentStock === "in" ? product.stock : !product.stock);
         const maxPrice = Number(currentMaxPrice);
         const matchesPrice = !currentMaxPrice || (!Number.isNaN(maxPrice) && Number(product.price) <= maxPrice);
@@ -473,12 +1026,14 @@
         return matchesSearch && matchesCategory && matchesSubcategory && matchesStock && matchesPrice && matchesWishlist;
     });
 
+    const compareAlphabetically = (a, b) => a.localeCompare(b, 'en', { sensitivity: 'base', numeric: true });
+    const primaryCategory = product => getProductCategories(product).slice().sort(compareAlphabetically)[0] || '';
     filtered.sort((a,b) => {
         if (currentSort === "price-asc") return Number(a.price) - Number(b.price);
         if (currentSort === "price-desc") return Number(b.price) - Number(a.price);
         if (currentSort === "name") return a.name.localeCompare(b.name);
         if (currentSort === "stock") return Number(b.stock) - Number(a.stock);
-        return Number(String(a.id).replace(/\D/g, "")) - Number(String(b.id).replace(/\D/g, ""));
+        return compareAlphabetically(primaryCategory(a), primaryCategory(b)) || compareAlphabetically(a.name, b.name);
     });
     return filtered;
   }
@@ -487,7 +1042,7 @@
         if (!select) return;
         const selectedValue = select.value || currentCategory;
         const compareAlphabetically = (a, b) => a.localeCompare(b, 'en', { sensitivity: 'base', numeric: true });
-        const categories = [...new Set(productsData.map(product => String(product.category || '').trim()).filter(Boolean))]
+        const categories = [...new Set(productsData.flatMap(getProductCategories))]
             .sort(compareAlphabetically);
         const options = categories.map(category => `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`).join('');
         select.innerHTML = `<option value="All">All Categories</option>${options}`;
@@ -500,9 +1055,8 @@
         if (!select) return;
         const compareAlphabetically = (a, b) => a.localeCompare(b, 'en', { sensitivity: 'base', numeric: true });
         const subcategories = category === 'All' ? [] : [...new Set(productsData
-            .filter(product => product.category === category)
-            .map(product => String(product.subcategory || '').trim())
-            .filter(Boolean))].sort(compareAlphabetically);
+            .filter(product => getProductCategories(product).includes(category))
+            .flatMap(getProductSubcategories))].sort(compareAlphabetically);
 
         select.innerHTML = `<option value="All">All Subcategories</option>${subcategories.map(subcategory =>
             `<option value="${escapeHtml(subcategory)}">${escapeHtml(subcategory)}</option>`
@@ -606,33 +1160,38 @@
             .trim();
     }
 
-    function recommendationSubcategory(product) {
-        const explicit = String(product.subcategory || '').trim();
-        if (explicit) return { key: normalizeRecommendationValue(explicit), label: explicit };
+    function recommendationSubcategories(product) {
+        const explicit = getProductSubcategories(product);
+        if (explicit.length) return explicit;
 
-        const category = normalizeRecommendationValue(product.category);
+        const categories = getProductCategories(product).map(normalizeRecommendationValue);
         const text = normalizeRecommendationValue([
             product.name, product.description, ...(product.specs || [])
         ].join(' '));
         let label = '';
 
-        if (category === 'solar kits') {
+        if (categories.includes('solar kits')) {
             if (/\b(fan|fans|cooling)\b/.test(text)) label = 'Solar Fans';
             else if (/\b(speaker|speakers|audio|karaoke)\b/.test(text)) label = 'Solar Audio';
             else if (/\b(barber|clipper|hair)\b/.test(text)) label = 'Solar Business Kits';
             else label = 'Solar Home Systems';
-        } else if (category === 'inverters') {
+        } else if (categories.includes('inverters')) {
             label = /\b(hybrid|on off grid)\b/.test(text) ? 'Hybrid Inverters' : 'Off-grid Inverters';
-        } else if (category === 'batteries') {
+        } else if (categories.includes('batteries')) {
             if (/\b(gel)\b/.test(text)) label = 'Gel Batteries';
             else if (/\b(lithium|lifepo|lfp)\b/.test(text)) label = 'Lithium Batteries';
-        } else if (category === 'protective devices' && /\b(voltage|current|meter|protection)\b/.test(text)) {
+        } else if (categories.includes('protective devices') && /\b(voltage|current|meter|protection)\b/.test(text)) {
             label = 'Voltage and Current Protection';
-        } else if (category === 'solar streetlights' && /\b(all in one|integrated)\b/.test(text)) {
+        } else if (categories.includes('solar streetlights') && /\b(all in one|integrated)\b/.test(text)) {
             label = 'All-in-One Solar Streetlights';
         }
 
-        return label ? { key: normalizeRecommendationValue(label), label } : { key: '', label: '' };
+        return label ? [label] : [];
+    }
+
+    function recommendationSubcategory(product) {
+        const values = recommendationSubcategories(product);
+        return { keys: values.map(normalizeRecommendationValue), label: values.join(', ') };
     }
 
     const recommendationStopWords = new Set([
@@ -648,7 +1207,6 @@
     }
 
     function recommendationCategoryBonus(categoryA, categoryB) {
-        const pair = [normalizeRecommendationValue(categoryA), normalizeRecommendationValue(categoryB)].sort().join('|');
         const complementaryPairs = new Map([
             ['batteries|inverters', 24],
             ['inverters|protective devices', 18],
@@ -657,27 +1215,33 @@
             ['inverters|solar kits', 14],
             ['solar kits|solar streetlights', 8]
         ]);
-        return complementaryPairs.get(pair) || 0;
+        const valuesA = (Array.isArray(categoryA) ? categoryA : [categoryA]).map(normalizeRecommendationValue);
+        const valuesB = (Array.isArray(categoryB) ? categoryB : [categoryB]).map(normalizeRecommendationValue);
+        let bonus = 0;
+        valuesA.forEach(category1 => valuesB.forEach(category2 => {
+            bonus = Math.max(bonus, complementaryPairs.get([category1, category2].sort().join('|')) || 0);
+        }));
+        return bonus;
     }
 
     function scoreRelatedProduct(current, candidate) {
         let score = 0;
-        const currentCategory = normalizeRecommendationValue(current.category);
-        const candidateCategory = normalizeRecommendationValue(candidate.category);
+        const currentCategories = getProductCategories(current).map(normalizeRecommendationValue);
+        const candidateCategories = getProductCategories(candidate).map(normalizeRecommendationValue);
         const currentSubcategory = recommendationSubcategory(current);
         const candidateSubcategory = recommendationSubcategory(candidate);
 
-        if (currentCategory && currentCategory === candidateCategory) score += 38;
-        if (currentSubcategory.key && currentSubcategory.key === candidateSubcategory.key) score += 72;
-        score += recommendationCategoryBonus(current.category, candidate.category);
+        if (currentCategories.some(category => candidateCategories.includes(category))) score += 38;
+        score += currentSubcategory.keys.filter(key => candidateSubcategory.keys.includes(key)).length * 72;
+        score += recommendationCategoryBonus(currentCategories, candidateCategories);
 
         const currentNameTokens = recommendationTokens(current.name);
         const currentTokens = recommendationTokens([
-            current.name, current.description, ...(current.specs || []), current.category, current.subcategory
+            current.name, current.description, ...(current.specs || []), ...getProductCategories(current), ...getProductSubcategories(current)
         ].join(' '));
         const candidateNameTokens = recommendationTokens(candidate.name);
         const candidateTokens = recommendationTokens([
-            candidate.name, candidate.description, ...(candidate.specs || []), candidate.category, candidate.subcategory
+            candidate.name, candidate.description, ...(candidate.specs || []), ...getProductCategories(candidate), ...getProductSubcategories(candidate)
         ].join(' '));
 
         currentTokens.forEach(token => {
@@ -716,13 +1280,12 @@
         if (section) section.hidden = false;
 
         const title = section?.querySelector('h2');
-        if (title) title.textContent = 'Recommended products';
-        const intro = section?.querySelector('p');
-        if (intro) intro.textContent = 'Selected by product type and matching features.';
+        if (title) title.textContent = 'Related products';
+        section?.querySelector('p')?.remove();
 
         grid.innerHTML = recommendations.map(product => {
             const group = recommendationSubcategory(product);
-            const note = group.label || product.category || 'Recommended match';
+            const note = group.label || getProductCategories(product).join(', ') || 'Related match';
             return `<a class="related-product-card" href="${escapeHtml(productPageHref(product))}" aria-label="View ${escapeHtml(product.name)}">
                 <img src="${escapeHtml(productImageUrl(product.mainImg))}" alt="${escapeHtml(product.name)}" loading="lazy" decoding="async">
                 <span class="related-product-copy">
