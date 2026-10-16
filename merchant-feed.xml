@@ -96,7 +96,6 @@
       <g:description>DG (Deep Cycle GEL) series is designed for frequent cyclic charge and discharge applications under extreme environments. By using strong grids, high-purity lead and patented Gel electrolyte, DG series offers excellent recovery after deep discharge under frequent cyclic discharge, and can deliver 400 cycles at 100% DOD. Suitable for solar, CATV, marine, RV and deep discharge UPS applications.</g:description>
       <link>https://elitevoltsystems.com/products/ritar-12v-200ah-deep-cycle-gel-battery.html</link>
       <g:image_link>https://www.ritarpower.com/uploads/image/20251226/dg-series-lead-acid-batteries-bulk.webp</g:image_link>
-      <g:additional_image_link>https://images.unsplash.com/photo-1622484214887-b6bb5e7fc5b3?w=300&amp;h=300&amp;fit=crop</g:additional_image_link>
       <g:availability>out_of_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>5000.00 GHS</g:price>
@@ -114,7 +113,7 @@
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>8500.00 GHS</g:price>
-      <g:sale_price>7500.00 GHS</g:sale_price>
+      <g:sale_price>6500.00 GHS</g:sale_price>
       <g:brand>EliteVolt Systems</g:brand>
       <g:product_type>Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
@@ -194,10 +193,10 @@
     <item>
       <g:id>p14</g:id>
       <g:title>TW Solar 620W Bifacial panel</g:title>
-      <g:description>620W Bifacial Solar Panel</g:description>
+      <g:description>The TW Solar 620W Bifacial Solar Panel (commonly model TWMNH-66HD620W) is a high-efficiency photovoltaic module built with N-type TOPCon monocrystalline cells and a dual-glass design.</g:description>
       <link>https://elitevoltsystems.com/products/tw-620w.html</link>
-      <g:image_link>https://elitevoltsystems.com/images/tw-620w-1.png</g:image_link>
-      <g:additional_image_link>https://elitevoltsystems.com/images/tw-620w-2.png</g:additional_image_link>
+      <g:image_link>https://elitevoltsystems.com/images/tw-620w-2.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/tw-620w-3.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>1400.00 GHS</g:price>
@@ -311,7 +310,7 @@
     </item>
     <item>
       <g:id>p23</g:id>
-      <g:title>Megatank GL48100 LiFePO4 Energy Storage Battery</g:title>
+      <g:title>Megatank 51.2V 100Ah Lithium Battery (GL48100)</g:title>
       <g:description>Megatank GL48100 is a 51.2V, 100Ah LiFePO4 (lithium iron phosphate) energy storage battery with a rated capacity of 5.12 kWh</g:description>
       <link>https://elitevoltsystems.com/products/GL48100.html</link>
       <g:image_link>https://elitevoltsystems.com/images/megatank-5kwh.png</g:image_link>
@@ -494,8 +493,8 @@
       <g:title>Deye SUN-6K-SG04LP1-EU 6kW Solar Hybrid Inverter</g:title>
       <g:description>The Deye SUN-6K-SG04LP1-EU is a 6 kW single-phase low-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
       <link>https://elitevoltsystems.com/products/SUN-6K-SG04LP1-EU-SM2.html</link>
-      <g:image_link>https://elitevoltsystems.com/images/Deye-6k-hy.png</g:image_link>
-      <g:additional_image_link>https://elitevoltsystems.com/images/Deye-6k-hy-1.png</g:additional_image_link>
+      <g:image_link>https://elitevoltsystems.com/images/deye-6k-hy.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/deye-6k-hy-1.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>22500.00 GHS</g:price>
@@ -556,6 +555,157 @@
       <g:price>47000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
       <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p41</g:id>
+      <g:title>Deye SUN-16K-SG01LP1-EU 16kW Solar Hybrid Inverter</g:title>
+      <g:description>The Deye SUN-16K-SG01LP1-EU is a 16 kW single-phase low-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
+      <link>https://elitevoltsystems.com/products/SUN-16K-SG01LP1-EU.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/deye-16k.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/deye-16k-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>55300.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p42</g:id>
+      <g:title>Deye SUN-16K-SG05LP3-EU-SM2 16kW Solar Hybrid Inverter</g:title>
+      <g:description>The Deye SUN-16K-SG05LP3-EU-SM2 is a 16 kW three-phase low-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
+      <link>https://elitevoltsystems.com/products/SUN-16K-SG05LP3-EU-SM2.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/deye-16k-3p.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>63000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p43</g:id>
+      <g:title>Deye SUN-18K-SG05LP3-EU-SM2 18kW 3phase Solar Hybrid Inverter</g:title>
+      <g:description>The Deye SUN-18K-SG05LP3-EU-SM2 is a 18 kW three-phase low-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
+      <link>https://elitevoltsystems.com/products/SUN-18K-SG05LP3-EU-SM2.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/deye-16k-3p.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>67000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p44</g:id>
+      <g:title>Deye SUN-20K-SG05LP3-EU-SM2 20kW 3phase Solar Hybrid Inverter</g:title>
+      <g:description>The Deye SUN-20K-SG05LP3-EU-SM2 is a 20 kW three-phase low-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
+      <link>https://elitevoltsystems.com/products/SUN-20K-SG05LP3-EU-SM2.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/deye-16k-3p.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>75000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p45</g:id>
+      <g:title>Deye SUN-25K-SG01-HP3-EU-AM2 25kW 3phase Solar Hybrid Inverter</g:title>
+      <g:description>The Deye SUN-25K-SG01-HP3-EU-AM2 is a 25 kW three-phase high-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
+      <link>https://elitevoltsystems.com/products/SUN-25K-SG01-HP3-EU-AM2.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/deye-25k.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/deye-25k-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>93000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p46</g:id>
+      <g:title>Megatank GT Powertank GL48200S 48V 200Ah Lithium-ion Battery</g:title>
+      <g:description>The Megatank GT Powertank GL48200S is a 48V 200Ah lithium-ion battery designed for solar energy storage applications, providing reliable and efficient energy storage for residential and commercial solar systems.</g:description>
+      <link>https://elitevoltsystems.com/products/GL48200S.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/mega-10kwh.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/mega-10kwh-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>24000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Batteries &gt; Lithium Batteries</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p47</g:id>
+      <g:title>Smart Power Station 220V/6kW 15kWh</g:title>
+      <g:description>The Blue Carbon Smart Power Station is an all-in-one solar and lithium-ion energy storage system built by Blue Carbon for residential, rural, and light commercial use.</g:description>
+      <link>https://elitevoltsystems.com/products/SPS-220V-6kW-15kWh.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/sps6k.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/sps6k-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>22000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Power Stations &gt; Smart Power Stations, Lithium Batteries, Non Portable | Inverters &gt; Smart Power Stations, Lithium Batteries, Non Portable | Batteries &gt; Smart Power Stations, Lithium Batteries, Non Portable</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p48</g:id>
+      <g:title>Smart Power Station 220V/12kW 30kWh</g:title>
+      <g:description>The Blue Carbon Smart Power Station is an all-in-one solar and lithium-ion energy storage system built by Blue Carbon for residential, rural, and light commercial use.</g:description>
+      <link>https://elitevoltsystems.com/products/SPS-220V-12kW-30kWh.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/sps12k.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/sps12k-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>45000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Power Stations &gt; Smart Power Stations, Lithium Batteries, Non Portable | Inverters &gt; Smart Power Stations, Lithium Batteries, Non Portable | Batteries &gt; Smart Power Stations, Lithium Batteries, Non Portable</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p49</g:id>
+      <g:title>Smart Power Station 220V/18kW 45kWh</g:title>
+      <g:description>The Blue Carbon Smart Power Station is an all-in-one solar and lithium-ion energy storage system built by Blue Carbon for residential, rural, and light commercial use.</g:description>
+      <link>https://elitevoltsystems.com/products/SPS-220V-18kW-45kWh.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/sps18k.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/sps18k-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>75000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Power Stations &gt; Smart Power Stations, Lithium Batteries, Non Portable | Inverters &gt; Smart Power Stations, Lithium Batteries, Non Portable | Batteries &gt; Smart Power Stations, Lithium Batteries, Non Portable</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p50</g:id>
+      <g:title>SRNE 61.4kWh High Voltage Lithium Battery</g:title>
+      <g:description>The SRNE SR-Ket60A is a 61.4 kWh high-voltage lithium iron phosphate (LiFePO4/LFP) battery energy storage system (ESS) designed for commercial, industrial, and high-capacity residential solar setups</g:description>
+      <link>https://elitevoltsystems.com/products/srne-hv-60kwh.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/srne-hv.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/srne-hv-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>170000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Batteries &gt; Lithium Batteries, High Voltage Batteries</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p51</g:id>
+      <g:title>SRNE 60kW Three-phase High Voltage Hybrid Solar Storage Inverter</g:title>
+      <g:description>SRNE 60kW Three-phase high-voltage hybrid solar storage inverter engineered for commercial and industrial (C&amp;I) applications, providing efficient energy management and grid support capabilities.</g:description>
+      <link>https://elitevoltsystems.com/products/srne-60kw.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/srne-60kw.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/srne-60kw-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>170000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid Inverters, High Voltage Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
   </channel>

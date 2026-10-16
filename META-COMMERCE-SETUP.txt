@@ -29,8 +29,8 @@ the scheduled CSV URL above as a data feed source. The XML URL remains
 available for existing integrations.
 
 META PIXEL
-Every page on the site (home, shop, all 40 product pages, all blog and
-service pages) now includes js/meta-pixel.js and a
+Every page on the site, including home, shop, product, blog and service pages,
+includes js/meta-pixel.js and a
 <meta name="meta-pixel-id" content=""> tag in its <head>. To activate the
 pixel sitewide, put your numeric Meta Pixel ID into that one meta tag on
 EVERY page (find/replace across the project is the fastest way):
@@ -57,7 +57,7 @@ not reload the page. Cart and wishlist data live in the shopper's own
 browser (localStorage) — there is no shared/server-side cart.
 
 NOTES
-- Product IDs (p1–p40) match the IDs used in the pixel events and the
+- Product IDs match the IDs used in the pixel events and the
   "sku" field in each product page's Product structured data, so Meta's
   dynamic ads / catalog matching will line up when the catalog uses either
   generated feed file.
