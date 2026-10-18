@@ -29,17 +29,12 @@ the scheduled CSV URL above as a data feed source. The XML URL remains
 available for existing integrations.
 
 META PIXEL
-Every page on the site, including home, shop, product, blog and service pages,
-includes js/meta-pixel.js and a
-<meta name="meta-pixel-id" content=""> tag in its <head>. To activate the
-pixel sitewide, put your numeric Meta Pixel ID into that one meta tag on
-EVERY page (find/replace across the project is the fastest way):
+The sitewide Meta Pixel ID is centrally configured in js/meta-pixel.js:
+1115706364423032. Every published page loads this shared script, including
+product and blog pages created by the site generators. Keep the ID in that
+single configuration point when it needs to change.
 
-<meta name="meta-pixel-id" content="YOUR_NUMERIC_PIXEL_ID">
-
-Do not include quotes or spaces inside the numeric ID.
-
-Once the ID is set, the site automatically sends:
+The site automatically sends:
 - PageView on every page load
 - ViewContent on each product page (id, name, price)
 - AddToCart when a shopper adds an item from the shop grid or a product
@@ -48,14 +43,6 @@ Once the ID is set, the site automatically sends:
   in the cart (value = cart total, num_items, contents)
 - Lead when a shopper requests a quote from the home page solar
   calculator, by WhatsApp or email
-
-The AddToCart hook also emits a browser event you can hook into for your
-own analytics: elitevolt:addtocart (similarly elitevolt:initiatecheckout).
-
-The catalog filter/search/wishlist system is fully client-side and does
-not reload the page. Cart and wishlist data live in the shopper's own
-browser (localStorage) — there is no shared/server-side cart.
-
 NOTES
 - Product IDs match the IDs used in the pixel events and the
   "sku" field in each product page's Product structured data, so Meta's
