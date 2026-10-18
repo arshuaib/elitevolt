@@ -997,7 +997,7 @@
         {id: "p51", pageUrl: "products/srne-60kw.html",
             name: "SRNE 60kW Three-phase High Voltage Hybrid Solar Storage Inverter",
             category: "Inverters", "subcategory": ["Hybrid Inverters", "High Voltage Inverters"],
-            price: 170000,
+            price: 75000,
             stock: true,
             mainImg: "images/srne-60kw.png",
             thumbnails: ["images/srne-60kw-1.png", "images/srne-60kw-2.png", "images/srne-60kw-3.png"],
@@ -1012,6 +1012,72 @@
                 "Switch Time: 10ms (typical value)"
             ],
             whatsappMsg: "SRNE 60kW Three-phase High Voltage Hybrid Solar Storage Inverter"
+        },
+
+        {id: "p52", pageUrl: "products/SR-EOS02B-12.html",
+            name: "SRNE 12.8V 200Ah SR-EOS02B-12 Lithium Iron Phosphate Battery",
+            category: "Batteries", "subcategory": "Lithium Batteries",
+            price: 7000,
+            stock: true,
+            mainImg: "images/srne-12-200.jpg",
+            thumbnails: ["images/srne-12-200-1.jpg", "images/srne-12-200-2.jpg"],
+            description: "The SRNE SR-EOS02B-12 is a compact, high-performance 12.8V 200Ah Lithium Iron Phosphate (LiFePO₄) battery module designed by SRNE Solar. It functions as a robust energy storage solution for residential solar setups, off-grid systems, RVs, and backup power applications.",
+            specs: [
+                "• Nominal Voltage: 12.8V",
+                "• Rated Capacity: 200Ah",
+                "• Rated Energy: 2.56 kWh",
+                "• Battery Chemistry: LiFePO₄ (A-grade cells)",
+                "• Cycle Life: 6,000 cycles (at 80% DOD, 0.2C, 25°C)",
+                "• Weight: 23 kg",
+                "• Protection Rating: IP30",
+                "• Scalability: Supports up to 4 units connected in parallel",
+                "• Communication & Monitoring: CAN, RS485, USB interface for PC setup, standard Bluetooth, and optional Wi-Fi via mobile app.",
+                "• Installation: Floor or wall mounting (requires a solid wall >80mm)"
+            ],
+            whatsappMsg: "SRNE SR-EOS02B-12 12.8V 200Ah Lithium Iron Phosphate Battery"
+        },
+
+        {id: "p53", pageUrl: "products/SR-SE05B.html",
+            name: "SRNE 51.2V 100Ah 5.12kWh SR-SE05B Lithium Iron Phosphate Battery",
+            category: "Batteries", "subcategory": "Lithium Batteries",
+            price: 9500,
+            stock: true,
+            mainImg: "images/SR-SE05B.jpg",
+            thumbnails: ["images/SR-SE05B-1.jpg", "images/SR-SE05B-2.jpg"],
+            description: "The SRNE SR-SE05B is a high-performance 5.12 kWh low-voltage Lithium Iron Phosphate (LiFePO4) battery module engineered for residential and light commercial solar energy storage. It functions as a wall-mounted or floor-standing component within a 48V-class system, offering extensive longevity and scalable energy capacity.",
+            specs: [
+                "• Battery Type: LiFePO4 (LFP)",
+                "• Rated Voltage: 51.2V (48V class)",
+                "• Rated Capacity: 100Ah",
+                "• Total Energy: 5.12 kWh",
+                "• Cycle Life: 6,000 cycles",
+                "• Max Charging Voltage: 57.6V (Over-discharge protection at 44.8V)",
+                "• Weight: 44 kg",
+                "• Protection Rating: IP30",
+                "• Mounting: Wall or floor mounting",
+                "• Scalability: Connect up to 16 units in parallel without DIP switches",
+                "• Communication: CAN, RS485, USB, Wi-Fi, and Bluetooth app monitoring"
+            ],
+            whatsappMsg: "SRNE SR-SE05B 51.2V 100Ah 5.12kWh Lithium Iron Phosphate Battery"
+        },
+
+        {id: "p54", pageUrl: "products/mc4.html",
+            name: "MC4 Solar Connector, single (10 pairs)",
+            category: "Accessories", "subcategory": "Solar Connectors",
+            price: 250,
+            stock: true,
+            mainImg: "images/MC4.png",
+            thumbnails: ["images/MC4-1.png", "images/MC4-2.png"],
+            description: "The MC4 Solar Connector is a high-performance, weather-resistant connector designed for use with solar panels. It provides a secure and reliable connection for transmitting electrical power from the solar panels to the inverter or charge controller.",
+            specs: [
+                "• Components: 1 Male connector and 1 Female connector (with tin/silver-plated copper contacts and UV-resistant PPO/PC housing)",
+                "• Rated Voltage: 1000V DC to 1500V DC",
+                "• Rated Current: Up to 30A",
+                "• Compatible Wire Size: 2.5mm² to 6mm² (14 AWG to 10 AWG)",
+                "• Waterproof Rating: IP67",
+                "• Operating Temperature: -40°C to +90°C"
+            ],
+            whatsappMsg: "MC4 Solar Connector, single"
         },
 
     ];
