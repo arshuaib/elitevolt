@@ -74,7 +74,7 @@ function makeProductPage(product, pagePath, pageDirectory) {
   const discountPrice = Number(product.compareAtPrice) > Number(product.price) ? Number(product.price).toFixed(2) : null;
   const metaDescription = description.length > 160 ? `${description.slice(0, 157).trimEnd()}...` : description;
   return `<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="${esc(relativeAsset('images/logo.png', pageDirectory))}" type="image/png">
 <title>${esc(title)}</title><meta name="description" content="${esc(metaDescription)}"><meta name="robots" content="index, follow, max-image-preview:large"><link rel="canonical" href="${esc(canonical)}">
 <meta property="og:type" content="product"><meta property="og:title" content="${esc(title)}"><meta property="og:site_name" content="EliteVolt Systems"><meta property="og:description" content="${esc(metaDescription)}"><meta property="og:url" content="${esc(canonical)}"><meta property="og:image" content="${esc(/^(https?:)?\/\//i.test(image) ? image : new URL(String(product.mainImg).replace(/^\.\//, ''), origin).href)}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(metaDescription)}"><meta name="twitter:image" content="${esc(/^(https?:)?\/\//i.test(image) ? image : new URL(String(product.mainImg).replace(/^\.\//, ''), origin).href)}">
