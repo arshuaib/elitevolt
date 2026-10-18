@@ -1,14 +1,13 @@
 /* EliteVolt Meta Pixel loader.
- * Add the numeric Meta Pixel ID to the <meta name="meta-pixel-id"> tag
- * present in every page's <head> (see META-COMMERCE-SETUP.txt).
- * Once set, this fires PageView on every page, ViewContent on product
- * pages (via window.EV_PRODUCT, set inline on each product page), and
- * shop.js sends AddToCart / InitiateCheckout on top of that.
+ * The sitewide numeric Pixel ID is configured in this shared file.
+ * This fires PageView on every page, ViewContent on product pages
+ * (via window.EV_PRODUCT), and shop.js sends AddToCart and
+ * InitiateCheckout events.
  */
 (function () {
   'use strict';
-  var meta = document.querySelector('meta[name="meta-pixel-id"]');
-  var pixelId = meta ? String(meta.content || '').trim() : '';
+  // The sitewide Meta Pixel ID is configured here once for every page.
+  var pixelId = '1115706364423032';
   if (!/^\d+$/.test(pixelId)) return;
 
   if (typeof window.fbq !== 'function') {
