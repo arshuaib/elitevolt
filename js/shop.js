@@ -1095,8 +1095,27 @@
     let currentWishlistOnly = false;
 
     const wishlistKey = "ev_wishlist_v1";
-    function getWishlist() { try { return JSON.parse(localStorage.getItem(wishlistKey) || "[]"); } catch (e) { return []; } }
-    function setWishlist(items) { localStorage.setItem(wishlistKey, JSON.stringify(items)); }
+    function readStoredValue(key) {
+        try { return window.localStorage.getItem(key); }
+        catch (error) { return null; }
+    }
+    function writeStoredValue(key, value) {
+        try {
+            window.localStorage.setItem(key, value);
+            return true;
+        } catch (error) {
+            return false;
+        }
+    }
+    function getWishlist() {
+        try {
+            const saved = JSON.parse(readStoredValue(wishlistKey) || "[]");
+            return Array.isArray(saved) ? saved : [];
+        } catch (error) {
+            return [];
+        }
+    }
+    function setWishlist(items) { writeStoredValue(wishlistKey, JSON.stringify(items)); }
 
     function formatPrice(n) {
         return Number(n || 0).toLocaleString('en-GH', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -1269,8 +1288,17 @@
 
     // Cart state
     let cart = [];
-    function loadCart() { const s = localStorage.getItem("ev_cart_v4"); if(s) { try { cart = JSON.parse(s); } catch(e) { cart = []; } } else cart = []; validateCart(); updateAllUI(); }
-    function saveCart() { localStorage.setItem("ev_cart_v4", JSON.stringify(cart)); }
+    function loadCart() {
+        try {
+            const saved = JSON.parse(readStoredValue("ev_cart_v4") || "[]");
+            cart = Array.isArray(saved) ? saved : [];
+        } catch (error) {
+            cart = [];
+        }
+        validateCart();
+        updateAllUI();
+    }
+    function saveCart() { writeStoredValue("ev_cart_v4", JSON.stringify(cart)); }
     function validateCart() {
         let changed = false;
         cart = cart.filter(item => {
