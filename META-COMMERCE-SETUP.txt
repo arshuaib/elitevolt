@@ -36,13 +36,24 @@ single configuration point when it needs to change.
 
 The site automatically sends:
 - PageView on every page load
-- ViewContent on each product page (id, name, price)
+- ViewContent on each product page (catalog ID, name, category, and current price)
+- Search when a shopper submits a product search; email addresses and phone-like
+  searches are omitted from event data
+- AddToWishlist when a shopper saves a product
 - AddToCart when a shopper adds an item from the shop grid or a product
-  page (content_ids, content_name, value, currency GHS, contents)
+  page (catalog IDs, quantity, item price, category, and cart value in GHS)
 - InitiateCheckout when a shopper taps "WhatsApp Order" or "Email Order"
-  in the cart (value = cart total, num_items, contents)
-- Lead when a shopper requests a quote from the home page solar
-  calculator, by WhatsApp or email
+  in the cart (cart value in GHS, item IDs, quantities, and item prices)
+- Contact when a shopper taps a WhatsApp, email, or phone link; message text
+  and contact details are not sent
+- Lead when a shopper requests a quote from the solar calculator by WhatsApp
+  or email (estimated system size is sent without a monetary value)
+
+There is no Purchase event because checkout and payment happen outside the
+website and there is no confirmed purchase page to report.
+
+After deployment, use Meta Events Manager's Test Events view and the Meta
+Pixel Helper browser extension to confirm each event and its parameters.
 NOTES
 - Product IDs match the IDs used in the pixel events and the
   "sku" field in each product page's Product structured data, so Meta's
