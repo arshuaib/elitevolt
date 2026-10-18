@@ -208,16 +208,32 @@
     return msg;
   }
   
+  function trackSolarQuoteLead(contactMethod, sizing) {
+    const parameters = {
+      content_name: 'Solar calculator quote request',
+      content_category: 'Solar system sizing',
+      contact_method: contactMethod,
+      daily_kwh: Number(sizing.totalDailyKwh) || 0,
+      solar_kwp: Number(sizing.solarKwp) || 0,
+      inverter_kw: Number(sizing.inverterKw) || 0,
+      battery_kwh: Number(sizing.batteryKwh) || 0
+    };
+    if (typeof window.EVMetaPixel?.track === 'function') {
+      window.EVMetaPixel.track('Lead', parameters);
+    } else if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead', parameters);
+    }
+  }
+
   // WhatsApp Quote
   document.getElementById('whatsappQuoteBtn').addEventListener('click', () => {
-    const { totalDailyKwh, inverterKw, solarKwp, batteryKwh } = computeSystem();
+    const sizing = computeSystem();
+    const { totalDailyKwh, inverterKw, solarKwp, batteryKwh } = sizing;
     if (totalDailyKwh === 0) {
       alert("Please enter appliance quantities, wattage and daily hours before requesting a quote.");
       return;
     }
-    if (typeof window.fbq === 'function') {
-      window.fbq('track', 'Lead', { content_name: 'Solar load calculator - WhatsApp quote', value: solarKwp, currency: 'GHS' });
-    }
+    trackSolarQuoteLead('whatsapp', sizing);
     let msg = getQuoteMessage();
     const phone = "233249976762";  // EliteVolt contact 
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
@@ -226,14 +242,13 @@
   
   // Email Quote Request
   document.getElementById('emailQuoteBtn').addEventListener('click', () => {
-    const { totalDailyKwh, runningKw, inverterKw, solarKwp, batteryKwh, sunshineHours, backupDays, pvMargin, loadMargin } = computeSystem();
+    const sizing = computeSystem();
+    const { totalDailyKwh, runningKw, inverterKw, solarKwp, batteryKwh, sunshineHours, backupDays, pvMargin, loadMargin } = sizing;
     if (totalDailyKwh === 0) {
       alert("Please enter appliance quantities, wattage and daily hours before requesting a quote.");
       return;
     }
-    if (typeof window.fbq === 'function') {
-      window.fbq('track', 'Lead', { content_name: 'Solar load calculator - email quote', value: solarKwp, currency: 'GHS' });
-    }
+    trackSolarQuoteLead('email', sizing);
     let subject = "EliteVolt Solar Quote Request";
 
 let body = `Hello EliteVolt Systems,

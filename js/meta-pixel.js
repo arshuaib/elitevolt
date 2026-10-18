@@ -1,12 +1,7 @@
-/* EliteVolt Meta Pixel loader.
- * The sitewide numeric Pixel ID is configured in this shared file.
- * This fires PageView on every page, ViewContent on product pages
- * (via window.EV_PRODUCT), and shop.js sends AddToCart and
- * InitiateCheckout events.
- */
+/* EliteVolt Meta Pixel and standard web event tracking. */
 (function () {
   'use strict';
-  // The sitewide Meta Pixel ID is configured here once for every page.
+
   var pixelId = '1115706364423032';
   if (!/^\d+$/.test(pixelId)) return;
 
@@ -27,21 +22,73 @@
       s = b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t, s);
     }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+  }
 
+  // Initialize this Pixel once even if another script created fbq first.
+  window.__eliteVoltMetaPixelIds = window.__eliteVoltMetaPixelIds || {};
+  if (!window.__eliteVoltMetaPixelIds[pixelId]) {
     window.fbq('init', pixelId);
+    window.__eliteVoltMetaPixelIds[pixelId] = true;
   }
 
-  window.fbq('track', 'PageView');
+  function track(eventName, parameters) {
+    if (typeof window.fbq !== 'function') return;
+    if (parameters && Object.keys(parameters).length) window.fbq('track', eventName, parameters);
+    else window.fbq('track', eventName);
+    window.dispatchEvent(new CustomEvent('elitevolt:' + eventName.toLowerCase(), { detail: parameters || {} }));
+  }
 
-  // Product pages set window.EV_PRODUCT = { id, name, price } before loading
-  // this script, so we can report ViewContent for the Meta catalog/pixel.
-  if (window.EV_PRODUCT && window.EV_PRODUCT.id) {
-    window.fbq('track', 'ViewContent', {
-      content_ids: [window.EV_PRODUCT.id],
-      content_name: window.EV_PRODUCT.name,
+  function productParameters(product) {
+    if (!product || !product.id) return {};
+
+    var id = String(product.id);
+    var price = Number(product.price);
+    var categories = Array.isArray(product.categories) ? product.categories : (product.category ? [product.category] : []);
+    var subcategories = Array.isArray(product.subcategories) ? product.subcategories : (product.subcategory ? [product.subcategory] : []);
+    var parameters = {
+      content_ids: [id],
+      content_name: product.name || id,
       content_type: 'product',
-      value: Number(window.EV_PRODUCT.price) || 0,
-      currency: 'GHS'
-    });
+      contents: [{ id: id, quantity: 1 }]
+    };
+
+    if (categories.length || subcategories.length) {
+      parameters.content_category = categories.join(', ');
+      if (subcategories.length) parameters.content_category += (categories.length ? ' > ' : '') + subcategories.join(', ');
+    }
+    if (Number.isFinite(price) && price >= 0) {
+      parameters.value = price;
+      parameters.currency = 'GHS';
+      parameters.contents[0].item_price = price;
+    }
+    return parameters;
   }
+
+  window.EVMetaPixel = window.EVMetaPixel || {};
+  window.EVMetaPixel.track = track;
+  window.EVMetaPixel.productParameters = productParameters;
+
+  track('PageView');
+  if (window.EV_PRODUCT && window.EV_PRODUCT.id) {
+    track('ViewContent', productParameters(window.EV_PRODUCT));
+  }
+
+  // Record shopper contact intent on WhatsApp, email, or phone links.
+  // Product context is included on product pages; message contents are never sent.
+  document.addEventListener('click', function (event) {
+    var link = event.target && event.target.closest ? event.target.closest('a[href]') : null;
+    if (!link) return;
+
+    var href = (link.getAttribute('href') || '').trim().toLowerCase();
+    var method = '';
+    if (href.indexOf('wa.me/') !== -1 || href.indexOf('whatsapp.com/') !== -1) method = 'whatsapp';
+    else if (href.indexOf('mailto:') === 0) method = 'email';
+    else if (href.indexOf('tel:') === 0) method = 'phone';
+    if (!method) return;
+
+    var parameters = { contact_method: method };
+    var product = productParameters(window.EV_PRODUCT);
+    Object.keys(product).forEach(function (key) { parameters[key] = product[key]; });
+    track('Contact', parameters);
+  }, true);
 })();

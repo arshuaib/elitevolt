@@ -1243,7 +1243,14 @@
             }
         });
         updateRelatedProducts();
-        Object.assign(productInfo, { name: product.name, price: product.price, description: product.description, image: absoluteProductImageUrl(product.mainImg) });
+        Object.assign(productInfo, {
+            name: product.name,
+            price: product.price,
+            description: product.description,
+            image: absoluteProductImageUrl(product.mainImg),
+            categories: getProductCategories(product),
+            subcategories: getProductSubcategories(product)
+        });
 
         if (!priceElement) return;
         const price = getPricePresentation(product);
@@ -1265,24 +1272,32 @@
     }
 
     function trackMetaAddToCart(product, quantity = 1) {
+        const unitPrice = Number(product.price) || 0;
         trackMetaEvent("AddToCart", {
             content_ids: [product.id],
             content_name: product.name,
             content_type: "product",
-            value: Number(product.price) * quantity,
+            content_category: getProductCategoryPaths(product).join(" | "),
+            value: unitPrice * quantity,
             currency: "GHS",
-            contents: [{ id: product.id, quantity }]
+            num_items: quantity,
+            contents: [{ id: product.id, quantity, item_price: unitPrice }]
         });
     }
 
     function trackMetaCheckout(items, total) {
+        const categories = [...new Set(items.flatMap(item => {
+            const product = productsData.find(candidate => candidate.id === item.id);
+            return product ? getProductCategoryPaths(product) : [];
+        }))];
         trackMetaEvent("InitiateCheckout", {
             content_ids: items.map(i => i.id),
             content_type: "product",
+            content_category: categories.join(", "),
             value: total,
             currency: "GHS",
             num_items: items.reduce((sum, i) => sum + i.quantity, 0),
-            contents: items.map(i => ({ id: i.id, quantity: i.quantity }))
+            contents: items.map(i => ({ id: i.id, quantity: i.quantity, item_price: Number(i.price) || 0 }))
         });
     }
 
@@ -1663,7 +1678,24 @@
     function toggleWishlist(id) {
         const items = getWishlist();
         const index = items.indexOf(id);
-        if (index >= 0) items.splice(index, 1); else items.push(id);
+        if (index >= 0) {
+            items.splice(index, 1);
+        } else {
+            items.push(id);
+            const product = productsData.find(item => item.id === id);
+            if (product) {
+                const unitPrice = Number(product.price) || 0;
+                trackMetaEvent("AddToWishlist", {
+                    content_ids: [product.id],
+                    content_name: product.name,
+                    content_type: "product",
+                    content_category: getProductCategoryPaths(product).join(" | "),
+                    value: unitPrice,
+                    currency: "GHS",
+                    contents: [{ id: product.id, quantity: 1, item_price: unitPrice }]
+                });
+            }
+        }
         setWishlist(items);
         paintWishlist();
     }
@@ -1976,6 +2008,17 @@
     const runSearch = () => {
         currentSearchTerm = (searchInput?.value || '').trim();
         currentPage = 1;
+        const hasEmail = /[^\s@]+@[^\s@]+\.[^\s@]+/.test(currentSearchTerm);
+        const phoneLikeValues = currentSearchTerm.match(/\+?\d[\d\s().-]{7,}\d/g) || [];
+        const hasPhone = phoneLikeValues.some(value => value.replace(/\D/g, '').length >= 8);
+        if (currentSearchTerm && !hasEmail && !hasPhone) {
+            const parameters = {
+                search_string: currentSearchTerm.slice(0, 100),
+                content_type: "product"
+            };
+            if (currentCategory !== "All") parameters.content_category = currentCategory;
+            trackMetaEvent("Search", parameters);
+        }
         renderProducts();
     };
     searchInput?.addEventListener('input', (e) => { currentSearchTerm = e.target.value; currentPage = 1; renderProducts(); });
