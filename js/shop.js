@@ -1066,8 +1066,8 @@
             category: "Accessories", "subcategory": "Solar Connectors",
             price: 250,
             stock: true,
-            mainImg: "images/MC4.png",
-            thumbnails: ["images/MC4-1.png", "images/MC4-2.png"],
+            mainImg: "images/mc4.png",
+            thumbnails: ["images/mc4-1.png", "images/mc4-2.png"],
             description: "The MC4 Solar Connector is a high-performance, weather-resistant connector designed for use with solar panels. It provides a secure and reliable connection for transmitting electrical power from the solar panels to the inverter or charge controller.",
             specs: [
                 "• Components: 1 Male connector and 1 Female connector (with tin/silver-plated copper contacts and UV-resistant PPO/PC housing)",
