@@ -201,7 +201,7 @@
       <g:condition>new</g:condition>
       <g:price>1400.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline Solar Panels</g:product_type>
+      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -360,7 +360,7 @@
       <g:condition>new</g:condition>
       <g:price>1800.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline Solar Panels</g:product_type>
+      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -374,7 +374,7 @@
       <g:condition>new</g:condition>
       <g:price>1800.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline Solar Panels</g:product_type>
+      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -388,7 +388,7 @@
       <g:condition>new</g:condition>
       <g:price>1800.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline Solar Panels</g:product_type>
+      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -402,7 +402,7 @@
       <g:condition>new</g:condition>
       <g:price>2200.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline Solar Panels</g:product_type>
+      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -416,7 +416,7 @@
       <g:condition>new</g:condition>
       <g:price>2300.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline Solar Panels</g:product_type>
+      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -467,6 +467,7 @@
       <g:description>Deye SUN-6K-OG01LP1-EU-AM2 6kW Off-grid Inverter</g:description>
       <link>https://elitevoltsystems.com/products/SUN-6K-OG01LP1-EU-AM2.html</link>
       <g:image_link>https://elitevoltsystems.com/images/deye-6k-off.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/deye-6k-off-1.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>11200.00 GHS</g:price>
@@ -508,6 +509,7 @@
       <g:description>The Deye SUN-8K-SG01LP1-EU is a 8 kW single-phase low-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
       <link>https://elitevoltsystems.com/products/SUN-8K-SG01LP1-EU.html</link>
       <g:image_link>https://elitevoltsystems.com/images/Deye-8k-hy.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/Deye-8k-hy-1.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>29000.00 GHS</g:price>
@@ -577,6 +579,7 @@
       <g:description>The Deye SUN-16K-SG05LP3-EU-SM2 is a 16 kW three-phase low-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
       <link>https://elitevoltsystems.com/products/SUN-16K-SG05LP3-EU-SM2.html</link>
       <g:image_link>https://elitevoltsystems.com/images/deye-16k-3p.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/deye-16k-3p-1.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>63000.00 GHS</g:price>
@@ -590,6 +593,7 @@
       <g:description>The Deye SUN-18K-SG05LP3-EU-SM2 is a 18 kW three-phase low-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
       <link>https://elitevoltsystems.com/products/SUN-18K-SG05LP3-EU-SM2.html</link>
       <g:image_link>https://elitevoltsystems.com/images/deye-16k-3p.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/deye-16k-3p-1.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>67000.00 GHS</g:price>
@@ -603,6 +607,7 @@
       <g:description>The Deye SUN-20K-SG05LP3-EU-SM2 is a 20 kW three-phase low-voltage hybrid solar inverter designed for residential and light commercial use</g:description>
       <link>https://elitevoltsystems.com/products/SUN-20K-SG05LP3-EU-SM2.html</link>
       <g:image_link>https://elitevoltsystems.com/images/deye-16k-3p.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/deye-16k-3p-1.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
       <g:price>75000.00 GHS</g:price>
@@ -703,9 +708,105 @@
       <g:additional_image_link>https://elitevoltsystems.com/images/srne-60kw-1.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
-      <g:price>170000.00 GHS</g:price>
+      <g:price>75000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid Inverters, High Voltage Inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid inverters, High voltage inverters, On/Off-grid inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p52</g:id>
+      <g:title>SRNE 12.8V 200Ah SR-EOS02B-12 Lithium Iron Phosphate Battery</g:title>
+      <g:description>The SRNE SR-EOS02B-12 is a compact, high-performance 12.8V 200Ah Lithium Iron Phosphate (LiFePO₄) battery module designed by SRNE Solar. It functions as a robust energy storage solution for residential solar setups, off-grid systems, RVs, and backup power applications.</g:description>
+      <link>https://elitevoltsystems.com/products/SR-EOS02B-12.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/srne-12-200.jpg</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/srne-12-200-1.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>7000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Batteries &gt; Lithium Batteries</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p53</g:id>
+      <g:title>SRNE 51.2V 100Ah 5.12kWh SR-SE05B Lithium Iron Phosphate Battery</g:title>
+      <g:description>The SRNE SR-SE05B is a high-performance 5.12 kWh low-voltage Lithium Iron Phosphate (LiFePO4) battery module engineered for residential and light commercial solar energy storage. It functions as a wall-mounted or floor-standing component within a 48V-class system, offering extensive longevity and scalable energy capacity.</g:description>
+      <link>https://elitevoltsystems.com/products/SR-SE05B.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/SR-SE05B.jpg</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/SR-SE05B-1.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>9500.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Batteries &gt; Lithium Batteries</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p54</g:id>
+      <g:title>MC4 Solar Connector, single (10 pairs)</g:title>
+      <g:description>The MC4 Solar Connector is a high-performance, weather-resistant connector designed for use with solar panels. It provides a secure and reliable connection for transmitting electrical power from the solar panels to the inverter or charge controller.</g:description>
+      <link>https://elitevoltsystems.com/products/mc4.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/mc4.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/mc4-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>250.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Accessories &gt; Solar Connectors</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p55</g:id>
+      <g:title>10W polycrystalline solar panel</g:title>
+      <g:description>A compact, 10-watt polycrystalline solar panel designed for small-scale and off-grid electrical needs, this mini solar module delivers highly reliable energy with minimal maintenance overhead.</g:description>
+      <link>https://elitevoltsystems.com/products/RTM010P.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/RTM010P.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/RTM010P-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>60.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Solar Panels &gt; Polycrystalline</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p56</g:id>
+      <g:title>15W monocrystalline solar panel</g:title>
+      <g:description>A compact, 15-watt monocrystalline solar panel designed for small-scale and off-grid electrical needs, this mini solar module delivers highly reliable energy with minimal maintenance overhead.</g:description>
+      <link>https://elitevoltsystems.com/products/RTM015M.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/RTM010P.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/RTM010P-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>60.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Solar Panels &gt; Monocrystalline</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p57</g:id>
+      <g:title>330W monocrystalline solar panel</g:title>
+      <g:description>330-watt monocrystalline solar panel designed for residential and commercial solar energy systems, providing high efficiency and reliable performance in various environmental conditions.</g:description>
+      <link>https://elitevoltsystems.com/products/RTM330M.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/RTM330M.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>1000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Solar Panels &gt; Monocrystalline</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p58</g:id>
+      <g:title>Restar 6.2kW Hybrid Inverter</g:title>
+      <g:description>The RT-HY6.2KW-48P1-II is a 6.2 kW single-phase (1-phase) on/off-grid hybrid solar inverter charger. It manages solar power generation, battery charging, and grid or generator inputs within a single system to provide an uninterrupted pure sine wave AC output.</g:description>
+      <link>https://elitevoltsystems.com/products/RT-HY6-2KW-48P1-II.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/restar4k.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>6500.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
   </channel>
