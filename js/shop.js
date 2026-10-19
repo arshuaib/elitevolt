@@ -180,7 +180,7 @@
 
         {id: "p14", pageUrl: "products/tw-620w.html",
             name: "TW Solar 620W Bifacial panel",
-            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline Solar Panels"],
+            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline"],
             price: 1400,
             stock: true,
             mainImg: "images/tw-620w-2.png",
@@ -469,7 +469,7 @@
 
         {id: "p26", pageUrl: "products/jinko-620w.html",
             name: "620W Jinko Bifacial Solar Panel",
-            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline Solar Panels"],
+            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline"],
             price: 1800,
             stock: true,
             mainImg: "images/jinko-1.png",
@@ -488,7 +488,7 @@
 
         {id: "p27", pageUrl: "products/jinko-625w.html",
             name: "625W Jinko Bifacial Solar Panel",
-            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline Solar Panels"],
+            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline"],
             price: 1800,
             stock: true,
             mainImg: "images/jinko-1.png",
@@ -507,7 +507,7 @@
         
         {id: "p28", pageUrl: "products/jinko-630w.html",
             name: "630W Jinko Bifacial Solar Panel",
-            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline Solar Panels"],
+            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline"],
             price: 1800,
             stock: true,
             mainImg: "images/jinko-1.png",
@@ -526,7 +526,7 @@
 
         {id: "p29", pageUrl: "products/jinko-715w.html",
             name: "715W Jinko Bifacial Solar Panel",
-            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline Solar Panels"],
+            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline"],
             price: 2200,
             stock: true,
             mainImg: "images/jinko-1.png",
@@ -546,7 +546,7 @@
 
         {id: "p30", pageUrl: "products/jinko-720w.html",
             name: "720W Jinko Bifacial Solar Panel",
-            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline Solar Panels"],
+            category: "Solar Panels", "subcategory": ["Bifacial Solar Panels", "Monocrystalline"],
             price: 2300,
             stock: true,
             mainImg: "images/jinko-1.png",
@@ -603,7 +603,7 @@
             price: 11200,
             stock: true,
             mainImg: "images/deye-6k-off.png",
-            thumbnails: "images/deye-6k-off-2.png",
+            thumbnails: ["images/deye-6k-off-1.png"],
             description: "Deye SUN-6K-OG01LP1-EU-AM2 6kW Off-grid Inverter",
             specs: [
                 "• Rated AC Output Power: 6,000 W (pure sine wave)",
@@ -674,7 +674,7 @@
             price: 29000,
             stock: true,
             mainImg: "images/Deye-8k-hy.png",
-            thumbnails: "images/Deye-8k-hy-1.png",
+            thumbnails: ["images/Deye-8k-hy-1.png"],
             description: "The Deye SUN-8K-SG01LP1-EU is a 8 kW single-phase low-voltage hybrid solar inverter designed for residential and light commercial use",
             specs: [
                 "• Rated AC Output: 8,000W (Max AC output: 8,800W)",
@@ -787,7 +787,7 @@
             price: 63000,
             stock: true,
             mainImg: "images/deye-16k-3p.png",
-            thumbnails: "images/deye-16k-3p.png", 
+            thumbnails: ["images/deye-16k-3p-1.png"],
             description: "The Deye SUN-16K-SG05LP3-EU-SM2 is a 16 kW three-phase low-voltage hybrid solar inverter designed for residential and light commercial use",
             specs: [
                 "• ated AC Output: 16 kW (3-phase, 100% unbalanced output supported)",
@@ -807,7 +807,7 @@
             price: 67000,
             stock: true,
             mainImg: "images/deye-16k-3p.png",
-            thumbnails: "images/deye-16k-3p.png", 
+            thumbnails: ["images/deye-16k-3p-1.png"],
             description: "The Deye SUN-18K-SG05LP3-EU-SM2 is a 18 kW three-phase low-voltage hybrid solar inverter designed for residential and light commercial use",
             specs: [
                 "• ated AC Output: 18 kW (3-phase, 100% unbalanced output supported)",
@@ -827,7 +827,7 @@
             price: 75000,
             stock: true,
             mainImg: "images/deye-16k-3p.png",
-            thumbnails: "images/deye-16k-3p.png", 
+            thumbnails: ["images/deye-16k-3p-1.png"],
             description: "The Deye SUN-20K-SG05LP3-EU-SM2 is a 20 kW three-phase low-voltage hybrid solar inverter designed for residential and light commercial use",
             specs: [
                 "• ated AC Output: 20 kW (3-phase, 100% unbalanced output supported)",
@@ -996,7 +996,7 @@
 
         {id: "p51", pageUrl: "products/srne-60kw.html",
             name: "SRNE 60kW Three-phase High Voltage Hybrid Solar Storage Inverter",
-            category: "Inverters", "subcategory": ["Hybrid Inverters", "High Voltage Inverters"],
+            category: "Inverters", "subcategory": ["Hybrid inverters", "High voltage inverters", "On/Off-grid inverters"],
             price: 75000,
             stock: true,
             mainImg: "images/srne-60kw.png",
@@ -1078,6 +1078,120 @@
                 "• Operating Temperature: -40°C to +90°C"
             ],
             whatsappMsg: "MC4 Solar Connector, single"
+        },
+
+        {id: "p55", pageUrl: "products/RTM010P.html",
+            name: "10W polycrystalline solar panel",
+            category: "Solar Panels", "subcategory": "Polycrystalline",
+            price: 60,
+            stock: true,
+            mainImg: "images/RTM010P.png",
+            thumbnails: ["images/RTM010P-1.png", "images/RTM010P-2.png"],
+            description: "A compact, 10-watt polycrystalline solar panel designed for small-scale and off-grid electrical needs, this mini solar module delivers highly reliable energy with minimal maintenance overhead.",
+            specs: [
+                "Rated Maximum Power (Pmax): 10W",
+                "Power Tolerance Range: 0~+5W",
+                "Open Circuit Voltage (Voc): 21.60V",
+                "Peak Voltage (Vmp): 18.20V",
+                "Short Circuit Current (Isc): 0.61A",
+                "Peak Current (Imp): 0.55A",
+                "Max.System Voltage: 1000V",
+                "Max.Series Fuse Rating: 15A",
+                "Operating Temperature: -40°C to +85°C",
+                "Module Application: ClassA",
+                "Dimension: 48918517mm"
+            ],
+            whatsappMsg: "10W polycrystalline solar panel"
+        },
+
+        {id: "p56", pageUrl: "products/RTM015M.html",
+            name: "15W monocrystalline solar panel",
+            category: "Solar Panels", "subcategory": "Monocrystalline",
+            price: 60,
+            stock: true,
+            mainImg: "images/RTM010P.png",
+            thumbnails: ["images/RTM010P-1.png", "images/RTM010P-2.png"],
+            description: "A compact, 15-watt monocrystalline solar panel designed for small-scale and off-grid electrical needs, this mini solar module delivers highly reliable energy with minimal maintenance overhead.",
+            specs: [
+                "Rated Maximum Power (Pmax): 15W",
+                "Power Tolerance Range: 0～+5W",
+                "Open Circuit Voltage (Voc): 23.40V",
+                "Peak Voltage (Vmp): 19.50V",
+                "Short Circuit Current (Isc): 0.85A",
+                "Peak Current (Imp): 0.77A",
+                "Max.System Voltage: 1000V",
+                "Max.Series Fuse Rating: 15A",
+                "Module Application: ClassA",
+                "Dimension: 350*350*17mm"
+            ],
+            whatsappMsg: "15W monocrystalline solar panel"
+        },
+
+        {id: "p57", pageUrl: "products/RTM330M.html",
+            name: "330W monocrystalline solar panel",
+            category: "Solar Panels", "subcategory": "Monocrystalline",
+            price: 1000,
+            stock: true,
+            mainImg: "images/RTM330M.png",
+            description: "330-watt monocrystalline solar panel designed for residential and commercial solar energy systems, providing high efficiency and reliable performance in various environmental conditions.",
+            specs: [
+                "Rated Maximum Power (Pmax): 330W",
+                "Power Tolerance Range: ±3%",
+                "Open Circuit Voltage (Voc): 26.18V",
+                "Peak Voltage (Vmp): 21.99V",
+                "Short Circuit Current (Isc): 15.76A",
+                "Peak Current (Imp): 15.01A",
+                "Module [T98] max [°C ] 70",
+                "Max System Voltage 1500VDC",
+                "Max Series Fuse Rating 20A",
+                "Power Sorting 0~5W",
+                "Module Application Class A",
+                "Dimension 1530*880*30mm"
+            ],
+            whatsappMsg: "330W monocrystalline solar panel"
+        },
+
+        {id: "p58", pageUrl: "products/RT-HY6-2KW-48P1-II.html",
+            name: "Restar 6.2kW Hybrid Inverter",
+            category: "Inverters", "subcategory": ["Hybrid inverters", "On/Off-grid inverters"],
+            price: 6500,
+            stock: true,
+            mainImg: "images/restar4k.png",
+            description: "The RT-HY6.2KW-48P1-II is a 6.2 kW single-phase (1-phase) on/off-grid hybrid solar inverter charger. It manages solar power generation, battery charging, and grid or generator inputs within a single system to provide an uninterrupted pure sine wave AC output.",
+            specs: [
+                "Operating Temperature Range:-10~ 50°C",
+                "PV INPUT:",
+                "Nominal operating voltage:240Vdc",
+                "Vmax PV:500Vdc",
+                "PV input voltage range:60-450Vdc",
+                "Imax PV:22A",
+                "Full load MPPT range:240~450Vdc",
+                "Maximum PV Input Power: 6500W",
+                "Maximum Solar Charging Current:120A",
+                "GRID/AC OUTPUT:",
+                "Nominal Output Voltage:220/230/240Vac",
+                "Feed-in Grid Voltage Range:195~253Vac",
+                "Feed-in Grid Frequency Range:50±1Hz",
+                "Nominal Output Current:27.0A",
+                "Power Factor Range:>0.99",
+                "Maximum Conversion Efficiency(DC/AC):97%",
+                "Nominal Operating Frequency:50/60Hz",
+                "TWO LOAD OUTPUT POWER:",
+                "Full Load:6200W",
+                "Maximum Main Load:6200W",
+                "Maximum Second Load:2066W",
+                "Main Load Cut Off Voltage:52Vdc",
+                "Main Load Return Voltage:54Vdc",
+                "AC INPUT:",
+                "Nominal operating voltage:230Vac",
+                "Maximum input current:40A",
+                "Nominal operating frequency:50/60Hz",
+                "Surge power:12400VA",
+                "Maximum AC Charging Current:100A",
+                "BATTERY:",
+                "Battery voltage:48Vd"
+            ],
+            whatsappMsg: "Restar 6.2kW Hybrid Inverter"
         },
 
     ];
@@ -1182,7 +1296,10 @@
         const breadcrumbs = productPage?.querySelector('.crumbs');
         if (breadcrumbs?.lastChild?.nodeType === Node.TEXT_NODE) breadcrumbs.lastChild.nodeValue = ` / ${product.name}`;
         if (gallery) {
-            const images = [product.mainImg, ...(product.thumbnails || [])].filter(Boolean);
+            const thumbnails = Array.isArray(product.thumbnails)
+                ? product.thumbnails
+                : (typeof product.thumbnails === 'string' ? [product.thumbnails] : []);
+            const images = [...new Set([product.mainImg, ...thumbnails].filter(Boolean))];
             gallery.innerHTML = images.map(src => `<img src="${escapeHtml(productImageUrl(src))}" alt="${escapeHtml(product.name)}" loading="lazy" decoding="async">`).join('');
         }
         if (statusElement) {
