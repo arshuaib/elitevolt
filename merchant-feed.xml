@@ -17,7 +17,7 @@
       <g:price>1500.00 GHS</g:price>
       <g:sale_price>1400.00 GHS</g:sale_price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Kits</g:product_type>
+      <g:product_type>Solar Kits | Solar Home Systems</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -31,7 +31,7 @@
       <g:condition>new</g:condition>
       <g:price>1500.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Kits</g:product_type>
+      <g:product_type>Solar Kits | Solar Home Systems</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -45,7 +45,7 @@
       <g:condition>new</g:condition>
       <g:price>1600.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Kits</g:product_type>
+      <g:product_type>Solar Kits | Solar Home Systems</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -59,7 +59,7 @@
       <g:condition>new</g:condition>
       <g:price>3500.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Kits</g:product_type>
+      <g:product_type>Solar Kits | Productive Use Equipments</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -73,7 +73,7 @@
       <g:condition>new</g:condition>
       <g:price>7500.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Kits</g:product_type>
+      <g:product_type>Solar Kits | Productive Use Equipments</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -87,7 +87,7 @@
       <g:condition>new</g:condition>
       <g:price>1750.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Kits</g:product_type>
+      <g:product_type>Solar Kits | Solar Home Systems</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -112,10 +112,10 @@
       <g:additional_image_link>https://elitevoltsystems.com/images/5kw-hv-srne2.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
-      <g:price>8500.00 GHS</g:price>
-      <g:sale_price>6500.00 GHS</g:sale_price>
+      <g:price>6500.00 GHS</g:price>
+      <g:sale_price>6000.00 GHS</g:sale_price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -124,11 +124,11 @@
       <g:description>Single-Phase Off-grid Solar Storage Inverter □ SRNE 15 years in PV industry, committed to independent R&amp;D and production. □ Holds over 200 patents in energy storage, with unique industry- leading technologies. □ Chooses top-quality international components to deliver high-value products to customers. □ Upholds values of customer priority, proactivity, responsibility, and innovative breakthroughs. □ Advanced MPPT technology with up to 99.9% efficiency □ Up to 6 units in parallel for 36kW □ Time-slot function to save cost with peak-valley □ Off-grid/without battery output mode □ Aesthetically industrial design appearance □ Support BMS communication</g:description>
       <link>https://elitevoltsystems.com/products/srne-hybrid-inverter-6kw-hv.html</link>
       <g:image_link>https://elitevoltsystems.com/images/6kw-hv-srne1.png</g:image_link>
-      <g:availability>out_of_stock</g:availability>
+      <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
-      <g:price>8800.00 GHS</g:price>
+      <g:price>6500.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -157,22 +157,22 @@
       <g:price>3000.00 GHS</g:price>
       <g:sale_price>2500.00 GHS</g:sale_price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Streetlights &gt; All In One Solar Streetlights</g:product_type>
+      <g:product_type>Lights &gt; Solar Streetlights, All In One Solar Streetlights | Streetlights &gt; Solar Streetlights, All In One Solar Streetlights</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
       <g:id>p12</g:id>
-      <g:title>SRNE 12kW Single phase On/Off grid Hybrid Inverter</g:title>
-      <g:description>12kW SRNE Single Phase Low Voltage On/Off-grid Solar Hybrid Inverter</g:description>
+      <g:title>SRNE 12kW (12000W) Single-phase Hybrid Solar Inverter</g:title>
+      <g:description>An industrial-grade, residential 12kW Single-Phase Low-Voltage Hybrid Solar Storage Inverter. It serves as the central brain for high-capacity, whole-home energy systems, seamlessly managing power inputs from solar panels, 48V battery banks, the utility grid, and backup generators</g:description>
       <link>https://elitevoltsystems.com/products/srne-12kw-1ph-on.html</link>
       <g:image_link>https://elitevoltsystems.com/images/12kw-srne-1.png</g:image_link>
       <g:additional_image_link>https://elitevoltsystems.com/images/12kw-srne-2.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
-      <g:price>29000.00 GHS</g:price>
-      <g:sale_price>23000.00 GHS</g:sale_price>
+      <g:price>26000.00 GHS</g:price>
+      <g:sale_price>22000.00 GHS</g:sale_price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -201,7 +201,7 @@
       <g:condition>new</g:condition>
       <g:price>1400.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline</g:product_type>
+      <g:product_type>Solar Panels &gt; Bifacial, Monocrystalline</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -240,7 +240,7 @@
       <g:condition>new</g:condition>
       <g:price>2600.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Off-grid Inverters, Hybrid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -253,7 +253,7 @@
       <g:condition>new</g:condition>
       <g:price>3000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Off-grid Inverters, Hybrid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -266,7 +266,7 @@
       <g:condition>new</g:condition>
       <g:price>4000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Off-grid Inverters, Hybrid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -279,7 +279,7 @@
       <g:condition>new</g:condition>
       <g:price>4500.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Off-grid Inverters, Hybrid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -292,7 +292,7 @@
       <g:condition>new</g:condition>
       <g:price>5500.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -305,7 +305,7 @@
       <g:condition>new</g:condition>
       <g:price>9600.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -317,7 +317,7 @@
       <g:additional_image_link>https://elitevoltsystems.com/images/mega-5kwh-1.png</g:additional_image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>new</g:condition>
-      <g:price>11500.00 GHS</g:price>
+      <g:price>12000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
       <g:product_type>Batteries &gt; Lithium Batteries</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
@@ -346,7 +346,7 @@
       <g:condition>new</g:condition>
       <g:price>13500.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -360,7 +360,7 @@
       <g:condition>new</g:condition>
       <g:price>1800.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline</g:product_type>
+      <g:product_type>Solar Panels &gt; Bifacial, Monocrystalline</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -374,7 +374,7 @@
       <g:condition>new</g:condition>
       <g:price>1800.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline</g:product_type>
+      <g:product_type>Solar Panels &gt; Bifacial, Monocrystalline</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -388,7 +388,7 @@
       <g:condition>new</g:condition>
       <g:price>1800.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline</g:product_type>
+      <g:product_type>Solar Panels &gt; Bifacial, Monocrystalline</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -402,7 +402,7 @@
       <g:condition>new</g:condition>
       <g:price>2200.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline</g:product_type>
+      <g:product_type>Solar Panels &gt; Bifacial, Monocrystalline</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -416,7 +416,7 @@
       <g:condition>new</g:condition>
       <g:price>2300.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Solar Panels &gt; Bifacial Solar Panels, Monocrystalline</g:product_type>
+      <g:product_type>Solar Panels &gt; Bifacial, Monocrystalline</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -472,7 +472,7 @@
       <g:condition>new</g:condition>
       <g:price>11200.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters, Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -486,7 +486,7 @@
       <g:condition>new</g:condition>
       <g:price>22000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -500,7 +500,7 @@
       <g:condition>new</g:condition>
       <g:price>22500.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -514,7 +514,7 @@
       <g:condition>new</g:condition>
       <g:price>29000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -528,7 +528,7 @@
       <g:condition>new</g:condition>
       <g:price>42000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -542,7 +542,7 @@
       <g:condition>new</g:condition>
       <g:price>44000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -556,7 +556,7 @@
       <g:condition>new</g:condition>
       <g:price>47000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -570,7 +570,7 @@
       <g:condition>new</g:condition>
       <g:price>55300.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -584,7 +584,7 @@
       <g:condition>new</g:condition>
       <g:price>63000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -598,7 +598,7 @@
       <g:condition>new</g:condition>
       <g:price>67000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -612,7 +612,7 @@
       <g:condition>new</g:condition>
       <g:price>75000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -626,7 +626,7 @@
       <g:condition>new</g:condition>
       <g:price>93000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -654,7 +654,7 @@
       <g:condition>new</g:condition>
       <g:price>22000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Power Stations &gt; Smart Power Stations, Lithium Batteries, Non Portable | Inverters &gt; Smart Power Stations, Lithium Batteries, Non Portable | Batteries &gt; Smart Power Stations, Lithium Batteries, Non Portable</g:product_type>
+      <g:product_type>Power Stations &gt; Smart Power Stations, Lithium Batteries | Inverters &gt; Smart Power Stations, Lithium Batteries | Batteries &gt; Smart Power Stations, Lithium Batteries</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -668,7 +668,7 @@
       <g:condition>new</g:condition>
       <g:price>45000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Power Stations &gt; Smart Power Stations, Lithium Batteries, Non Portable | Inverters &gt; Smart Power Stations, Lithium Batteries, Non Portable | Batteries &gt; Smart Power Stations, Lithium Batteries, Non Portable</g:product_type>
+      <g:product_type>Power Stations &gt; Smart Power Stations, Lithium Batteries | Inverters &gt; Smart Power Stations, Lithium Batteries | Batteries &gt; Smart Power Stations, Lithium Batteries</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -682,7 +682,7 @@
       <g:condition>new</g:condition>
       <g:price>75000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Power Stations &gt; Smart Power Stations, Lithium Batteries, Non Portable | Inverters &gt; Smart Power Stations, Lithium Batteries, Non Portable | Batteries &gt; Smart Power Stations, Lithium Batteries, Non Portable</g:product_type>
+      <g:product_type>Power Stations &gt; Smart Power Stations, Lithium Batteries | Inverters &gt; Smart Power Stations, Lithium Batteries | Batteries &gt; Smart Power Stations, Lithium Batteries</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -710,7 +710,7 @@
       <g:condition>new</g:condition>
       <g:price>75000.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters, High voltage inverters, On/Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, High voltage Inverters, On/Off-grid Inverters</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
     <item>
@@ -806,7 +806,323 @@
       <g:condition>new</g:condition>
       <g:price>6500.00 GHS</g:price>
       <g:brand>EliteVolt Systems</g:brand>
-      <g:product_type>Inverters &gt; Hybrid inverters, On/Off-grid inverters</g:product_type>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p59</g:id>
+      <g:title>Restar 8.2kW Hybrid Inverter</g:title>
+      <g:description>The RT-HY8.2KW-48P1-II is a 8.2 kW single-phase (1-phase) on/off-grid hybrid solar inverter charger. It manages solar power generation, battery charging, and grid or generator inputs within a single system to provide an uninterrupted pure sine wave AC output.</g:description>
+      <link>https://elitevoltsystems.com/products/RT-HY8-2KW-48P1.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/restar4k.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>11000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p60</g:id>
+      <g:title>Restar 10.2kW Hybrid Inverter</g:title>
+      <g:description>The RT-HY10.2KW-48P1-II is a 10.2 kW single-phase (1-phase) on/off-grid hybrid solar inverter charger. It manages solar power generation, battery charging, and grid or generator inputs within a single system to provide an uninterrupted pure sine wave AC output.</g:description>
+      <link>https://elitevoltsystems.com/products/RTHY10-2KW-48P1.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/restar4k.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>12500.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p61</g:id>
+      <g:title>Restar 610W Monocrystalline Bifacial Solar Panel</g:title>
+      <g:description>The RT8H610M is a high-power mono-crystalline solar panel engineered for commercial and industrial utility-scale power generation. It is designed to maximize energy output within a dense physical footprint, relying on high-efficiency silicon cell structures.</g:description>
+      <link>https://elitevoltsystems.com/products/RT8H610M.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/RT8H610M.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>1550.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Solar Panels &gt; Monocrystalline, Bifacial</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p62</g:id>
+      <g:title>Solis 12kW 1ph Hybrid Solar Inverter</g:title>
+      <g:description>A high-capacity energy storage inverter designed for large residential, villa, commercial, and agricultural backup systems</g:description>
+      <link>https://elitevoltsystems.com/products/solis12k.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/solis-12kw.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/solis-12kw-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>44000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p63</g:id>
+      <g:title>Solis 16kW 1ph Hybrid Solar Inverter</g:title>
+      <g:description>A high-capacity energy storage inverter designed for large residential, villa, commercial, and agricultural backup systems</g:description>
+      <link>https://elitevoltsystems.com/products/solis16k.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/solis-12kw.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/solis-12kw-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>55000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p64</g:id>
+      <g:title>Glonev Hybrid Solar Air Conditioner</g:title>
+      <g:description>Glonev Hybrid ACDC solar air conditioners are dual-power cooling systems designed to provide high-efficiency indoor cooling by blending power directly from solar panels and the electrical grid</g:description>
+      <link>https://elitevoltsystems.com/products/solar-ac.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/glo-sol.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/glo-sol-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>13500.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Air Conditioners &gt; Solar Air Conditioners, Hybrid Air Conditioners</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p65</g:id>
+      <g:title>AWP 650VA offline UPS</g:title>
+      <g:description>The AWP 650VA UPS is an entry-level, line-interactive uninterruptible power supply designed to protect desktop computers, networking gear, and small home office electronics from sudden data loss and electrical damage.</g:description>
+      <link>https://elitevoltsystems.com/products/650va.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/650va.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>1000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>UPS &gt; Off-line UPS</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p66</g:id>
+      <g:title>40A PWM Solar Charge Controller 48V</g:title>
+      <g:description>The 40A PWM Solar Charge Controller 48V is designed to efficiently manage the charging of solar panels and batteries in off-grid solar power systems.</g:description>
+      <link>https://elitevoltsystems.com/products/scc-i48v.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/scc-i48v.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/scc-i48v-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>550.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Charge Controllers &gt; PWM</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p67</g:id>
+      <g:title>30A PWM Solar Charge Controller</g:title>
+      <g:description>The 30A PWM Solar Charge Controller is designed to efficiently manage the charging of solar panels and batteries in off-grid solar power systems.</g:description>
+      <link>https://elitevoltsystems.com/products/scc-i.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/scc-i.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/scc-i-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>350.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Charge Controllers &gt; PWM</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p68</g:id>
+      <g:title>Media 6W LED Bulb</g:title>
+      <g:description>The Media 6W LED Bulb is designed to provide efficient and bright lighting for various applications.</g:description>
+      <link>https://elitevoltsystems.com/products/6W-media-led.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/6W-media-led.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/6W-media-led-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>15.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Lights &gt; LED Bulbs, Energy Saver Bulbs</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p69</g:id>
+      <g:title>SRNE 1.5kW (1500W) Single-phase Hybrid Solar Inverter</g:title>
+      <g:description>The SRNE 1.5kW (1500W) Single-phase Hybrid Solar Inverter is designed for efficient power conversion in off-grid solar power systems.</g:description>
+      <link>https://elitevoltsystems.com/products/srne-1-5kw.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/srne-1-5kw.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/srne-1-5kw-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>3000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid Inverters, Off-grid Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p70</g:id>
+      <g:title>SRNE 6kW (6000W) Single-phase Hybrid Solar Inverter</g:title>
+      <g:description>The SRNE 6kW (6000W) Single-phase Hybrid Solar Inverter is designed for efficient power conversion in off-grid solar power systems.</g:description>
+      <link>https://elitevoltsystems.com/products/srne-6kw-on.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/srne-6k-on.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/srne-6k-on-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>12000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p71</g:id>
+      <g:title>SRNE 10kW (10000W) Single-phase Hybrid Solar Inverter</g:title>
+      <g:description>A 10,000W (10 kW) single-phase hybrid solar storage inverter designed for efficient power conversion in off-grid solar power systems.</g:description>
+      <link>https://elitevoltsystems.com/products/srne-10kw-on.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/srne-10kw-off.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/srne-10kw-off-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>13000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid Inverters, Off-grid Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p72</g:id>
+      <g:title>SRNE 12kW (12000W) Three-phase Off-grid Hybrid Solar Inverter</g:title>
+      <g:description>An industrial-grade, 12 kW three-phase hybrid solar storage inverter designed to manage solar inputs, grid/generator power, and battery banks simultaneously. Built primarily for regions with unstable grids or complete off-grid requirements, it serves as an all-in-one energy management system for larger residential properties, workshops, and commercial facilities</g:description>
+      <link>https://elitevoltsystems.com/products/srne-12kw-off.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/srne-12kw-off.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/srne-12kw-off-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>15000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid Inverters, Off-grid Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p73</g:id>
+      <g:title>SRNE 12kW (12000W) Three-phase On/Off-grid Hybrid Solar Inverter</g:title>
+      <g:description>A high-performance 12kW, 48V Three-Phase Low-Voltage Hybrid Solar Inverter designed for large residential, light commercial, or industrial applications.</g:description>
+      <link>https://elitevoltsystems.com/products/srne-12kw-3ph.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/12kw-srne-1.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/12kw-srne-2.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>24000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p74</g:id>
+      <g:title>SRNE 16kW (16000W) Three-phase Off-grid Hybrid Solar Inverter</g:title>
+      <g:description>A heavy-duty, commercial-grade 16kW three-phase off-grid solar storage inverter. It is designed as an all-in-one management unit that unifies solar power generation, utility/generator grid charging, and battery energy storage into a single high-capacity device</g:description>
+      <link>https://elitevoltsystems.com/products/srne-16kw-3ph.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/16kw-srne.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/16kw-srne-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>25000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid Inverters, Off-grid Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p75</g:id>
+      <g:title>SRNE 20kW (20000W) Three-phase Off-grid Hybrid Solar Inverter</g:title>
+      <g:description>A heavy-duty, commercial-grade 20kW three-phase off-grid solar storage inverter. It is designed as an all-in-one management unit that unifies solar power generation, utility/generator grid charging, and battery energy storage into a single high-capacity device</g:description>
+      <link>https://elitevoltsystems.com/products/srne-20kw-3ph.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/16kw-srne.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/16kw-srne-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>28000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid Inverters, Off-grid Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p76</g:id>
+      <g:title>SRNE 16kW (16000W) Three-phase On/Off-grid Hybrid Solar Inverter</g:title>
+      <g:description>A commercial and high-capacity residential three-phase low-voltage hybrid solar inverter designed to manage solar PV generation, 48V battery storage, utility grids, and diesel generator inputs simultaneously.</g:description>
+      <link>https://elitevoltsystems.com/products/srne-16kw-3ph-on.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/srne-16-20kw-on.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/srne-16-20kw-on-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>35000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p77</g:id>
+      <g:title>SRNE 20kW (20000W) Three-phase On/Off-grid Hybrid Solar Inverter</g:title>
+      <g:description>A commercial and high-capacity residential three-phase low-voltage hybrid solar inverter designed to manage solar PV generation, 48V battery storage, utility grids, and diesel generator inputs simultaneously.</g:description>
+      <link>https://elitevoltsystems.com/products/srne-20kw-3ph-on.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/srne-16-20kw-on.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/srne-16-20kw-on-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>37000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Inverters &gt; Hybrid Inverters, On/Off-grid Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p78</g:id>
+      <g:title>SRNE all-in-one 3kW low-voltage solar storage</g:title>
+      <g:description>An indoor, plug-and-play all-in-one low-voltage hybrid solar storage system designed for residential backup, small commercial applications, and off-grid remote power solutions. It combines a pure sine wave hybrid inverter, an MPPT solar charge controller, and a high-performance lithium battery into a single mobile cabinet.</g:description>
+      <link>https://elitevoltsystems.com/products/srne-all-in-one-3kw.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/srne-16-20kw-on.png</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/srne-16-20kw-on-1.png</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>11500.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Power Stations | Inverters</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p79</g:id>
+      <g:title>SRNE 24V 100Ah LiFePO4 Battery Module</g:title>
+      <g:description>A 2.56kWh wall-mounted Lithium Iron Phosphate (LiFePO4) battery module designed for residential solar energy storage. It provides high energy density, a compact footprint, and advanced communication capabilities to easily pair with off-grid or hybrid solar inverters.</g:description>
+      <link>https://elitevoltsystems.com/products/srne-24v-batt.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/srne-12-200.jpg</g:image_link>
+      <g:additional_image_link>https://elitevoltsystems.com/images/srne-12-200-1.jpg</g:additional_image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>7000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Batteries &gt; Lithium Batteries</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p80</g:id>
+      <g:title>SRNE 51.2V 100Ah (SR-EOC05B-UL) LiFePO4 Battery Module</g:title>
+      <g:description>A high-performance, low-voltage lithium iron phosphate (LiFePO4) solar storage battery designed for modern residential and light commercial energy systems.</g:description>
+      <link>https://elitevoltsystems.com/products/srne-51-2v-batt.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/srne-5kwh.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>11500.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Batteries &gt; Lithium Batteries</g:product_type>
+      <g:identifier_exists>false</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>p81</g:id>
+      <g:title>SRNE 51.2V 200Ah (SR-EOS10B) LiFePO4 Battery Module</g:title>
+      <g:description>A high-capacity, low-voltage lithium iron phosphate (LFP) wall-mounted energy storage battery designed for residential solar systems and backup power applications.</g:description>
+      <link>https://elitevoltsystems.com/products/SR-EOS10B.html</link>
+      <g:image_link>https://elitevoltsystems.com/images/SR-EOS10B.png</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:price>26000.00 GHS</g:price>
+      <g:brand>EliteVolt Systems</g:brand>
+      <g:product_type>Batteries &gt; Lithium Batteries</g:product_type>
       <g:identifier_exists>false</g:identifier_exists>
     </item>
   </channel>

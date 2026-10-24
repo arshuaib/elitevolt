@@ -57,9 +57,11 @@
 <div class="shop-container">
     <div class="products-wrapper">
         <div class="search-bar" role="search">
-            <input type="text" id="searchInput" placeholder="Search products..." autocomplete="off" aria-label="Search products">
+            <div class="search-input-wrap">
+                <input type="text" id="searchInput" placeholder="Search products..." autocomplete="off" aria-label="Search products">
+                <button id="clearSearchBtn" class="clear-search-btn" type="button" aria-label="Clear search" title="Clear search" hidden><i class="fas fa-times" aria-hidden="true"></i></button>
+            </div>
             <button id="searchBtn" class="search-action-btn" type="button"><i class="fas fa-search"></i> Search</button>
-            <button id="clearSearchBtn" class="clear-search-btn" type="button" aria-label="Clear search"><i class="fas fa-times"></i><span>Clear</span></button>
         </div>
         <h1 class="shop-page-title">⚡ Products</h1>
 
