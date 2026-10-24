@@ -46,7 +46,10 @@ function makeProductPage(product, pagePath, pageDirectory) {
   const canonical = new URL(pagePath, origin).href;
   const title = `${name} | EliteVolt Systems Ghana`;
   const image = relativeAsset(product.mainImg, pageDirectory);
-  const images = [...new Set([product.mainImg, ...(Array.isArray(product.thumbnails) ? product.thumbnails : [])].filter(Boolean))];
+  const thumbnails = Array.isArray(product.thumbnails)
+    ? product.thumbnails
+    : (typeof product.thumbnails === 'string' ? [product.thumbnails] : []);
+  const images = [...new Set([product.mainImg, ...thumbnails].filter(Boolean))];
   const gallery = images.map((src, index) => `<img src="${esc(relativeAsset(src, pageDirectory))}" alt="${esc(name)}${index ? ` product image ${index + 1}` : ''}" loading="${index ? 'lazy' : 'eager'}" decoding="async">`).join('\n');
   const specs = Array.isArray(product.specs) ? product.specs.filter(Boolean) : [];
   const specsSection = specs.length ? `<section class="product-specs"><h2>Specifications</h2><ul>${specs.map(item => `<li>${esc(item)}</li>`).join('')}</ul></section>` : '';
@@ -98,14 +101,16 @@ for (const product of products) {
   allPaths.add(pagePath.toLowerCase());
   const pageDirectory = dirname(target);
   await mkdir(pageDirectory, { recursive: true });
+  let existing = '';
   try {
-    const existing = await readFile(target, 'utf8');
-    const withoutTaxonomy = existing.replace(/<div\b(?=[^>]*class=["'][^"']*\bproduct-taxonomy\b[^"']*["'])[^>]*>[\s\S]*?<\/div>/gi, '');
-    if (withoutTaxonomy !== existing) await writeFile(target, withoutTaxonomy, 'utf8');
+    existing = await readFile(target, 'utf8');
   } catch (error) {
     if (error?.code !== 'ENOENT') throw error;
-    await writeFile(target, makeProductPage(product, pagePath, pageDirectory), 'utf8');
-    console.log(`Created product page: ${pagePath}`);
+  }
+  const generated = makeProductPage(product, pagePath, pageDirectory);
+  if (existing !== generated) {
+    await writeFile(target, generated, 'utf8');
+    console.log(`${existing ? 'Updated' : 'Created'} product page: ${pagePath}`);
   }
 }
 
