@@ -22,3 +22,13 @@
   .gallery { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .gallery img { height:105px !important; }
 }
+
+/* Prevent product details and the image gallery from widening the page. */
+.page-wrap { box-sizing:border-box; width:100%; }
+.product, .product > * { min-width:0; }
+.product-gallery, .product-gallery-stage, .product-gallery-thumbnails,
+.product-specs, .product-specs ul, .product-specs li { min-width:0; max-width:100%; }
+.product-gallery-stage { width:100%; }
+.product-gallery img.product-gallery-main { object-fit:contain !important; }
+.product-specs ul { list-style:none; padding-left:0; }
+.product-specs li { overflow-wrap:anywhere; }
