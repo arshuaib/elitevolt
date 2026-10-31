@@ -1376,7 +1376,7 @@
             name: "AWP 650VA offline UPS",
             category: "UPS", "subcategory": "Off-line UPS",
             price: 1000,
-            stock: true,
+            stock: false,
             mainImg: "images/650va.png",
             thumbnails: "images/650va-1.png", 
             description: "The AWP 650VA UPS is an entry-level, line-interactive uninterruptible power supply designed to protect desktop computers, networking gear, and small home office electronics from sudden data loss and electrical damage. ",
