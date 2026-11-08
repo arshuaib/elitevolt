@@ -32,3 +32,135 @@
 .product-gallery img.product-gallery-main { object-fit:contain !important; }
 .product-specs ul { list-style:none; padding-left:0; }
 .product-specs li { overflow-wrap:anywhere; }
+
+/* Product discovery from product detail pages */
+.product-page-search {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:.55rem;
+  width:calc(100% - 2rem);
+  max-width:1180px;
+  margin:.65rem auto 0;
+  align-items:stretch;
+}
+.product-page-search input {
+  box-sizing:border-box;
+  width:100%;
+  min-width:0;
+  min-height:46px;
+  padding:.7rem 1rem;
+  border:1px solid #cbd5e1;
+  border-radius:999px;
+  background:#fff;
+  color:#17211d;
+  font:inherit;
+  font-size:16px;
+  -webkit-appearance:none;
+  appearance:none;
+}
+.product-page-search input::placeholder { color:#64748b; opacity:1; }
+.product-page-search button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.45rem;
+  min-width:100px;
+  min-height:46px;
+  padding:.65rem 1rem;
+  border:1px solid #0b3d34;
+  border-radius:999px;
+  background:#0b3d34;
+  color:#fff;
+  font:inherit;
+  font-weight:700;
+  cursor:pointer;
+  -webkit-appearance:none;
+  appearance:none;
+}
+.product-page-search button:focus-visible,
+.product-page-search input:focus-visible { outline:3px solid rgba(43,122,62,.35); outline-offset:2px; }
+.visually-hidden { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+
+/* Keep product actions readable before and after touch interaction. */
+.product .cta,
+.product .cta:link,
+.product .cta:visited,
+.product .cta:hover,
+.product .cta:active,
+.product .cta:focus,
+.product .cta:focus-visible,
+.product-enquiries .cta,
+.product-enquiries .cta:link,
+.product-enquiries .cta:visited,
+.product-enquiries .cta:hover,
+.product-enquiries .cta:active,
+.product-enquiries .cta:focus,
+.product-enquiries .cta:focus-visible {
+  color:#fff!important;
+  -webkit-text-fill-color:#fff;
+  text-decoration:none!important;
+  opacity:1;
+  visibility:visible;
+}
+.product .cta:not(.secondary),
+.product-enquiries .cta:not(.secondary) { background:#0b3d34!important; }
+.product .cta.secondary,
+.product-enquiries .cta.secondary { background:#334155!important; }
+.product-actions .product-wishlist { color:#334155!important; -webkit-text-fill-color:#334155; }
+
+/* The legacy mobile gallery rule targets every image; scope each role back to its own size. */
+.gallery.product-gallery .product-gallery-stage { width:100%; height:auto; min-height:0; aspect-ratio:1/1; }
+.gallery.product-gallery .product-gallery-stage img.product-gallery-main {
+  display:block;
+  width:100%!important;
+  height:100%!important;
+  max-width:none;
+  object-fit:contain!important;
+  padding:12px;
+  box-sizing:border-box;
+  background:#f3f6f4;
+}
+.gallery.product-gallery .product-gallery-thumbnails {
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:center;
+  width:100%;
+  max-width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  overscroll-behavior-x:contain;
+  -webkit-overflow-scrolling:touch;
+  touch-action:pan-x;
+  scrollbar-width:thin;
+}
+.gallery.product-gallery .product-gallery-thumbnails .gallery-thumbnail {
+  display:grid;
+  flex:0 0 68px;
+  width:68px;
+  height:68px;
+  min-width:68px;
+  place-items:center;
+  touch-action:manipulation;
+}
+.gallery.product-gallery .product-gallery-thumbnails .gallery-thumbnail img {
+  display:block;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  padding:2px;
+  box-sizing:border-box;
+  object-fit:contain!important;
+  grid-column:auto!important;
+  background:#f8fafc;
+  cursor:pointer!important;
+}
+@media(max-width:700px) {
+  .product-page-search { width:calc(100% - 2rem); }
+  .gallery.product-gallery .product-gallery-stage img.product-gallery-main { height:100%!important; }
+}
+@media(max-width:520px) {
+  .product-page-search { width:calc(100% - 1.5rem); gap:.4rem; }
+  .product-page-search button { min-width:86px; padding-inline:.75rem; }
+  .gallery.product-gallery .product-gallery-thumbnails .gallery-thumbnail { flex-basis:62px; width:62px; min-width:62px; height:62px; }
+}
