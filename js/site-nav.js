@@ -60,10 +60,31 @@
   }
 
   function init() {
+    initProductSearch();
     document.querySelectorAll(".nav-inner, .nav-container").forEach(function (container) {
       var links = container.querySelector(":scope > .main-nav, :scope > .nav-links");
       initMenu(container, links);
     });
+  }
+
+  function initProductSearch() {
+    if (!/\/products\/[^/]+\.html?$/i.test(window.location.pathname)) return;
+
+    var nav = document.querySelector(".site-nav");
+    if (!nav || document.querySelector(".product-page-search")) return;
+
+    var form = document.createElement("form");
+    form.className = "product-page-search";
+    form.setAttribute("role", "search");
+    form.setAttribute("aria-label", "Search products");
+    form.method = "get";
+    form.action = "../shop.html";
+    form.innerHTML =
+      '<label class="visually-hidden" for="productPageSearch">Search products</label>' +
+      '<input id="productPageSearch" name="q" type="search" maxlength="100" placeholder="Search products…" autocomplete="off">' +
+      '<button type="submit"><i class="fas fa-search" aria-hidden="true"></i><span>Search</span></button>';
+
+    nav.insertAdjacentElement("afterend", form);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

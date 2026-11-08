@@ -239,7 +239,7 @@
       button.setAttribute("aria-pressed", "false");
 
       button.innerHTML =
-        '<img src="' + escapeAttr(item.src) + '" alt="" loading="lazy">';
+        '<img src="' + escapeAttr(item.src) + '" alt="" loading="eager" decoding="async">';
 
       button.addEventListener("click", function () {
         show(index);

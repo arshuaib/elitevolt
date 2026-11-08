@@ -2,7 +2,7 @@
     // PRODUCT DATABASE 
     // Optional verified offer fields: compareAtPrice (regular price) and promotionLabel. Keep price as the customer pays.
     const productsData = [
-        { id: "p1", pageUrl: "products/m600x-solar-kit.html", name: "M600X Solar Kit",
+        { id: "p1", pageUrl: "products/m600x-solar-kit.html", name: "M600X Solar Light Kit",
             category: ["Solar Kits","Solar Home Systems"],
             price: 1400,
             compareAtPrice: 1500,
@@ -12,7 +12,7 @@
         thumbnails: ["images/M600X-2.jpeg","images/M600X-3.jpg"], 
         description: "12W solar home system, 4 lamps, USB, 5200mAh battery.", 
         specs: ["12W Panel", "Main Lamp", "3 Secondary", "Torch", "USB Cable"],
-        whatsappMsg: "M600X Solar Kit" },
+        whatsappMsg: "M600X Solar Light Kit" },
        
         { id: "p2", pageUrl: "products/lumn-home-840.html", name: "Lumn Home 840",
             category: ["Solar Kits","Solar Home Systems"],
@@ -20,7 +20,7 @@
             stock: true, 
         mainImg: "images/Lumn Home 840.jpg", 
         thumbnails: ["images/Lumn Home 840-2.jpg","images/Lumn Home 840-3.png"],
-        description: "LUMN Home 840lm delivers four high-intensity LED bulbs, ensuring every corner stays bright. Built with MPPT solar charging, wireless switches, and pay-go compatibility, it offers modern energy solutions for off-grid communities.Up to 10 hours of lighting at full brightness Four 210-lumen LED lamps with 3 brightness settings 12W solar panel & 40Wh battery for efficient energy storage", 
+        description: "LUMN Home 840lm is an off-grid solar lighting and power solution built for homes, shared spaces, and areas with limited or no grid electricity. Delivers four high-intensity LED bulbs, ensuring every corner stays bright. Built with MPPT solar charging, wireless switches, and pay-go compatibility, it offers modern energy solutions for off-grid communities.Up to 10 hours of lighting at full brightness Four 210-lumen LED lamps with 3 brightness settings 12W solar panel & 40Wh battery for efficient energy storage", 
         specs: ["Lumn Home Battery Hub 12Ah/40Wh", "LED Lamp 1W 210 Lm Output",
             "2M Extend Charging Cable for Lumn Home","5M Extend Cable for Lumn Home",
             "Wireless Switch for Lumn Home"], 
@@ -32,7 +32,7 @@
         stock: true,
         mainImg: "images/Lumn Home 1230.jpg",
         thumbnails: ["images/Lumn Home 1230-2.jpg", "images/Lumn Home 1230-3.jpg"],
-        description: "LUMN Home 1230lm is designed for large rooms, classrooms, or shared spaces. The system is easy to install, Bluetooth-enabled, and powered by a smart solar hub for uninterrupted lighting. 6-7 hours of runtime at full brightness. Three 410-lumen tube lights. MPPT solar charging for maximum efficiency. Durable LiFePO4 battery with 2000 cycles",
+        description: "LUMN Home 1230lm  is a high-performance, off-grid solar home system designed to provide efficient multi-room lighting and device charging for large residential spaces, classrooms, and small business setups. Designed for large rooms, classrooms, or shared spaces. The system is easy to install, Bluetooth-enabled, and powered by a smart solar hub for uninterrupted lighting. 6-7 hours of runtime at full brightness. Three 410-lumen tube lights. MPPT solar charging for maximum efficiency. Durable LiFePO4 battery with 2000 cycles",
         specs: ["1 x Lumn Home Battery Hub 12Ah/40Wh", "3 x Lumn Home LED Tube 2W/410 Lumen", "2M Extend Charging Cable for Lumn Home", "5M Extend Cable for Lumn Home", "3 x Wireless Switch for Lumn Home"], 
         whatsappMsg: "Lumn Home 1230" },
 
@@ -42,7 +42,7 @@
         stock: true, 
         mainImg: "images/Solar barber kit.jpeg",
         thumbnails: ["images/barberkit.jpg"],
-        description: "The Solar Barber Shop 06Ah Starter Pack includes a 20W solar panel, 6Ah lithium battery Hub for energy storage, two cordless haircutters with accessories such as limit combs, a cleaning brush, and lubricating oil, two efficient LED tube lights and a multi-functional torch.",
+        description: "The Solar Barber Shop 06Ah Starter Pack is a specialized, all-in-one productive-use solar home system tailored for running a micro-enterprise barber shop in off-grid or unreliable grid settings. It belongs to the ovCamp™ Series and provides clean, plug-and-play 12V DC power specifically optimized for barbers and small businesses includes a 20W solar panel, 6Ah lithium battery Hub for energy storage, two cordless haircutters with accessories such as limit combs, a cleaning brush, and lubricating oil, two efficient LED tube lights and a multi-functional torch.",
         specs: ["Camp Battery Hub 06Ah","20Wp c-Si Standard Sized IEC Certified Solar Panel", "2 x Cordless Battery Powered Durable Professional Hair Clipper", "2 x LT4 LED Tube",  "Hand-Held Torch / Lantern / Remote Control w/ Li-Ion Battery"],
         whatsappMsg: "Solar Barber Shop 06Ah Starter Pack" },
 
@@ -1376,7 +1376,7 @@
             name: "AWP 650VA offline UPS",
             category: "UPS", "subcategory": "Off-line UPS",
             price: 1000,
-            stock: false,
+            stock: true,
             mainImg: "images/650va.png",
             thumbnails: "images/650va-1.png", 
             description: "The AWP 650VA UPS is an entry-level, line-interactive uninterruptible power supply designed to protect desktop computers, networking gear, and small home office electronics from sudden data loss and electrical damage. ",
@@ -1542,7 +1542,7 @@
             price: 24000,
             stock: true,
             mainImg: "images/12kw-srne-1.png",
-            thumbnails: ["images/12kw-srne-2.png", "images/12kw-srne-3.png"],
+            thumbnails: ["images/12kw-srne-2.png", "images/12kw-srne-3.jpg"],
             description: "A high-performance 12kW, 48V Three-Phase Low-Voltage Hybrid Solar Inverter designed for large residential, light commercial, or industrial applications.",
             specs: [
                 "Rated Output Power: 12,000 W (12 kW)",
@@ -1761,9 +1761,10 @@
 
     // Pagination settings
     const ITEMS_PER_PAGE = 20;
-    const pageFromUrl = Number.parseInt(new URLSearchParams(window.location.search).get('page') || '1', 10);
+    const urlParameters = new URLSearchParams(window.location.search);
+    const pageFromUrl = Number.parseInt(urlParameters.get('page') || '1', 10);
     let currentPage = Number.isFinite(pageFromUrl) && pageFromUrl > 0 ? pageFromUrl : 1;
-    let currentSearchTerm = "";
+    let currentSearchTerm = (urlParameters.get('q') || urlParameters.get('search') || '').trim();
     let currentCategory = "All";
     let currentSubcategory = "All";
     let currentSort = "default";
@@ -2685,6 +2686,7 @@
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.getElementById('searchBtn');
     const clearBtn = document.getElementById('clearSearchBtn');
+    if (searchInput && currentSearchTerm) searchInput.value = currentSearchTerm;
     const syncClearSearchButton = () => {
         if (searchInput && clearBtn) clearBtn.hidden = !searchInput.value;
     };
