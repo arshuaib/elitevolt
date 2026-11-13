@@ -1664,8 +1664,8 @@
             category: ["Power Stations","Inverters"],
             price: 11500,
             stock: true,
-            mainImg: "images/srne-16-20kw-on.png",
-            thumbnails: ["images/srne-16-20kw-on-1.png","images/srne-16-20kw-on-2.png"],
+            mainImg: "images/3k-all-in-1-1.png",
+            thumbnails: ["images/3k-all-in-1-3.png","images/3k-all-in-1-2.png"],
             description: "An indoor, plug-and-play all-in-one low-voltage hybrid solar storage system designed for residential backup, small commercial applications, and off-grid remote power solutions. It combines a pure sine wave hybrid inverter, an MPPT solar charge controller, and a high-performance lithium battery into a single mobile cabinet.",
             specs: [
                 "Rated Output Power: 2,500W to 3,000W",
